@@ -5,9 +5,6 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3', '1.3.6'
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -18,6 +15,17 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+# Gems used in development environment
+group :development do
+  gem 'sqlite3', '>= 1.3.6'
+end
+
+# Gems for production with deployment on Heroku
+group :production do
+  gem 'thin'
+  gem 'pg'
 end
 
 gem 'jquery-rails'
