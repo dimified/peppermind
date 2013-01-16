@@ -19,7 +19,7 @@ end
 
 # Gems used in development environment
 group :development do
-  gem 'sqlite3', '>= 1.3.6'
+  gem "mongoid", "~> 3.0.0"
 end
 
 # Gems for production with deployment on Heroku
