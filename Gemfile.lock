@@ -54,9 +54,9 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.19)
-    mongoid (3.0.16)
+    mongoid (3.0.17)
       activemodel (~> 3.1)
-      moped (~> 1.1)
+      moped (~> 1.2)
       origin (~> 1.0)
       tzinfo (~> 0.3.22)
     moped (1.3.2)
@@ -119,7 +119,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
-  mongoid (~> 3.0.0)
+  mongoid (~> 3.0.17)
   pg
   rails (= 3.2.11)
   sass-rails (~> 3.2.3)

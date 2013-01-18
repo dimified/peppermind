@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-gem 'mongoid', '~> 3.0.0'
+gem 'mongoid', '~> 3.0.17'
 gem 'jquery-rails'
 
 # Bundle edge Rails instead:
