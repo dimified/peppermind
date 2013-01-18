@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
+gem 'mongoid', '~> 3.0.0'
+gem 'jquery-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -19,7 +21,6 @@ end
 
 # Gems used in development environment
 group :development do
-  gem "mongoid", "~> 3.0.0"
 end
 
 # Gems for production with deployment on Heroku
@@ -28,8 +29,9 @@ group :production do
   gem 'pg'
 end
 
-gem 'jquery-rails'
+group :test do
 
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
