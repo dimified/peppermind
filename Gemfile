@@ -4,6 +4,8 @@ gem 'rails', '3.2.11'
 gem "mongoid", "~> 3.1.0"
 gem 'jquery-rails'
 gem "devise", "~> 2.2.3"
+gem "simple_form", "~> 2.0.4"
+gem "haml", "~> 4.0.0"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
