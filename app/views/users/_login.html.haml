@@ -1,5 +1,5 @@
 = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  = f.input :email, autofocus: true
+  = f.input :login, autofocus: true
   = f.input :password
 
   - if devise_mapping.rememberable?

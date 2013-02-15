@@ -25,10 +25,18 @@ class User
   field :last_sign_in_ip,    :type => String
 
   ## Custom Fields
-  field :display_name
+  field :display_name, type: String
 
   ## Validations
   validates :email, confirmation: true
+
+  # Virtual attribute for authenticating by either username or email
+  # This is in addition to a real persisted field like 'username'
+  attr_accessor :login, :email_confirmation
+  attr_accessible :login
+
+  ## Attributes accessible
+  attr_accessible :display_name, :email, :email_confirmation, :password
 
   ## Confirmable
   # field :confirmation_token,   :type => String
@@ -43,4 +51,14 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
+
+  # function to manage user's login via email or display_name
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login).downcase
+      where(conditions).where('$or' => [ {:display_name => /^#{Regexp.escape(login)}$/i}, {:email => /^#{Regexp.escape(login)}$/i} ]).first
+    else
+      where(conditions).first
+    end
+  end
 end

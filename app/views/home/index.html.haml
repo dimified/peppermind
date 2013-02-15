@@ -3,4 +3,4 @@
 - if user_signed_in?
   = link_to "Destroy Session", destroy_user_session_path, method: :delete
 - else
-  = render "devise/sessions/new", resource: :user
+  = render "users/login", resource: :user
