@@ -1,4 +1,6 @@
 %h1 Landing Page
 
-- if current_user
-	= link_to "Destroy Session", destroy_user_session_path, method: :delete
+- if user_signed_in?
+  = link_to "Destroy Session", destroy_user_session_path, method: :delete
+- else
+  = render "devise/sessions/new", resource: :user

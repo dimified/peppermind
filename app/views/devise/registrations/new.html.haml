@@ -4,8 +4,8 @@
   = devise_error_messages!
 
   = f.input :email, autofocus: true
+  = f.input :email_confirmation
   = f.input :password
-  = f.input :password_confirmation
   = f.submit
 
 = render "devise/shared/links"
