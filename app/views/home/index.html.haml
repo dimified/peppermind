@@ -1,0 +1,4 @@
+%h1 Landing Page
+
+- if current_user
+	= link_to "Destroy Session", destroy_user_session_path, method: :delete

@@ -24,6 +24,7 @@ end
 
 # Gems used in development environment
 group :development do
+	gem "better_errors", "~> 0.6.0"
 end
 
 # Gems for production with deployment on Heroku
