@@ -1,6 +1,13 @@
-%h1 Landing Page
+:ruby
+  content_for :stylesheet_includes do
+    stylesheet_link_tag "landingpage"
+  end
 
-- if user_signed_in?
-  = link_to "Destroy Session", destroy_user_session_path, method: :delete
-- else
-  = render "users/login", resource: :user
+.gradient
+  .logo
+  .container
+    .login
+      - if user_signed_in?
+        = link_to "Destroy Session", destroy_user_session_path, method: :delete
+      - else
+        = render "users/login", resource: :user

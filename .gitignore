@@ -17,3 +17,4 @@ log/development.log
 .yardoc
 _yardoc
 doc/
+.DS_Store

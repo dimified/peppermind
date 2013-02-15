@@ -1,17 +1,16 @@
 !!! 5
-
-%html{:lang => 'de'}
+%html{lang: 'de'}
   %head
-    %meta{:charset => 'utf-8'}
+    %meta{charset: 'utf-8'}
 
-    %title= content_for?(:title) ? yield(:title) : 'Peppermind'
+    %title
+      = content_for?(:title) ? yield(:title) : 'Peppermind'
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}
+    %meta{name: 'description', content: content_for?(:description) ? yield(:description) : ''}
+    %meta{name: 'keywords', content: content_for?(:keywords) ? yield(:keywords) : ''}
 
-    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1'}
-    %meta{:name => 'description', :content => content_for?(:description) ? yield(:description) : ''}
-    %meta{:name => 'keywords', :content => content_for?(:keywords) ? yield(:keywords) : ''}
-
-    = stylesheet_link_tag :application, :media => "all"
-    = javascript_include_tag :application
+    = stylesheet_link_tag :screen, media: "all"
+    = yield :stylesheet_includes
     = csrf_meta_tags
     = yield(:head)
   %body
@@ -19,3 +18,5 @@
     %p.alert= alert
 
     = yield
+    
+    = javascript_include_tag :application
