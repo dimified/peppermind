@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-gem 'mongoid', '~> 3.0.17'
+gem "mongoid", "~> 3.1.0"
 gem 'jquery-rails'
+gem "devise", "~> 2.2.3"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -29,8 +30,8 @@ group :production do
   gem 'pg'
 end
 
-group :test do
-
+group :test, :development do
+	gem "rspec-rails", "~> 2.12.2"
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
