@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem "devise", "~> 2.2.3"
 gem "simple_form", "~> 2.0.4"
 gem "haml", "~> 4.0.0"
+gem "font-awesome-sass-rails", "~> 3.0.2.1"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

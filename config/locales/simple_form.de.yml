@@ -10,10 +10,10 @@ de:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Leider konnte der Eintrag noch nicht gespeichert werden. Bitte prüfen Sie folgende Felder:"
-  helpers:
-    submit:
-      create: "%{model} speichern"
-      update: "%{model} aktualisieren"
+    sign_in:
+      login: "Benutzername oder E-Mail"
+      password: "Passwort"
+      button: "Anmelden"
     # Labels and hints examples
     # labels:
     #   password: 'Password'

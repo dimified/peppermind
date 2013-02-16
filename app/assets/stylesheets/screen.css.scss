@@ -1,19 +1,20 @@
-// ---------------------------------------------------------------------------
 // Imports
+// ---------------------------------------------------------------------------
 
 @import "compass";
 @import "compass/reset";
 @import "compass/css3";
 @import "compass/utilities";
-@import "compass/css3/images";
+@import "font-awesome";
 @import "base";
-@import "globales";
+@import "globals";
 @import "general";
+@import "forms";
 
-/* -------------------------------------------------------------------------*/
 /* Layout */
+/* -------------------------------------------------------------------------*/
 
 .container {
   @include container;
-  @include susy-grid-background;
+  //@include susy-grid-background;
 }

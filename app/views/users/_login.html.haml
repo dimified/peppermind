@@ -1,10 +1,13 @@
 = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  = f.input :login, autofocus: true
-  = f.input :password
+  %i.icon-user
+  = f.input_field :login, autofocus: true, placeholder: t('simple_form.sign_in.login')
+  %i.icon-key
+  = f.input_field :password, placeholder: t('simple_form.sign_in.password')
 
-  - if devise_mapping.rememberable?
+  -# if devise_mapping.rememberable?
     = f.input :remember_me, as: :boolean
 
-  = f.submit "Sign In"
+  %button{type: 'submit', class: 'green-button', id: 'login-button'}
+    .login-text= t('simple_form.sign_in.button')
 
-  = render "devise/shared/links"
+  -#= render "devise/shared/links"
