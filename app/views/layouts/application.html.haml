@@ -9,8 +9,8 @@
     %meta{name: 'description', content: content_for?(:description) ? yield(:description) : ''}
     %meta{name: 'keywords', content: content_for?(:keywords) ? yield(:keywords) : ''}
 
-    = stylesheet_link_tag :screen, media: "all"
-    = yield :stylesheet_includes
+    = stylesheet_link_tag :screen, media: "screen"
+    = yield :stylesheets
     = csrf_meta_tags
     = yield(:head)
   %body
