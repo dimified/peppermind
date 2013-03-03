@@ -6,10 +6,19 @@
 @import "compass/css3";
 @import "compass/utilities";
 @import "font-awesome";
+
+// Application
+// ---------------------------------------------------------------------------
+
 @import "base";
 @import "globals";
 @import "general";
 @import "forms";
+
+// Pages
+// ---------------------------------------------------------------------------
+
+@import "landingpage";
 
 /* Layout */
 /* -------------------------------------------------------------------------*/
