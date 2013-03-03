@@ -2,7 +2,7 @@ $('#mozilla-persona').click (event) ->
   event.preventDefault()
   navigator.id.request siteName: 'Peppermind'
   navigator.id.watch
-    loggedInUser: 'undefined'
+    loggedInUser: null
     onlogin: (assertion) ->
       $.ajax
         type: 'POST'
