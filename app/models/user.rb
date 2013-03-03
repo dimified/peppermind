@@ -6,10 +6,13 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  ## social login
+  has_many :socialproviders, :dependent => :destroy
+
   ## Database authenticatable
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
-  
+
   ## Recoverable
   field :reset_password_token,   :type => String
   field :reset_password_sent_at, :type => Time
@@ -34,10 +37,9 @@ class User
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'display_name'
   attr_accessor :login, :email_confirmation
-  attr_accessible :login
 
   ## Attributes accessible
-  attr_accessible :display_name, :email, :email_confirmation, :password
+  attr_accessible :login, :display_name, :email, :email_confirmation, :password
 
   ## Confirmable
   # field :confirmation_token,   :type => String

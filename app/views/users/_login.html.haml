@@ -12,4 +12,10 @@
   %button{type: 'submit', class: 'green-button', id: 'login-button'}
     .login-text= t('simple_form.sign_in.button')
 
+%div{style: 'clear:both'}
+  = link_to 'Mozilla Persona', '/auth/persona/', id: 'mozilla-persona'
+  = link_to 'Facebook', '/auth/facebook/'
+  = link_to 'Google', '/auth/google/'
+  = link_to 'Twitter', '/auth/twitter/'
+
 -#= render 'devise/shared/links'

@@ -1,0 +1,30 @@
+%section
+  %h2 Social Provider
+
+  %div
+    %h3 Die folgenden Social Provider sind mit deinem Benutzerkonto verknüpft:
+
+    - (@providers_user).each do |socialprovider|
+      %div
+        = socialprovider.provider
+        %div
+          Name: #{socialprovider.display_name} (ID: #{socialprovider.uid})
+        %div
+          E-Mail: #{socialprovider.email}
+        %div
+          = link_to 'Social Provider entfernen', socialprovider, :confirm => 'Bist du sicher, dass du diesen Social Provider entfernen möchtest? Das Entfernen des letzten Social Providers kann zur Folge haben, dass du dich aus deinem Benutzerkonto ausschließt, wenn du kein Passwort für dein Benutzerkonto gewählt hast!', method: :delete
+
+    %div
+      %h3 Du kannst dein Benutzerkonto mit weiteren Diensten verknüpfen:
+      %div
+        - (@providers_suggested).each do |provider|
+          -if provider == 'persona'
+            = link_to 'Mozilla Persona', '/auth/persona/', id: 'mozilla-persona'
+          -elsif provider == 'facebook'
+            = link_to 'Facebook', '/auth/facebook/'
+          -elsif provider == 'google'
+            = link_to 'Google', '/auth/google/'
+          -elsif provider == 'twitter'
+            = link_to 'Twitter', '/auth/twitter/'
+
+      %p Wenn du dich über einen Social Provider auf Peppermind registriert hast, wurde ein zufälliges Passwort für dich gewählt. Du kannst ein neues Passwort über den "Passwort vergessen?"-Link auf der Anmelden-Seite anfordern.
