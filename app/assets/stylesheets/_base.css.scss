@@ -13,3 +13,11 @@ $gutter-width   : 1em;
 $grid-padding   : $gutter-width;
 
 $show-grid-backgrounds  : true;
+
+// Basic Grid
+// ---------------------------------------------------------------------------
+
+.container {
+  @include container;
+  //@include susy-grid-background;
+}
