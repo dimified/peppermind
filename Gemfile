@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
 
 gem 'rails', '3.2.12'
 gem 'mongoid', '~> 3.1.0'
@@ -39,3 +38,6 @@ end
 group :test, :development do
 	gem 'rspec-rails', '~> 2.12.2'
 end
+
+# Deploy with Capistrano
+gem 'capistrano'
