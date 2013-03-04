@@ -18,4 +18,3 @@ log/development.log
 _yardoc
 doc/
 .DS_Store
-config/api_keys.yml
