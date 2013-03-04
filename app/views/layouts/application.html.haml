@@ -8,7 +8,7 @@
     %meta{name: 'description', content: content_for?(:description) ? yield(:description) : ''}
     %meta{name: 'keywords', content: content_for?(:keywords) ? yield(:keywords) : ''}
 
-    = stylesheet_link_tag :application, media: "screen"
+    = stylesheet_link_tag "application", media: "screen"
     = yield :stylesheets
     = csrf_meta_tags
     = yield(:head)
@@ -19,4 +19,4 @@
     = yield
 
     = javascript_include_tag 'https://login.persona.org/include.js'
-    = javascript_include_tag :application
+    = javascript_include_tag "application"
