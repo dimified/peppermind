@@ -9,10 +9,9 @@
     %meta{name: 'keywords', content: content_for?(:keywords) ? yield(:keywords) : ''}
 
     = stylesheet_link_tag "application", media: "screen"
-    = yield :stylesheets
     = csrf_meta_tags
     = yield(:head)
-  %body
+    %body
     %p.notice= notice
     %p.alert= alert
 

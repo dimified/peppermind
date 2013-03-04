@@ -19,5 +19,5 @@ $show-grid-backgrounds  : true;
 
 .container {
   @include container;
-  //@include susy-grid-background;
+  @include susy-grid-background;
 }

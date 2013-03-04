@@ -1,17 +1,11 @@
-%h2 Registrieren
+.container
+  %h2 Registrieren
 
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
+  = render "form"
 
-  = f.input :display_name, autofocus: true
-  = f.input :email
-  = f.input :email_confirmation
-  = f.input :password
-  = f.submit
+  = link_to 'Mozilla Persona', '/auth/persona/', id: 'mozilla-persona'
+  = link_to 'Facebook', '/auth/facebook/'
+  = link_to 'Google', '/auth/google/'
+  = link_to 'Twitter', '/auth/twitter/'
 
-= link_to 'Mozilla Persona', '/auth/persona/', id: 'mozilla-persona'
-= link_to 'Facebook', '/auth/facebook/'
-= link_to 'Google', '/auth/google/'
-= link_to 'Twitter', '/auth/twitter/'
-
-= render 'devise/shared/links'
+  = render 'devise/shared/links'

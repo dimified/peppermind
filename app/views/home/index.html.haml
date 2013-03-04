@@ -2,7 +2,4 @@
   .logo
   .container
     .login
-      - if user_signed_in?
-        = link_to 'Abmelden', destroy_user_session_path, method: :delete
-      - else
-        = render 'users/login', resource: :user
+      = render 'users/login', resource: :user

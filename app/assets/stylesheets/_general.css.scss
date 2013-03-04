@@ -1,6 +1,16 @@
 /* General */
 /* -------------------------------------------------------------------------*/
 
+body {
+	@include global-typo;
+}
+
+a {
+	@include unstyled-link;
+	@include hover-link;
+  @include link-colors(black, $darkgreen, $lightgreen, black, $darkgreen);
+}
+
 .login label {
 	display: none;
 }

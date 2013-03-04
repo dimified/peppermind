@@ -1,5 +1,8 @@
 Peppermind::Application.routes.draw do
-  # root route
+  # The route to the root
+  authenticated :user do
+  	root to: "users#show"
+  end
   root :to => 'home#index'
 
   # user authentication

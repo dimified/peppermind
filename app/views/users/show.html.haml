@@ -1,0 +1,6 @@
+.container
+  = link_to 'Back', users_path
+  = link_to 'Edit', edit_user_path(@user)
+
+  - if user_signed_in?
+    = link_to 'Abmelden', destroy_user_session_path, method: :delete
