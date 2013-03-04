@@ -1,9 +1,7 @@
 require File.expand_path('../boot', __FILE__)
-
 require 'action_controller/railtie'
 require 'action_mailer/railtie'
 require 'active_resource/railtie'
-require 'rails/test_unit/railtie'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -14,6 +12,14 @@ end
 
 module Peppermind
   class Application < Rails::Application
+    config.generators do |g|
+      g.test_framework :rspec, fixture: true
+      g.fixture_replacement :factory_girl
+      g.form_builder :simple_form
+      g.template_engine :haml
+      g.orm :mongoid
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -65,7 +71,7 @@ module Peppermind
     # Forcing your application to not access the DB or load models when precompiling your assets.
     config.assets.initialize_on_precompile = false
 
-    # Precompile *all* assets, except those that start with underscore. You can also add files seperately.
-    #config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
   end
 end

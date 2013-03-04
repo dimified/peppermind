@@ -32,7 +32,7 @@ class User
 
   ## Validations
   validates :email, confirmation: true
-  validates :login, presence: true
+  #validates :login, presence: true
 
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'display_name'

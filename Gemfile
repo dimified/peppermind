@@ -37,5 +37,10 @@ group :production do
 end
 
 group :test, :development do
-	gem 'rspec-rails', '~> 2.12.2'
+	gem "rspec-rails",'~> 2.12.2'
+  gem "factory_girl_rails", "~> 4.2.1"
+  gem "capybara", "~> 2.0.2"
+  gem "guard-rspec", "~> 2.5.0"
+  gem "database_cleaner", "~> 0.9.1"
+  gem "mongoid-rspec", "~> 1.7.0"
 end

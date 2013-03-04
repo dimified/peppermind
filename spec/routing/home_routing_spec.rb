@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe HomesController do
+describe HomeController do
   describe "routing" do
 
     it "routes to #index" do
