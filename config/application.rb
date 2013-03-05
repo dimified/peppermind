@@ -19,7 +19,7 @@ module Peppermind
         helper_specs: false,
         routing_specs: true,
         controller_specs: true,
-        request_specs: true
+        request_specs: false
       g.fixture_replacement :factory_girl, dir: "spec/factories"
       g.form_builder :simple_form
       g.template_engine :haml
