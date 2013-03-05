@@ -11,6 +11,8 @@ a {
   @include link-colors(black, $darkgreen, $lightgreen, black, $darkgreen);
 }
 
-.login label {
-	display: none;
+form {
+	label {
+		display: none;
+	}
 }
