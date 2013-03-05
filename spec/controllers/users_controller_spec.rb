@@ -34,131 +34,135 @@ describe UsersController do
     {}
   end
 
+  before(:each) do
+    controller.stub(:authenticate_user!).and_return true
+  end
+
   describe "GET index" do
     it "assigns all users as @users" do
-      user = User.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:users).should eq([user])
+      user = create(:user)
+      get :index
+      expect(assigns(:users)).to eq [user]
+    end
+
+    it "renders the :index template" do
+      get :index
+      expect(response).to render_template :index
     end
   end
 
-  describe "GET show" do
-    it "assigns the requested user as @user" do
-      user = User.create! valid_attributes
-      get :show, {:id => user.to_param}, valid_session
-      assigns(:user).should eq(user)
-    end
-  end
+  # describe "GET show" do
+  #   it "assigns the requested user as @user" do
+  #     user = create(:user)
+  #     get :show, id: user
+  #     assigns(:user).should eq(user)
+  #   end
+  #   it "renders the :show view" do
+  #     user = create(:user)
+  #     get :show, id: user
+  #     expect(response).to render_template :show
+  #   end
+  # end
 
   describe "GET new" do
     it "assigns a new user as @user" do
-      get :new, {}, valid_session
-      assigns(:user).should be_a_new(User)
+      get :new
+      expect(assigns(:user)).to be_a_new(User)
+    end
+
+    it "renders the :new template" do 
+      get :new
+      expect(response).to render_template :new
     end
   end
 
   describe "GET edit" do
     it "assigns the requested user as @user" do
-      user = User.create! valid_attributes
-      get :edit, {:id => user.to_param}, valid_session
-      assigns(:user).should eq(user)
+      user = create(:user)
+      get :edit, id: user
+      expect(assigns(:user)).to eq(user)
     end
   end
 
   describe "POST create" do
-    describe "with valid params" do
+    context "with valid params" do
       it "creates a new User" do
         expect {
-          post :create, {:user => valid_attributes}, valid_session
+          post :create, user: attributes_for(:user)
         }.to change(User, :count).by(1)
       end
 
-      it "assigns a newly created user as @user" do
-        post :create, {:user => valid_attributes}, valid_session
-        assigns(:user).should be_a(User)
-        assigns(:user).should be_persisted
-      end
-
       it "redirects to the created user" do
-        post :create, {:user => valid_attributes}, valid_session
-        response.should redirect_to(User.last)
+        post :create, user: attributes_for(:user)
+        expect(response).to redirect_to(User.last)
       end
     end
 
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved user as @user" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        User.any_instance.stub(:save).and_return(false)
-        post :create, {:user => {  }}, valid_session
-        assigns(:user).should be_a_new(User)
+    context "with invalid attributes" do
+      it "does not save the new message in the database" do
+        expect{
+          post :create, user: attributes_for(:invalid_user)
+        }.to_not change(User, :count)
       end
-
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        User.any_instance.stub(:save).and_return(false)
-        post :create, {:user => {  }}, valid_session
-        response.should render_template("new")
-      end
+      
+      it "re-renders the :new template" do 
+        post :create, user: attributes_for(:invalid_user) 
+        expect(response).to render_template :new
+      end 
     end
   end
 
   describe "PUT update" do
-    describe "with valid params" do
+    before :each do
+      @user = create(:user)
+    end
+
+    it "locates the requested @user" do
+      put :update, id: @user, user: attributes_for(:user)
+      expect(assigns(:user)).to eq(@user)
+    end
+
+    context "with valid params" do
       it "updates the requested user" do
-        user = User.create! valid_attributes
-        # Assuming there are no other users in the database, this
-        # specifies that the User created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        User.any_instance.should_receive(:update_attributes).with({ "these" => "params" })
-        put :update, {:id => user.to_param, :user => { "these" => "params" }}, valid_session
+        put :update, id: @user, user: attributes_for(:user, display_name: "isaacnewton")
+        @user.reload
+        expect(@user.display_name).to eq("isaacnewton") 
       end
 
-      it "assigns the requested user as @user" do
-        user = User.create! valid_attributes
-        put :update, {:id => user.to_param, :user => valid_attributes}, valid_session
-        assigns(:user).should eq(user)
-      end
-
-      it "redirects to the user" do
-        user = User.create! valid_attributes
-        put :update, {:id => user.to_param, :user => valid_attributes}, valid_session
-        response.should redirect_to(user)
+      it "redirects to the updated user" do
+        put :update, id: @user, user: attributes_for(:user)
+        expect(response).to redirect_to @user
       end
     end
 
-    describe "with invalid params" do
-      it "assigns the user as @user" do
-        user = User.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        User.any_instance.stub(:save).and_return(false)
-        put :update, {:id => user.to_param, :user => {  }}, valid_session
-        assigns(:user).should eq(user)
+    context "with invalid params" do
+      it "does not update the requested user" do
+        put :update, id: @user, user: attributes_for(:user, display_name: "isaacnewton", email: nil)
+        @user.reload
+        expect(@user.display_name).to_not eq("isaacnewton")
       end
 
-      it "re-renders the 'edit' template" do
-        user = User.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        User.any_instance.stub(:save).and_return(false)
-        put :update, {:id => user.to_param, :user => {  }}, valid_session
-        response.should render_template("edit")
+      it "re-renders the :edit template" do
+        put :update, id: @user, user: attributes_for(:invalid_user)
+        expect(response).to render_template :edit
       end
     end
   end
 
-  describe "DELETE destroy" do
-    it "destroys the requested user" do
-      user = User.create! valid_attributes
-      expect {
-        delete :destroy, {:id => user.to_param}, valid_session
+  describe'DELETE destroy' do 
+    before :each do
+      @user = create(:user)
+    end
+
+    it "destroys the requested user" do 
+      expect{
+        delete :destroy, id: @user
       }.to change(User, :count).by(-1)
     end
-
-    it "redirects to the users list" do
-      user = User.create! valid_attributes
-      delete :destroy, {:id => user.to_param}, valid_session
-      response.should redirect_to(users_url)
+    
+    it "redirects to users#index" do 
+      delete :destroy, id: @user 
+      expect(response).to redirect_to users_url
     end
   end
-
 end

@@ -46,4 +46,5 @@ group :test do
   gem "capybara", "~> 2.0.2"
   gem "database_cleaner", "~> 0.9.1"
   gem "mongoid-rspec", "~> 1.7.0"
+  gem "faker", "~> 1.1.2"
 end
