@@ -32,6 +32,8 @@ class User
 
   ## Validations
   validates :email, confirmation: true
+  validates :display_name, presence: true, uniqueness: true
+  validates :password, length: { minimum: 8}
   #validates :login, presence: true
 
   # Virtual attribute for authenticating by either username or email
