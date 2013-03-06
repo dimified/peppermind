@@ -12,10 +12,10 @@ test/tmp
 test/version_tmp
 tmp
 log/development.log
+log/test.log
 
 # YARD artifacts
 .yardoc
 _yardoc
 doc/
 .DS_Store
-config/initializers/secret_token.rb
