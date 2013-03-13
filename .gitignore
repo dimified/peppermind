@@ -19,3 +19,4 @@ log/test.log
 _yardoc
 doc/
 .DS_Store
+config/env_vars.rb
