@@ -8,4 +8,6 @@ class Idea
   field :solution
 
   ## Validations
+  validates :title, presence: true
+  validates :summary, presence: true
 end

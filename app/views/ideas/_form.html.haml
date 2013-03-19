@@ -1,7 +1,5 @@
 = simple_form_for @idea do |f|
   = f.input :title, placeholder: "Titel"
   = f.input :summary, as: :text, placeholder: "Zusammenfassung"
-  = f.input :problem, as: :text, placeholder: "Problem"
-  = f.input :solution, as: :text, placeholder: "Lösung"
 
-  = f.button :submit, class: 'green-button'
+  = f.button :submit, "Continue", class: 'green-button'

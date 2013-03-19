@@ -44,7 +44,8 @@ class IdeasController < ApplicationController
 
     respond_to do |format|
       if @idea.save
-        format.html { redirect_to @idea, notice: 'Idea was successfully created.' }
+        session[:idea_id] = @idea.id
+        format.html { redirect_to idea_steps_path, notice: 'Idea was successfully created.' }
         format.json { render json: @idea, status: :created, location: @idea }
       else
         format.html { render action: "new" }

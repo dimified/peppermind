@@ -1,0 +1,4 @@
+= simple_form_for(@idea, url: wizard_path) do |f|
+  = yield f
+  = f.button :submit, "Continue", class: 'green-button'
+= link_to "Skip", next_wizard_path

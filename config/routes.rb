@@ -1,6 +1,4 @@
 Peppermind::Application.routes.draw do
-  resources :ideas
-
 
   # The route to the root
   authenticated :user do
@@ -14,4 +12,6 @@ Peppermind::Application.routes.draw do
   resources :socialproviders, :only => [:index, :create, :destroy]
 
   resources :users
+  resources :ideas
+  resources :idea_steps
 end
