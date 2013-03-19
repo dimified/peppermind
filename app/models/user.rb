@@ -6,7 +6,7 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  ## social login
+  ## Social login
   has_many :socialproviders, :dependent => :destroy
 
   ## Database authenticatable

@@ -1,4 +1,7 @@
 Peppermind::Application.routes.draw do
+  resources :ideas
+
+
   # The route to the root
   authenticated :user do
   	root to: "users#show"
