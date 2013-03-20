@@ -1,4 +1,6 @@
 class IdeasController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
+
   # GET /ideas
   # GET /ideas.json
   def index

@@ -1,0 +1,12 @@
+%section.container
+  %h1 Ideen
+
+  - @ideas.each do |idea|
+    %div.idea-container
+      = idea.title
+      %br
+      = idea.summary
+      %br
+      = l(idea.created_at)
+      %br
+      = idea.user.display_name
