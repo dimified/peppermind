@@ -2,7 +2,22 @@
 /* -------------------------------------------------------------------------*/
 
 body {
-  @include global-typo;
+	@include global-typo;
+	//@include filter-gradient($lightgreen, $darkgreen, vertical);
+	//@include background(image-url('texture.png') 0 0 repeat);
+}
+
+h1 {
+	font-size: 200%;
+}
+
+h2 {
+	font-size: 150%;
+	margin: 10px 0;
+}
+
+p {
+  margin: 10px 0;
 }
 
 a {
@@ -16,18 +31,6 @@ form {
   }
 }
 
-h1 {
-  margin: 10px 0;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-h2 {
-  margin: 5px 0;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-p {
-  margin: 10px 0;
+.clear {
+	clear: both;
 }

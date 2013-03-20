@@ -1,19 +1,5 @@
-// Imports
-// ---------------------------------------------------------------------------
-
-@import "compass";
-@import "compass/utilities";
-@import "compass/css3";
-@import "globals";
-
 /* Landing Page */
 /* -------------------------------------------------------------------------*/
-
-body {
-	height: 100%;
-	@include filter-gradient($lightgreen, $darkgreen, vertical);
-	@include background(image-url('texture.png') 0 0 repeat);
-}
 
 .gradient {
 	position: absolute;

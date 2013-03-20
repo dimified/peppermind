@@ -3,10 +3,10 @@ class Idea
   include Mongoid::Timestamps
 
   ## Fields
-  field :title
-  field :summary
-  field :problem
-  field :solution
+  field :title, type: String
+  field :summary, type: String
+  field :problem, type: String
+  field :solution, type: String
 
   ## Validations
   validates :title, presence: true, length: {maximum: 40}

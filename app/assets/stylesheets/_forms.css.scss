@@ -2,13 +2,17 @@
 /* -------------------------------------------------------------------------*/
 
 form.simple_form {
-	padding: 20px;
-
-	input {
+	margin: 20px;
+	input, textarea {
 		@include embossed-style;
 		@include span-columns(12);
 		text-indent: 10px;
 		padding: 10px 0;
+		margin: 5px 0;
+	}
+
+	textarea {
+		resize: none;
 	}
 }
 

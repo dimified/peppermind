@@ -6,7 +6,6 @@
 // Basic Grid
 // ---------------------------------------------------------------------------
 
-
 $total-columns  : 12;
 $column-width   : 4em;
 $gutter-width   : 1em;
@@ -19,5 +18,5 @@ $show-grid-backgrounds  : true;
 
 .container {
   @include container;
-  //@include susy-grid-background;
+  @include susy-grid-background;
 }
