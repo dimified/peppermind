@@ -95,6 +95,11 @@ GEM
       rspec (~> 2.11)
     haml (4.0.0)
       tilt
+    haml-rails (0.4)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (>= 3.1, < 4.1)
+      railties (>= 3.1, < 4.1)
     hashie (1.2.0)
     hike (1.2.1)
     httpauth (0.2.0)
@@ -269,6 +274,7 @@ DEPENDENCIES
   font-awesome-sass-rails (~> 3.0.2.1)
   guard-rspec (~> 2.5.0)
   haml (~> 4.0.0)
+  haml-rails (~> 0.4)
   jquery-rails
   mongoid (~> 3.1.0)
   mongoid-rspec (~> 1.7.0)

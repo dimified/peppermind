@@ -15,9 +15,10 @@ gem 'sass-rails',   '~> 3.2.3'
 gem 'compass', '~> 0.12.2'
 gem 'compass-rails', '~> 1.0.3'
 gem 'susy', '~> 1.0.5'
+gem 'haml-rails', '~> 0.4'
 gem 'haml', '~> 4.0.0'
 gem 'font-awesome-sass-rails', '~> 3.0.2.1'
-gem "wicked", "~> 0.5.0"
+gem 'wicked', '~> 0.5.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -38,14 +39,14 @@ group :production do
 end
 
 group :test, :development do
-	gem "rspec-rails",'~> 2.12.2'
-  gem "factory_girl_rails", "~> 4.2.1"
-  gem "guard-rspec", "~> 2.5.0"
+	gem 'rspec-rails','~> 2.12.2'
+  gem 'factory_girl_rails', '~> 4.2.1'
+  gem 'guard-rspec', '~> 2.5.0'
 end
 
 group :test do
-  gem "capybara", "~> 2.0.2"
-  gem "database_cleaner", "~> 0.9.1"
-  gem "mongoid-rspec", "~> 1.7.0"
-  gem "faker", "~> 1.1.2"
+  gem 'capybara', '~> 2.0.2'
+  gem 'database_cleaner', '~> 0.9.1'
+  gem 'mongoid-rspec', '~> 1.7.0'
+  gem 'faker', '~> 1.1.2'
 end
