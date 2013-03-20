@@ -43,6 +43,9 @@ class User
   ## Attributes accessible
   attr_accessible :login, :display_name, :email, :email_confirmation, :password
 
+  ## Associations
+  has_many :ideas
+
   ## Confirmable
   # field :confirmation_token,   :type => String
   # field :confirmed_at,         :type => Time
