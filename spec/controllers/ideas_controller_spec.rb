@@ -31,18 +31,26 @@ describe IdeasController do
   end
 
   describe "GET new" do
+    before(:each) do
+      sign_in user
+    end
+
     it "assigns a new idea as @idea" do
       get :new
       expect(assigns(:idea)).to be_a_new(Idea)
     end
 
-    it "renders the :new template" do 
+    it "renders the :new template" do
       get :new
       expect(response).to render_template :new
     end
   end
 
   describe "GET edit" do
+    before(:each) do
+      sign_in user
+    end
+
     it "assigns the requested idea as @idea" do
       idea = create(:idea)
       get :edit, id: idea
@@ -55,7 +63,7 @@ describe IdeasController do
       sign_in user
     end
 
-    context "with valid params" do
+    context "with valid attributes" do
       it "creates a new Idea" do
         expect {
           post :create, idea: attributes_for(:idea)
