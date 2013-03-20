@@ -3,10 +3,14 @@
 
   - @ideas.each do |idea|
     %div.idea-container
-      = idea.title
-      %br
-      = idea.summary
-      %br
-      = l(idea.created_at)
-      %br
-      = idea.user.display_name
+      =link_to idea_path(idea.id) do
+        = idea.title
+        %br
+        = idea.summary
+        %br
+        = l(idea.created_at)
+        %br
+        = idea.user.display_name
+
+  %p
+    =link_to 'Neue Idee', new_idea_path

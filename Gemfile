@@ -3,6 +3,7 @@ ruby '1.9.3'
 
 gem 'rails', '3.2.13'
 gem 'mongoid', '~> 3.1.0'
+gem 'mongoid_auto_increment_id', '~> 0.6.1'
 gem 'jquery-rails'
 gem 'devise', '~> 2.2.3'
 gem 'omniauth', '~> 1.1.3'

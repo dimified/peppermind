@@ -16,6 +16,6 @@ class IdeaStepsController < ApplicationController
 private
   
   def finish_wizard_path
-  	root_url
+  	idea_path @idea
   end
 end

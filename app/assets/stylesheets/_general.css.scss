@@ -2,17 +2,16 @@
 /* -------------------------------------------------------------------------*/
 
 body {
-	@include global-typo;
+  @include global-typo;
 }
 
 a {
-	@include unstyled-link;
-	@include hover-link;
+  @include hover-link;
   @include link-colors(black, $darkgreen, $lightgreen, black, $darkgreen);
 }
 
 form {
-	label {
-		display: none;
-	}
+  label {
+    display: none;
+  }
 }
