@@ -3,6 +3,7 @@ en:
     new:
       skip: "Diesen Schritt überspringen"
       continue: "Weiter zum nächsten Schritt"
-	time:
-	  formats:
-	    default: "%d.%m.%Y, %H:%M"
+
+  time:
+    formats:
+      default: "%d.%m.%Y, %H:%M"
