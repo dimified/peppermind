@@ -17,6 +17,10 @@ describe IdeasController do
   end
 
   describe "GET show" do
+    before(:each) do
+      sign_in user
+    end
+
     it "assigns the requested idea as @idea" do
       idea = create(:idea)
       get :show, id: idea
@@ -122,7 +126,7 @@ describe IdeasController do
 
     context "with invalid attributes" do
       it "does not update the requested idea" do
-        put :update, id: @idea, user: attributes_for(:idea, title: "New title for idea", summary: nil)
+        put :update, id: @idea, user: attributes_for(:idea, title: "New title for idea", description: nil)
         @idea.reload
         expect(@idea.title).to_not eq("New title for idea")
       end

@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe UsersController do
+  let(:user) { create(:user) }
 
   before(:each) do
     controller.stub(:authenticate_user!).and_return true
@@ -8,7 +9,6 @@ describe UsersController do
 
   describe "GET index" do
     it "assigns all users as @users" do
-      user = create(:user)
       get :index
       expect(assigns(:users)).to eq [user]
     end
@@ -19,18 +19,21 @@ describe UsersController do
     end
   end
 
-  # describe "GET show" do
-  #   it "assigns the requested user as @user" do
-  #     user = create(:user)
-  #     get :show, id: user
-  #     assigns(:user).should eq(user)
-  #   end
-  #   it "renders the :show view" do
-  #     user = create(:user)
-  #     get :show, id: user
-  #     expect(response).to render_template :show
-  #   end
-  # end
+  describe "GET show" do
+    before(:each) do
+      sign_in user
+    end
+
+    it "assigns the requested user as @user" do
+      get :show
+      expect(assigns(:user)).to eq(user)
+    end
+
+    it "renders the :show view" do
+      get :show, id: user
+      expect(response).to render_template :show
+    end
+  end
 
   describe "GET new" do
     it "assigns a new user as @user" do
@@ -46,7 +49,6 @@ describe UsersController do
 
   describe "GET edit" do
     it "assigns the requested user as @user" do
-      user = create(:user)
       get :edit, id: user
       expect(assigns(:user)).to eq(user)
     end
