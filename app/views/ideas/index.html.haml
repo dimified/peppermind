@@ -1,13 +1,12 @@
 %section.container
-  %h1= "Ideen"
+  %h1= 'Ideen'
 
   - @ideas.each do |idea|
-    %a{href: idea_path(idea)}
-      .idea-container
+    .idea-container
+      =link_to idea_path(idea.id) do
         %h2= idea.title
-        = "von #{idea.user.display_name} am"
-        %time
-          = l(idea.created_at)
+        von #{idea.user.display_name} am
+        %time= l(idea.created_at)
         %p= idea.description
   
-  = link_to "Neue Idee", new_idea_path
+  = link_to 'Neue Idee', new_idea_path

@@ -1,6 +1,5 @@
 $('#mozilla-persona').click (event) ->
   event.preventDefault()
-  navigator.id.request siteName: 'Peppermind'
   navigator.id.watch
     loggedInUser: null
     onlogin: (assertion) ->
@@ -14,3 +13,4 @@ $('#mozilla-persona').click (event) ->
         error: (xhr, status, error) ->
           console.error(error)
     onlogout: ->
+  navigator.id.request siteName: 'Peppermind'
