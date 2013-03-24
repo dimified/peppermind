@@ -1,13 +1,8 @@
 %section.container
   %h1= 'Ideen'
 
-  - @ideas.each do |idea|
-    .idea-container
-      =link_to idea_path(idea.id) do
-        %h2= idea.title
-        von #{idea.user.display_name} am
-        %time= l(idea.created_at)
-        %p= idea.description
+  #ideas
+    = render @ideas
 
   = paginate @ideas
   

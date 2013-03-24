@@ -3,7 +3,7 @@ class Idea
   include Mongoid::Timestamps
 
   ## Number of Elements per Page
-  paginates_per 2
+  paginates_per 10
 
   ## Fields
   field :title, type: String
