@@ -1,6 +1,8 @@
 /* Color */
 /* -------------------------------------------------------------------------*/
 
+$lightred: rgb(255, 122, 106);
+$darkred: rgb(255, 57, 47);
 $lightgreen: rgb(166, 255, 90);
 $darkgreen: rgb(103, 158, 56);
 $darkblue: rgb(165, 179, 198);
@@ -40,5 +42,21 @@ $lightblue: rgb(218, 233, 252);
 	/* typo */
 	color: #333;
 	@include embossed-typo;
+  font-size: 100%;
+}
+
+.red-button {
+  @include border-radius(4px);
+  @include embossed-style;
+  border: none;
+
+  /* background */
+  background-color: $lightred;
+  @include filter-gradient($lightgreen, $darkgreen, vertical);
+  @include background(linear-gradient(top, $lightred 0%, $darkred 100%));
+
+  /* typo */
+  color: #333;
+  @include embossed-typo;
   font-size: 100%;
 }
