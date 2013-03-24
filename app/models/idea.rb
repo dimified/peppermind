@@ -2,6 +2,9 @@ class Idea
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  ## Number of Elements per Page
+  paginates_per 2
+
   ## Fields
   field :title, type: String
   field :description, type: String

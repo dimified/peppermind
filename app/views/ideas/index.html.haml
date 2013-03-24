@@ -8,6 +8,8 @@
         von #{idea.user.display_name} am
         %time= l(idea.created_at)
         %p= idea.description
+
+  = paginate @ideas
   
   = link_to 'Neue Idee', new_idea_path
   = link_to 'Dashboard', root_path

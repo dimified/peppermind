@@ -7,3 +7,11 @@ de:
   time:
     formats:
       default: "%d.%m.%Y, %H:%M"
+
+  views:
+        pagination:
+          first: "&laquo; Erste"
+          last: "Letzte &raquo;"
+          previous: "&lsaquo; Vorherige"
+          next: "Nächste &rsaquo;"
+          truncate: "..."

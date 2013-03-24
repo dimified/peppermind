@@ -12,6 +12,9 @@ Peppermind::Application.routes.draw do
   resources :socialproviders, :only => [:index, :create, :destroy]
 
   resources :users
-  resources :ideas
   resources :idea_steps
+
+  resources :ideas do
+    get ':page', :action => :index, :on => :collection
+  end
 end
