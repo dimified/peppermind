@@ -2,7 +2,7 @@ class SocialprovidersController < ApplicationController
   before_filter :authenticate_user!, except: [:create]
 
   def index
-    @providers_suggested = providers_all = ['persona', 'facebook', 'google', 'twitter']
+    @providers_suggested = %w[persona facebook google twitter]
     @providers_user = current_user.socialproviders.all
 
     @providers_user.each do | socialprovider |

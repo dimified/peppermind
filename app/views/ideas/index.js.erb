@@ -1,5 +1,5 @@
 $('#ideas').append('<%= escape_javascript(render(@ideas)) %>');
-<% if (@ideas.current_page < @ideas.num_pages) %>
+<% if @ideas.current_page < @ideas.num_pages %>
   $('.pagination').replaceWith('<%= j paginate(@ideas) %>');
 <% else %>
   $('.pagination').remove();

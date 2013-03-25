@@ -1,11 +1,10 @@
-.container
-  %h2 Registrierung
+%h2 Registrierung
 
-  = render "form"
+= render 'form'
 
-  = link_to 'Mozilla Persona', '/auth/persona/', id: 'mozilla-persona'
-  = link_to 'Facebook', '/auth/facebook/'
-  = link_to 'Google', '/auth/google/'
-  = link_to 'Twitter', '/auth/twitter/'
+= link_to 'Mozilla Persona', '/auth/persona/', id: 'mozilla-persona'
+= link_to 'Facebook', '/auth/facebook/'
+= link_to 'Google', '/auth/google/'
+= link_to 'Twitter', '/auth/twitter/'
 
-  = render 'devise/shared/links'
+= render 'devise/shared/links'

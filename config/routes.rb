@@ -1,20 +1,19 @@
 Peppermind::Application.routes.draw do
-
-  # The route to the root
+  # root
   authenticated :user do
-  	root to: "users#show"
+  	root to: 'users#show'
   end
   root :to => 'home#index'
 
-  # user authentication
+  # users
   devise_for :users
+  resources :users, except: [:new]
   match '/auth/:socialprovider/callback' => 'socialproviders#create'
-  resources :socialproviders, :only => [:index, :create, :destroy]
+  resources :socialproviders, only: [:index, :create, :destroy]
 
-  resources :users
-  resources :idea_steps
-
+  # ideas
   resources :ideas do
-    get ':page', :action => :index, :on => :collection, :constraints => { :page => /\d/ }
+    get 'page/:page', action: :index, on: :collection, constraints: { :page => /\d/ }
   end
+  resources :idea_steps
 end

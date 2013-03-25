@@ -1,21 +1,17 @@
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  -#= devise_error_messages!
-
+= simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
   %i.icon-user
   = f.input :login, placeholder: t('simple_form.sign_in.login'), autofocus: true
   %i.icon-key
   = f.input :password, placeholder: t('simple_form.sign_in.password')
 
-  -# if devise_mapping.rememberable?
+  - if devise_mapping.rememberable?
     = f.input :remember_me, as: :boolean
 
   %button{type: 'submit', class: 'green-button', id: 'login-button'}
     .login-text= t('simple_form.sign_in.button')
 
-%div{style: 'clear:both'}
+.clear
   = link_to 'Mozilla Persona', '/auth/persona/', id: 'mozilla-persona'
   = link_to 'Facebook', '/auth/facebook/'
   = link_to 'Google', '/auth/google/'
   = link_to 'Twitter', '/auth/twitter/'
-
--#= render 'devise/shared/links'

@@ -150,7 +150,7 @@ describe IdeasController do
       }.to change(Idea, :count).by(-1)
     end
     
-    it "redirects to ideas#index" do 
+    it "redirects to ideas#index" do
       delete :destroy, id: @idea 
       expect(response).to redirect_to ideas_url
     end
