@@ -1,1 +1,23 @@
 = title @idea.title
+
+= @idea.description
+
+- unless @idea.problem.blank?
+  %h2= t('.problem')
+  %p
+    = simple_format @idea.problem
+
+- unless @idea.solution.blank?
+  %h2= t('.solution')
+  %p
+    = simple_format @idea.solution
+
+  #{t('.created', user: @idea.user.display_name)}
+  %time{datetime: @idea.created_at.strftime('%Y-%m-%dT%H:%M:%S%z')}= l(@idea.created_at)
+
+  %p
+    #{t('.updated')} #{@idea.updated_at}
+
+  %nav
+    = link_to t('.link.dashboard'), root_path
+    = link_to t('.link.ideas'), ideas_path

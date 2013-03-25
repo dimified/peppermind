@@ -48,6 +48,14 @@ de:
       title: 'Ideen'
     new:
       title: 'Neue Idee anlegen'
+    show:
+      created: 'Angelegt von %{user} am:'
+      link:
+        dashboard: 'Dashboard'
+        ideas: 'Alle Ideen'
+      problem: 'Problem'
+      solution: 'Lösung'
+      updated: 'Letzte Aktualisierung:'
 
   socialproviders:
     index:
