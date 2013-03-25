@@ -1,5 +1,6 @@
 class IdeasController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
+  load_and_authorize_resource
 
   def index
     @ideas = Idea.order_by([:created_at, :desc]).page params[:page]

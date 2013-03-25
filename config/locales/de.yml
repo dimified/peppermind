@@ -1,5 +1,7 @@
 de:
   authentication:
+    exception:
+      acces_denied: 'Du bist nicht autorisiert, diese Seite zu betreten.'
     label:
       login: 'Benutzername oder E-Mail-Adresse'
       password: 'Passwort'
@@ -52,6 +54,7 @@ de:
       created: 'Angelegt von %{user} am:'
       link:
         dashboard: 'Dashboard'
+        edit: 'Idee bearbeiten'
         ideas: 'Alle Ideen'
       problem: 'Problem'
       solution: 'Lösung'

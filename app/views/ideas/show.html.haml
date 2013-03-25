@@ -4,6 +4,7 @@
 
 - unless @idea.problem.blank?
   %h2= t('.problem')
+
   %p
     = simple_format @idea.problem
 
@@ -21,3 +22,6 @@
   %nav
     = link_to t('.link.dashboard'), root_path
     = link_to t('.link.ideas'), ideas_path
+
+    - if can? :update, @idea
+      = link_to t('.link.edit'), edit_idea_path(@idea)
