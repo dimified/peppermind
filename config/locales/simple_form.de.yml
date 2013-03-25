@@ -9,11 +9,7 @@ de:
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Leider konnte der Eintrag noch nicht gespeichert werden. Bitte prüfen Sie folgende Felder:"
-    sign_in:
-      login: "Benutzername oder E-Mail"
-      password: "Passwort"
-      button: "Anmelden"
+      default_message: 'Leider konnte der Eintrag noch nicht gespeichert werden. Bitte prüfen Sie folgende Felder:'
     # Labels and hints examples
     # labels:
     #   password: 'Password'

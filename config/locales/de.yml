@@ -1,17 +1,95 @@
 de:
-  idea:
-    new:
-      skip: "Diesen Schritt überspringen"
-      continue: "Weiter zum nächsten Schritt"
+  authentication:
+    label:
+      login: 'Benutzername oder E-Mail-Adresse'
+      password: 'Passwort'
+      button: 'Anmelden'
+    placeholder:
+      display_name: 'Benutzername'
+      email: 'E-Mail-Adresse'
+      email_confirm: 'E-Mail-Adresse bestätigen'
+      password: 'Passwort'
+    registration:
+      title: 'Registrierung'
+    social:
+      added: 'Anmeldung via %{provider} wurde zum Benutzerkonto hinzugefügt.'
+      added_and_signed_in: 'Anmeldung via %{provider} wurde zum Benutzerkonto %{email} hinzugefügt. Anmeldung erfolgreich.'
+      already_linked: %{provider} ist bereits mit dem Benutzerkonto verknüpft.'
+      created: 'Das Benutzerkonto wurde erfolgreich via %{provider} erstellt.'
+      error: 'Fehler bei der Anmeldung via %{provider}.'
+      invalid_data: '%{provider} schickte ungültige Daten für diese User-ID zurück.'
+      success: 'Erfolgreich via %{provider} angemeldet.'
+
+  helpers:
+    submit:
+      user:
+        create: 'Benutzer erstellen'
+        update: 'Benutzer bearbeiten'
+
+  ideas:
+    _form:
+      button:
+        cancel: 'Abbrechen'
+        continue: 'Weiter zum nächsten Schritt'
+        skip: 'Diesen Schritt überspringen'
+      placeholder:
+        description: 'Beschreibung'
+        problem: 'Problem'
+        solution: 'Lösung'
+        title: 'Titel'
+    _process:
+      title: 'Neue Idee anlegen'
+    edit:
+      title: 'Idee bearbeiten'
+    index:
+      link:
+        dashboard: 'Dashboard'
+        new: 'Neue Idee'
+      title: 'Ideen'
+
+  socialproviders:
+    index:
+      bottomline: 'Wenn du dich über einen Social Provider auf Peppermind registriert hast, wurde ein zufälliges Passwort für dich gewählt. Du kannst ein neues Passwort über den "Passwort vergessen?"-Link auf der Anmelden-Seite anfordern.'
+      caption:
+        linked: 'Die folgenden Social Provider sind mit deinem Benutzerkonto verknüpft:'
+        suggested: 'Du kannst dein Benutzerkonto mit weiteren Diensten verknüpfen:'
+      link:
+        remove_service:
+          confirmation: 'Bist du sicher, dass du diesen Social Provider entfernen möchtest? Das Entfernen des letzten Social Providers kann zur Folge haben, dass du dich aus deinem Benutzerkonto ausschließt, wenn du kein Passwort für dein Benutzerkonto gewählt hast!'
+          text: 'Anbieter entfernen'
+      provider:
+        email: 'E-Mail-Adresse'
+        name: 'Name'
+      title: 'Social Provider'
 
   time:
     formats:
-      default: "%d.%m.%Y, %H:%M"
+      default: '%d.%m.%Y, %H:%M'
+
+  users:
+    edit:
+      errors:
+        title: '%{count} prohibited this user from being saved:'
+      link:
+        back: 'Zurück'
+        profile: 'Profil'
+      title: 'Benutzer bearbeiten'
+
+    show:
+      link:
+        back: 'Zurück'
+        edit: 'Bearbeiten'
+        idea:
+          all: 'Alle Ideen'
+          new: 'Neue Idee'
+        signout: 'Abmelden'
+        socialproviders: 'Social Provider'
+      title: 'Profil'
 
   views:
-        pagination:
-          first: "&laquo; Erste"
-          last: "Letzte &raquo;"
-          previous: "&lsaquo; Vorherige"
-          next: "Nächste &rsaquo;"
-          truncate: "..."
+    pagination:
+      first: '&laquo; Erste'
+      last: 'Letzte &raquo;'
+      previous: '&lsaquo; Vorherige'
+      next: 'Nächste &rsaquo;'
+      truncate: '&ellip;'

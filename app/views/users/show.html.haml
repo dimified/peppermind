@@ -1,9 +1,11 @@
-%section
-  = link_to 'Back', users_path
-  = link_to 'Edit', edit_user_path(@user)
+%h1= t('.title')
 
-  - if user_signed_in?
-    = link_to 'Abmelden', destroy_user_session_path, method: :delete
+= link_to t('.link.back'), users_path
+= link_to t('.link.edit'), edit_user_path(@user)
 
-  = link_to 'Neue Idee', new_idea_path
-  = link_to 'Alle Ideen', ideas_path
+- if user_signed_in?
+  = link_to t('.link.socialproviders'), socialproviders_path
+  = link_to t('.link.signout'), destroy_user_session_path, method: :delete
+
+= link_to t('.link.idea.new'), new_idea_path
+= link_to t('.link.idea.all'), ideas_path

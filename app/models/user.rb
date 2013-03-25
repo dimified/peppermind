@@ -6,31 +6,31 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  ## Social login
+  # Social login
   has_many :socialproviders, :dependent => :destroy
 
-  ## Database authenticatable
+  # Database authenticatable
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
 
-  ## Recoverable
+  # Recoverable
   field :reset_password_token,   :type => String
   field :reset_password_sent_at, :type => Time
 
-  ## Rememberable
+  # Rememberable
   field :remember_created_at, :type => Time
 
-  ## Trackable
+  # Trackable
   field :sign_in_count,      :type => Integer, :default => 0
   field :current_sign_in_at, :type => Time
   field :last_sign_in_at,    :type => Time
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
 
-  ## Custom Fields
+  # Custom Fields
   field :display_name, type: String
 
-  ## Validations
+  # Validations
   validates :email, confirmation: true
   validates :display_name, presence: true, uniqueness: true
   validates :password, length: { minimum: 8}
@@ -40,24 +40,24 @@ class User
   # This is in addition to a real persisted field like 'display_name'
   attr_accessor :login, :email_confirmation
 
-  ## Attributes accessible
+  # Attributes accessible
   attr_accessible :login, :display_name, :email, :email_confirmation, :password
 
-  ## Associations
+  # Associations
   has_many :ideas
 
-  ## Confirmable
+  # Confirmable
   # field :confirmation_token,   :type => String
   # field :confirmed_at,         :type => Time
   # field :confirmation_sent_at, :type => Time
   # field :unconfirmed_email,    :type => String # Only if using reconfirmable
 
-  ## Lockable
+  # Lockable
   # field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    :type => String # Only if unlock strategy is :email or :both
   # field :locked_at,       :type => Time
 
-  ## Token authenticatable
+  # Token authenticatable
   # field :authentication_token, :type => String
 
   # function to manage user's login via email or display_name

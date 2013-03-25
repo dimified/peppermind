@@ -1,6 +1,6 @@
 = simple_form_for @idea do |f| 
-  = f.input :title, placeholder: 'Titel'
-  = f.input :description, as: :text, placeholder: 'Beschreibung'
+  = f.input :title, placeholder: t('ideas._form.placeholder.title')
+  = f.input :description, as: :text, placeholder: t('ideas._form.placeholder.description')
 
-  = f.submit 'Continue', class: 'green-button'
-  = link_to 'Abbrechen', root_path, class: 'button red-button'
+  = f.submit t('ideas._form.button.continue'), class: 'green-button'
+  = link_to t('ideas._form.button.cancel'), root_path, class: 'button red-button'

@@ -1,4 +1,4 @@
-%h2 Registrierung
+%h2= t('authentication.registration.title')
 
 = render 'form'
 
@@ -6,5 +6,3 @@
 = link_to 'Facebook', '/auth/facebook/'
 = link_to 'Google', '/auth/google/'
 = link_to 'Twitter', '/auth/twitter/'
-
-= render 'devise/shared/links'

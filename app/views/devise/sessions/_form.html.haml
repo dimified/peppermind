@@ -1,8 +1,8 @@
 = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  = f.input :login, autofocus: true
-  = f.input :password
+  = f.input :login, placeholder: t('authentication.label.login'), autofocus: true
+  = f.input :password, placeholder: t('authentication.label.password')
 
   - if devise_mapping.rememberable?
     = f.input :remember_me, as: :boolean
 
-  = f.submit 'Anmelden'
+  = f.submit t('authentication.label.button')
