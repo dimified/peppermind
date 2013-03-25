@@ -46,6 +46,8 @@ en:
         dashboard: 'Dashboard'
         new: 'New idea'
       title: 'Ideas'
+    new:
+      title: 'Create new idea'
 
   socialproviders:
     index:
@@ -74,6 +76,8 @@ en:
         back: 'Back'
         profile: 'Profile'
       title: 'Edit user'
+    index:
+      title: 'Show all users'
 
     show:
       link:
