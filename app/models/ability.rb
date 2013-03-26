@@ -6,6 +6,6 @@ class Ability
 
     can :read, Idea
     can :create, Idea if user
-    can :update, Idea, :user_id => user.id
+    can [:update, :destroy], Idea, :user_id => user.id
   end
 end

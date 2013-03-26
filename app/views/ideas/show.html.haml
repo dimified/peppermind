@@ -24,3 +24,6 @@
 
   - if can? :update, @idea
     = link_to t('.link.edit'), edit_idea_path(@idea)
+
+  - if can? :destroy, @idea
+    = link_to t('.link.delete'), idea_path(@idea), method: :delete, confirm: t('.link.delete_confirm')

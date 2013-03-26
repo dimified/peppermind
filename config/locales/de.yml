@@ -54,6 +54,8 @@ de:
       created: 'Angelegt von %{user} am:'
       link:
         dashboard: 'Dashboard'
+        delete: 'Löschen'
+        delete_confirm: 'Möchtest du die Idee wirklich löschen?'
         edit: 'Idee bearbeiten'
         ideas: 'Alle Ideen'
       problem: 'Problem'
