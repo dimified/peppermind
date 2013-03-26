@@ -39,6 +39,7 @@ class IdeasController < ApplicationController
 
     respond_to do |format|
       if @idea.save
+        track_activity @idea
         session[:idea_id] = @idea.id
         format.html { redirect_to idea_steps_path }
         format.json { render json: idea_steps_path, status: :created, location: @idea }
@@ -54,6 +55,7 @@ class IdeasController < ApplicationController
 
     respond_to do |format|
       if @idea.update_attributes(params[:idea])
+        track_activity @idea
         format.html { redirect_to @idea }
         format.json { head :no_content }
       else

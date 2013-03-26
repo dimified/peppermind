@@ -1,0 +1,9 @@
+= title t('.title')
+
+= link_to t('.link.all_ideas'), ideas_path
+= link_to t('.link.new_idea'), new_idea_path
+
+#activities
+  = render @activities
+
+= paginate @activities

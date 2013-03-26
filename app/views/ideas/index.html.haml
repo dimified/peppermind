@@ -1,9 +1,9 @@
 = title t('.title')
 
+= link_to t('.link.dashboard'), root_path
+= link_to t('.link.new'), new_idea_path
+
 #ideas
   = render @ideas
 
 = paginate @ideas
-
-= link_to t('.link.new'), new_idea_path
-= link_to t('.link.dashboard'), root_path

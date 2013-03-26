@@ -9,6 +9,9 @@ class User
   # Social login
   has_many :socialproviders, :dependent => :destroy
 
+  # Activities
+  has_many :activities
+
   # Database authenticatable
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""

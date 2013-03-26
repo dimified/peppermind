@@ -1,4 +1,19 @@
 en:
+  activities:
+    idea:
+      _create:
+        deleted: 'created an idea which has since been removed.'
+        exists: 'created the idea %{link}.'
+      _update:
+        deleted: 'updated an idea which has since been removed.'
+        exists: 'updated the idea %{link}.'
+
+    index:
+      link:
+        all_ideas: 'All Ideas'
+        new_idea: 'Neue Idee'
+      title: 'Activity Stream'
+
   authentication:
     exception:
       acces_denied: 'You are not authorized to access this page.'
@@ -80,6 +95,9 @@ en:
   time:
     formats:
       default: '%d.%m.%Y, %H:%M'
+
+  trackable:
+    title: 'Activity Stream'
 
   users:
     edit:

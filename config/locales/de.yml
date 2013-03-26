@@ -1,4 +1,19 @@
 de:
+  activities:
+    idea:
+      _create:
+        deleted: 'erstellte eine Idee, welche seit dem gelöscht worden ist.'
+        exists: 'erstellte die Idee %{link}.'
+      _update:
+        deleted: 'aktualisierte eine Idee, welche seit dem gelöscht worden ist.'
+        exists: 'aktualisierte die Idee %{link}.'
+
+    index:
+      link:
+        all_ideas: 'Alle Ideen'
+        new_idea: 'Neue Idee'
+      title: 'Activity Stream'
+
   authentication:
     exception:
       acces_denied: 'Du bist nicht autorisiert, diese Seite zu betreten.'
