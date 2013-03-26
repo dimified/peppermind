@@ -11,7 +11,7 @@ de:
     index:
       link:
         all_ideas: 'Alle Ideen'
-        new_idea: ''
+        new_idea: 'Neue Idee'
       title: 'Activity Stream'
 
   authentication:

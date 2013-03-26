@@ -13,7 +13,7 @@ module ApplicationHelper
   end
 
   def time(time, options = {})
-    options[:class] ||= ''
+    options[:class] ||= 'time'
     content_tag(:time, l(time), options.merge(:datetime => time.strftime('%Y-%m-%dT%H:%M:%S%z'))) if time
   end
 end
