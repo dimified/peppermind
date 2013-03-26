@@ -66,7 +66,7 @@ en:
     new:
       title: 'Create new idea'
     show:
-      created: 'Created by %{user} at:'
+      created: 'Created by %{user} at'
       link:
         dashboard: 'Dashboard'
         delete: 'Delete'
@@ -95,9 +95,6 @@ en:
   time:
     formats:
       default: '%d.%m.%Y, %H:%M'
-
-  trackable:
-    title: 'Activity Stream'
 
   users:
     edit:

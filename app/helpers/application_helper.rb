@@ -11,4 +11,9 @@ module ApplicationHelper
     content_for(:title, page_title.to_s + ' - ' + Rails.application.class.parent_name)
     content_tag(:h1, page_title)
   end
+
+  def time(time, options = {})
+    options[:class] ||= ''
+    content_tag(:time, l(time), options.merge(:datetime => time.strftime('%Y-%m-%dT%H:%M:%S%z'))) if time
+  end
 end

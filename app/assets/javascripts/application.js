@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.timeago
 //= require mozilla-persona
+//= require main
 //= require_tree .

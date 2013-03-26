@@ -1,4 +1,4 @@
-#{l(activity.created_at)}:
+#{time activity.created_at, class: :timeago}:
 = link_to(activity.user.display_name, activity.user)
 - if idea
   = t('activities.idea._update.exists', link: link_to(idea.title, idea)).html_safe

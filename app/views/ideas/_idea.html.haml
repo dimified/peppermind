@@ -2,6 +2,6 @@
   =link_to idea_path(idea.id) do
     %div
       %h2= idea.title
-      von #{idea.user.display_name} am
-      %time{datetime: idea.created_at.strftime('%Y-%m-%dT%H:%M:%S%z')}= l(idea.created_at)
+      #{idea.user.display_name}
+      = time idea.created_at, class: :timeago
       %p= idea.description

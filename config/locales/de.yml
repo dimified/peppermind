@@ -11,7 +11,7 @@ de:
     index:
       link:
         all_ideas: 'Alle Ideen'
-        new_idea: 'Neue Idee'
+        new_idea: ''
       title: 'Activity Stream'
 
   authentication:
@@ -66,7 +66,7 @@ de:
     new:
       title: 'Neue Idee anlegen'
     show:
-      created: 'Angelegt von %{user} am:'
+      created: 'Angelegt von %{user} am'
       link:
         dashboard: 'Dashboard'
         delete: 'Löschen'

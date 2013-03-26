@@ -77,6 +77,8 @@ module Peppermind
     # Forcing your application to not access the DB or load models when precompiling your assets.
     config.assets.initialize_on_precompile = false
 
+    config.assets.localized_precompile = ['application-de.js', 'application-en.js']
+
     config.autoload_paths += %W(#{config.root}/lib)
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
   end
