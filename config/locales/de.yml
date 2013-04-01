@@ -77,6 +77,24 @@ de:
       solution: 'Lösung'
       updated: 'Letzte Aktualisierung:'
 
+  layouts:
+    application:
+      navigation:
+        all_ideas: 'Idee finden'
+        all_users: 'Alle Benutzer'
+        dashboard: 'Dashboard'
+        edit_profile: 'Profil bearbeiten'
+        new_idea: 'Neue Idee'
+        profile: 'Mein Profil'
+        signin: 'Anmelden'
+        signout: 'Abmelden'
+      topbar:
+        back: 'Vorherige Seite'
+        menu: 'Hauptmenü'
+        signed_in: 'Du bist angemeldet. Abmelden?'
+        signed_out: 'Du bist nicht angemeldet. Anmelden?'
+        signout_confirmation: 'Möchtest du dich wirklich abmelden?'
+
   socialproviders:
     index:
       bottomline: 'Wenn du dich über einen Social Provider auf Peppermind registriert hast, wurde ein zufälliges Passwort für dich gewählt. Du kannst ein neues Passwort über den "Passwort vergessen?"-Link auf der Anmelden-Seite anfordern.'

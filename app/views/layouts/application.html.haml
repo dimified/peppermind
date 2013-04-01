@@ -1,24 +1,90 @@
 !!! 5
-%html{lang: 'de'}
+%html.no-js{lang: 'de'}
   %head
     %meta{charset: 'utf-8'}
 
-    %title= content_for?(:title) ? yield(:title) : 'Peppermind'
+    %title= content_for?(:title) ? yield(:title) : Rails.application.class.parent_name
     %meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}
     %meta{name: 'description', content: content_for?(:description) ? yield(:description) : ''}
     %meta{name: 'keywords', content: content_for?(:keywords) ? yield(:keywords) : ''}
 
-    = stylesheet_link_tag 'application', media: 'screen'
+    = stylesheet_link_tag 'application', controller_name, media: 'screen'
     = csrf_meta_tags
     = yield(:head)
   %body
-    .gradient
-      .notice= notice
-      .alert= alert
+    #top-bar
+      #logo
+        = link_to '', root_path, title: Rails.application.class.parent_name
 
-      .container
-        = yield
+      %nav.off-canvas-navigation
+        %ul
+          %li.back-item
+            = link_to :back, title: t('.topbar.back') do
+              %i.icon-chevron-left
+          %li.menu-item
+            = link_to '#menu', title: t('.topbar.menu'), class: 'menu-button' do
+              %i.icon-reorder
+          %li.user-item
+            - if user_signed_in?
+              = link_to destroy_user_session_path, method: :delete, confirm: t('.topbar.signout_confirmation') do
+                %i.icon-user{title: t('.topbar.signed_in')}
+            - else
+              = link_to new_user_session_path do
+                %i.icon-user.offline{title: t('.topbar.signed_out')}
+
+    #main
+      %section{role: 'main'}
+        .notice= notice
+        .alert= alert
+
+        #main-content
+          = yield
+
+      %nav#menu{role: 'navigation'}
+        %ul
+          - if user_signed_in?
+            %li
+              = link_to root_path do
+                %i.icon-dashboard
+                <span>#{t('.navigation.dashboard')}</span>
+
+          %li
+            = link_to ideas_path do
+              %i.icon-list
+              <span>#{t('.navigation.all_ideas')}</span>
+
+          - if user_signed_in?
+            %li
+              = link_to new_idea_path do
+                %i.icon-plus
+                <span>#{t('.navigation.new_idea')}</span>
+
+            %li
+              = link_to users_path do
+                %i.icon-group
+                <span>#{t('.navigation.all_users')}</span>
+
+            %li
+              = link_to user_path current_user do
+                %i.icon-user
+                <span>#{t('.navigation.profile')}</span>
+
+            %li
+              = link_to edit_user_path current_user do
+                %i.icon-cog
+                <span>#{t('.navigation.edit_profile')}</span>
+
+            %li
+              = link_to destroy_user_session_path, method: :delete, confirm: t('.topbar.signout_confirmation') do
+                %i.icon-signout
+                <span>#{t('.navigation.signout')}</span>
+
+          - else
+            %li
+              = link_to new_user_session_path do
+                %i.icon-signin
+                <span>#{t('.navigation.signin')}</span>
 
     = javascript_include_tag 'https://login.persona.org/include.js'
-    = javascript_include_tag 'application'
+    = javascript_include_tag 'application', controller_name
     = javascript_include_tag "application-#{I18n.locale}"

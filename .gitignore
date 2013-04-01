@@ -21,3 +21,4 @@ doc/
 .DS_Store
 config/env_vars.rb
 .idea
+.sass-cache/

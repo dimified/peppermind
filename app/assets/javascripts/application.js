@@ -15,4 +15,3 @@
 //= require jquery.timeago
 //= require mozilla-persona
 //= require main
-//= require_tree .
