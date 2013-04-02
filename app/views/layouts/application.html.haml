@@ -91,19 +91,47 @@
       :javascript
         $(document).ready(function() {
           var noty_notice = noty({
-            'text' : "#{escape_javascript(flash[:notice].html_safe)}",
-            'layout' : 'top',
-            'type' : 'success',
-            'timeout' : 3000
+            text : "#{escape_javascript(flash[:notice].html_safe)}",
+            layout : 'top',
+            type : 'success',
+            timeout : 3000,
+            callback: {
+              onShow: function() {
+                var active;
+                active = true;
+                return $('#main-content').animate({
+                  marginTop: '+=35'
+                }, 500);
+              },
+              onClose: function() {
+                return $('#main-content').animate({
+                  marginTop: '-=35'
+                }, 500);
+              }
+            }
           });
         });
     - elsif flash[:error]
       :javascript
         $(document).ready(function() {
           var noty_error = noty({
-            'text' : "#{escape_javascript(flash[:error].html_safe)}",
-            'layout' : 'top',
-            'type' : 'success',
-            'timeout' : 3000
+            text : "#{escape_javascript(flash[:error].html_safe)}",
+            layout : 'top',
+            type : 'success',
+            timeout : 3000,
+            callback: {
+              onShow: function() {
+                var active;
+                active = true;
+                return $('#main-content').animate({
+                  marginTop: '+=35'
+                }, 500);
+              },
+              onClose: function() {
+                return $('#main-content').animate({
+                  marginTop: '-=35'
+                }, 500);
+              }
+            }
           });
         });

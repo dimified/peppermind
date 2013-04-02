@@ -39,16 +39,21 @@ jQuery(document).ready ->
     okButton =
       type: 'btn'
       text: I18n.authentication.notification.button_okay
-      click: (noty) -> $.rails.confirmed(link); noty.close()
+      click: (noty) -> active = false; $.rails.confirmed(link); noty.close()
     cancelButton =
       type: 'btn btn-danger'
       text: I18n.authentication.notification.button_cancel
-      click: (noty) -> noty.close()
+      click: (noty) -> active = false; noty.close()
     noty
       text: message
       buttons: [okButton, cancelButton]
       callback:
         onShow: ->
           active = true
-        afterClose: ->
-          active = false
+          $('#main-content, #menu').animate
+            marginTop: '+=74'
+          , 500
+        onClose: ->
+          $('#main-content, #menu').animate
+            marginTop: '-=74'
+          , 500
