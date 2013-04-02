@@ -124,7 +124,8 @@ de:
       title: 'Benutzer bearbeiten'
     index:
       title: 'Alle Benutzer anzeigen'
-
+    login:
+      title: 'Anmelden'
     show:
       link:
         back: 'Zurück'

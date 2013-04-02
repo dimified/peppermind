@@ -124,7 +124,8 @@ en:
       title: 'Edit user'
     index:
       title: 'Show all users'
-
+    login:
+      title: 'Anmelden'
     show:
       link:
         back: 'Back'

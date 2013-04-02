@@ -19,11 +19,11 @@ jQuery(document).ready ->
   # use timeago plugin in time tags with .timeago class
   jQuery('time.timeago').timeago()
 
-  # replaces rails confirmation dialog with noty-styled confirmation dialog
-  dialog = false
+  # replaces rails confirmation dialog with noty-styled confirmation bar
+  active = false
 
   $.rails.allowAction = (link) ->
-    if (dialog)
+    if (active)
       return false
 
     return true unless link.attr('data-confirm')
@@ -49,6 +49,6 @@ jQuery(document).ready ->
       buttons: [okButton, cancelButton]
       callback:
         onShow: ->
-          dialog = true
+          active = true
         afterClose: ->
-          dialog = false
+          active = false
