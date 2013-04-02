@@ -56,7 +56,7 @@ a
   overflow: hidden
 
   #main-content
-    margin: 45px 5%
+    margin: 40px 5%
 
 /* OFF CANVAS */
 
@@ -78,7 +78,7 @@ a
   position: relative
   display: block
   width: 100%
-  transition: .2s all ease
+  transition: 1s all ease
 
 .js [role='main']
   position: relative
@@ -196,3 +196,56 @@ a
       &:active
         a, i
           color: rgb(112, 175, 61)
+
+/* NOTIFICATIONS */
+
+.noty_buttons
+  text-align: center !important
+
+/* BUTTONS */
+
+.btn
+  margin: 0
+  padding: 5px 15px
+  border: 1px solid #d4d4d4
+  text-align: center
+  text-shadow: 1px 1px 0 #fff
+  color: #333
+  white-space: nowrap
+  cursor: pointer
+  outline: none
+  background-color: #ececec
+  background-image: linear-gradient(#f4f4f4, #ececec)
+  background-clip: padding-box
+  border-radius: 5px
+
+  &:hover, &:focus, &:active
+    border-color: #3072b3
+    border-bottom-color: #2a65a0
+    text-decoration: none
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3)
+    color: #fff
+    background-color: #3c8dde
+    background-image: linear-gradient(#599bdc, #3072b3)
+
+  &:active
+    border-color: #2a65a0
+    border-bottom-color: #3884cd
+    background-color: #3072b3
+    background-image: linear-gradient(#3072b3, #599bdc)
+
+.btn.btn-danger
+  color: #900
+
+  &:hover, &:focus, &:active
+    border-color: #b53f3a
+    border-bottom-color: #a0302a
+    color: #fff
+    background-color: #dc5f59
+    background-image: linear-gradient(#dc5f59, #b33630)
+
+  &:active
+    border-color: #a0302a
+    border-bottom-color: #bf4843
+    background-color: #b33630
+    background-image: linear-gradient(#b33630, #dc5f59)

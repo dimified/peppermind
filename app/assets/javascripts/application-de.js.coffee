@@ -1,4 +1,4 @@
-jQuery.timeago.settings.strings =
+$.timeago.settings.strings =
   prefixAgo: 'vor'
   prefixFromNow: 'in'
   suffixAgo: ''
