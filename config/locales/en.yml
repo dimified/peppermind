@@ -21,6 +21,9 @@ en:
       login: 'Username or Email address'
       password: 'Password'
       button: 'Sign in'
+    notification:
+      button_okay: 'Ja, wirklich abmelden'
+      button_cancel: 'Nein, nicht abmelden'
     placeholder:
       display_name: 'Username'
       email: 'Email address'
@@ -125,7 +128,7 @@ en:
     index:
       title: 'Show all users'
     login:
-      title: 'Anmelden'
+      title: 'Sign in'
     show:
       link:
         back: 'Back'

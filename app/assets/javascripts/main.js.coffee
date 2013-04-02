@@ -38,11 +38,11 @@ jQuery(document).ready ->
     message = link.attr 'data-confirm'
     okButton =
       type: 'btn'
-      text: 'Okay'
+      text: I18n.authentication.notification.button_okay
       click: (noty) -> $.rails.confirmed(link); noty.close()
     cancelButton =
       type: 'btn btn-danger'
-      text: 'Cancel'
+      text: I18n.authentication.notification.button_cancel
       click: (noty) -> noty.close()
     noty
       text: message

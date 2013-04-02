@@ -82,6 +82,8 @@
                 %i.icon-signin
                 <span>#{t('.navigation.signin')}</span>
 
+    :javascript
+      window.I18n = #{current_translations.to_json.html_safe}
     = javascript_include_tag 'https://login.persona.org/include.js'
     = javascript_include_tag 'application', controller_name
     = javascript_include_tag "application-#{I18n.locale}"

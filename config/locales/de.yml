@@ -21,6 +21,9 @@ de:
       login: 'Benutzername oder E-Mail-Adresse'
       password: 'Passwort'
       button: 'Anmelden'
+    notification:
+      button_okay: 'Ja, wirklich abmelden'
+      button_cancel: 'Nein, nicht abmelden'
     placeholder:
       display_name: 'Benutzername'
       email: 'E-Mail-Adresse'
