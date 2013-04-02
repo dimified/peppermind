@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.timeago
+//= require jquery.noty
+//= require jquery.noty.theme
 //= require mozilla-persona
 //= require main

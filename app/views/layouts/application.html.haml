@@ -34,9 +34,6 @@
 
     #main
       %section{role: 'main'}
-        .notice= notice
-        .alert= alert
-
         #main-content
           = yield
 
@@ -88,3 +85,23 @@
     = javascript_include_tag 'https://login.persona.org/include.js'
     = javascript_include_tag 'application', controller_name
     = javascript_include_tag "application-#{I18n.locale}"
+    - if flash[:notice]
+      :javascript
+        $(document).ready(function() {
+          var noty_notice = noty({
+            'text' : "#{escape_javascript(flash[:notice].html_safe)}",
+            'layout' : 'top',
+            'type' : 'success',
+            'timeout' : 3000
+          });
+        });
+    - elsif flash[:error]
+      :javascript
+        $(document).ready(function() {
+          var noty_error = noty({
+            'text' : "#{escape_javascript(flash[:error].html_safe)}",
+            'layout' : 'top',
+            'type' : 'success',
+            'timeout' : 3000
+          });
+        });
