@@ -42,7 +42,7 @@
 
       this.$buttons.css({
         padding: 5,
-        textAlign: 'right',
+        textAlign: 'center',
         borderTop: '1px solid #ccc',
         backgroundColor: '#fff'
       });
