@@ -5,7 +5,7 @@
 
 - if user_signed_in?
   = link_to t('.link.socialproviders'), socialproviders_path
-  = link_to t('.link.signout'), destroy_user_session_path, method: :delete
+  = link_to t('.link.signout'), destroy_user_session_path, class: 'confirmation', method: :delete, confirm: t('layouts.application.topbar.signout_confirmation')
 
 = link_to t('.link.idea.new'), new_idea_path
 = link_to t('.link.idea.all'), ideas_path

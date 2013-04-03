@@ -47,17 +47,17 @@ jQuery(document).ready ->
       type: 'btn'
       text: I18n.authentication.notification.button_okay
       click: (noty) ->
+        $('.off-canvas-navigation').find('.confirmation').click()
+        noty.close()
         active = false
         $.rails.confirmed(link)
-        $('.off-canvas-navigation').find('.user-item').click()
-        noty.close()
     cancelButton =
       type: 'btn btn-danger'
       text: I18n.authentication.notification.button_cancel
       click: (noty) ->
-        active = false
-        $('.off-canvas-navigation').find('.user-item').click()
+        $('.off-canvas-navigation').find('.confirmation').click()
         noty.close()
+        active = false
     noty
       text: message
       buttons: [okButton, cancelButton]
@@ -65,7 +65,7 @@ jQuery(document).ready ->
         onShow: ->
           active = true
 
-  $('.off-canvas-navigation').find('.logout').click ->
+  $('.confirmation').click ->
     $notificationbar = $('#noty_top_layout_container')
     $content = $('#main-content')
     $menu = $('#menu')
