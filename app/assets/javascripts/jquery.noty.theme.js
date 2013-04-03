@@ -72,10 +72,10 @@
 
       switch (this.options.type) {
         case 'alert':
-          this.$bar.css({backgroundColor: '#FFF', borderColor: '#CCC', color: '#444'});
+          this.$bar.css({backgroundColor: '#FFF', borderBottom: 'none', color: '#444'});
           break;
         case 'notification':
-          this.$bar.css({backgroundColor: '#FFF', borderColor: '#CCC', color: '#444'});
+          this.$bar.css({backgroundColor: '#FFF', borderBottom: 'none', color: '#444'});
           break;
         case 'warning':
           this.$bar.css({backgroundColor: '#FFEAA8', borderColor: '#FFC237', color: '#826200'});
@@ -95,7 +95,7 @@
           this.$buttons.css({borderTop: '1px solid #50C24E'});
           break;
         default:
-          this.$bar.css({backgroundColor: '#FFF', borderColor: '#CCC', color: '#444'});
+          this.$bar.css({backgroundColor: '#FFF', borderBottom: 'none', color: '#444'});
           break;
       }
     },

@@ -5,11 +5,17 @@ jQuery(document).ready ->
   $document.addClass 'js'
 
   # off canvas main menu
-  $main = $('section[role="main"]')
-  $height = window.innerHeight - 40
+  recalculateHeight = ->
+    $main = $('section[role="main"]')
+    $height = window.innerHeight - 44
 
-  if ($main.height() < $height)
-    $main.height($height)
+    if $main.height() < $height
+      $main.height($height)
+
+  recalculateHeight()
+
+  jQuery(window).resize ->
+    recalculateHeight()
 
   $('.menu-button').click (e) ->
     e.preventDefault()
@@ -21,9 +27,10 @@ jQuery(document).ready ->
 
   # replaces rails confirmation dialog with noty-styled confirmation bar
   active = false
+  clicked = false
 
   $.rails.allowAction = (link) ->
-    if (active)
+    if active
       return false
 
     return true unless link.attr('data-confirm')
@@ -39,21 +46,36 @@ jQuery(document).ready ->
     okButton =
       type: 'btn'
       text: I18n.authentication.notification.button_okay
-      click: (noty) -> active = false; $.rails.confirmed(link); noty.close()
+      click: (noty) ->
+        $.rails.confirmed(link)
+        $('.off-canvas-navigation').find('.user-item').click()
+        noty.close()
     cancelButton =
       type: 'btn btn-danger'
       text: I18n.authentication.notification.button_cancel
-      click: (noty) -> active = false; noty.close()
+      click: (noty) ->
+        $('.off-canvas-navigation').find('.user-item').click()
+        noty.close()
     noty
       text: message
       buttons: [okButton, cancelButton]
       callback:
         onShow: ->
           active = true
-          $('#main-content, #menu').animate
-            marginTop: '+=74'
-          , 500
-        onClose: ->
-          $('#main-content, #menu').animate
-            marginTop: '-=74'
-          , 500
+
+  $('.off-canvas-navigation').find('.user-item').click ->
+    $notificationbar = $('#noty_top_layout_container')
+    $content = $('#main-content, #menu')
+
+    if !clicked
+      clicked = true
+      $notificationbar.slideDown 500
+      $content.animate
+        marginTop: '+=72'
+      , 500
+    else
+      clicked = false
+      $notificationbar.slideUp 500
+      $content.animate
+        marginTop: '-=72'
+      , 500
