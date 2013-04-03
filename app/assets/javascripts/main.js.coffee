@@ -47,6 +47,7 @@ jQuery(document).ready ->
       type: 'btn'
       text: I18n.authentication.notification.button_okay
       click: (noty) ->
+        active = false
         $.rails.confirmed(link)
         $('.off-canvas-navigation').find('.user-item').click()
         noty.close()
@@ -54,6 +55,7 @@ jQuery(document).ready ->
       type: 'btn btn-danger'
       text: I18n.authentication.notification.button_cancel
       click: (noty) ->
+        active = false
         $('.off-canvas-navigation').find('.user-item').click()
         noty.close()
     noty
@@ -62,8 +64,6 @@ jQuery(document).ready ->
       callback:
         onShow: ->
           active = true
-        onClose: ->
-          active = false
 
   $('.off-canvas-navigation').find('.user-item').click ->
     $notificationbar = $('#noty_top_layout_container')
