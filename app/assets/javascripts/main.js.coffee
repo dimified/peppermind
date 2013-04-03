@@ -62,6 +62,8 @@ jQuery(document).ready ->
       callback:
         onShow: ->
           active = true
+        onClose: ->
+          active = false
 
   $('.off-canvas-navigation').find('.user-item').click ->
     $notificationbar = $('#noty_top_layout_container')
