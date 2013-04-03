@@ -72,7 +72,7 @@ jQuery(document).ready ->
     if !clicked
       clicked = true
       $notificationbar.animate
-        marginTop: '+=72'
+        top: '44'
       , 500
       $content.animate
         marginTop: '87'
@@ -80,7 +80,7 @@ jQuery(document).ready ->
     else
       clicked = false
       $notificationbar.animate
-        marginTop: '-=72'
+        top: '-28'
       , 500
       $content.animate
         marginTop: '0'
