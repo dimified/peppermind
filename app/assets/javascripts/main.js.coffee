@@ -75,7 +75,7 @@ jQuery(document).ready ->
         marginTop: '+=72'
       , 500
       $content.animate
-        marginTop: '+=72'
+        marginTop: '87'
       , 500
     else
       clicked = false
@@ -83,5 +83,5 @@ jQuery(document).ready ->
         marginTop: '-=72'
       , 500
       $content.animate
-        marginTop: '-=72'
+        marginTop: '0'
       , 500
