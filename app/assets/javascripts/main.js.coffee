@@ -71,13 +71,17 @@ jQuery(document).ready ->
 
     if !clicked
       clicked = true
-      $notificationbar.slideDown 500
+      $notificationbar.animate
+        marginTop: '+=72'
+      , 500
       $content.animate
         marginTop: '+=72'
       , 500
     else
       clicked = false
-      $notificationbar.slideUp 500
+      $notificationbar.animate
+        marginTop: '-=72'
+      , 500
       $content.animate
         marginTop: '-=72'
       , 500
