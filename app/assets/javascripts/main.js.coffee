@@ -67,7 +67,8 @@ jQuery(document).ready ->
 
   $('.off-canvas-navigation').find('.user-item').click ->
     $notificationbar = $('#noty_top_layout_container')
-    $content = $('#main-content, #menu')
+    $content = $('#main-content')
+    $menu = $('#menu')
 
     if !clicked
       clicked = true
@@ -77,6 +78,9 @@ jQuery(document).ready ->
       $content.animate
         marginTop: '87'
       , 500
+      $menu.animate
+        marginTop: '87'
+      , 100
     else
       clicked = false
       $notificationbar.animate
@@ -85,3 +89,6 @@ jQuery(document).ready ->
       $content.animate
         marginTop: '0'
       , 500
+      $menu.animate
+        marginTop: '0'
+      , 100
