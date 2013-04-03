@@ -65,7 +65,7 @@ jQuery(document).ready ->
         onShow: ->
           active = true
 
-  $('.off-canvas-navigation').find('.user-item').click ->
+  $('.off-canvas-navigation').find('.logout').click ->
     $notificationbar = $('#noty_top_layout_container')
     $content = $('#main-content')
     $menu = $('#menu')

@@ -26,7 +26,7 @@
               %i.icon-reorder
           %li.user-item
             - if user_signed_in?
-              = link_to destroy_user_session_path, method: :delete, confirm: t('.topbar.signout_confirmation') do
+              = link_to destroy_user_session_path, class: 'logout', method: :delete, confirm: t('.topbar.signout_confirmation') do
                 %i.icon-user{title: t('.topbar.signed_in')}
             - else
               = link_to new_user_session_path do
