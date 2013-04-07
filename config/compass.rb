@@ -1,1 +1,1 @@
-# config/compass.rb
+project_type = :rails
