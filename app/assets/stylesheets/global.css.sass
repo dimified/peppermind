@@ -1,13 +1,21 @@
 /* IMPORTS */
 
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400')
+@import url('http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz')
 @import compass
+
+/* VARIABLES */
+
+$darkgreen: rgb(159, 255, 102)
+$lightgreen: rgb(173, 255, 0)
+$darkgrey: rgb(32, 34, 34)
+$white: rgb(250, 250, 250)
 
 /* GENERAL */
 
 body
   margin: 0
-  background: rgb(250, 250, 250)
+  background: $white
   font-family: 'Open Sans', 'Trebuchet MS', Arial, Helvetica, sans-serif
   -webkit-font-smoothing: antialiased
 
@@ -15,6 +23,7 @@ i[class^='icon-']
   cursor: default
 
 a
+  @include hover-link
   i[class^='icon-']
     cursor: pointer
 
@@ -33,22 +42,22 @@ a
   z-index: 10000
   width: 100%
   height: 40px
-  background: rgb(235, 235, 235)
-  border-top: 3px solid rgb(112, 175, 61)
-  box-shadow: 0 -2px 6px 2px rgb(165, 165, 165)
+  background: $darkgrey
+  border-top: 2px solid $lightgreen
+  box-shadow: 0px -2px 6px 0px $darkgrey
 
   #logo
+    font-family: 'Yanone Kaffeesatz', 'sans-serif'
+    font-size: 20px
+    color: $lightgreen
     position: relative
-    z-index: 12000
-    margin: 2px auto
-    width: 157px
-    height: 36px
-    background: url('logo-small.png') no-repeat
+    top: 8px
+    left: 15px
+    width: 100px
 
     a
-      display: block
-      width: 100%
-      height: 100%
+      color: $lightgreen
+      text-decoration: none
 
 #main
   position: absolute
@@ -107,7 +116,7 @@ a
 
 .off-canvas-navigation
   position: absolute
-  top: 10px
+  top: 4px
   z-index: 11000
   display: block
   width: 100%
@@ -121,6 +130,7 @@ a
 
     li
       float: right
+      padding: 5px
 
       a
         text-decoration: none
@@ -128,15 +138,15 @@ a
 
       i
         font-size: 1.4em
-        color: rgb(51, 51, 51)
-        transition: color 0.3s linear
+        color: $white
+        transition: text-shadow 0.3s linear
 
         &:hover
-          color: rgb(102, 102, 102)
+          text-shadow: 0px 0px 15px rgba(white, 0.8)
 
       &:active, .menu-button.active-button
         i
-          color: rgb(112, 175, 61)
+          color: $white
 
     li.back-item
       float: left
@@ -150,10 +160,11 @@ a
       cursor: default
 
       i
-        color: rgb(112, 175, 61)
+        color: $lightgreen
+        text-shadow: 0px 0px 15px rgba($lightgreen, 0.5)
 
       i.offline
-        color: rgb(175, 61, 66)
+        color: $white
 
 /* NAVIGATION */
 

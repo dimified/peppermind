@@ -14,13 +14,15 @@
   %body
     #top-bar
       #logo
-        = link_to '', root_path, title: Rails.application.class.parent_name
+        = link_to root_path do
+          .icon-leaf
+          = 'Peppermind'
 
       %nav.off-canvas-navigation
         %ul
-          %li.back-item
-            = link_to :back, title: t('.topbar.back') do
-              %i.icon-chevron-left
+          -#%li.back-item
+            -#= link_to :back, title: t('.topbar.back') do
+              -#%i.icon-chevron-left
           %li.menu-item
             = link_to '#menu', title: t('.topbar.menu'), class: 'menu-button' do
               %i.icon-reorder
