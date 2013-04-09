@@ -13,10 +13,11 @@
     = yield(:head)
   %body
     #top-bar
-      #logo
-        = link_to root_path do
+      = link_to root_path do
+        #logo
           .icon-leaf
-          = 'Peppermind'
+          = Rails.application.class.parent_name
+
 
       %nav.off-canvas-navigation
         %ul
@@ -29,10 +30,10 @@
           %li.user-item
             - if user_signed_in?
               = link_to destroy_user_session_path, class: 'confirmation', method: :delete, confirm: t('.topbar.signout_confirmation') do
-                %i.icon-user{title: t('.topbar.signed_in')}
+                %i.icon-user.online{title: t('.topbar.signed_in')}
             - else
               = link_to new_user_session_path do
-                %i.icon-user.offline{title: t('.topbar.signed_out')}
+                %i.icon-user{title: t('.topbar.signed_out')}
 
     #main
       %section{role: 'main'}
