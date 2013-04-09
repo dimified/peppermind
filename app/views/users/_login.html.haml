@@ -1,19 +1,34 @@
 = title t('.title')
 
 = simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
-  -#%i.icon-user
+  %i.icon-user
   = f.input :login, placeholder: t('authentication.label.login'), autofocus: true
-  -#%i.icon-key
+  %i.icon-lock
   = f.input :password, placeholder: t('authentication.label.password')
 
   - if devise_mapping.rememberable?
     = f.input :remember_me, as: :boolean
 
   %button{type: 'submit', id: 'login-button', class: 'btn'}
-    .login-text= t('authentication.label.button')
+    = t('authentication.label.button')
 
-.clear
-  = link_to 'Mozilla Persona', '/auth/persona/', id: 'mozilla-persona'
-  = link_to 'Facebook', '/auth/facebook/'
-  = link_to 'Google', '/auth/google/'
-  = link_to 'Twitter', '/auth/twitter/'
+.btn#toggle-social
+  = t('authentication.label.social-login')
+  %i.icon-chevron-down
+#social-login
+  = link_to '/auth/persona/', id: 'mozilla-persona' do
+    .btn.social-button
+      %i.icon-signin
+      = t('authentication.label.persona')
+  = link_to '/auth/facebook/' do
+    .btn.social-button
+      %i.icon-facebook
+      = t('authentication.label.facebook')
+  = link_to '/auth/google/' do
+    .btn.social-button
+      %i.icon-google-plus
+      = t('authentication.label.googleplus')
+  = link_to '/auth/twitter/' do
+    .btn.social-button
+      %i.icon-twitter
+      = t('authentication.label.twitter')

@@ -15,5 +15,6 @@
 //= require jquery.timeago
 //= require jquery.noty
 //= require jquery.noty.theme
+//= require jquery-ui
 //= require mozilla-persona
 //= require main

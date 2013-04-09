@@ -20,7 +20,12 @@ en:
     label:
       login: 'Username or Email address'
       password: 'Password'
-      button: 'Sign in'
+      button: 'Sign in with Peppermind Account'
+      social-login: 'Choose an existing account'
+      persona: 'Sign in with Firefox Persona'
+      facebook: 'Sign in with Facebook account'
+      googleplus: 'Sign in with Google Plus'
+      twitter: 'Sign in with Twitter Account'
     notification:
       button_okay: 'Ja, wirklich abmelden'
       button_cancel: 'Nein, nicht abmelden'

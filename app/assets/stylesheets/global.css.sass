@@ -1,15 +1,7 @@
-/* IMPORTS */
-
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400')
 @import url('http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz')
 @import compass
-
-/* VARIABLES */
-
-
-$lightgreen: rgb(173, 255, 50)
-$darkgrey: rgb(32, 34, 34)
-$white: rgb(250, 250, 250)
+@import colors
 
 /* GENERAL */
 
@@ -71,7 +63,7 @@ a
   overflow: hidden
 
   #main-content
-    margin: 15px 5%
+    margin: 15px 10%
 
 /* OFF CANVAS */
 
@@ -142,17 +134,16 @@ a
         outline: none
 
       i
-        font-size: 1.4em
         color: $white
         transition: text-shadow 0.3s linear
 
         &:hover
-          text-shadow: 0px 0px 15px rgba(white, 0.8)
+          text-shadow: 0px 0px 20px rgba(white, 0.8)
 
       &:active, .menu-button.active-button
         i
           color: $white
-          text-shadow: 0px 0px 15px rgba(white, 0.8)
+          text-shadow: 0px 0px 20px rgba(white, 0.8)
 
     li.back-item
       float: left
@@ -220,8 +211,7 @@ a
   margin: 0
   padding: 5px 15px
   border: 1px solid rgb(212, 212, 212)
-  text-align: center
-  text-shadow: 1px 1px 0 rgb(255, 255, 255)
+  text-shadow: 0px 1px 0 rgb(255, 255, 255)
   color: rgb(51, 51, 51)
   text-decoration: none
   white-space: nowrap
@@ -230,12 +220,12 @@ a
   background-color: rgb(236, 236, 236)
   background-image: linear-gradient(rgb(244, 244, 244), rgb(236, 236, 236))
   background-clip: padding-box
-  border-radius: 5px
+  font-size: 0.8em
 
   &:hover, &:focus, &:active
     border-color: rgba(21, 127, 0, 0.5)
     border-bottom-color: rgba(21, 127, 0, 0.7)
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3)
+    text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.3)
     color: $white
     background-color: $lightgreen
     @include background-image(linear-gradient(top, rgb(130, 217, 0), rgb(115, 191, 0)))
@@ -272,8 +262,8 @@ form
     width: 100%
     margin: 5px 0px
     padding: 10px 0px
-    text-indent: 10px
-    border-radius: 5px
+    text-indent: 30px
+    border-radius: 2px
     border: none
     box-shadow: 0px -1px 1px rgba($darkgrey, 0.5)
     height: 20px
