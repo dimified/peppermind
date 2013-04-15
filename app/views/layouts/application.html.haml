@@ -90,6 +90,7 @@
     = javascript_include_tag 'https://login.persona.org/include.js'
     = javascript_include_tag 'application', controller_name
     = javascript_include_tag "application-#{I18n.locale}"
+    = yield(:javascript)
     - if flash[:notice]
       :javascript
         $(document).ready(function() {
