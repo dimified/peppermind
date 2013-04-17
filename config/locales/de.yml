@@ -20,7 +20,8 @@ de:
     label:
       login: 'Benutzername oder E-Mail-Adresse'
       password: 'Passwort'
-      button: 'Mit Peppermind Konto anmelden'
+      signin: 'Mit Peppermind Konto anmelden'
+      signup: 'Bei Peppermind registrieren'
       social-login: 'Mit einem anderen Konto anmelden'
       persona: 'Firefox Persona verwenden'
       facebook: 'Facebook Konto verwenden'
