@@ -227,14 +227,14 @@ a
     border-bottom-color: rgba(21, 127, 0, 0.7)
     text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.3)
     color: $white
-    background-color: $lightgreen
-    @include background-image(linear-gradient(top, rgb(130, 217, 0), rgb(115, 191, 0)))
+    background-color: $Blightgreen
+    @include background-image(linear-gradient(top, $Blightgreen, $Bdarkgreen))
 
   &:active
-    border-color: rgb(42, 101, 160)
-    border-bottom-color: rgb(56, 132, 205)
-    background-color: rgb(48, 114, 179)
-    background-image: linear-gradient(rgb(48, 114, 179), rgb(89, 155, 220))
+    border-color: rgba(21, 127, 0, 0.5)
+    border-bottom-color: rgba(21, 127, 0, 0.7)
+    background-color: rgb(130, 217, 0)
+    @include background-image(linear-gradient(top, $Hlightgreen, $Hdarkgreen))
 
 .btn.btn-danger
   color: rgb(153, 0, 0)

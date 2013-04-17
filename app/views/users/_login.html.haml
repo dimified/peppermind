@@ -1,19 +1,16 @@
-- content_for :javascript do
-  = javascript_include_tag 'login'
+.login-form
+  = title t('.title')
+  = simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+    %i.icon-user
+    = f.input :login, placeholder: t('authentication.label.login'), autofocus: true
+    %i.icon-lock
+    = f.input :password, placeholder: t('authentication.label.password')
 
-= title t('.title')
+    - if devise_mapping.rememberable?
+      = f.input :remember_me, as: :boolean
 
-= simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
-  %i.icon-user
-  = f.input :login, placeholder: t('authentication.label.login'), autofocus: true
-  %i.icon-lock
-  = f.input :password, placeholder: t('authentication.label.password')
-
-  - if devise_mapping.rememberable?
-    = f.input :remember_me, as: :boolean
-
-  %button{type: 'submit', id: 'login-button', class: 'btn'}
-    = t('authentication.label.button')
+    %button{type: 'submit', id: 'login-button', class: 'btn'}
+      = t('authentication.label.button')
 
 .btn#toggle-social
   = t('authentication.label.social-login')

@@ -1,2 +1,8 @@
+- content_for :javascript do
+  = javascript_include_tag 'login'
+
 %section{role: 'home'}
+  #big-logo
+    = image_tag 'logo.png'
+
   = render 'users/login', resource: :user
