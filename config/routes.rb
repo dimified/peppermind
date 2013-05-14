@@ -25,4 +25,7 @@ Peppermind::Application.routes.draw do
   
   # idea steps
   resources :idea_steps
+
+  # ditos
+  resources :ditos
 end
