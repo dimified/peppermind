@@ -7,6 +7,7 @@
   # Associations
   belongs_to :user
   embeds_many :inspirations
+  has_many :ditos
 
   # Formatted date string
   attr_accessor :duration_string

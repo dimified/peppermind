@@ -5,6 +5,9 @@
 #dito
   = @challenge.dito
 
+= simple_form_for @dito do |f|
+  = f.submit
+
 #{t('.created', user: @challenge.user.display_name)}
 = time @challenge.created_at
 %div= @challenge.duration_string

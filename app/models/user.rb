@@ -9,6 +9,7 @@ class User
   # Associations
   has_many :socialproviders, :dependent => :destroy
   has_many :activities
+  has_many :ditos
 
   # Database authenticatable
   field :email,              :type => String, :default => ""
@@ -30,7 +31,7 @@ class User
 
   # Custom Fields
   field :display_name, type: String
-  field :points, type: Integer, default: 20
+  field :points, type: Integer, default: 0
   field :level, type: Symbol, default: :rookie
 
   # Validations

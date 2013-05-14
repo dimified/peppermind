@@ -40,7 +40,10 @@ class DitosController < ApplicationController
   # POST /ditos
   # POST /ditos.json
   def create
+    @challenge = Challenge.find(session[:challenge_id])
     @dito = Dito.new(params[:dito])
+    @dito.challenge = @challenge
+    @dito.user = current_user
 
     respond_to do |format|
       if @dito.save
