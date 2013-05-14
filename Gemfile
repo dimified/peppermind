@@ -32,6 +32,7 @@ end
 # Gems used in development environment
 group :development do
   gem 'better_errors', '~> 0.6.0'
+  gem 'binding_of_caller'
 end
 
 # Gems for production with deployment on Heroku

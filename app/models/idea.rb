@@ -1,9 +1,10 @@
-class Idea
+ class Idea
   include Mongoid::Document
   include Mongoid::Timestamps
 
   # Associations
   belongs_to :user
+  embeds_many :inspirations
 
   # Fields
   field :question, type: String

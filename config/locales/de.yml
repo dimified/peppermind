@@ -82,9 +82,17 @@ de:
         delete_confirm: 'Möchtest du die Idee wirklich löschen?'
         edit: 'Idee bearbeiten'
         ideas: 'Alle Ideen'
+        inspiration: 'Neue Inspiration'
       problem: 'Problem'
       solution: 'Lösung'
       updated: 'Letzte Aktualisierung:'
+
+  idea_inspirations:
+    _form:
+      placeholder:
+        description: 'Beschreibung der Inspiration'
+      button:
+        submit: 'Inspiration anlegen'
 
   layouts:
     application:

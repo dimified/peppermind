@@ -1,0 +1,4 @@
+= simple_form_for([@idea, @inspiration]) do |f|
+  = f.input :description, as: :text, placeholder: t('idea_inspirations._form.placeholder.description')
+  = f.submit t('idea_inspirations._form.button.submit')
+

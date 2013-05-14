@@ -1,0 +1,17 @@
+%h1 Listing inspirations
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @inspirations.each do |inspiration|
+    %tr
+      -#%td= link_to 'Show', inspiration
+      -#%td= link_to 'Edit', edit_inspiration_path(inspiration)
+      -#%td= link_to 'Destroy', inspiration, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+-#= link_to 'New Inspiration', new_inspiration_path

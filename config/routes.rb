@@ -15,5 +15,10 @@ Peppermind::Application.routes.draw do
   resources :ideas, :activities do
     get 'page/:page', action: :index, on: :collection, constraints: { :page => /\d/ }
   end
+
+  resources :ideas do
+    resources :inspirations
+  end
+
   resources :idea_steps
 end
