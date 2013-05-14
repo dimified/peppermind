@@ -1,4 +1,4 @@
- class Idea
+ class Challenge
   include Mongoid::Document
   include Mongoid::Timestamps
 

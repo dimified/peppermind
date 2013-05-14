@@ -3,19 +3,19 @@ class IdeaStepsController < ApplicationController
 	steps :problem, :solution
 
 	def show
-		@idea = Idea.find(session[:idea_id])
+		@challenge = Challenge.find(session[:challenge_id])
 		render_wizard
 	end
 
 	def update
-		@idea = Idea.find(session[:idea_id])
-		@idea.attributes = params[:idea]
-		render_wizard @idea
+		@challenge = Challenge.find(session[:challenge_id])
+		@challenge.attributes = params[:challenge]
+		render_wizard @challenge
 	end
 
   private
   
   def finish_wizard_path
-  	idea_path @idea
+  	challenge_path @challenge
   end
 end

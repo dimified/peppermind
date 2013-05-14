@@ -1,0 +1,7 @@
+= simple_form_for @challenge, defaults: { input_html: { class: 'styled_input' } } do |f|
+  = f.input :question, placeholder: t('challenges._form.placeholder.question')
+  = f.input :description, as: :text, placeholder: t('challenges._form.placeholder.description')
+  = f.input :duration, input_html: {class: 'styled_input datepicker'}, placeholder: 'Dauer'
+
+  = f.submit t('challenges._form.button.create'), class: 'btn green-button'
+  = link_to t('challenges._form.button.cancel'), root_path, class: 'btn red-button'

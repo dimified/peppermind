@@ -65,4 +65,4 @@ de:
             description:
               blank: "Beschreibung darf nicht leer sein"
             question:
-              blank: "Fragestelltion darf nicht leer sein"
+              blank: "Fragestellung darf nicht leer sein"

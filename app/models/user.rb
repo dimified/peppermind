@@ -47,7 +47,7 @@ class User
   attr_accessible :login, :display_name, :email, :email_confirmation, :password
 
   # Associations
-  has_many :ideas
+  has_many :challenges
 
   # Confirmable
   # field :confirmation_token,   :type => String

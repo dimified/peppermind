@@ -1,0 +1,6 @@
+$('#challenges').append('<%= escape_javascript(render(@challenges)) %>');
+<% if @challenges.current_page < @challenges.num_pages %>
+  $('.pagination').replaceWith('<%= j paginate(@challenges) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

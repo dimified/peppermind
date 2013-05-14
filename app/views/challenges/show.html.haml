@@ -1,0 +1,20 @@
+= title @challenge.question
+
+= @challenge.description
+
+#{t('.created', user: @challenge.user.display_name)}
+= time @challenge.created_at
+
+%p
+  #{t('.updated')} #{time @challenge.updated_at}
+
+%nav
+  = link_to t('.link.dashboard'), root_path
+  = link_to t('.link.challenges'), challenges_path
+  = link_to t('.link.inspiration'), new_challenge_inspiration_path(@challenge.id)
+
+  - if can? :update, @challenge
+    = link_to t('.link.edit'), edit_challenge_path(@challenge)
+
+  - if can? :destroy, @challenge
+    = link_to t('.link.delete'), challenge_path(@challenge), method: :delete, confirm: t('.link.delete_confirm')

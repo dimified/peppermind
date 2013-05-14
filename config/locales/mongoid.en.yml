@@ -68,4 +68,4 @@ en:
             description:
               blank: "Description must not be blank"
             question:
-              blank: "Title must not be blank"
+              blank: "Question must not be blank"

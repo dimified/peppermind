@@ -1,0 +1,9 @@
+= title t('.title')
+
+= link_to t('.link.dashboard'), root_path
+= link_to t('.link.new'), new_challenge_path
+
+#challenges
+  = render @challenges
+
+= paginate @challenges

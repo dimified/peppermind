@@ -16,14 +16,14 @@ de:
 
   authentication:
     exception:
-      acces_denied: 'Du bist nicht autorisiert, diese Seite zu betreten.'
+      access_denied: 'Du bist nicht autorisiert, diese Seite zu betreten.'
     label:
       login: 'Benutzername oder E-Mail-Adresse'
       password: 'Passwort'
       signin: 'Mit Peppermind Konto anmelden'
       signup: 'Bei Peppermind registrieren'
       social-login: 'Mit einem anderen Konto anmelden'
-      persona: 'Firefox Persona verwenden'
+      persona: 'Mozilla Persona verwenden'
       facebook: 'Facebook Konto verwenden'
       googleplus: 'Google Plus verwenden'
       twitter: 'Twitter Konto verwenden'
@@ -56,13 +56,11 @@ de:
     _form:
       button:
         cancel: 'Abbrechen'
-        continue: 'Weiter zum nächsten Schritt'
+        create: 'Anlegen'
         skip: 'Diesen Schritt überspringen'
       placeholder:
         description: 'Beschreibung'
-        problem: 'Problem'
-        solution: 'Lösung'
-        title: 'Titel'
+        question: 'Fragestellung'
     _process:
       title: 'Neue Idee anlegen'
     edit:

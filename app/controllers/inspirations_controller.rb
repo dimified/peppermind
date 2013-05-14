@@ -13,8 +13,8 @@ class InspirationsController < ApplicationController
   # GET /inspirations/1
   # GET /inspirations/1.json
   def show
-    @idea = Idea.find(params[:idea_id])
-    @inspiration = @idea.inspirations.find(params[:id])
+    @challenge = Challenge.find(params[:challenge_id])
+    @inspiration = @challenge.inspirations.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,8 +25,8 @@ class InspirationsController < ApplicationController
   # GET /inspirations/new
   # GET /inspirations/new.json
   def new
-    @idea = Idea.find(params[:idea_id])
-    @inspiration = @idea.inspirations.build
+    @challenge = Challenge.find(params[:challenge_id])
+    @inspiration = @challenge.inspirations.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,13 +42,13 @@ class InspirationsController < ApplicationController
   # POST /inspirations
   # POST /inspirations.json
   def create
-    @idea = Idea.find(params[:idea_id])
-    @inspiration = @idea.inspirations.new(params[:inspiration])
+    @challenge = Challenge.find(params[:challenge_id])
+    @inspiration = @challenge.inspirations.new(params[:inspiration])
 
     respond_to do |format|
       if @inspiration.save
-        format.html { redirect_to idea_inspiration_path(@idea, @inspiration), notice: 'Inspiration was successfully created.' }
-        format.json { render json: idea_inspiration_path(@idea, @inspiration), status: :created, location: @inspiration }
+        format.html { redirect_to challenge_inspiration_path(@challenge, @inspiration), notice: 'Inspiration was successfully created.' }
+        format.json { render json: challenge_inspiration_path(@challenge, @inspiration), status: :created, location: @inspiration }
       else
         format.html { render action: "new" }
         format.json { render json: @inspiration.errors, status: :unprocessable_entity }

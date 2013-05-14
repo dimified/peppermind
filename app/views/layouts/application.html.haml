@@ -48,15 +48,15 @@
                 <span>#{t('.navigation.dashboard')}</span>
 
           %li
-            = link_to ideas_path do
+            = link_to challenges_path do
               %i.icon-list
-              <span>#{t('.navigation.all_ideas')}</span>
+              <span>#{t('.navigation.all_challenges')}</span>
 
           - if user_signed_in?
             %li
-              = link_to new_idea_path do
+              = link_to new_challenge_path do
                 %i.icon-plus
-                <span>#{t('.navigation.new_idea')}</span>
+                <span>#{t('.navigation.new_challenge')}</span>
 
             %li
               = link_to users_path do
