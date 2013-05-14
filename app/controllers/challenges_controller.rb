@@ -43,7 +43,7 @@ class ChallengesController < ApplicationController
       if @challenge.save
         track_activity @challenge
         session[:challenge_id] = @challenge.id
-        format.html { redirect_to @challenge }
+        format.html { redirect_to new_challenge_inspiration_path(@challenge.id) }
         format.json { render json: @challenge }
       else
         format.html { render action: 'new' }
