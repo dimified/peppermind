@@ -6,10 +6,8 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Social login
+  # Associations
   has_many :socialproviders, :dependent => :destroy
-
-  # Activities
   has_many :activities
 
   # Database authenticatable
@@ -32,6 +30,8 @@ class User
 
   # Custom Fields
   field :display_name, type: String
+  field :points, type: Integer, default: 20
+  field :level, type: Symbol, default: :rookie
 
   # Validations
   validates :email, confirmation: true

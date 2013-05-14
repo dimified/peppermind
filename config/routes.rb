@@ -8,17 +8,21 @@ Peppermind::Application.routes.draw do
   # users
   devise_for :users
   resources :users, except: [:new]
-  match '/auth/:socialprovider/callback' => 'socialproviders#create'
   resources :socialproviders, only: [:index, :create, :destroy]
+  match '/auth/:socialprovider/callback' => 'socialproviders#create'
 
-  # challenges and dashboard
-  resources :challenges, :activities do
-    get 'page/:page', action: :index, on: :collection, constraints: { :page => /\d/ }
-  end
-
+  # challenges
   resources :challenges do
+    get 'page/:page', action: :index, on: :collection, constraints: { :page => /\d/ }
+    post 'dito', action: :dito, controller: :challenges
     resources :inspirations
   end
 
+  # activities
+  resources :activities do
+    get 'page/:page', action: :index, on: :collection, constraints: { :page => /\d/ }
+  end
+  
+  # idea steps
   resources :idea_steps
 end

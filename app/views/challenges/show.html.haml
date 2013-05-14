@@ -2,6 +2,9 @@
 
 = @challenge.description
 
+#dito
+  = @challenge.dito
+
 #{t('.created', user: @challenge.user.display_name)}
 = time @challenge.created_at
 %div= @challenge.duration_string

@@ -77,3 +77,4 @@ class ChallengesController < ApplicationController
     end
   end
 end
+
