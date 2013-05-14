@@ -2,16 +2,16 @@ de:
   activities:
     challenge:
       _create:
-        deleted: 'erstellte eine Idee, welche seit dem gelöscht worden ist.'
-        exists: 'erstellte die Idee %{link}.'
+        deleted: 'erstellte eine Challenge, welche seit dem gelöscht worden ist.'
+        exists: 'erstellte die Challenge %{link}.'
       _update:
-        deleted: 'aktualisierte eine Idee, welche seit dem gelöscht worden ist.'
-        exists: 'aktualisierte die Idee %{link}.'
+        deleted: 'aktualisierte eine Challenge, welche seit dem gelöscht worden ist.'
+        exists: 'aktualisierte die Challenge %{link}.'
 
     index:
       link:
-        all_challenges: 'Alle Ideen'
-        new_challenge: 'Neue Idee'
+        all_challenges: 'Alle Challenges'
+        new_challenge: 'Neue Challenge'
       title: 'Activity Stream'
 
   authentication:
@@ -62,24 +62,24 @@ de:
         description: 'Beschreibung'
         question: 'Fragestellung'
     _process:
-      title: 'Neue Idee anlegen'
+      title: 'Neue Challenge anlegen'
     edit:
-      title: 'Idee bearbeiten'
+      title: 'Challenge bearbeiten'
     index:
       link:
         dashboard: 'Dashboard'
-        new: 'Neue Idee'
-      title: 'Ideen'
+        new: 'Neue Challenge'
+      title: 'Challenge'
     new:
-      title: 'Neue Idee anlegen'
+      title: 'Neue Challenge anlegen'
     show:
       created: 'Angelegt von %{user} am'
       link:
         dashboard: 'Dashboard'
         delete: 'Löschen'
-        delete_confirm: 'Möchtest du die Idee wirklich löschen?'
-        edit: 'Idee bearbeiten'
-        challenges: 'Alle Ideen'
+        delete_confirm: 'Möchtest du die Challenge wirklich löschen?'
+        edit: 'Challenge bearbeiten'
+        challenges: 'Alle Challenge'
         inspiration: 'Neue Inspiration'
       problem: 'Problem'
       solution: 'Lösung'
@@ -95,11 +95,11 @@ de:
   layouts:
     application:
       navigation:
-        all_challenges: 'Idee finden'
+        all_challenges: 'Challenge finden'
         all_users: 'Alle Benutzer'
         dashboard: 'Dashboard'
         edit_profile: 'Profil bearbeiten'
-        new_challenge: 'Neue Idee'
+        new_challenge: 'Neue Challenge'
         profile: 'Mein Profil'
         signin: 'Anmelden'
         signout: 'Abmelden'
@@ -146,8 +146,8 @@ de:
         back: 'Zurück'
         edit: 'Bearbeiten'
         challenge:
-          all: 'Alle Ideen'
-          new: 'Neue Idee'
+          all: 'Alle Challenge'
+          new: 'Neue Challenge'
         signout: 'Abmelden'
         socialproviders: 'Social Provider'
       title: 'Profil'

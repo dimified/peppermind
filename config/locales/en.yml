@@ -62,7 +62,7 @@ en:
         description: 'Description'
         question: 'Fragestellung'
     _process:
-        title: 'Neue Idee anlegen'
+        title: 'Neue Challenge anlegen'
     edit:
       title: 'Edit challenge'
     index:
@@ -77,9 +77,9 @@ en:
       link:
         dashboard: 'Dashboard'
         delete: 'Delete'
-        delete_confirm: 'Möchtest du die Idee wirklich löschen?'
+        delete_confirm: 'Möchtest du die Challenge wirklich löschen?'
         edit: 'Edit challenge'
-        challenges: 'All Ideas'
+        challenges: 'All challenges'
       problem: 'Problem'
       solution: 'Solution'
       updated: 'Last update:'
