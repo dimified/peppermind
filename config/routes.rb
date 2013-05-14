@@ -1,7 +1,7 @@
 Peppermind::Application.routes.draw do
   # root
   authenticated :user do
-  	root to: 'activities#index'
+   root to: 'activities#index'
   end
   root :to => 'home#index'
 
@@ -11,12 +11,12 @@ Peppermind::Application.routes.draw do
   match '/auth/:socialprovider/callback' => 'socialproviders#create'
   resources :socialproviders, only: [:index, :create, :destroy]
 
-  # ideas and dashboard
-  resources :ideas, :activities do
+  # challenges and dashboard
+  resources :challenges, :activities do
     get 'page/:page', action: :index, on: :collection, constraints: { :page => /\d/ }
   end
 
-  resources :ideas do
+  resources :challenges do
     resources :inspirations
   end
 

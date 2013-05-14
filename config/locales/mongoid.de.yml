@@ -60,7 +60,7 @@ de:
           %{model_name}.%{scope_name} existiert."
         blank_on_locale: "can't be blank in %{location}"
       models:
-        idea:
+        challenge:
           attributes:
             description:
               blank: "Beschreibung darf nicht leer sein"

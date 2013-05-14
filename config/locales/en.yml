@@ -1,17 +1,17 @@
 en:
   activities:
-    idea:
+    challenge:
       _create:
-        deleted: 'created an idea which has since been removed.'
-        exists: 'created the idea %{link}.'
+        deleted: 'created an challenge which has since been removed.'
+        exists: 'created the challenge %{link}.'
       _update:
-        deleted: 'updated an idea which has since been removed.'
-        exists: 'updated the idea %{link}.'
+        deleted: 'updated an challenge which has since been removed.'
+        exists: 'updated the challenge %{link}.'
 
     index:
       link:
-        all_ideas: 'All Ideas'
-        new_idea: 'Neue Idee'
+        all_challenges: 'All Ideas'
+        new_challenge: 'Neue Idee'
       title: 'Activity Stream'
 
   authentication:
@@ -23,7 +23,7 @@ en:
       signin: 'Sign in with Peppermind Account'
       signup: 'Sign up to Peppermind'
       social-login: 'Choose an existing account'
-      persona: 'Sign in with Mozilla Persona'
+      persona: 'Sign in with Firefox Persona'
       facebook: 'Sign in with Facebook account'
       googleplus: 'Sign in with Google Plus'
       twitter: 'Sign in with Twitter Account'
@@ -52,41 +52,41 @@ en:
         create: 'Create user'
         update: 'Edit user'
 
-  ideas:
+  challenges:
     _form:
       button:
         cancel: 'Cancel'
-        create: 'Fragestellung anlegen'
+        continue: 'Continue'
         skip: 'Diesen Schritt überspringen'
       placeholder:
-        description: 'Problembeschreibung'
+        description: 'Description'
         problem: 'Problem'
-        question: 'Fragestellung'
         solution: 'Solution'
+        title: 'Title'
     _process:
-        title: 'Was bewegt dich !?'
+        title: 'Neue Idee anlegen'
     edit:
-      title: 'Edit idea'
+      title: 'Edit challenge'
     index:
       link:
         dashboard: 'Dashboard'
-        new: 'New idea'
-      title: 'Ideas'
+        new: 'New challenge'
+      title: 'challenges'
     new:
-      title: 'Create new idea'
+      title: 'Create new challenge'
     show:
       created: 'Created by %{user} at'
       link:
         dashboard: 'Dashboard'
         delete: 'Delete'
         delete_confirm: 'Möchtest du die Idee wirklich löschen?'
-        edit: 'Edit idea'
-        ideas: 'All Ideas'
+        edit: 'Edit challenge'
+        challenges: 'All Ideas'
       problem: 'Problem'
       solution: 'Solution'
       updated: 'Last update:'
 
-  idea_inspirations:
+  challenge_inspirations:
     _form:
       placeholder:
         description: 'Description of the inspiration'
@@ -96,11 +96,11 @@ en:
   layouts:
     application:
       navigation:
-        all_ideas: 'Find idea'
+        all_challenges: 'Find idea'
         all_users: 'All users'
         dashboard: 'Dashboard'
         edit_profile: 'Edit profile'
-        new_idea: 'New Idea'
+        new_challenge: 'New Idea'
         profile: 'My Profile'
         signin: 'Sign in'
         signout: 'Sign out'
@@ -146,9 +146,9 @@ en:
       link:
         back: 'Back'
         edit: 'Edit'
-        idea:
-          all: 'All ideas'
-          new: 'New idea'
+        challenge:
+          all: 'All challenges'
+          new: 'New challenge'
         signout: 'Sign out'
         socialproviders: 'Social Providers'
       title: 'Profile'

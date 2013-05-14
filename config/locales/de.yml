@@ -1,6 +1,6 @@
 de:
   activities:
-    idea:
+    challenge:
       _create:
         deleted: 'erstellte eine Idee, welche seit dem gelöscht worden ist.'
         exists: 'erstellte die Idee %{link}.'
@@ -10,8 +10,8 @@ de:
 
     index:
       link:
-        all_ideas: 'Alle Ideen'
-        new_idea: 'Neue Idee'
+        all_challenges: 'Alle Ideen'
+        new_challenge: 'Neue Idee'
       title: 'Activity Stream'
 
   authentication:
@@ -23,7 +23,7 @@ de:
       signin: 'Mit Peppermind Konto anmelden'
       signup: 'Bei Peppermind registrieren'
       social-login: 'Mit einem anderen Konto anmelden'
-      persona: 'Mozilla Persona verwenden'
+      persona: 'Firefox Persona verwenden'
       facebook: 'Facebook Konto verwenden'
       googleplus: 'Google Plus verwenden'
       twitter: 'Twitter Konto verwenden'
@@ -52,17 +52,17 @@ de:
         create: 'Benutzer erstellen'
         update: 'Benutzer bearbeiten'
 
-  ideas:
+  challenges:
     _form:
       button:
         cancel: 'Abbrechen'
-        create: 'Fragestellung anlegen'
+        continue: 'Weiter zum nächsten Schritt'
         skip: 'Diesen Schritt überspringen'
       placeholder:
-        description: 'Problembeschreibung'
+        description: 'Beschreibung'
         problem: 'Problem'
-        question: 'Fragestellung'
         solution: 'Lösung'
+        title: 'Titel'
     _process:
       title: 'Neue Idee anlegen'
     edit:
@@ -73,7 +73,7 @@ de:
         new: 'Neue Idee'
       title: 'Ideen'
     new:
-      title: 'Was bewegt dich !?'
+      title: 'Neue Idee anlegen'
     show:
       created: 'Angelegt von %{user} am'
       link:
@@ -81,13 +81,13 @@ de:
         delete: 'Löschen'
         delete_confirm: 'Möchtest du die Idee wirklich löschen?'
         edit: 'Idee bearbeiten'
-        ideas: 'Alle Ideen'
+        challenges: 'Alle Ideen'
         inspiration: 'Neue Inspiration'
       problem: 'Problem'
       solution: 'Lösung'
       updated: 'Letzte Aktualisierung:'
 
-  idea_inspirations:
+  challenge_inspirations:
     _form:
       placeholder:
         description: 'Beschreibung der Inspiration'
@@ -97,11 +97,11 @@ de:
   layouts:
     application:
       navigation:
-        all_ideas: 'Idee finden'
+        all_challenges: 'Idee finden'
         all_users: 'Alle Benutzer'
         dashboard: 'Dashboard'
         edit_profile: 'Profil bearbeiten'
-        new_idea: 'Neue Idee'
+        new_challenge: 'Neue Idee'
         profile: 'Mein Profil'
         signin: 'Anmelden'
         signout: 'Abmelden'
@@ -147,7 +147,7 @@ de:
       link:
         back: 'Zurück'
         edit: 'Bearbeiten'
-        idea:
+        challenge:
           all: 'Alle Ideen'
           new: 'Neue Idee'
         signout: 'Abmelden'
