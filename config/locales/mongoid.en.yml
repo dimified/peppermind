@@ -69,3 +69,6 @@ en:
               blank: "Description must not be blank"
             question:
               blank: "Question must not be blank"
+            duration_string:
+              invalid: "Das Datum muss im Format dd.mm.yyyy angegeben sein"
+              not_in_future: "Das Datum muss in der Zukunft liegen"

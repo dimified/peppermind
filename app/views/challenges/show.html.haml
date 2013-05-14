@@ -4,6 +4,7 @@
 
 #{t('.created', user: @challenge.user.display_name)}
 = time @challenge.created_at
+%div= @challenge.duration
 
 %p
   #{t('.updated')} #{time @challenge.updated_at}

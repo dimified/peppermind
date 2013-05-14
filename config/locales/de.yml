@@ -79,7 +79,7 @@ de:
         delete: 'Löschen'
         delete_confirm: 'Möchtest du die Challenge wirklich löschen?'
         edit: 'Challenge bearbeiten'
-        challenges: 'Alle Challenge'
+        challenges: 'Alle Challenges'
         inspiration: 'Neue Inspiration'
       problem: 'Problem'
       solution: 'Lösung'
@@ -146,7 +146,7 @@ de:
         back: 'Zurück'
         edit: 'Bearbeiten'
         challenge:
-          all: 'Alle Challenge'
+          all: 'Alle Challenges'
           new: 'Neue Challenge'
         signout: 'Abmelden'
         socialproviders: 'Social Provider'
