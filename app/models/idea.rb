@@ -6,14 +6,14 @@ class Idea
   belongs_to :user
 
   # Fields
-  field :title, type: String
+  field :question, type: String
   field :description, type: String
-  field :problem, type: String
-  field :solution, type: String
+  field :duration, type: String
 
   # Validations
-  validates :title, presence: true, length: {maximum: 40}
-  validates :description, presence: true, length: {maximum: 255}
+  validates :question, presence: true, length: {maximum: 100}
+  validates :description, presence: true
+  validates :duration, presence: true
 
   # Number of Elements per Page
   paginates_per 10

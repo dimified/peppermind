@@ -41,8 +41,8 @@ class IdeasController < ApplicationController
       if @idea.save
         track_activity @idea
         session[:idea_id] = @idea.id
-        format.html { redirect_to idea_steps_path }
-        format.json { render json: idea_steps_path, status: :created, location: @idea }
+        format.html { redirect_to @idea }
+        format.json { render json: @idea }
       else
         format.html { render action: 'new' }
         format.json { render json: @idea.errors, status: :unprocessable_entity }

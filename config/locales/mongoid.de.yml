@@ -62,7 +62,7 @@ de:
       models:
         idea:
           attributes:
-            title:
-              blank: "Titel darf nicht leer sein"
             description:
               blank: "Beschreibung darf nicht leer sein"
+            question:
+              blank: "Fragestelltion darf nicht leer sein"

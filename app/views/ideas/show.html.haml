@@ -1,16 +1,6 @@
-= title @idea.title
+= title @idea.question
 
 = @idea.description
-
-- unless @idea.problem.blank?
-  %h2= t('.problem')
-  %p
-    = simple_format @idea.problem
-
-- unless @idea.solution.blank?
-  %h2= t('.solution')
-  %p
-    = simple_format @idea.solution
 
 #{t('.created', user: @idea.user.display_name)}
 = time @idea.created_at

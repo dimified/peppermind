@@ -1,7 +1,7 @@
 %article.idea
   =link_to idea_path(idea.id) do
     %div
-      %h2= idea.title
+      %h2= idea.question
       #{idea.user.display_name}
       = time idea.created_at, class: :timeago
       %p= idea.description

@@ -65,7 +65,7 @@ en:
       models:
         idea:
           attributes:
-            title:
-              blank: "Title must not be blank"
             description:
               blank: "Description must not be blank"
+            question:
+              blank: "Title must not be blank"

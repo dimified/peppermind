@@ -23,7 +23,7 @@ de:
       signin: 'Mit Peppermind Konto anmelden'
       signup: 'Bei Peppermind registrieren'
       social-login: 'Mit einem anderen Konto anmelden'
-      persona: 'Firefox Persona verwenden'
+      persona: 'Mozilla Persona verwenden'
       facebook: 'Facebook Konto verwenden'
       googleplus: 'Google Plus verwenden'
       twitter: 'Twitter Konto verwenden'
@@ -56,13 +56,13 @@ de:
     _form:
       button:
         cancel: 'Abbrechen'
-        continue: 'Weiter zum nächsten Schritt'
+        create: 'Fragestellung anlegen'
         skip: 'Diesen Schritt überspringen'
       placeholder:
-        description: 'Beschreibung'
+        description: 'Problembeschreibung'
         problem: 'Problem'
+        question: 'Fragestellung'
         solution: 'Lösung'
-        title: 'Titel'
     _process:
       title: 'Neue Idee anlegen'
     edit:
@@ -73,7 +73,7 @@ de:
         new: 'Neue Idee'
       title: 'Ideen'
     new:
-      title: 'Neue Idee anlegen'
+      title: 'Was bewegt dich !?'
     show:
       created: 'Angelegt von %{user} am'
       link:

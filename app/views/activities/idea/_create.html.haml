@@ -1,6 +1,6 @@
 #{time activity.created_at, class: :timeago}:
 = link_to(activity.user.display_name, activity.user)
 - if idea
-  = t('activities.idea._create.exists', link: link_to(idea.title, idea)).html_safe
+  = t('activities.idea._create.exists', link: link_to(idea.question, idea)).html_safe
 - else
   = t('activities.idea._create.deleted')

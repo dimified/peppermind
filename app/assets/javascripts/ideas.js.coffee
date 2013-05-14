@@ -1,4 +1,5 @@
 jQuery ->
+  # endless scrolling
   isScrolledIntoView = (elem) ->
     docViewTop = $(window).scrollTop()
     docViewBottom = docViewTop + $(window).height()
@@ -13,3 +14,8 @@ jQuery ->
         $.getScript(url)
 
     $(window).scroll()
+
+  # datepicker
+  $('.datepicker').datepicker
+    dateFormat: 'dd.mm.yy'
+    defaultDate: +7

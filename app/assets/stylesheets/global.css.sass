@@ -19,6 +19,9 @@ a
   i[class^='icon-']
     cursor: pointer
 
+a.btn
+  text-decoration: none
+
 .clearfix:after
   visibility: hidden
   display: block
@@ -26,6 +29,23 @@ a
   content: ' '
   clear: both
   height: 0
+
+input.styled_input, textarea.styled_input
+  width: 100%
+  margin: 5px 0px
+  padding: 10px
+  border-radius: 2px
+  border: none
+  box-shadow: 0px -1px 1px rgba($darkgrey, 0.5)
+  font-family: 'Open Sans', 'Trebuchet MS', Arial, Helvetica, sans-serif
+  font-size: 12px
+
+input.styled_input
+  height: 20px
+
+textarea.styled_input
+  height: 120px
+  resize: none
 
 /* LAYOUT */
 
@@ -159,7 +179,6 @@ a
       i.online
         text-shadow: 0px 0px 15px rgba($lightgreen, 0.5)
         color: $lightgreen
-
 
 /* NAVIGATION */
 
