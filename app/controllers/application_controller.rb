@@ -8,4 +8,9 @@ class ApplicationController < ActionController::Base
   def track_activity(trackable, action = params[:action])
     current_user.activities.create! action: action, trackable: trackable
   end
+
+  # Convert Date in human-readable format
+  def convert_date(date)
+    DateTime.parse(date.to_s).strftime('%d.%m.%Y')
+  end
 end

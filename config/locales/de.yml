@@ -57,14 +57,16 @@ de:
       button:
         cancel: 'Abbrechen'
         create: 'Anlegen'
+        edit: 'Bearbeiten'
         skip: 'Diesen Schritt überspringen'
       placeholder:
         description: 'Beschreibung'
+        duration: 'Challenge läuft bis...'
         question: 'Fragestellung'
     _process:
       title: 'Neue Challenge anlegen'
     edit:
-      title: 'Challenge bearbeiten'
+      title: '%{challenge} - Challenge bearbeiten'
     index:
       link:
         dashboard: 'Dashboard'

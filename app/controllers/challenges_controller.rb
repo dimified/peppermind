@@ -32,6 +32,7 @@ class ChallengesController < ApplicationController
 
   def edit
     @challenge = Challenge.find(params[:id])
+    @challenge.duration_string = convert_date @challenge.duration
   end
 
   def create
