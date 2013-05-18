@@ -40,18 +40,12 @@ class DitosController < ApplicationController
   # POST /ditos
   # POST /ditos.json
   def create
-    @challenge = Challenge.find(session[:challenge_id])
-    @dito = Dito.new(params[:dito])
-    @dito.challenge = @challenge
-    @dito.user = current_user
+    @challenge = Challenge.find(params[:challenge_id])
+    @dito = Dito.new(user: current_user, challenge: @challenge)
 
     respond_to do |format|
       if @dito.save
-        format.html { redirect_to @dito, notice: 'Dito was successfully created.' }
-        format.json { render json: @dito, status: :created, location: @dito }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @dito.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -75,12 +69,12 @@ class DitosController < ApplicationController
   # DELETE /ditos/1
   # DELETE /ditos/1.json
   def destroy
-    @dito = Dito.find(params[:id])
+    @challenge = Challenge.find(params[:challenge_id])
+    @dito = current_user.ditos.where(challenge: @challenge).first
     @dito.destroy
 
     respond_to do |format|
-      format.html { redirect_to ditos_url }
-      format.json { head :no_content }
+      format.js
     end
   end
 end

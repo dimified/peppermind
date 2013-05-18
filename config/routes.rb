@@ -14,7 +14,6 @@ Peppermind::Application.routes.draw do
   # challenges
   resources :challenges do
     get 'page/:page', action: :index, on: :collection, constraints: { :page => /\d/ }
-    post 'dito', action: :dito, controller: :challenges
     resources :inspirations
   end
 

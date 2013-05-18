@@ -2,11 +2,8 @@
 
 = @challenge.description
 
-#dito
-  = @count_ditos
-
-= simple_form_for @dito do |f|
-  = f.submit
+= render 'challenges/count_ditos'
+= render 'ditos/form'
 
 #{t('.created', user: @challenge.user.display_name)}
 = time @challenge.created_at
