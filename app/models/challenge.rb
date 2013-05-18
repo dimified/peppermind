@@ -15,7 +15,7 @@
   # Fields
   field :question, type: String
   field :description, type: String
-  field :duration, type: Date
+  field :duration, type: String
 
   # Validations
   validates :question, presence: true, length: { maximum: 100 }

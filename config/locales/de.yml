@@ -150,13 +150,8 @@ de:
         back: 'Zurück'
         edit: 'Bearbeiten'
         challenge:
-<<<<<<< HEAD
           all: 'Alle Challenges'
           new: 'Neue Challenge'
-=======
-          all: 'Alle Ideen'
-          new: 'Neue Idee'
->>>>>>> modified challenges
         signout: 'Abmelden'
         socialproviders: 'Social Provider'
       title: 'Profil'
