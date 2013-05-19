@@ -1,0 +1,6 @@
+= title t('tags.title')
+
+%ul#tagcloud
+  - @tags.each do |tag, weight|
+    %li
+      = link_to tag, tag_path(URI.escape(tag)), data: {weight: weight }

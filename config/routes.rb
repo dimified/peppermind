@@ -27,4 +27,9 @@ Peppermind::Application.routes.draw do
 
   # ditos
   resources :ditos
+
+  #tags
+  resources :tags, only: [:index, :show] do
+    get ':id/page/:page', action: :show, on: :collection, constraints: { :page => /\d/ }
+  end
 end

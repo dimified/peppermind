@@ -12,6 +12,13 @@
 %p
   #{t('.updated')} #{time @challenge.updated_at}
 
+%h3= t('tags.title')
+
+%ul
+  - @challenge.tags_array.each do |tag|
+    %li
+      = link_to tag, tag_path(URI.escape(tag))
+
 %nav
   = link_to t('.link.dashboard'), root_path
   = link_to t('.link.challenges'), challenges_path

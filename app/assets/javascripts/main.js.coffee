@@ -1,9 +1,4 @@
 jQuery(document).ready ->
-  # change .no-js to .js if javascript is enabled
-  $document = $('html')
-  $document.removeClass 'no-js'
-  $document.addClass 'js'
-
   # off canvas main menu
   recalculateHeight = ->
     $main = $('section[role="main"]')

@@ -8,9 +8,14 @@
     %meta{name: 'description', content: content_for?(:description) ? yield(:description) : ''}
     %meta{name: 'keywords', content: content_for?(:keywords) ? yield(:keywords) : ''}
 
+    :javascript
+      window.onload = function() {
+        var html = document.getElementsByTagName('html')[0].className = 'js'
+      };
+
     = stylesheet_link_tag 'application', controller_name, media: 'screen'
-    = csrf_meta_tags
     = yield(:head)
+    = csrf_meta_tags
   %body
     #top-bar
       = link_to root_path do
@@ -47,17 +52,22 @@
                 %i.icon-dashboard
                 <span>#{t('.navigation.dashboard')}</span>
 
-          %li
-            = link_to challenges_path do
-              %i.icon-list
-              <span>#{t('.navigation.all_challenges')}</span>
-
-          - if user_signed_in?
             %li
               = link_to new_challenge_path do
                 %i.icon-plus
                 <span>#{t('.navigation.new_challenge')}</span>
 
+          %li
+            = link_to challenges_path do
+              %i.icon-list
+              <span>#{t('.navigation.all_challenges')}</span>
+
+          %li
+            = link_to tags_path do
+              %i.icon-tags
+              <span>#{t('.navigation.tags')}</span>
+
+          - if user_signed_in?
             %li
               = link_to users_path do
                 %i.icon-group

@@ -1,0 +1,8 @@
+= title t('tags.title_tagged', tag: @tag)
+
+%ul
+  - @challenges.each do |challenge|
+    %li
+      = link_to challenge.question, challenge_path(challenge.id)
+
+= paginate @challenges

@@ -1,6 +1,7 @@
  class Challenge
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Taggable
 
   before_validation :validate_date
 

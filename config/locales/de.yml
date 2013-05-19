@@ -107,6 +107,7 @@ de:
         profile: 'Mein Profil'
         signin: 'Anmelden'
         signout: 'Abmelden'
+        tags: 'Tags'
       topbar:
         back: 'Vorherige Seite'
         menu: 'Hauptmenü'
@@ -128,6 +129,11 @@ de:
         email: 'E-Mail-Adresse'
         name: 'Name'
       title: 'Social Provider'
+
+  tags:
+    add: 'Tag+'
+    title: 'Tags'
+    title_tagged: 'Challenges beschlagwortet mit "%{tag}"'
 
   time:
     formats:
@@ -162,4 +168,4 @@ de:
       last: 'Letzte &raquo;'
       previous: '&lsaquo; Vorherige'
       next: 'Nächste &rsaquo;'
-      truncate: '&ellip;'
+      truncate: '&hellip;'
