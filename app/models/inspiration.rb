@@ -1,6 +1,6 @@
 class Inspiration
   include Mongoid::Document
-  embedded_in :challenges
+  embedded_in :challenge
 
   # Fields
   field :description, type: String

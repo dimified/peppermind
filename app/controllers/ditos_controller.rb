@@ -1,44 +1,35 @@
 class DitosController < ApplicationController
-  # GET /ditos
-  # GET /ditos.json
   def index
     @ditos = Dito.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.json { render json: @ditos }
     end
   end
 
-  # GET /ditos/1
-  # GET /ditos/1.json
   def show
     @dito = Dito.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.json { render json: @dito }
     end
   end
 
-  # GET /ditos/new
-  # GET /ditos/new.json
   def new
     @dito = Dito.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.json { render json: @dito }
     end
   end
 
-  # GET /ditos/1/edit
   def edit
     @dito = Dito.find(params[:id])
   end
 
-  # POST /ditos
-  # POST /ditos.json
   def create
     @challenge = Challenge.find(params[:challenge_id])
     @dito = Dito.new(user: current_user, challenge: @challenge)
@@ -50,24 +41,20 @@ class DitosController < ApplicationController
     end
   end
 
-  # PUT /ditos/1
-  # PUT /ditos/1.json
   def update
     @dito = Dito.find(params[:id])
 
     respond_to do |format|
       if @dito.update_attributes(params[:dito])
-        format.html { redirect_to @dito, notice: 'Dito was successfully updated.' }
+        format.html { redirect_to @dito }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @dito.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /ditos/1
-  # DELETE /ditos/1.json
   def destroy
     @challenge = Challenge.find(params[:challenge_id])
     @dito = current_user.ditos.where(challenge: @challenge).first

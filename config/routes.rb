@@ -1,7 +1,7 @@
 Peppermind::Application.routes.draw do
   # root
   authenticated :user do
-   root to: 'activities#index'
+    root to: 'activities#index'
   end
   root :to => 'home#index'
 

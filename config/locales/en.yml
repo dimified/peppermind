@@ -58,13 +58,12 @@ en:
         cancel: 'Cancel'
         create: 'Create'
         edit: 'Edit'
-        skip: 'Diesen Schritt überspringen'
       placeholder:
         description: 'Description'
         duration: 'Challenge läuft bis...'
         question: 'Fragestellung'
     _process:
-        title: 'Neue Challenge anlegen'
+      title: 'Neue Challenge anlegen'
     edit:
       title: '%{challenge} - Edit challenge'
     index:
@@ -73,7 +72,7 @@ en:
         new: 'New challenge'
       title: 'challenges'
     new:
-      title: 'Create new challenge'
+      title: 'Was bewegt dich !?'
     show:
       created: 'Created by %{user} at'
       link:
@@ -82,6 +81,7 @@ en:
         delete_confirm: 'Möchtest du die Challenge wirklich löschen?'
         edit: 'Edit challenge'
         challenges: 'All challenges'
+        inspiration: 'New inspiration'
       problem: 'Problem'
       solution: 'Solution'
       updated: 'Last update:'
@@ -91,7 +91,10 @@ en:
       placeholder:
         description: 'Description of the inspiration'
       button:
-        :submit: 'Create inspiration'
+        submit: 'Create inspiration'
+        skip: 'Diesen Schritt überspringen'
+    created: 'Inspiration was successfully created.'
+    updated: 'Inspiration was successfully updated.'
 
   layouts:
     application:
