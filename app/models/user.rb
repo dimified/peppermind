@@ -11,6 +11,7 @@ class User
   has_many :activities
   has_many :ditos
   has_many :likes
+  has_many :inspirations
 
   # Database authenticatable
   field :email,              :type => String, :default => ""

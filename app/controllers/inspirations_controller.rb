@@ -9,8 +9,8 @@ class InspirationsController < ApplicationController
   end
 
   def show
-    @challenge = Challenge.find(params[:challenge_id])
-    @inspiration = @challenge.inspirations.find(params[:id])
+    #@challenge = Challenge.find(params[:challenge_id])
+    @inspiration = Inspiration.find(params[:id])
 
     respond_to do |format|
       format.html
@@ -20,7 +20,7 @@ class InspirationsController < ApplicationController
 
   def new
     @challenge = Challenge.find(params[:challenge_id])
-    @inspiration = @challenge.inspirations.build
+    @inspiration = Inspiration.new
 
     respond_to do |format|
       format.html
@@ -34,7 +34,7 @@ class InspirationsController < ApplicationController
 
   def create
     @challenge = Challenge.find(params[:challenge_id])
-    @inspiration = @challenge.inspirations.new(params[:inspiration])
+    @inspiration = Inspiration.new(user: current_user, challenge: @challenge, description: params[:inspiration]['description'])
 
     respond_to do |format|
       if @inspiration.save

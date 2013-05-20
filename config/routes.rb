@@ -13,16 +13,17 @@ Peppermind::Application.routes.draw do
 
   # challenges
   resources :challenges do
+    # pagination
     get 'page/:page', action: :index, on: :collection, constraints: { :page => /\d/ }
     resources :inspirations
   end
 
   # activities
   resources :activities do
+    # pagination
     get 'page/:page', action: :index, on: :collection, constraints: { :page => /\d/ }
   end
   
-  resources :idea_steps
   resources :ditos
   resources :likes
 
