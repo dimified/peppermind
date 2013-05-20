@@ -10,6 +10,7 @@ class User
   has_many :socialproviders, :dependent => :destroy
   has_many :activities
   has_many :ditos
+  has_many :likes
 
   # Database authenticatable
   field :email,              :type => String, :default => ""

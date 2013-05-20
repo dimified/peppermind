@@ -15,6 +15,7 @@ class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
     @challenge.duration_string = convert_date @challenge.duration
+    @inspirations = @challenge.inspirations
 
     respond_to do |format|
       format.html

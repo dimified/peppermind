@@ -22,11 +22,9 @@ Peppermind::Application.routes.draw do
     get 'page/:page', action: :index, on: :collection, constraints: { :page => /\d/ }
   end
   
-  # idea steps
   resources :idea_steps
-
-  # ditos
   resources :ditos
+  resources :likes
 
   #tags
   resources :tags, only: [:index, :show] do

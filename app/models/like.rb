@@ -1,7 +1,7 @@
-class Dito
+class Like
   include Mongoid::Document
 
   # Associations
   belongs_to :user
-  belongs_to :challenge
+  belongs_to :inspiration
 end
