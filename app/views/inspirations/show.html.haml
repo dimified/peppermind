@@ -1,10 +1,12 @@
+= title t('.title')
+
 = @inspiration.description
 
 = render 'inspirations/count_likes'
 = render 'likes/form'
 
 - if can? :update, @inspiration
-  = link_to t('.link.edit'), edit_challenge_inspiration_path(@inspiration)
+  = link_to t('.link.edit'), edit_challenge_inspiration_path(@inspiration), class: 'btn green-button'
 
 - if can? :destroy, @inspiration
-  = link_to t('.link.delete'), challenge_inspiration_path(@inspiration), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation'
+  = link_to t('.link.delete'), challenge_inspiration_path(@inspiration), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'

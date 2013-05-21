@@ -94,8 +94,8 @@ de:
       placeholder:
         description: 'Beschreibung der Inspiration'
       button:
+        cancel: 'Abbrechen'
         submit: 'Inspiration anlegen'
-        skip: 'Diesen Schritt überspringen'
     created: 'Die Inspiration wurde erfolgreich angelegt.'
     updated: 'Die Inspiration wurde erfolgreich bearbeitet.'
 
@@ -117,6 +117,7 @@ de:
         delete: 'Löschen'
         delete_confirm: 'Möchtest du die Inspiration wirklich löschen?'
         edit: 'Bearbeiten'
+      title: 'Inspiration'
 
   layouts:
     application:
