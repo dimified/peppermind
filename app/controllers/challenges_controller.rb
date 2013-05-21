@@ -46,7 +46,7 @@ class ChallengesController < ApplicationController
       if @challenge.save
         track_activity @challenge
         session[:challenge_id] = @challenge.id
-        format.html { redirect_to new_challenge_inspiration_path(@challenge.id) }
+        format.html { redirect_to new_challenge_inspiration_path(@challenge.id), notice: t('challenges.alert.created') }
         format.json { render json: @challenge }
       else
         format.html { render action: 'new' }
@@ -61,7 +61,7 @@ class ChallengesController < ApplicationController
     respond_to do |format|
       if @challenge.update_attributes(params[:challenge])
         track_activity @challenge
-        format.html { redirect_to @challenge }
+        format.html { redirect_to @challenge, notice: t('challenges.alert.updated') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -75,7 +75,7 @@ class ChallengesController < ApplicationController
     @challenge.destroy
 
     respond_to do |format|
-      format.html { redirect_to challenges_url }
+      format.html { redirect_to challenges_url, notice: t('challenges.alert.deleted') }
       format.json { head :no_content }
     end
   end

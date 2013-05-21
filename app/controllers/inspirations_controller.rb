@@ -67,10 +67,11 @@ class InspirationsController < ApplicationController
 
   def destroy
     @inspiration = Inspiration.find(params[:id])
+    challenge = @inspiration.challenge_id
     @inspiration.destroy
 
     respond_to do |format|
-      format.html { redirect_to challenge_inspirations_url }
+      format.html { redirect_to challenge_path(challenge), notice: t('challenge_inspirations.deleted') }
       format.json { head :no_content }
     end
   end

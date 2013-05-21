@@ -66,7 +66,10 @@ de:
     _process:
       title: 'Neue Challenge anlegen'
     alert:
+      created: 'Die Challenge wurde erfolgreich angelegt.'
+      deleted: 'Die Challenge wurde erfolgreich gelöscht.'
       missing: 'Eine Challenge mit dieser ID existiert nicht.'
+      updated: 'Die Challenge wurde erfolgreich aktualisiert.'
     edit:
       title: '%{challenge} - Challenge bearbeiten'
     index:
@@ -97,11 +100,12 @@ de:
         cancel: 'Abbrechen'
         submit: 'Inspiration anlegen'
     created: 'Die Inspiration wurde erfolgreich angelegt.'
+    deleted: 'Die Inspiration wurde erfolgreich gelöscht.'
     updated: 'Die Inspiration wurde erfolgreich bearbeitet.'
 
   inspirations:
     alert:
-      missing: 'Eine Inspiration zu dieser Challenge mit dieser ID existiert nicht.'
+      missing: 'Eine Inspiration mit dieser ID existiert nicht.'
     edit:
       button:
         cancel: 'Abbrechen'
