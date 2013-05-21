@@ -4,9 +4,9 @@ $('#mozilla-persona').click (event) ->
     loggedInUser: null
     onlogin: (assertion) ->
       $loadingOverlay = $('#loading-overlay')
-      $loadingSpinner = $('#loading-spinner').show();
+      $loadingSpinner = $('#loading-spinner')
       $loadingOverlay.addClass('loading-overlay')
-      $loadingSpinner.show();
+      $loadingSpinner.show()
       $.ajax
         type: 'POST'
         url: '/auth/persona/callback'
