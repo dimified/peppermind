@@ -3,6 +3,7 @@ class Inspiration
 
   # Fields
   field :description, type: String
+  field :like, type: Integer, default: 0
 
   # Associations
   has_many :likes

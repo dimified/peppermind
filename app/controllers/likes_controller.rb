@@ -44,6 +44,8 @@ class LikesController < ApplicationController
 
     unless current_user == @inspiration.user
       @like = Like.new(user: current_user, inspiration: @inspiration)
+      @inspiration.like = @inspiration.like + 1
+      @inspiration.save
 
       user = @inspiration.user
       user.points = user.points + 3
@@ -80,11 +82,18 @@ class LikesController < ApplicationController
 
     unless current_user == @inspiration.user
       @like = current_user.likes.where(inspiration: @inspiration).first
-      @like.destroy
+      if @inspiration.like >= 0
+        @inspiration.like = @inspiration.like - 1
+        @inspiration.save
+      end
 
       user = @inspiration.user
-      user.points = user.points - 3
-      user.save(validate: false)
+      if user.points >= 0
+        user.points = user.points - 3
+        user.save(validate: false)
+      end
+
+      @like.destroy
 
       respond_to do |format|
         format.js

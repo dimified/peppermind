@@ -17,7 +17,7 @@ class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
     @challenge.duration_string = convert_date @challenge.duration
-    @inspirations = Inspiration.where(challenge: @challenge)
+    @inspirations = Inspiration.where(challenge: @challenge).desc(:like)
 
     respond_to do |format|
       format.html
@@ -37,7 +37,6 @@ class ChallengesController < ApplicationController
   def edit
     @challenge = Challenge.find(params[:id])
     @challenge.duration_string = convert_date @challenge.duration
-    current_user.points = 1 * @challenge.dito
   end
 
   def create

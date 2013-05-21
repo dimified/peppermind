@@ -33,6 +33,7 @@
               %i.icon-reorder
           %li.user-item
             - if user_signed_in?
+              = current_user.display_name
               = link_to destroy_user_session_path, class: 'confirmation', method: :delete, confirm: t('.topbar.signout_confirmation') do
                 %i.icon-user.online{title: t('.topbar.signed_in')}
             - else

@@ -13,6 +13,7 @@ class InspirationsController < ApplicationController
   end
 
   def show
+    @challenge = Challenge.find(params[:challenge_id])
     @inspiration = Inspiration.find(params[:id])
 
     respond_to do |format|
@@ -37,7 +38,9 @@ class InspirationsController < ApplicationController
 
   def create
     @challenge = Challenge.find(params[:challenge_id])
-    @inspiration = Inspiration.new(user: current_user, challenge: @challenge, description: params[:inspiration]['description'])
+    @inspiration = Inspiration.new(params[:inspiration])
+    @inspiration.user = current_user
+    @inspiration.challenge = @challenge
 
     respond_to do |format|
       if @inspiration.save
