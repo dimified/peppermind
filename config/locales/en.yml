@@ -31,9 +31,6 @@ en:
       facebook: 'Sign in with Facebook account'
       googleplus: 'Sign in with Google Plus'
       twitter: 'Sign in with Twitter Account'
-    notification:
-      button_okay: 'Ja, wirklich abmelden'
-      button_cancel: 'Nein, nicht abmelden'
     placeholder:
       display_name: 'Username'
       email: 'Email address'
@@ -135,6 +132,10 @@ en:
         signed_in: 'Du bist angemeldet. Abmelden?'
         signed_out: 'Du bist nicht angemeldet. Anmelden?'
         signout_confirmation: 'Möchtest du dich wirklich abmelden?'
+
+  notification:
+    button_okay: 'Ja, wirklich!'
+    button_cancel: 'Nein, bitte nicht!'
 
   socialproviders:
     index:

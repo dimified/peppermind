@@ -40,7 +40,7 @@ jQuery(document).ready ->
     message = link.attr 'data-confirm'
     okButton =
       type: 'btn'
-      text: I18n.authentication.notification.button_okay
+      text: I18n.notification.button_okay
       click: (noty) ->
         $('.off-canvas-navigation').find('.confirmation').click()
         noty.close()
@@ -48,7 +48,7 @@ jQuery(document).ready ->
         $.rails.confirmed(link)
     cancelButton =
       type: 'btn btn-danger'
-      text: I18n.authentication.notification.button_cancel
+      text: I18n.notification.button_cancel
       click: (noty) ->
         $('.off-canvas-navigation').find('.confirmation').click()
         noty.close()
