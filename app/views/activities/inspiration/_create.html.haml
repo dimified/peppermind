@@ -1,0 +1,6 @@
+#{time activity.created_at, class: :timeago}:
+= link_to(activity.user.display_name, activity.user)
+- if activity.trackable
+  = t('activities.inspiration._create.exists', link: link_to('Inspiration', challenge_inspiration_path(activity.trackable.challenge_id, activity.trackable._id))).html_safe
+- else
+  = t('activities.inspiration._create.deleted')

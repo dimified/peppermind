@@ -7,6 +7,10 @@ en:
       _update:
         deleted: 'updated an challenge which has since been removed.'
         exists: 'updated the challenge %{link}.'
+    inspiration:
+      _create:
+        deleted: 'hat eine Inspiration beigetragen, welche seit dem gelöscht worden ist.'
+        exists: 'hat eine %{link} zu einem Projekt beigetragen.'
 
     index:
       link:
