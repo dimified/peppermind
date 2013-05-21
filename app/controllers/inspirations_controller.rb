@@ -1,6 +1,8 @@
 class InspirationsController < ApplicationController
   load_and_authorize_resource
 
+  rescue_from Mongoid::Errors::DocumentNotFound, :with => :access_denied
+
   def index
     @inspirations = Inspiration.all
 
@@ -40,7 +42,7 @@ class InspirationsController < ApplicationController
     respond_to do |format|
       if @inspiration.save
         track_activity @inspiration
-        format.html { redirect_to challenge_inspiration_path(@challenge, @inspiration), notice: I18n.t('challenge_inspirations.created') }
+        format.html { redirect_to challenge_inspiration_path(@challenge, @inspiration), notice: t('challenge_inspirations.created') }
         format.json { render json: challenge_inspiration_path(@challenge, @inspiration), status: :created, location: @inspiration }
       else
         format.html { render action: 'new' }
@@ -54,7 +56,7 @@ class InspirationsController < ApplicationController
 
     respond_to do |format|
       if @inspiration.update_attributes(params[:inspiration])
-        format.html { redirect_to challenge_inspiration_path(params[:challenge_id], @inspiration), notice: I18n.t('challenge_inspirations.updated') }
+        format.html { redirect_to challenge_inspiration_path(params[:challenge_id], @inspiration), notice: t('challenge_inspirations.updated') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -71,5 +73,11 @@ class InspirationsController < ApplicationController
       format.html { redirect_to challenge_inspirations_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def access_denied
+    redirect_to challenge_path(params[:challenge_id]), :flash => { :error => t('inspirations.alert.missing') }
   end
 end

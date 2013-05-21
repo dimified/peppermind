@@ -118,7 +118,7 @@
 
       style: function() {
         $(this).css({
-          top: '44px',
+          top: '42px',
           left: 0,
           position: 'fixed',
           width: '100%',

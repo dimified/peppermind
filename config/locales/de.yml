@@ -65,6 +65,8 @@ de:
         question: 'Fragestellung'
     _process:
       title: 'Neue Challenge anlegen'
+    alert:
+      missing: 'Eine Challenge mit dieser ID existiert nicht.'
     edit:
       title: '%{challenge} - Challenge bearbeiten'
     index:
@@ -98,6 +100,8 @@ de:
     updated: 'Die Inspiration wurde erfolgreich bearbeitet.'
 
   inspirations:
+    alert:
+      missing: 'Eine Inspiration zu dieser Challenge mit dieser ID existiert nicht.'
     edit:
       button:
         cancel: 'Abbrechen'

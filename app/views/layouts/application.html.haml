@@ -130,7 +130,7 @@
           var noty_error = noty({
             text : "#{escape_javascript(flash[:error].html_safe)}",
             layout : 'top',
-            type : 'success',
+            type : 'error',
             timeout : 3000,
             callback: {
               onShow: function() {
