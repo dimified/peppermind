@@ -47,7 +47,7 @@ class User
   attr_accessor :login, :email_confirmation
 
   # Attributes accessible
-  attr_accessible :login, :display_name, :email, :email_confirmation, :password
+  attr_accessible :login, :display_name, :email, :email_confirmation, :password, :points
 
   # Confirmable
   # field :confirmation_token,   :type => String

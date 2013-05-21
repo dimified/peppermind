@@ -41,11 +41,18 @@ class LikesController < ApplicationController
   # POST /likes.json
   def create
     @inspiration = Inspiration.find(params[:inspiration_id])
-    @like = Like.new(user: current_user, inspiration: @inspiration)
 
-    respond_to do |format|
-      if @like.save
-        format.js
+    unless current_user == @inspiration.user
+      @like = Like.new(user: current_user, inspiration: @inspiration)
+
+      user = @inspiration.user
+      user.points = user.points + 3
+      user.save(validate: false)
+
+      respond_to do |format|
+        if @like.save
+          format.js
+        end
       end
     end
   end
@@ -69,13 +76,19 @@ class LikesController < ApplicationController
   # DELETE /likes/1
   # DELETE /likes/1.json
   def destroy
-    #@challenge = Challenge.find(params[:challenge_id])
     @inspiration = Inspiration.find(params[:inspiration_id])
-    @like = current_user.likes.where(inspiration: @inspiration).first
-    @like.destroy
 
-    respond_to do |format|
-      format.js
+    unless current_user == @inspiration.user
+      @like = current_user.likes.where(inspiration: @inspiration).first
+      @like.destroy
+
+      user = @inspiration.user
+      user.points = user.points - 3
+      user.save(validate: false)
+
+      respond_to do |format|
+        format.js
+      end
     end
   end
 end

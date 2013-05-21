@@ -3,7 +3,8 @@
 = @challenge.description
 
 = render 'challenges/count_ditos'
-= render 'ditos/form'
+- unless current_user == @challenge.user
+  = render 'ditos/form'
 
 #{t('.created', user: @challenge.user.display_name)}
 = time @challenge.created_at
