@@ -1,4 +1,6 @@
 class InspirationsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @inspirations = Inspiration.all
 
@@ -9,7 +11,6 @@ class InspirationsController < ApplicationController
   end
 
   def show
-    #@challenge = Challenge.find(params[:challenge_id])
     @inspiration = Inspiration.find(params[:id])
 
     respond_to do |format|
@@ -53,7 +54,7 @@ class InspirationsController < ApplicationController
 
     respond_to do |format|
       if @inspiration.update_attributes(params[:inspiration])
-        format.html { redirect_to @inspiration, notice: I18n.t('challenge_inspirations.updated') }
+        format.html { redirect_to challenge_inspiration_path(params[:challenge_id], @inspiration), notice: I18n.t('challenge_inspirations.updated') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -67,7 +68,7 @@ class InspirationsController < ApplicationController
     @inspiration.destroy
 
     respond_to do |format|
-      format.html { redirect_to inspirations_url }
+      format.html { redirect_to challenge_inspirations_url }
       format.json { head :no_content }
     end
   end

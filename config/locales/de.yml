@@ -100,6 +100,23 @@ de:
     created: 'Die Inspiration wurde erfolgreich angelegt.'
     updated: 'Die Inspiration wurde erfolgreich bearbeitet.'
 
+  inspirations:
+    edit:
+      button:
+        cancel: 'Abbrechen'
+        submit: 'Bearbeiten'
+      title: 'Inspiration bearbeiten'
+    new:
+      button:
+        cancel: 'Abbrechen'
+        submit: 'Anlegen'
+      title: 'Neue Inspiration anlegen'
+    show:
+      link:
+        delete: 'Löschen'
+        delete_confirm: 'Möchtest du die Inspiration wirklich löschen?'
+        edit: 'Bearbeiten'
+
   layouts:
     application:
       navigation:

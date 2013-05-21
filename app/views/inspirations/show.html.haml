@@ -1,5 +1,10 @@
 = @inspiration.description
+
 = render 'inspirations/count_likes'
 = render 'likes/form'
--#= link_to 'Edit', edit_inspiration_path(@inspiration)
--#= link_to 'Back', inspirations_path
+
+- if can? :update, @inspiration
+  = link_to t('.link.edit'), edit_challenge_inspiration_path(@inspiration)
+
+- if can? :destroy, @inspiration
+  = link_to t('.link.delete'), challenge_inspiration_path(@inspiration), method: :delete, confirm: t('.link.delete_confirm')
