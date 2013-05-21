@@ -85,6 +85,28 @@ textarea.styled_input
   #main-content
     margin: 15px 10%
 
+.loading-overlay
+  display: block
+  position: absolute
+  z-index: 10000
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, .75)
+
+#loading-spinner
+  position: absolute
+  background: url('loading-spinner.gif') no-repeat
+  z-index: 11000
+  display: none
+  width: 48px
+  height: 48px
+  top: 50%
+  left: 50%
+  margin-top: -32px
+  margin-left: -32px
+
 /* OFF CANVAS */
 
 [role='main']:before, [role='main']:after
