@@ -31,5 +31,5 @@
     = link_to t('.link.delete'), challenge_path(@challenge), method: :delete, confirm: t('.link.delete_confirm')
 
 - @inspirations.each do |inspiration|
-  = link_to inspiration.description, challenge_inspiration_path(inspiration)
+  = link_to inspiration.description, challenge_inspiration_path(@challenge, inspiration)
 
