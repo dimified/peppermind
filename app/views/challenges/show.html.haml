@@ -28,7 +28,7 @@
     = link_to t('.link.edit'), edit_challenge_path(@challenge)
 
   - if can? :destroy, @challenge
-    = link_to t('.link.delete'), challenge_path(@challenge), method: :delete, confirm: t('.link.delete_confirm')
+    = link_to t('.link.delete'), challenge_path(@challenge), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation'
 
 - @inspirations.each do |inspiration|
   = link_to inspiration.description, challenge_inspiration_path(@challenge, inspiration)

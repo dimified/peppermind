@@ -79,11 +79,11 @@ jQuery(document).ready ->
     else
       clicked = false
       $notificationbar.animate
-        top: '-28'
+        top: '-32'
       , 500
       $content.animate
-        marginTop: '0'
+        marginTop: '15px'
       , 500
       $menu.animate
-        marginTop: '0'
+        marginTop: '15px'
       , 100
