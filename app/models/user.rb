@@ -67,7 +67,7 @@ class User
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login).downcase
-      where(conditions).where('$or' => [ {display_name: /^#{Regexp.escape(login)}$/i}, {email: /^#{Regexp.escape(login)}$/i} ]).first
+      where(conditions).where('$or' => [ { display_name: /^#{ Regexp.escape(login) }$/i }, { email: /^#{ Regexp.escape(login) }$/i } ]).first
     else
       where(conditions).first
     end
