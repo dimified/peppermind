@@ -37,9 +37,9 @@ class User
   field :level, type: Symbol, default: :rookie
 
   # Validations
-  validates :email, confirmation: true, uniqueness: true
-  validates :display_name, presence: true, uniqueness: true
-  validates :password, length: { minimum: 8}
+  validates :email, confirmation: true, uniqueness: true, on: :create
+  validates :display_name, presence: true, uniqueness: true, on: :create
+  validates :password, length: { minimum: 8}, on: :create
   #validates :login, presence: true
 
   # Virtual attribute for authenticating by either username or email
@@ -81,5 +81,15 @@ class User
     if User.where(display_name: name).exists?
       errors.add(:display_name, I18n.t('account.validation.display_name.not_unique'))
     end
+  end
+
+  def increment(pnt)
+    self.points += pnt
+    self.save
+  end
+
+  def decrement(pnt)
+    self.points -= pnt
+    self.save
   end
 end

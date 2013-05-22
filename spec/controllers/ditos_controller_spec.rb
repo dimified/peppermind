@@ -70,19 +70,36 @@ describe DitosController do
     before(:each) do
       sign_in user
       @challenge = create(:challenge)
+      @stubbed_user = create(:user)
       @user = @challenge.user
     end
 
     context "with valid attributes" do
       it "creates a new Dito" do
         expect {
+          controller.stub!(:current_user).and_return(@stubbed_user)
           post :create, challenge_id: @challenge, dito: attributes_for(:dito)
         }.to change(Dito, :count).by(1)
       end
 
       it "increments user points" do
-        
+        expect {
+          @user.increment 1
+        }.to change(@user, :points).by(1)
+      end
+    end
 
+    context "with invalid attributes" do
+      it "does not create a new dito" do
+        expect {
+          post :create, challenge_id: @challenge, dito: attributes_for(:dito)
+        }.to_not change(Dito, :count).by(1)
+      end
+
+      it "does not increment user points" do
+        expect {
+          @user.decrement 1
+        }.to_not change(@user, :points).by(1)
       end
     end
   end
