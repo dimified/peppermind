@@ -2,7 +2,16 @@ class AccountController < ApplicationController
   before_filter :authenticate_user!
 
   def edit
+    # profile information
     @user = User.find(current_user.id)
+
+    # social provider
+    @providers_suggested = %w[persona facebook google twitter]
+    @providers_user = current_user.socialproviders.all
+
+    @providers_user.each do | socialprovider |
+      @providers_suggested.delete(socialprovider.provider)
+    end
   end
 
   def update

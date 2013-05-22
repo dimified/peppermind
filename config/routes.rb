@@ -10,7 +10,7 @@ Peppermind::Application.routes.draw do
   resources :users, except: [:new]
   get 'account/edit'
   post 'account/update'
-  resources :socialproviders, only: [:index, :create, :destroy]
+  resources :socialproviders, only: [:create, :destroy]
   match '/auth/:socialprovider/callback' => 'socialproviders#create'
 
   # challenges

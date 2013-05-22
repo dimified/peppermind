@@ -6,3 +6,29 @@
     = f.input :display_name, label: t('.label.display_name')
     = f.submit t('.button.submit'), class: 'btn green-button'
     = link_to t('.button.cancel'), @user, class: 'btn btn-danger'
+
+%h1= t('.social_provider')
+
+#social-boxes
+  - (@providers_user).each do |socialprovider|
+    .social-box
+      = socialprovider.provider
+      %div
+        #{t('.provider.name')}: #{socialprovider.display_name} (ID: #{socialprovider.uid})
+      %div
+        #{t('.provider.email')}: #{socialprovider.email}
+      %div
+        = link_to t('.provider.link.remove_service.text'), socialprovider, :confirm => t('.provider.link.remove_service.confirmation'), method: :delete, class: :confirmation
+  - (@providers_suggested).each do |provider|
+    .social-box
+      - case provider
+        - when 'persona'
+          = link_to 'Mozilla Persona', '/auth/persona/', id: 'mozilla-persona'
+        - when 'facebook'
+          = link_to 'Facebook', '/auth/facebook/'
+        - when 'google'
+          = link_to 'Google', '/auth/google/'
+        - when 'twitter'
+          = link_to 'Twitter', '/auth/twitter/'
+
+%p= t('.provider.bottomline')

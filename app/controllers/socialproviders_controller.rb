@@ -1,15 +1,6 @@
 class SocialprovidersController < ApplicationController
   before_filter :authenticate_user!, except: [:create]
 
-  def index
-    @providers_suggested = %w[persona facebook google twitter]
-    @providers_user = current_user.socialproviders.all
-
-    @providers_user.each do | socialprovider |
-      @providers_suggested.delete(socialprovider.provider)
-    end
-  end
-
   def create
     provider = params[:socialprovider]
     omniauth = request.env['omniauth.auth']
@@ -70,12 +61,12 @@ class SocialprovidersController < ApplicationController
           # social prodider IS already linked with this account
           if auth
             flash[:notice] = t('authentication.social.already_linked', provider: provider.capitalize)
-            redirect_to socialproviders_path
+            redirect_to account_edit_path
           # social provider is NOT already linked with this account -> add social provider to account
           else
             current_user.socialproviders.create provider: provider, uid: uid, display_name: display_name, email: email
             flash[:notice] = t('authentication.social.added')
-            redirect_to socialproviders_path
+            redirect_to account_edit_path
           end
         end
       # provider or uid is NOT valid
@@ -94,6 +85,6 @@ class SocialprovidersController < ApplicationController
     @socialprovider = current_user.socialproviders.find(params[:id])
     @socialprovider.destroy
 
-    redirect_to socialproviders_path
+    redirect_to account_edit_path
   end
 end

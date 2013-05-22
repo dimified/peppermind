@@ -7,6 +7,15 @@ de:
       label:
         display_name: 'Anzeigename'
         email: 'E-Mail-Adresse'
+      provider:
+        bottomline: 'Wenn du dich über einen Social Provider auf Peppermind registriert hast, wurde ein zufälliges Passwort für dich gewählt. Du kannst ein neues Passwort über den "Passwort vergessen?"-Link auf der Anmelden-Seite anfordern.'
+        email: 'E-Mail-Adresse'
+        link:
+          remove_service:
+            confirmation: 'Bist du sicher, dass du diesen Social Provider entfernen möchtest? Das Entfernen des letzten Social Providers kann zur Folge haben, dass du dich aus deinem Benutzerkonto ausschließt, wenn du kein Passwort für dein Benutzerkonto gewählt hast.'
+            text: 'Verknüpfung aufheben'
+        name: 'Name'
+      social_provider: 'Social Login Verknüpfungen'
       title: 'Profil bearbeiten'
     validation:
       display_name:
@@ -153,20 +162,6 @@ de:
   notification:
     button_okay: 'Ja, wirklich!'
     button_cancel: 'Nein, bitte nicht!'
-  socialproviders:
-    index:
-      bottomline: 'Wenn du dich über einen Social Provider auf Peppermind registriert hast, wurde ein zufälliges Passwort für dich gewählt. Du kannst ein neues Passwort über den "Passwort vergessen?"-Link auf der Anmelden-Seite anfordern.'
-      caption:
-        linked: 'Die folgenden Social Provider sind mit deinem Benutzerkonto verknüpft:'
-        suggested: 'Du kannst dein Benutzerkonto mit weiteren Diensten verknüpfen:'
-      link:
-        remove_service:
-          confirmation: 'Bist du sicher, dass du diesen Social Provider entfernen möchtest? Das Entfernen des letzten Social Providers kann zur Folge haben, dass du dich aus deinem Benutzerkonto ausschließt, wenn du kein Passwort für dein Benutzerkonto gewählt hast!'
-          text: 'Anbieter entfernen'
-      provider:
-        email: 'E-Mail-Adresse'
-        name: 'Name'
-      title: 'Social Provider'
   tags:
     add: 'Tag+'
     title: 'Tags'
