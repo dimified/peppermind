@@ -29,7 +29,7 @@ en:
       link:
         all_challenges: 'All Challenges'
         new_challenge: 'Neue Challenge'
-      title: 'Activity Stream'
+      title:
   authentication:
     exception:
       access_denied: 'You are not authorized to access this page.'
@@ -111,6 +111,8 @@ en:
     created: 'Inspiration was successfully created.'
     deleted: 'Die Inspiration wurde erfolgreich gelöscht.'
     updated: 'Inspiration was successfully updated.'
+  endless_scrolling:
+    loading_label: 'Loading…'
   inspirations:
     alert:
       missing: 'Eine Inspiration mit dieser ID existiert nicht.'

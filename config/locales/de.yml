@@ -111,6 +111,8 @@ de:
     created: 'Die Inspiration wurde erfolgreich angelegt.'
     deleted: 'Die Inspiration wurde erfolgreich gelöscht.'
     updated: 'Die Inspiration wurde erfolgreich bearbeitet.'
+  endless_scrolling:
+    loading_label: 'Laden…'
   inspirations:
     alert:
       missing: 'Eine Inspiration mit dieser ID existiert nicht.'
