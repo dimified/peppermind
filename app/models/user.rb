@@ -3,33 +3,33 @@ class User
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
   # Associations
-  has_many :socialproviders, :dependent => :destroy
+  has_many :socialproviders, dependent: :destroy
   has_many :activities
   has_many :ditos
   has_many :likes
   has_many :inspirations
+  has_many :challenges
 
   # Database authenticatable
-  field :email,              :type => String, :default => ""
-  field :encrypted_password, :type => String, :default => ""
+  field :email,              type: String, default: ''
+  field :encrypted_password, type: String, default: ''
 
   # Recoverable
-  field :reset_password_token,   :type => String
-  field :reset_password_sent_at, :type => Time
+  field :reset_password_token,   type: String
+  field :reset_password_sent_at, type: Time
 
   # Rememberable
-  field :remember_created_at, :type => Time
+  field :remember_created_at, type: Time
 
   # Trackable
-  field :sign_in_count,      :type => Integer, :default => 0
-  field :current_sign_in_at, :type => Time
-  field :last_sign_in_at,    :type => Time
-  field :current_sign_in_ip, :type => String
-  field :last_sign_in_ip,    :type => String
+  field :sign_in_count,      type: Integer, :default => 0
+  field :current_sign_in_at, type: Time
+  field :last_sign_in_at,    type: Time
+  field :current_sign_in_ip, type: String
+  field :last_sign_in_ip,    type: String
 
   # Custom Fields
   field :display_name, type: String
@@ -37,7 +37,7 @@ class User
   field :level, type: Symbol, default: :rookie
 
   # Validations
-  validates :email, confirmation: true
+  validates :email, confirmation: true, uniqueness: true
   validates :display_name, presence: true, uniqueness: true
   validates :password, length: { minimum: 8}
   #validates :login, presence: true
@@ -48,9 +48,6 @@ class User
 
   # Attributes accessible
   attr_accessible :login, :display_name, :email, :email_confirmation, :password
-
-  # Associations
-  has_many :challenges
 
   # Confirmable
   # field :confirmation_token,   :type => String
@@ -70,9 +67,19 @@ class User
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login).downcase
-      where(conditions).where('$or' => [ {:display_name => /^#{Regexp.escape(login)}$/i}, {:email => /^#{Regexp.escape(login)}$/i} ]).first
+      where(conditions).where('$or' => [ {display_name: /^#{Regexp.escape(login)}$/i}, {email: /^#{Regexp.escape(login)}$/i} ]).first
     else
       where(conditions).first
+    end
+  end
+
+  def validate_display_name(name)
+    if name.blank?
+      errors.add(:display_name, I18n.t('account.validation.display_name.blank'))
+    end
+
+    if User.where(display_name: name).exists?
+      errors.add(:display_name, I18n.t('account.validation.display_name.not_unique'))
     end
   end
 end

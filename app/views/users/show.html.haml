@@ -1,9 +1,9 @@
 = title t('.title')
 
 = link_to t('.link.back'), users_path
-= link_to t('.link.edit'), edit_user_path(@user)
 
 - if user_signed_in?
+  = link_to t('.link.edit'), account_edit_path
   = link_to t('.link.socialproviders'), socialproviders_path
   = link_to t('.link.signout'), destroy_user_session_path, class: 'confirmation', method: :delete, confirm: t('layouts.application.topbar.signout_confirmation')
 

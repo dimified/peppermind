@@ -1,4 +1,18 @@
 en:
+  account:
+    edit:
+      button:
+        cancel: 'Cancel'
+        submit: 'Edit'
+      label:
+        display_name: 'Display name'
+        email: 'E-Mail-Adresse'
+      title: 'Edit profile'
+    validation:
+      display_name:
+        blank: 'Bitte einen Anzeigenamen angeben!'
+        not_unique: 'Dieser Anzeigename ist bereits vergeben, tut uns Leid!'
+      success: 'Deine Angaben wurden erfolgreich geändert!'
   activities:
     challenge:
       _create:
@@ -11,13 +25,11 @@ en:
       _create:
         deleted: 'hat eine Inspiration beigetragen, welche seit dem gelöscht worden ist.'
         exists: 'hat eine %{link} zu einem Projekt beigetragen.'
-
     index:
       link:
         all_challenges: 'All Challenges'
         new_challenge: 'Neue Challenge'
       title: 'Activity Stream'
-
   authentication:
     exception:
       access_denied: 'You are not authorized to access this page.'
@@ -46,13 +58,11 @@ en:
       error: 'Fehler bei der Anmeldung via %{provider}.'
       invalid_data: '%{provider} schickte ungültige Daten für diese User-ID zurück.'
       success: 'Erfolgreich via %{provider} angemeldet.'
-
   helpers:
     submit:
       user:
         create: 'Create user'
         update: 'Edit user'
-
   challenges:
     _form:
       button:
@@ -91,7 +101,6 @@ en:
       problem: 'Problem'
       solution: 'Solution'
       updated: 'Last update:'
-
   challenge_inspirations:
     _form:
       placeholder:
@@ -102,7 +111,6 @@ en:
     created: 'Inspiration was successfully created.'
     deleted: 'Die Inspiration wurde erfolgreich gelöscht.'
     updated: 'Inspiration was successfully updated.'
-
   inspirations:
     alert:
       missing: 'Eine Inspiration mit dieser ID existiert nicht.'
@@ -122,7 +130,6 @@ en:
         delete_confirm: 'Möchtest du die Inspiration wirklich löschen?'
         edit: 'Bearbeiten'
       title: 'Inspiration'
-
   layouts:
     application:
       navigation:
@@ -141,11 +148,9 @@ en:
         signed_in: 'Du bist angemeldet. Abmelden?'
         signed_out: 'Du bist nicht angemeldet. Anmelden?'
         signout_confirmation: 'Möchtest du dich wirklich abmelden?'
-
   notification:
     button_okay: 'Ja, wirklich!'
     button_cancel: 'Nein, bitte nicht!'
-
   socialproviders:
     index:
       bottomline: 'Wenn du dich über einen Social Provider auf Peppermind registriert hast, wurde ein zufälliges Passwort für dich gewählt. Du kannst ein neues Passwort über den "Passwort vergessen?"-Link auf der Anmelden-Seite anfordern.'
@@ -160,16 +165,13 @@ en:
         email: 'Email address'
         name: 'Name'
       title: 'Social Providers'
-
   tags:
       add: 'Tag+'
       title: 'Tags'
       title_tagged: 'Challenges beschlagwortet mit "%{tag}"'
-
   time:
     formats:
       default: '%d.%m.%Y, %H:%M'
-
   users:
     edit:
       errors:
@@ -192,7 +194,6 @@ en:
         signout: 'Sign out'
         socialproviders: 'Social Providers'
       title: 'Profile'
-
   views:
     pagination:
       first: '&laquo; First'

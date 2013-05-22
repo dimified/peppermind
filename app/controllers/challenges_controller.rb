@@ -2,7 +2,7 @@ class ChallengesController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   load_and_authorize_resource
 
-  rescue_from Mongoid::Errors::DocumentNotFound, :with => :access_denied
+  rescue_from Mongoid::Errors::DocumentNotFound, with: :access_denied
 
   def index
     @challenges = Challenge.order_by([:created_at, :desc]).page params[:page]
@@ -83,7 +83,7 @@ class ChallengesController < ApplicationController
   private
 
   def access_denied
-    redirect_to challenges_path, :flash => { :error => t('challenges.alert.missing') }
+    redirect_to challenges_path, flash: { error: t('challenges.alert.missing') }
   end
 end
 

@@ -8,20 +8,22 @@ Peppermind::Application.routes.draw do
   # users
   devise_for :users
   resources :users, except: [:new]
+  get 'account/edit'
+  post 'account/update'
   resources :socialproviders, only: [:index, :create, :destroy]
   match '/auth/:socialprovider/callback' => 'socialproviders#create'
 
   # challenges
   resources :challenges do
     # pagination
-    get 'page/:page', action: :index, on: :collection, constraints: { :page => /\d/ }
+    get 'page/:page', action: :index, on: :collection, constraints: { page: /\d/ }
     resources :inspirations
   end
 
   # activities
   resources :activities do
     # pagination
-    get 'page/:page', action: :index, on: :collection, constraints: { :page => /\d/ }
+    get 'page/:page', action: :index, on: :collection, constraints: { page: /\d/ }
   end
   
   resources :ditos
@@ -29,6 +31,6 @@ Peppermind::Application.routes.draw do
 
   #tags
   resources :tags, only: [:index, :show] do
-    get ':id/page/:page', action: :show, on: :collection, constraints: { :page => /\d/ }
+    get ':id/page/:page', action: :show, on: :collection, constraints: { page: /\d/ }
   end
 end

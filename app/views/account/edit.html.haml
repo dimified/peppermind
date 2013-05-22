@@ -1,0 +1,8 @@
+= title t('.title')
+
+= simple_form_for @user, url: account_update_path, method: :post, defaults: { input_html: { class: 'styled_input' } } do |f|
+  .form_with_labels
+    = f.input :email, disabled: true, label: t('.label.email')
+    = f.input :display_name, label: t('.label.display_name')
+    = f.submit t('.button.submit'), class: 'btn green-button'
+    = link_to t('.button.cancel'), @user, class: 'btn btn-danger'

@@ -79,6 +79,6 @@ class InspirationsController < ApplicationController
   private
 
   def access_denied
-    redirect_to challenge_path(params[:challenge_id]), :flash => { :error => t('inspirations.alert.missing') }
+    redirect_to challenge_path(params[:challenge_id]), flash: { error: t('inspirations.alert.missing') }
   end
 end
