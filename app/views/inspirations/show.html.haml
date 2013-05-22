@@ -7,7 +7,7 @@
 = render 'likes/form'
 
 - if can? :update, @inspiration
-  = link_to t('.link.edit'), edit_challenge_inspiration_path(@inspiration), class: 'btn green-button'
+  = link_to t('.link.edit'), edit_challenge_inspiration_path(@challenge, @inspiration), class: 'btn green-button'
 
 - if can? :destroy, @inspiration
-  = link_to t('.link.delete'), challenge_inspiration_path(@inspiration), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'
+  = link_to t('.link.delete'), challenge_inspiration_path(@challenge, @inspiration), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'

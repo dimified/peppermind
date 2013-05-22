@@ -13,6 +13,7 @@ class InspirationsController < ApplicationController
   end
 
   def show
+    @challenge = Challenge.find(params[:challenge_id])
     @inspiration = Inspiration.find(params[:id])
 
     respond_to do |format|
@@ -22,6 +23,7 @@ class InspirationsController < ApplicationController
   end
 
   def new
+    @challenge = Challenge.find(params[:challenge_id])
     @inspiration = Inspiration.new
 
     respond_to do |format|
@@ -31,6 +33,7 @@ class InspirationsController < ApplicationController
   end
 
   def edit
+    @challenge = Challenge.find(params[:challenge_id])
     @inspiration = Inspiration.find(params[:id])
   end
 
@@ -58,11 +61,7 @@ class InspirationsController < ApplicationController
 
     respond_to do |format|
       if @inspiration.update_attributes(params[:inspiration])
-<<<<<<< HEAD
-        format.html { redirect_to challenge_inspiration_path(params[:challenge_id], @inspiration), notice: t('challenge_inspirations.updated') }
-=======
-        format.html { redirect_to challenge_inspiration_path(@challenge, @inspiration), notice: I18n.t('challenge_inspirations.updated') }
->>>>>>> added controller tests for challenges and inspirations
+        format.html { redirect_to challenge_inspiration_path(@challenge, @inspiration), notice: t('challenge_inspirations.updated') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -74,15 +73,10 @@ class InspirationsController < ApplicationController
   def destroy
     @challenge = Challenge.find(params[:challenge_id])
     @inspiration = Inspiration.find(params[:id])
-    challenge = @inspiration.challenge_id
     @inspiration.destroy
 
     respond_to do |format|
-<<<<<<< HEAD
-      format.html { redirect_to challenge_path(challenge), notice: t('challenge_inspirations.deleted') }
-=======
-      format.html { redirect_to challenge_inspirations_path(@challenge) }
->>>>>>> added controller tests for challenges and inspirations
+      format.html { redirect_to challenge_path(@challenge), notice: t('challenge_inspirations.deleted') }
       format.json { head :no_content }
     end
   end

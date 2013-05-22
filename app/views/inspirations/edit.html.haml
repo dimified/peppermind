@@ -3,4 +3,4 @@
 = simple_form_for([@challenge, @inspiration], url: challenge_inspiration_path, defaults: { input_html: { class: 'styled_input' } }) do |f|
   = f.input :description, as: :text, placeholder: t('challenge_inspirations._form.placeholder.description')
   = f.submit t('.button.submit'), class: 'btn green-button'
-  = link_to t('.button.cancel'), challenge_inspiration_path(@inspiration), class: 'btn btn-danger'
+  = link_to t('.button.cancel'), challenge_inspiration_path(@challenge, @inspiration), class: 'btn btn-danger'
