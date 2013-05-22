@@ -12,11 +12,11 @@ describe LikesController do
     end
 
     it "routes to #show" do
-      get("/likes/1").should route_to("likes#show", :id => "1")
+      get("/likes/1").should route_to("likes#show", id: "1")
     end
 
     it "routes to #edit" do
-      get("/likes/1/edit").should route_to("likes#edit", :id => "1")
+      get("/likes/1/edit").should route_to("likes#edit", id: "1")
     end
 
     it "routes to #create" do
@@ -24,11 +24,11 @@ describe LikesController do
     end
 
     it "routes to #update" do
-      put("/likes/1").should route_to("likes#update", :id => "1")
+      put("/likes/1").should route_to("likes#update", id: "1")
     end
 
     it "routes to #destroy" do
-      delete("/likes/1").should route_to("likes#destroy", :id => "1")
+      delete("/likes/1").should route_to("likes#destroy", id: "1")
     end
 
   end

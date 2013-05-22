@@ -2,5 +2,12 @@
 
 FactoryGirl.define do
   factory :dito do
+  	user 1
+  	challenge 1
+
+  	factory :invalid_dito do
+  		user nil
+  		challenge nil
+   	end
   end
 end

@@ -1,5 +1,3 @@
-# spec/factories/users.rb
-
 FactoryGirl.define do
 	factory :user do
 		display_name {Faker::Internet.user_name}

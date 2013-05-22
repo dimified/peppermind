@@ -12,4 +12,5 @@ class Inspiration
 
   # Validations
   validates :description, presence: true, length: {maximum: 255}
+  validates :like, numericality: true, allow_nil: false
 end

@@ -8,11 +8,11 @@ describe UsersController do
     end
 
     it "routes to #show" do
-      expect(get("/users/1")).to route_to("users#show", :id => "1")
+      expect(get("/users/1")).to route_to("users#show", id: "1")
     end
 
     it "routes to #edit" do
-      expect(get("/users/1/edit")).to route_to("users#edit", :id => "1")
+      expect(get("/users/1/edit")).to route_to("users#edit", id: "1")
     end
 
     it "routes to #create" do
@@ -20,11 +20,11 @@ describe UsersController do
     end
 
     it "routes to #update" do
-      expect(put("/users/1")).to route_to("users#update", :id => "1")
+      expect(put("/users/1")).to route_to("users#update", id: "1")
     end
 
     it "routes to #destroy" do
-      expect(delete("/users/1")).to route_to("users#destroy", :id => "1")
+      expect(delete("/users/1")).to route_to("users#destroy", id: "1")
     end
 
   end

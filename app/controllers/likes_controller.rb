@@ -49,7 +49,7 @@ class LikesController < ApplicationController
 
       user = @inspiration.user
       user.points = user.points + 3
-      user.save(validate: false)
+      user.save
 
       respond_to do |format|
         if @like.save

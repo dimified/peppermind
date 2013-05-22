@@ -32,18 +32,17 @@ class DitosController < ApplicationController
 
   def create
     @challenge = Challenge.find(params[:challenge_id])
-
+    @dito = Dito.new(user: current_user, challenge: @challenge)
+    
     unless current_user == @challenge.user
-      @dito = Dito.new(user: current_user, challenge: @challenge)
-
       user = @challenge.user
       user.points = user.points + 1
-      user.save(validate: false)
+      user.save  
+    end
 
-      respond_to do |format|
-        if @dito.save
-          format.js
-        end
+    respond_to do |format|
+      if @dito.save
+        format.js
       end
     end
   end
