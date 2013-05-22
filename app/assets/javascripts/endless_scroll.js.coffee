@@ -1,5 +1,4 @@
 jQuery ->
-  # endless scrolling
   isScrolledIntoView = (elem) ->
     docViewTop = $(window).scrollTop()
     docViewBottom = docViewTop + $(window).height()
