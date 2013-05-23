@@ -1,38 +1,47 @@
-.login-form
-  = title t('.title')
-  = simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
-    %i.icon-user
-    = f.input :login, placeholder: t('authentication.label.login'), autofocus: true
-    %i.icon-lock
-    = f.input :password, placeholder: t('authentication.label.password')
+- content_for :javascript do
+  = javascript_include_tag 'login'
 
-    - if devise_mapping.rememberable?
-      = f.input_field :remember_me, as: :boolean, inline_label: t('devise.passwords.remember')
+%section{role: 'home'}
+  #big-logo
+    = image_tag 'logo.png'
 
-    - if devise_mapping.recoverable?
-      = link_to t('devise.passwords.forgot'), new_password_path(resource), class: 'forgot'
+  .login-form
+    = title t('.title')
+    = simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+      %i.icon-user
+      = f.input :login, placeholder: t('authentication.label.login'), autofocus: true
+      %i.icon-lock
+      = f.input :password, placeholder: t('authentication.label.password')
 
-    %button{type: 'submit', id: 'login-button', class: 'btn'}
-      = t('authentication.label.signin')
+      - if devise_mapping.rememberable?
+        = f.input_field :remember_me, as: :boolean, inline_label: t('devise.passwords.remember')
 
-  .btn#toggle-social
-    = t('authentication.label.social-login')
-    %i.icon-chevron-down
-  #social-login
-    = link_to '/auth/persona/', id: 'mozilla-persona' do
-      .btn.social-button
-        %i.icon-signin
-        = t('authentication.label.persona')
-    = link_to '/auth/facebook/' do
-      .btn.social-button
-        %i.icon-facebook
-        = t('authentication.label.facebook')
-    = link_to '/auth/google/' do
-      .btn.social-button
-        %i.icon-google-plus
-        = t('authentication.label.googleplus')
-    = link_to '/auth/twitter/' do
-      .btn.social-button
-        %i.icon-twitter
-        = t('authentication.label.twitter')
+      - if devise_mapping.recoverable?
+        = link_to t('devise.passwords.forgot'), new_password_path(resource), class: 'forgot'
 
+      %button{type: 'submit', id: 'login-button', class: 'btn'}
+        = t('authentication.label.signin')
+
+    .btn#toggle-social
+      = t('authentication.label.social-login')
+      %i.icon-chevron-down
+    #social-login
+      = link_to '/auth/persona/', id: 'mozilla-persona' do
+        .btn.social-button
+          %i.icon-signin
+          = t('authentication.label.persona')
+      = link_to '/auth/facebook/' do
+        .btn.social-button
+          %i.icon-facebook
+          = t('authentication.label.facebook')
+      = link_to '/auth/google/' do
+        .btn.social-button
+          %i.icon-google-plus
+          = t('authentication.label.googleplus')
+      = link_to '/auth/twitter/' do
+        .btn.social-button
+          %i.icon-twitter
+          = t('authentication.label.twitter')
+  = link_to new_user_registration_path do
+    %button.btn#signup-button
+      = t('authentication.label.signup')

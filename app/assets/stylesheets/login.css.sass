@@ -15,6 +15,7 @@
     background: rgba($white, 0.7)
     border-radius: 4px
     box-shadow: 0px 0px 15px 0px rgba($darkgrey, 0.5)
+
     label.checkbox
       float: left
       width: 130px
@@ -24,9 +25,11 @@
       border: 1px solid gainsboro
       font-size: 0.8em
       line-height: 1.7
+
       #user_remember_me
         float: right
-        margin-top: 6px
+        margin-top: 4px
+
     .forgot
       float: right
       font-size: 0.8em
@@ -35,7 +38,7 @@
       border-radius: 4px
       padding: 6px
       border: 1px solid gainsboro
-
+      color: inherit
 
   #user_login, #user_password
     width: 100%
@@ -63,6 +66,7 @@
 
   #social-login
     display: none
+
     a
       text-decoration: none
 
@@ -82,4 +86,3 @@
   #social-login a:nth-of-type(4)
     .social-button
       @include border-bottom-radius(2px)
-

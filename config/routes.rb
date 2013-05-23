@@ -1,9 +1,13 @@
 Peppermind::Application.routes.draw do
-  # root
+  # root path for authenticated users
   authenticated :user do
     root to: 'activities#index'
   end
-  root :to => 'home#index'
+
+  # root path for guest users
+  devise_scope :user do
+    root to: 'devise/sessions#new'
+  end
 
   # users
   devise_for :users
