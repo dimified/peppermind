@@ -16,7 +16,7 @@ describe InspirationsController do
     end
 
     it "routes to #create" do
-      expect(post("/challenges/1/inspirations")).to route_to("inspirations#index", challenge_id: "1")
+      expect(post("/challenges/1/inspirations")).to route_to("inspirations#create", challenge_id: "1")
     end
 
     it "routes to #update" do

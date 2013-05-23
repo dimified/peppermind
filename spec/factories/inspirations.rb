@@ -2,8 +2,8 @@ FactoryGirl.define do
   factory :inspiration do
   	description {Faker::Lorem.characters(255)}
   	like 1
-  	user
-  	challenge
+  	user 1
+  	challenge 1
 
   	factory :invalid_inspiration do
   		description nil
