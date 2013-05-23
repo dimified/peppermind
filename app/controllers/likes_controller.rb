@@ -44,34 +44,15 @@ class LikesController < ApplicationController
 
     unless current_user == @inspiration.user
       @like = Like.new(user: current_user, inspiration: @inspiration)
-      @inspiration.like = @inspiration.like + 1
-      @inspiration.save
+      @like.save
+      #@inspiration.like = @inspiration.like + 1
+      #@inspiration.save
 
-      user = @inspiration.user
-      user.points = user.points + 3
-      user.save
-
-      respond_to do |format|
-        if @like.save
-          format.js
-        end
-      end
+      @inspiration.user.increment 3
     end
-  end
-
-  # PUT /likes/1
-  # PUT /likes/1.json
-  def update
-    @like = Like.find(params[:id])
 
     respond_to do |format|
-      if @like.update_attributes(params[:like])
-        format.html { redirect_to @like, notice: 'Like was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @like.errors, status: :unprocessable_entity }
-      end
+      format.js
     end
   end
 
@@ -81,23 +62,14 @@ class LikesController < ApplicationController
     @inspiration = Inspiration.find(params[:inspiration_id])
 
     unless current_user == @inspiration.user
-      @like = current_user.likes.where(inspiration: @inspiration).first
-      if @inspiration.like >= 0
-        @inspiration.like = @inspiration.like - 1
-        @inspiration.save
-      end
-
-      user = @inspiration.user
-      if user.points >= 0
-        user.points = user.points - 3
-        user.save(validate: false)
-      end
-
+      @like = Like.where(user: current_user, inspiration: @inspiration).first
       @like.destroy
 
-      respond_to do |format|
-        format.js
-      end
+      @inspiration.user.decrement 3
+    end
+
+    respond_to do |format|
+      format.js
     end
   end
 end

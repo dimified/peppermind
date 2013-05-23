@@ -32,50 +32,31 @@ class DitosController < ApplicationController
 
   def create
     @challenge = Challenge.find(params[:challenge_id])
-    @dito = Dito.new(user: current_user, challenge: @challenge)
     
     unless current_user == @challenge.user
-      user = @challenge.user
-      user.points = user.points + 1
-      user.save  
+      @dito = Dito.new(user: current_user, challenge: @challenge)
+      @dito.save
+
+      @challenge.user.increment 1
     end
-
+    
     respond_to do |format|
-      if @dito.save
-        format.js
-      end
-    end
-  end
-
-  def update
-    @dito = Dito.find(params[:id])
-
-    respond_to do |format|
-      if @dito.update_attributes(params[:dito])
-        format.html { redirect_to @dito }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @dito.errors, status: :unprocessable_entity }
-      end
+      format.js
     end
   end
 
   def destroy
     @challenge = Challenge.find(params[:challenge_id])
-
+  
     unless current_user == @challenge.user
-      @dito = current_user.ditos.where(challenge: @challenge).first
-
-      user = @challenge.user
-      user.points = user.points - 1
-      user.save(validate: false)
-
+      @dito = Dito.where(user: current_user, challenge: @challenge).first
       @dito.destroy
 
-      respond_to do |format|
-        format.js
-      end
+      @challenge.user.decrement 1
+    end
+
+    respond_to do |format|
+      format.js
     end
   end
 end
