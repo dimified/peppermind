@@ -65,12 +65,12 @@
               %i.icon-tags
               <span>#{t('.navigation.tags')}</span>
 
-          - if user_signed_in?
-            %li
-              = link_to users_path do
-                %i.icon-group
-                <span>#{t('.navigation.all_users')}</span>
+          %li
+            = link_to users_path do
+              %i.icon-group
+              <span>#{t('.navigation.all_users')}</span>
 
+          - if user_signed_in?
             %li
               = link_to user_path current_user do
                 %i.icon-user
@@ -88,7 +88,7 @@
 
           - else
             %li
-              = link_to new_user_session_path do
+              = link_to root_path do
                 %i.icon-signin
                 <span>#{t('.navigation.signin')}</span>
 
