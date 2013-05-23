@@ -1,7 +1,7 @@
 class InspirationsController < ApplicationController
   load_and_authorize_resource
   rescue_from Mongoid::Errors::DocumentNotFound, :with => :access_denied
-  before_filter :authenticate_user!
+  before_filter :authenticate_user! 
 
   def index
     @inspirations = Inspiration.all

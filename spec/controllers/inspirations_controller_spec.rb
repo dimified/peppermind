@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+class SomeHocusPocusClass; end
+
 describe InspirationsController do
   let(:user) { create(:user) }
 
@@ -81,8 +83,13 @@ describe InspirationsController do
           post :create, challenge_id: @challenge, inspiration: attributes_for(:inspiration)
         }.to change(Inspiration, :count).by(1)
       end
+      
+      it "has an no nil values" do
+        post :create, challenge_id: @challenge, inspiration: attributes_for(:inspiration)
+        expect(assigns(:inspiration).attributes.symbolize_keys).to_not be_nil
+      end
 
-      it "redirects to the Challenge Inspiration Path" do
+      it "redirects to challenge_inspiration_path" do
         post :create, challenge_id: @challenge, inspiration: attributes_for(:inspiration)
         expect(response).to redirect_to(challenge_inspiration_path(@challenge, 1))
       end
@@ -102,56 +109,18 @@ describe InspirationsController do
     end
   end
 
-  # describe "PUT update" do
-  #   before(:each) do
-  #     sign_in user
-  #     @challenge = create(:challenge)
-  #     @inspiration = create(:inspiration)
-  #   end
+  describe "GET access_denied" do
+    before do
+      sign_in user
+      def controller.index
+        raise Mongoid::Errors::DocumentNotFound.new SomeHocusPocusClass, {}
+      end
+    end
 
-  #   it "locates the requested @inspiration" do
-  #     put :update, challenge_id: @challenge, id: @inspiration, inspiration: attributes_for(:inspiration)
-  #     expect(assigns(:inspiration)).to eq(@inspiration)
-  #   end
-
-  #   context "with valid attributes" do
-  #     it "updates the requested inspiration" do
-  #       put :update, challenge_id: @challenge, id: @inspiration, inspiration: attributes_for(:inspiration, description: "New description")
-  #       @inspiration.reload
-  #       expect(@inspiration.description).to eq("New description")
-  #     end
-
-  #     it "redirects to the Challenge Inspiration Path" do
-  #       put :update, challenge_id: @challenge, id: @inspiration, inspiration: attributes_for(:inspiration)
-  #       expect(response).to redirect_to challenge_inspiration_path(@challenge, 1)
-  #     end
-  #   end
-
-  #   context "with invalid attributes" do
-  #     it "does not update the requested inspiration" do
-  #       put :update, challenge_id: @challenge, id: @inspiration, inspiration: attributes_for(:inspiration, description: "New description", like: nil)
-  #       @inspiration.reload
-  #       expect(@inspiration.description).to_not eq("New description")
-  #     end
-  #   end
-  # end
-
-  # describe'DELETE destroy' do 
-  #   before :each do
-  #     sign_in user
-  #     @challenge = create(:challenge)
-  #     @inspiration = create(:inspiration)
-  #   end
-
-  #   it "destroys the requested inspiration" do
-  #     expect{
-  #       delete :destroy, challenge_id: @challenge, id: @inspiration
-  #     }.to change(Inspiration, :count).by(-1)
-  #   end
-    
-  #   it "redirects to Challenge Path" do
-  #     delete :destroy, challenge_id: @challenge, id: @inspiration
-  #     expect(response).to redirect_to challenge_path(@challenge)
-  #   end
-  # end
+    it "redirects to challenge_path" do 
+      @challenge = create(:challenge)
+      get :index, challenge_id: @challenge
+      expect(response).to redirect_to(challenge_path(@challenge))
+    end
+  end
 end

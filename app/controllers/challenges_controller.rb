@@ -1,7 +1,6 @@
 class ChallengesController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   load_and_authorize_resource
-
   rescue_from Mongoid::Errors::DocumentNotFound, with: :access_denied
 
   def index
@@ -17,7 +16,7 @@ class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
     @challenge.duration_string = convert_date @challenge.duration
-    @inspirations = Inspiration.where(challenge: @challenge).sort
+    @inspirations = Inspiration.where(challenge: @challenge)
 
     respond_to do |format|
       format.html

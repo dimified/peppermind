@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+class SomeHocusPocusClass; end
+
 describe ChallengesController do
   let(:user) { create(:user) }
 
@@ -24,6 +26,12 @@ describe ChallengesController do
     it "assigns the requested challenge as @challenge" do
       get :show, id: @challenge
       expect(assigns(:challenge)).to eq(@challenge)
+    end
+
+    it "assigns the inspirations as @inspirations" do
+      inspiration = create(:inspiration, challenge: @challenge)
+      get :show, id: @challenge
+      expect(assigns(:inspirations)).to eq([inspiration])
     end
 
     it "renders the show template" do
@@ -90,6 +98,19 @@ describe ChallengesController do
         post :create, challenge: attributes_for(:invalid_challenge)
         expect(response).to render_template :new
       end 
+    end
+  end
+
+  describe "GET access_denied" do
+    before do
+      def controller.index
+        raise Mongoid::Errors::DocumentNotFound.new SomeHocusPocusClass, {}
+      end
+    end
+
+    it "redirects to challenges path" do 
+      get :index
+      expect(response).to redirect_to(challenges_path)
     end
   end
 end
