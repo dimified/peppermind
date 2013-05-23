@@ -29,8 +29,11 @@ Peppermind::Application.routes.draw do
   resources :ditos
   resources :likes
 
-  #tags
+  # tags
   resources :tags, only: [:index, :show] do
     get ':id/page/:page', action: :show, on: :collection, constraints: { page: /\d/ }
   end
+
+  # error page
+  match '*not_found', to: 'errors#render_404'
 end

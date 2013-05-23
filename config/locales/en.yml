@@ -122,6 +122,10 @@ en:
     updated: 'Inspiration was successfully updated.'
   endless_scrolling:
     loading_label: 'Loading…'
+  errors:
+    error_404:
+      content: 'Die gewünschte Seite konnte leider nicht gefunden werden.'
+      title: 'Page not found'
   inspirations:
     alert:
       missing: 'Eine Inspiration mit dieser ID existiert nicht.'

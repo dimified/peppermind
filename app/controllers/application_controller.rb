@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  rescue_from ActionController::RoutingError, ActionController::UnknownController, ::AbstractController::ActionNotFound do
+    ErrorsController::render_404
+  end
+
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => t('authentication.exception.access_denied')
   end
