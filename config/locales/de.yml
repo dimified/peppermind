@@ -30,27 +30,27 @@ de:
       _update:
         deleted: 'aktualisierte eine Challenge, welche seit dem gelöscht worden ist.'
         exists: 'aktualisierte die Challenge %{link}.'
-    inspiration:
-      _create:
-        deleted: 'hat eine Inspiration beigetragen, welche seit dem gelöscht worden ist.'
-        exists: 'hat eine %{link} zu einem Projekt beigetragen.'
     index:
       link:
         all_challenges: 'Alle Challenges'
         new_challenge: 'Neue Challenge'
       title: 'Activity Stream'
+    inspiration:
+      _create:
+        deleted: 'hat eine Inspiration beigetragen, welche seit dem gelöscht worden ist.'
+        exists: 'hat eine %{link} zu einem Projekt beigetragen.'
   authentication:
     exception:
       access_denied: 'Du bist nicht autorisiert, diese Seite zu betreten.'
     label:
+      facebook: 'Facebook Konto verwenden'
+      googleplus: 'Google Plus verwenden'
       login: 'Benutzername oder E-Mail-Adresse'
       password: 'Passwort'
+      persona: 'Mozilla Persona verwenden'
       signin: 'Mit Peppermind Konto anmelden'
       signup: 'Bei Peppermind registrieren'
       social-login: 'Mit einem anderen Konto anmelden'
-      persona: 'Mozilla Persona verwenden'
-      facebook: 'Facebook Konto verwenden'
-      googleplus: 'Google Plus verwenden'
       twitter: 'Twitter Konto verwenden'
     placeholder:
       display_name: 'Benutzername'
@@ -67,11 +67,16 @@ de:
       error: 'Fehler bei der Anmeldung via %{provider}.'
       invalid_data: '%{provider} schickte ungültige Daten für diese User-ID zurück.'
       success: 'Erfolgreich via %{provider} angemeldet.'
-  helpers:
-    submit:
-      user:
-        create: 'Benutzer erstellen'
-        update: 'Benutzer bearbeiten'
+  challenge_inspirations:
+    _form:
+      placeholder:
+        description: 'Beschreibung der Inspiration'
+      button:
+        cancel: 'Abbrechen'
+        submit: 'Inspiration anlegen'
+    created: 'Die Inspiration wurde erfolgreich angelegt.'
+    deleted: 'Die Inspiration wurde erfolgreich gelöscht.'
+    updated: 'Die Inspiration wurde erfolgreich bearbeitet.'
   challenges:
     _form:
       button:
@@ -80,7 +85,7 @@ de:
         edit: 'Bearbeiten'
       placeholder:
         description: 'Beschreibung'
-        duration: 'Challenge läuft bis...'
+        duration: 'Challenge läuft bis…'
         question: 'Fragestellung'
     _process:
       title: 'Neue Challenge anlegen'
@@ -101,31 +106,26 @@ de:
     show:
       created: 'Angelegt von %{user} am'
       link:
+        challenges: 'Alle Challenges'
         dashboard: 'Dashboard'
         delete: 'Löschen'
         delete_confirm: 'Möchtest du die Challenge wirklich löschen?'
         edit: 'Challenge bearbeiten'
-        challenges: 'Alle Challenges'
         inspiration: 'Neue Inspiration'
       problem: 'Problem'
       solution: 'Lösung'
       updated: 'Letzte Aktualisierung:'
-  challenge_inspirations:
-    _form:
-      placeholder:
-        description: 'Beschreibung der Inspiration'
-      button:
-        cancel: 'Abbrechen'
-        submit: 'Inspiration anlegen'
-    created: 'Die Inspiration wurde erfolgreich angelegt.'
-    deleted: 'Die Inspiration wurde erfolgreich gelöscht.'
-    updated: 'Die Inspiration wurde erfolgreich bearbeitet.'
   endless_scrolling:
     loading_label: 'Laden…'
   errors:
     error_404:
       content: 'Die gewünschte Seite konnte leider nicht gefunden werden.'
       title: 'Seite nicht gefunden'
+  helpers:
+    submit:
+      user:
+        create: 'Benutzer erstellen'
+        update: 'Benutzer bearbeiten'
   inspirations:
     alert:
       missing: 'Eine Inspiration mit dieser ID existiert nicht.'
@@ -164,8 +164,8 @@ de:
         signed_out: 'Du bist nicht angemeldet. Anmelden?'
         signout_confirmation: 'Möchtest du dich wirklich abmelden?'
   notification:
-    button_okay: 'Ja, wirklich!'
     button_cancel: 'Nein, bitte nicht!'
+    button_okay: 'Ja, wirklich!'
   tags:
     add: 'Tag+'
     title: 'Tags'
@@ -188,10 +188,10 @@ de:
     show:
       link:
         back: 'Zurück'
-        edit: 'Bearbeiten'
         challenge:
           all: 'Alle Challenges'
           new: 'Neue Challenge'
+        edit: 'Bearbeiten'
         signout: 'Abmelden'
         socialproviders: 'Social Provider'
       title: 'Profil'
@@ -199,6 +199,6 @@ de:
     pagination:
       first: '&laquo; Erste'
       last: 'Letzte &raquo;'
-      previous: '&lsaquo; Vorherige'
       next: 'Nächste &rsaquo;'
-      truncate: '&hellip;'
+      previous: '&lsaquo; Vorherige'
+      truncate: '…'
