@@ -37,8 +37,7 @@ class DitosController < ApplicationController
       @dito = Dito.new(user: current_user, challenge: @challenge)
       @dito.save
 
-      @user = @challenge.user
-      @user.increment 1
+      @challenge.user.increment 1
     end
     
     respond_to do |format|
@@ -46,29 +45,14 @@ class DitosController < ApplicationController
     end
   end
 
-  def update
-    @dito = Dito.find(params[:id])
-
-    respond_to do |format|
-      if @dito.update_attributes(params[:dito])
-        format.html { redirect_to @dito }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @dito.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   def destroy
     @challenge = Challenge.find(params[:challenge_id])
   
     unless current_user == @challenge.user
-      @dito = current_user.ditos.where(challenge: @challenge).first
+      @dito = Dito.where(user: current_user, challenge: @challenge).first
       @dito.destroy
 
-      @user = @challenge.user
-      @user.decrement 1
+      @challenge.user.decrement 1
     end
 
     respond_to do |format|
