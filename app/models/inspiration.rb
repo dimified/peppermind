@@ -13,4 +13,14 @@ class Inspiration
   # Validations
   validates :description, presence: true, length: {maximum: 255}
   validates :like, numericality: true, allow_nil: false
+
+  def add_like
+    self.like += 1
+    self.save
+  end
+
+  def remove_like
+    self.like -= 1
+    self.save
+  end
 end

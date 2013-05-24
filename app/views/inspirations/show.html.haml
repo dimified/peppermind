@@ -4,7 +4,8 @@
 = @inspiration.user.display_name
 
 = render 'inspirations/count_likes'
-= render 'likes/form'
+- if current_user != @inspiration.user && current_user
+  = render 'likes/form' 
 
 - if can? :update, @inspiration
   = link_to t('.link.edit'), edit_challenge_inspiration_path(@challenge, @inspiration), class: 'btn green-button'

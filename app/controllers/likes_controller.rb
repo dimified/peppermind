@@ -38,9 +38,7 @@ class LikesController < ApplicationController
     unless current_user == @inspiration.user
       @like = Like.new(user: current_user, inspiration: @inspiration)
       @like.save
-      #@inspiration.like = @inspiration.like + 1
-      #@inspiration.save
-
+      @inspiration.add_like
       @inspiration.user.increment 3
     end
 
@@ -55,7 +53,7 @@ class LikesController < ApplicationController
     unless current_user == @inspiration.user
       @like = Like.where(user: current_user, inspiration: @inspiration).first
       @like.destroy
-
+      @inspiration.remove_like
       @inspiration.user.decrement 3
     end
 

@@ -16,4 +16,16 @@ describe Inspiration do
  	it "is invalid when like is nil" do
     expect(build(:inspiration, like: nil)).to_not be_valid
 	end
+
+	it "increments like" do
+    expect {
+      @inspiration.add_like
+    }.to change(@inspiration, :like).by(1)
+  end
+
+  it "decrements like" do
+    expect {
+      @inspiration.remove_like
+    }.to change(@inspiration, :like).by(-1)
+  end
 end
