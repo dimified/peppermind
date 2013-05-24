@@ -14,7 +14,7 @@ describe User do
 	end
 
 	it "is invalid with a duplicate display name" do
-		expect(build(:user, email: @user.display_name)).to_not be_valid
+		expect(build(:user, display_name: @user.display_name)).to_not be_valid
 	end
 
 	it "is invalid when password is less than 8 characters" do

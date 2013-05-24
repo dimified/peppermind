@@ -37,9 +37,9 @@ class User
   field :level, type: Symbol, default: :rookie
 
   # Validations
-  validates :email, confirmation: true, uniqueness: true, on: :create
-  validates :display_name, presence: true, uniqueness: true, on: :create
-  validates :password, length: { minimum: 8}, on: :create
+  validates :email, confirmation: true, uniqueness: true
+  validates :display_name, presence: true, uniqueness: true
+  validates :password, length: { minimum: 8 }
   #validates :login, presence: true
 
   # Virtual attribute for authenticating by either username or email
