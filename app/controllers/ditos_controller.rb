@@ -1,36 +1,5 @@
 class DitosController < ApplicationController
-  #before_filter :authenticate_user!, except: [:index, :show]
-
-  def index
-    @ditos = Dito.all
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @ditos }
-    end
-  end
-
-  def show
-    @dito = Dito.find(params[:id])
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @dito }
-    end
-  end
-
-  def new
-    @dito = Dito.new
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @dito }
-    end
-  end
-
-  def edit
-    @dito = Dito.find(params[:id])
-  end
+  before_filter :authenticate_user!
 
   def create
     @challenge = Challenge.find(params[:challenge_id])
@@ -39,8 +8,8 @@ class DitosController < ApplicationController
       @dito = Dito.new(user: current_user, challenge: @challenge)
       @dito.save
 
-      # Incrementing user points
       @challenge.user.increment
+      @challenge.user.update_user_level
     end
 
     respond_to do |format|
@@ -55,8 +24,8 @@ class DitosController < ApplicationController
       @dito = Dito.where(user: current_user, challenge: @challenge).first
       @dito.destroy
 
-      # Decrementing user points
       @challenge.user.decrement
+      @challenge.user.update_user_level
     end
 
     respond_to do |format|

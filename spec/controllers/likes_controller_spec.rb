@@ -3,69 +3,6 @@ require 'spec_helper'
 describe LikesController do
   let(:user) { create(:user) }
 
-  describe "GET index" do
-    before(:each) do
-      sign_in user
-    end
-
-    it "assigns all likes as @likes" do
-      like = create(:like)
-      get :index
-      expect(assigns(:likes)).to eq([like])
-    end
-
-    it "renders the index template" do
-      get :index
-      expect(response).to render_template :index
-    end
-  end
-
-  describe "GET show" do
-    before(:each) do
-      sign_in user
-      @like = create(:like) 
-    end
-
-    it "assigns the requested like as @like" do
-      get :show, id: @like
-      expect(assigns(:like)).to eq(@like)
-    end
-
-    it "renders the show template" do
-      get :show, id: @like
-      expect(response).to render_template :show
-    end
-  end
-
-  describe "GET new" do
-    before(:each) do
-      sign_in user
-      @dito = create(:like)
-    end
-
-    it "assigns a new like as @like" do
-      get :new
-      expect(assigns(:like)).to be_a_new(Like)
-    end
-
-    it "renders the new template" do
-      get :new
-      expect(response).to render_template :new
-    end
-  end
-
-  describe "GET edit" do
-    before(:each) do
-      sign_in user
-      @like = create(:like)
-    end
-
-    it "assigns the requested like as @like" do
-      get :edit, id: @like
-      expect(assigns(:like)).to eq(@like)
-    end
-  end
-
   describe "POST create" do
     before(:each) do
       sign_in user
