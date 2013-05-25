@@ -5,7 +5,7 @@ class User
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
-  after_initialize :init
+  #after_initialize :init
 
   # Associations
   has_many :socialproviders, dependent: :destroy
@@ -41,18 +41,13 @@ class User
   # Validations
   validates :email, confirmation: true, uniqueness: true
   validates :display_name, presence: true, uniqueness: true
-  validates :password, length: { minimum: 8 }
-  #validates :login, presence: true
+
+  # Attributes accessible
+  attr_accessible :login, :display_name, :email, :email_confirmation, :password, :points
 
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'display_name'
   attr_accessor :login, :email_confirmation
-
-  # Attribute to set when level changes
-  attr_accessor :level
-
-  # Attributes accessible
-  attr_accessible :login, :display_name, :email, :email_confirmation, :password, :points
 
   # Confirmable
   # field :confirmation_token,   :type => String
@@ -89,18 +84,19 @@ class User
   end
 
   def increment(options = {})
-    points = self.points
-    points += options[:points] || 1
-    update_attribute(:points, points)
+    inc = self.points
+    inc += options[:points] || 1
+    update_attributes(points: inc)
   end
 
   def decrement(options = {})
-    points = self.points
-    points -= options[:points] || 1
-    update_attribute(:points, points)
+    dec = self.points
+    dec -= options[:points] || 1
+    update_attributes(points: dec)
   end
 
   def init
+    super
     self.level = :rookie
     self.save
   end
