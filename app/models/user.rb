@@ -5,8 +5,6 @@ class User
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
-  #after_initialize :init
-
   # Associations
   has_many :socialproviders, dependent: :destroy
   has_many :activities
@@ -93,11 +91,5 @@ class User
     dec = self.points
     dec -= options[:points] || 1
     update_attributes(points: dec)
-  end
-
-  def init
-    super
-    self.level = :rookie
-    self.save
   end
 end
