@@ -1,11 +1,14 @@
 = title t('.title')
+.display_name
+  = @user.display_name
+.points
+  = @user.points
+.level
+  = @user.level
 
 = link_to t('.link.back'), users_path
 
-- if user_signed_in?
+- if user_signed_in? && current_user == @user
   = link_to t('.link.edit'), account_edit_path
   = link_to t('.link.socialproviders'), socialproviders_path
   = link_to t('.link.signout'), destroy_user_session_path, class: 'confirmation', method: :delete, confirm: t('layouts.application.topbar.signout_confirmation')
-
-= link_to t('.link.challenge.new'), new_challenge_path
-= link_to t('.link.challenge.all'), challenges_path

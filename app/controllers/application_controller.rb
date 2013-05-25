@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     ErrorsController::render_404
   end
 
-  # Show acces denied alert
+  # Show access denied alert
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => t('authentication.exception.access_denied')
   end

@@ -34,14 +34,15 @@ class DitosController < ApplicationController
 
   def create
     @challenge = Challenge.find(params[:challenge_id])
-    
+
     unless current_user == @challenge.user
       @dito = Dito.new(user: current_user, challenge: @challenge)
       @dito.save
 
-      @challenge.user.increment 1
+      # Incrementing user points
+      @challenge.user.increment
     end
-    
+
     respond_to do |format|
       format.js
     end
@@ -49,12 +50,13 @@ class DitosController < ApplicationController
 
   def destroy
     @challenge = Challenge.find(params[:challenge_id])
-  
+
     unless current_user == @challenge.user
       @dito = Dito.where(user: current_user, challenge: @challenge).first
       @dito.destroy
 
-      @challenge.user.decrement 1
+      # Decrementing user points
+      @challenge.user.decrement
     end
 
     respond_to do |format|
@@ -62,3 +64,4 @@ class DitosController < ApplicationController
     end
   end
 end
+

@@ -5,6 +5,8 @@ class User
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
+  after_initialize :init
+
   # Associations
   has_many :socialproviders, dependent: :destroy
   has_many :activities
@@ -46,6 +48,9 @@ class User
   # This is in addition to a real persisted field like 'display_name'
   attr_accessor :login, :email_confirmation
 
+  # Attribute to set when level changes
+  attr_accessor :level
+
   # Attributes accessible
   attr_accessible :login, :display_name, :email, :email_confirmation, :password, :points
 
@@ -83,13 +88,20 @@ class User
     end
   end
 
-  def increment(pnt)
-    self.points += pnt
-    self.save
+  def increment(options = {})
+    points = self.points
+    points += options[:points] || 1
+    update_attribute(:points, points)
   end
 
-  def decrement(pnt)
-    self.points -= pnt
+  def decrement(options = {})
+    points = self.points
+    points -= options[:points] || 1
+    update_attribute(:points, points)
+  end
+
+  def init
+    self.level = :rookie
     self.save
   end
 end
