@@ -59,7 +59,13 @@ en:
       email_confirm: 'Confirm email address'
       password: 'Password'
     registration:
-      title: 'Registration'
+      providers:
+        facebook: 'Mit Facebook anmelden'
+        google: 'Mit Google Plus anmelden'
+        persona: 'Mit Mozilla Persona anmelden'
+        twitter: 'Mit Twitter anmelden'
+      social: '… oder mit bestehenden Nutzerdaten anmelden'
+      title: 'Jetzt kostenlos anmelden!'
     social:
       added: 'Anmeldung via %{provider} wurde zum Benutzerkonto hinzugefügt.'
       added_and_signed_in: 'Anmeldung via %{provider} wurde zum Benutzerkonto %{email} hinzugefügt. Anmeldung erfolgreich.'

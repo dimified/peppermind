@@ -1,8 +1,27 @@
+- content_for :head do
+  = stylesheet_link_tag 'account', controller_name, media: 'screen'
+
 = title t('authentication.registration.title')
 
 = render 'form'
 
-= link_to 'Mozilla Persona', '/auth/persona/', id: 'mozilla-persona'
-= link_to 'Facebook', '/auth/facebook/'
-= link_to 'Google', '/auth/google/'
-= link_to 'Twitter', '/auth/twitter/'
+%h2= t('authentication.registration.social')
+
+#social-boxes
+  .clearfix
+    %div{class: 'social-box persona'}
+      %div{class: 'logo'}
+      %p
+        = link_to t('authentication.registration.providers.persona'), '/auth/persona/', id: 'mozilla-persona', class: 'btn btn-green'
+    %div{class: 'social-box twitter'}
+      %div{class: 'logo'}
+      %p
+        = link_to t('authentication.registration.providers.twitter'), '/auth/twitter/', class: 'btn btn-green'
+    %div{class: 'social-box facebook'}
+      %div{class: 'logo'}
+      %p
+        = link_to t('authentication.registration.providers.facebook'), '/auth/facebook/', class: 'btn btn-green'
+    %div{class: 'social-box google'}
+      %div{class: 'logo'}
+      %p
+        = link_to t('authentication.registration.providers.google'), '/auth/google/', class: 'btn btn-green'
