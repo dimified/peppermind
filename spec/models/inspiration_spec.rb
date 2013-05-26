@@ -9,8 +9,8 @@ describe Inspiration do
 	  expect(@inspiration).to be_valid
 	end
 
-	it "is invalid when description is more than 255 characters" do
-		expect(build(:inspiration, description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,q")).to_not be_valid
+	it "is invalid when description is more than 300 characters" do
+		expect(build(:inspiration, description: Faker::Lorem.characters(301))).to_not be_valid
 	end
 
  	it "is invalid when like is nil" do

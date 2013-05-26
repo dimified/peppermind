@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :inspiration do
-  	description {Faker::Lorem.characters(255)}
+  	description {Faker::Lorem.characters(300)}
   	like 1
   	user 1
   	challenge 1
