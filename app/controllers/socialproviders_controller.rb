@@ -65,7 +65,7 @@ class SocialprovidersController < ApplicationController
           # social provider is NOT already linked with this account -> add social provider to account
           else
             current_user.socialproviders.create provider: provider, uid: uid, display_name: display_name, email: email
-            flash[:notice] = t('authentication.social.added')
+            flash[:notice] = t('authentication.social.added', provider: provider.capitalize)
             redirect_to account_edit_path
           end
         end
@@ -85,6 +85,6 @@ class SocialprovidersController < ApplicationController
     @socialprovider = current_user.socialproviders.find(params[:id])
     @socialprovider.destroy
 
-    redirect_to account_edit_path
+    redirect_to account_edit_path, notice: t('authentication.social.removed', provider: @socialprovider.provider.capitalize)
   end
 end

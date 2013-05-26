@@ -1,3 +1,30 @@
+- content_for :javascript do
+  = javascript_include_tag 'jquery.tagsinput'
+
+  :javascript
+    $(document).ready(function() {
+      var noty_notice = noty({
+        text : "#{escape_javascript(t('.warning', link: link_to('Passwort vergessen', new_user_password_path)).html_safe)}",
+        layout : 'top',
+        type : 'warning',
+        timeout : false,
+        callback : {
+          onShow : function() {
+            var active;
+            active = true;
+            return $('#main-content, #menu').animate({
+              marginTop: $('#noty_top_layout_container').find('li').height() + 10
+            }, 500);
+          },
+          onClose : function() {
+            return $('#main-content, #menu').animate({
+              marginTop: 0
+            }, 500);
+          }
+        }
+      });
+    });
+
 = title t('.title')
 
 = simple_form_for @user, url: account_update_path, method: :post, defaults: { input_html: { class: 'styled_input' } } do |f|
@@ -10,25 +37,26 @@
 %h1= t('.social_provider')
 
 #social-boxes
-  - (@providers_user).each do |socialprovider|
-    .social-box
-      = socialprovider.provider
-      %div
-        #{t('.provider.name')}: #{socialprovider.display_name} (ID: #{socialprovider.uid})
-      %div
-        #{t('.provider.email')}: #{socialprovider.email}
-      %div
-        = link_to t('.provider.link.remove_service.text'), socialprovider, :confirm => t('.provider.link.remove_service.confirmation'), method: :delete, class: :confirmation
-  - (@providers_suggested).each do |provider|
-    .social-box
-      - case provider
-        - when 'persona'
-          = link_to 'Mozilla Persona', '/auth/persona/', id: 'mozilla-persona'
-        - when 'facebook'
-          = link_to 'Facebook', '/auth/facebook/'
-        - when 'google'
-          = link_to 'Google', '/auth/google/'
-        - when 'twitter'
-          = link_to 'Twitter', '/auth/twitter/'
-
-%p= t('.provider.bottomline')
+  .clearfix
+    - (@providers_user).each do |socialprovider|
+      %div{class: 'social-box ' + socialprovider.provider + ' enabled'}
+        %div{class: 'logo'}
+        %p
+        = link_to t('.provider.link.remove_service.text'), socialprovider, :confirm => t('.provider.link.remove_service.confirmation'), method: :delete, class: 'confirmation btn btn-danger'
+        %p
+          #{t('.provider.id')}: #{socialprovider.uid}
+        %p
+          #{t('.provider.email')}: #{socialprovider.email}
+    - (@providers_suggested).each do |provider|
+      %div{class: 'social-box ' + provider + ' disabled'}
+        %div{class: 'logo'}
+        %p
+        - case provider
+          - when 'persona'
+            = link_to t('.provider.link.add_service'), '/auth/persona/', id: 'mozilla-persona', class: 'btn btn-green'
+          - when 'facebook'
+            = link_to t('.provider.link.add_service'), '/auth/facebook/', class: 'btn btn-green'
+          - when 'google'
+            = link_to t('.provider.link.add_service'), '/auth/google/', class: 'btn btn-green'
+          - when 'twitter'
+            = link_to t('.provider.link.add_service'), '/auth/twitter/', class: 'btn btn-green'

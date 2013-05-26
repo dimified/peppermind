@@ -8,15 +8,16 @@ de:
         display_name: 'Anzeigename'
         email: 'E-Mail-Adresse'
       provider:
-        bottomline: 'Wenn du dich über einen Social Provider auf Peppermind registriert hast, wurde ein zufälliges Passwort für dich gewählt. Du kannst ein neues Passwort über den "Passwort vergessen?"-Link auf der Anmelden-Seite anfordern.'
         email: 'E-Mail-Adresse'
+        id: 'ID'
         link:
+          add_service: 'Benutzerkonto verknüpfen'
           remove_service:
             confirmation: 'Bist du sicher, dass du diesen Social Provider entfernen möchtest? Das Entfernen des letzten Social Providers kann zur Folge haben, dass du dich aus deinem Benutzerkonto ausschließt, wenn du kein Passwort für dein Benutzerkonto gewählt hast.'
             text: 'Verknüpfung aufheben'
-        name: 'Name'
       social_provider: 'Social Login Verknüpfungen'
       title: 'Profil bearbeiten'
+      warning: '<strong>Achtung:</strong> Wenn du dich über einen Social Provider auf Peppermind registriert hast, wurde ein zufälliges Passwort für dich gewählt. Du kannst ein neues Passwort über die %{link}-Seite anfordern. <strong>Bitte sperre dich nicht aus deinem eigenen Account aus!</strong>'
     validation:
       display_name:
         blank: 'Bitte einen Anzeigenamen angeben!'
@@ -66,6 +67,7 @@ de:
       created: 'Das Benutzerkonto wurde erfolgreich via %{provider} erstellt.'
       error: 'Fehler bei der Anmeldung via %{provider}.'
       invalid_data: '%{provider} schickte ungültige Daten für diese User-ID zurück.'
+      removed: 'Verknüpfung mit %{provider} aufgehoben.'
       success: 'Erfolgreich via %{provider} angemeldet.'
   challenge_inspirations:
     _form:
