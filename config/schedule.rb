@@ -1,5 +1,5 @@
 set :output, '/log/cron.log'
-set :environment, 'development' 
+set :environment, 'production' 
 
 # development
 every 1.minute do
