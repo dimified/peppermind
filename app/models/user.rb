@@ -1,5 +1,6 @@
 class User
   include Mongoid::Document
+  after_create :init
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -41,7 +42,7 @@ class User
   validates :display_name, presence: true, uniqueness: true
 
   # Attributes accessible
-  attr_accessible :login, :display_name, :email, :email_confirmation, :password, :level
+  attr_accessible :login, :display_name, :email, :email_confirmation, :password
 
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'display_name'
@@ -60,6 +61,11 @@ class User
 
   # Token authenticatable
   # field :authentication_token, :type => String
+
+  def init
+    self.level = :rookie
+    self.save
+  end
 
   # function to manage user's login via email or display_name
   def self.find_for_database_authentication(warden_conditions)
@@ -104,23 +110,28 @@ class User
     level = self.level
 
     case
+      # Rookie
       when 0 <= points && points <= 99
         unless level == :rookie
-          update_attributes(level: :rookie)
+          self.level = :rookie
         end
+      # Seeker
       when 100 <= points && points <= 199
         unless level == :seeker
-          update_attributes(level: :seeker)
+          self.level = :seeker
         end
+      # Inspirer
       when 200 <= points && points <= 299
         unless level == :inspirer
-          update_attributes(level: :inspirer)
+          self.level = :inspirer
         end
+      # Solver
       when 300 <= points
         unless level == :solver
-          update_attributes(level: :solver)
+          self.level = :solver
         end
     end
+    self.save
   end
 end
 

@@ -47,7 +47,8 @@ describe User do
 	end
 
   it "changes the level of user from seeker to rookie" do
-		user = create(:user, points: 99, level: :seeker)
+		user = create(:user, points: 99)
+		user.level = :seeker
 		assert_equal(user.level, :seeker)
 		assert_equal(user.points, 99)
 		expect {
@@ -56,7 +57,8 @@ describe User do
 	end
 
 	it "changes the level of user from seeker to inspirer" do
-		user = create(:user, points: 200, level: :seeker)
+		user = create(:user, points: 200)
+		user.level = :seeker
 		assert_equal(user.level, :seeker)
 		assert_equal(user.points, 200)
 		expect {
@@ -65,7 +67,8 @@ describe User do
 	end
 
   it "changes the level of user from inspirer to seeker" do
-		user = create(:user, points: 199, level: :inspirer)
+		user = create(:user, points: 199)
+		user.level = :inspirer
 		assert_equal(user.level, :inspirer)
 		assert_equal(user.points, 199)
 		expect {
@@ -74,7 +77,8 @@ describe User do
 	end
 
 	it "changes the level of user from inspirer to solver" do
-		user = create(:user, points: 300, level: :inspirer)
+		user = create(:user, points: 300)
+		user.level = :inspirer
 		assert_equal(user.level, :inspirer)
 		assert_equal(user.points, 300)
 		expect {
@@ -83,7 +87,8 @@ describe User do
 	end
 
   it "changes the level of user from solver to inspirer" do
-		user = create(:user, points: 299, level: :solver)
+		user = create(:user, points: 299)
+		user.level = :solver
 		assert_equal(user.level, :solver)
 		assert_equal(user.points, 299)
 		expect {
