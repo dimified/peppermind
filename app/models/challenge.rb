@@ -50,7 +50,7 @@
     self.save
   end
 
-  def self.is_over
+  def self.rewards
     # challenges may not exist
     if self.empty?
       puts "#{Time.now}: No Challenges exist"
