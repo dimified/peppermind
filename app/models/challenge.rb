@@ -51,26 +51,44 @@
   end
 
   def self.is_over
+    # challenges may not exist
     if self.empty?
       puts "#{Time.now}: No Challenges exist"
     else
       self.all.each do |challenge|
+
+        # only open challenges are relevant which are over or within actual time
         if Time.now >= challenge.duration && challenge.status == :open
-          puts "#{Time.now}: Time is over for challenge (#{challenge.duration.to_s})"
+          puts "#{Time.now}: Time is over for challenge (#{challenge.duration})"
 
-          # Change status of Challenge to :closed
-          challenge.status = :closed
-          challenge.save
-          puts "Challenge status updated: [id: #{challenge.id}, status: #{challenge.status}]"
+          # inspirations may not exist
+          unless challenge.inspirations.empty?
 
-          # Add points to the users of the first three most liked inspirations
-          challenge.inspirations.desc(:like).limit(3).each do |top|
-            points = top.like * 5
-            top.user.increment(points: points)
-            puts "User #{top.user.id} gets #{points} Points for the inspiration #{top.id}"
+            # add points to the users of the first three most liked inspirations
+            challenge.inspirations.desc(:like).limit(3).each do |top|
+              points = top.like * 5
+              top.user.add_points(points: points)
+              puts "User #{top.user.id} gets #{points} Points for the inspiration #{top.id}"
+            end
+
+            # change status of Challenge to :closed
+            challenge.status = :closed
+
+          # if so the due date will be extended
+          else
+            challenge.duration += 14.days
           end
+
+          # result statement
+          challenge.save
+          puts "Challenge status updated: [id: #{challenge.id}, status: #{challenge.status}, time: #{challenge.duration}]"
+
         else
-          puts "#{Time.now}: Time is NOT over for challenge: [id: #{challenge.id}, status: #{challenge.status}, time: #{challenge.duration.to_date}]"
+          if challenge.status == :open
+            puts "#{Time.now}: [OPEN] Still open challenge: [id: #{challenge.id}, status: #{challenge.status}, time: #{challenge.duration}]"
+          # elsif challenge.status == :closed
+          #   puts "#{Time.now}: [CLOSED] Already closed challenge: [id: #{challenge.id}, status: #{challenge.status}, time: #{challenge.duration.to_date}]"
+          end
         end
       end
     end

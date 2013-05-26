@@ -39,11 +39,4 @@ describe Challenge do
     challenge.remove_dito
     expect(challenge.dito).to eq(0)
   end
-
-	# it "sets the opened challenge to status closed" do
-	#   challenge = create(:challenge, duration: Date.new(2013, 05, 01), status: :open)
-	#   expect{
-	#   	Challenge.send(:is_over)
-	#   }.to change(challenge, :status).from(:open).to(:closed)
- #  end
 end
