@@ -59,6 +59,7 @@ de:
       email_confirm: 'E-Mail-Adresse bestätigen'
       password: 'Passwort'
     registration:
+      cancel: 'Abbrechen'
       providers:
         facebook: 'Mit Facebook anmelden'
         google: 'Mit Google Plus anmelden'

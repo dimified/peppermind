@@ -1,6 +1,6 @@
 = title t('.title')
 
 = simple_form_for([@challenge, @inspiration], defaults: { input_html: { class: 'styled_input' } }) do |f|
-  = f.input :description, as: :text, placeholder: t('challenge_inspirations._form.placeholder.description')
+  = f.input :description, as: :text, placeholder: t('challenge_inspirations._form.placeholder.description'), autofocus: true
   = f.submit t('challenge_inspirations._form.button.submit'), class: 'btn green-button'
   = link_to t('challenge_inspirations._form.button.cancel'), @challenge, class: 'btn btn-danger'
