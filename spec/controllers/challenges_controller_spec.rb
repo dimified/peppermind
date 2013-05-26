@@ -81,9 +81,9 @@ describe ChallengesController do
         }.to change(Challenge, :count).by(1)
       end
 
-      it "redirects to the challenge" do
+      it "redirects to the new_challenge_inspiration_path" do
         post :create, challenge: attributes_for(:challenge)
-        expect(response).to redirect_to(challenge_path(1))
+        expect(response).to redirect_to(new_challenge_inspiration_path(1))
       end
     end
 
