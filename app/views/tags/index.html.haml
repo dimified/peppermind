@@ -3,4 +3,4 @@
 %ul#tagcloud
   - @tags.each do |tag|
     %li
-      = link_to tag[0], tag_path(URI.escape(tag[0])), { style: 'font-size: ' + tag[1] + 'em' }
+      = link_to tag[0], tag_path(URI.escape(tag[0])), { style: 'font-size: ' + tag[1] + '%' }
