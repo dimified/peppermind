@@ -277,9 +277,6 @@ textarea.styled_input
   font-size: 0.8em
   border-radius: 2px
 
-.btn:not(#toggle-social)
-  white-space: nowrap
-
   &:hover, &:focus, &:active
     border-color: rgba(21, 127, 0, 0.5)
     border-bottom-color: rgba(21, 127, 0, 0.7)
@@ -293,6 +290,9 @@ textarea.styled_input
     border-bottom-color: rgba(21, 127, 0, 0.7)
     background-color: rgb(130, 217, 0)
     @include background-image(linear-gradient(top, $Hlightgreen, $Hdarkgreen))
+
+.btn:not(#toggle-social)
+  white-space: nowrap
 
 .btn.btn-danger
   color: rgb(153, 0, 0)
