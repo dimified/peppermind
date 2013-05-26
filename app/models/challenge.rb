@@ -4,6 +4,7 @@
   include Mongoid::Taggable
 
   before_validation :validate_date
+  after_create :init
 
   # Associations
   belongs_to :user
@@ -15,10 +16,13 @@
   field :description, type: String
   field :duration, type: Date
   field :dito, type: Integer, default: 0
-  field :status, type: Symbol
+  field :status, type: Symbol, default: :open
 
   # Formatted date string
-  attr_accessor :duration_string, :status
+  attr_accessor :duration_string
+
+  # Fields accessable by the user
+  attr_accessible :question, :description, :duration_string
 
   # Validations
   validates :question, presence: true, length: { maximum: 100 }
@@ -26,6 +30,11 @@
 
   # Number of Elements per Page
   paginates_per 10
+
+  def init
+    self.status = :open
+    self.save
+  end
 
   def add_dito
     self.dito += 1
@@ -42,23 +51,27 @@
   end
 
   def self.is_over
-    self.all.each do |challenge|
-      if Time.now >= challenge.duration
-        puts "#{Time.now}: Time is over for challenge (#{challenge.duration.to_s})"
+    if self.empty?
+      puts "#{Time.now}: No Challenges exist"
+    else
+      self.all.each do |challenge|
+        if Time.now >= challenge.duration && challenge.status == :open
+          puts "#{Time.now}: Time is over for challenge (#{challenge.duration.to_s})"
 
-        # Change status of Challenge to :closed
-        challenge.status = :closed
-        challenge.save
-        puts "Challenge status updated: [id: #{challenge.id}, status: #{challenge.status}]"
+          # Change status of Challenge to :closed
+          challenge.status = :closed
+          challenge.save
+          puts "Challenge status updated: [id: #{challenge.id}, status: #{challenge.status}]"
 
-        # Add points to the users of the first three most liked inspirations
-        challenge.inspirations.desc(:like).limit(3).each do |top|
-          points = top.like * 5
-          top.user.increment(points: points)
-          puts "User #{top.user.id} gets #{points} Points for the inspiration #{top.id}"
+          # Add points to the users of the first three most liked inspirations
+          challenge.inspirations.desc(:like).limit(3).each do |top|
+            points = top.like * 5
+            top.user.increment(points: points)
+            puts "User #{top.user.id} gets #{points} Points for the inspiration #{top.id}"
+          end
+        else
+          puts "#{Time.now}: Time is NOT over for challenge: [id: #{challenge.id}, status: #{challenge.status}, time: #{challenge.duration.to_date}]"
         end
-      else
-        puts "#{Time.now}: Time is NOT over for challenge: [id: #{challenge.id}, status: #{challenge.status}, time: #{challenge.duration.to_date}]"
       end
     end
   end

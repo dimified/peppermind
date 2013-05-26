@@ -9,7 +9,7 @@ class DitosController < ApplicationController
       @dito.save
       @challenge.add_dito
 
-      @challenge.user.increment
+      @challenge.user.add_points
       @challenge.user.update_user_level
     end
 
@@ -26,7 +26,7 @@ class DitosController < ApplicationController
       @dito.destroy
       @challenge.remove_dito
 
-      @challenge.user.decrement
+      @challenge.user.remove_points
       @challenge.user.update_user_level
     end
 

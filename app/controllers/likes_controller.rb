@@ -9,7 +9,7 @@ class LikesController < ApplicationController
       @like.save
       @inspiration.add_like
 
-      @inspiration.user.increment(points: 3)
+      @inspiration.user.add_points(points: 3)
       @inspiration.user.update_user_level
     end
 
@@ -25,7 +25,7 @@ class LikesController < ApplicationController
       @like = Like.where(user: current_user, inspiration: @inspiration).first
       @like.destroy
       @inspiration.remove_like
-      @inspiration.user.decrement(points: 3)
+      @inspiration.user.remove_points(points: 3)
       @inspiration.user.update_user_level
     end
 

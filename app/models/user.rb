@@ -41,7 +41,7 @@ class User
   validates :display_name, presence: true, uniqueness: true
 
   # Attributes accessible
-  attr_accessible :login, :display_name, :email, :email_confirmation, :password, :points, :level
+  attr_accessible :login, :display_name, :email, :email_confirmation, :password, :level
 
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'display_name'
@@ -81,22 +81,22 @@ class User
     end
   end
 
-  def increment(options = {})
-    inc = self.points
-    inc += options[:points] || 1
-    update_attributes(points: inc)
+  def add_points(options = {})
+    self.points += options[:points] || 1
+    self.save
   end
 
-  def decrement(options = {})
-    dec = self.points
-    dec -= options[:points] || 1
+  def remove_points(options = {})
+    points = options[:points] || 1
 
-    # only if final points equal 0 or above
-    if dec >= 0
-      update_attributes(points: dec)
+    if self.points <= 0
+      self.points = 0
+    elsif self.points < points
+      self.points -= self.points
     else
-      update_attributes(points: 0)
+      self.points -= points
     end
+    self.save
   end
 
   def update_user_level

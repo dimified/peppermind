@@ -23,18 +23,18 @@ describe User do
 
   it "increments user points" do
     expect {
-      @user.increment
+      @user.add_points
     }.to change(@user, :points).by(1)
   end
 
   it "decrements user points" do
     expect {
-      @user.decrement
+      @user.remove_points
     }.to change(@user, :points).by(-1)
   end
 
   it "decrements only until 0 points" do
-  	@user.decrement(points: 10)
+  	@user.remove_points(points: 10)
     expect(@user.points).to eq(0)
   end
 
