@@ -165,7 +165,7 @@ de:
         profile: 'Mein Profil'
         signin: 'Anmelden'
         signout: 'Abmelden'
-        tags: 'Tags'
+        tags: 'Suche in Kategorien'
       topbar:
         back: 'Vorherige Seite'
         menu: 'Hauptmenü'
@@ -177,8 +177,9 @@ de:
     button_okay: 'Ja, wirklich!'
   tags:
     add: 'Tag+'
-    title: 'Tags'
-    title_tagged: 'Challenges beschlagwortet mit "%{tag}"'
+    title: 'Suche nach Challenges in Kategorien'
+    title_tagged: 'Challenges kategorisiert mit "%{tag}"'
+    title_tagged_short: 'Challenges kategorisiert mit'
   time:
     formats:
       default: '%d.%m.%Y, %H:%M'

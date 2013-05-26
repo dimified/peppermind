@@ -1,8 +1,14 @@
-= title t('tags.title_tagged', tag: @tag)
+- content_for :head do
+  = stylesheet_link_tag 'challenges', controller_name, media: 'screen'
 
-%ul
-  - @challenges.each do |challenge|
-    %li
-      = link_to challenge.question, challenge_path(challenge.id)
+- title t('tags.title_tagged', tag: @tag)
+
+%h1
+  = t('tags.title_tagged_short')
+  %i.icon-tag
+  = @tag
+
+#challenges
+  = render @challenges
 
 = paginate @challenges
