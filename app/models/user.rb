@@ -90,7 +90,13 @@ class User
   def decrement(options = {})
     dec = self.points
     dec -= options[:points] || 1
-    update_attributes(points: dec)
+
+    # only if final points equal 0 or above
+    if dec >= 0
+      update_attributes(points: dec)
+    else
+      update_attributes(points: 0)
+    end
   end
 
   def update_user_level
@@ -117,3 +123,4 @@ class User
     end
   end
 end
+

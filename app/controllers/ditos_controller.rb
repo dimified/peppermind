@@ -7,6 +7,7 @@ class DitosController < ApplicationController
     unless current_user == @challenge.user
       @dito = Dito.new(user: current_user, challenge: @challenge)
       @dito.save
+      @challenge.add_dito
 
       @challenge.user.increment
       @challenge.user.update_user_level
@@ -23,6 +24,7 @@ class DitosController < ApplicationController
     unless current_user == @challenge.user
       @dito = Dito.where(user: current_user, challenge: @challenge).first
       @dito.destroy
+      @challenge.remove_dito
 
       @challenge.user.decrement
       @challenge.user.update_user_level

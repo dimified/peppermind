@@ -28,4 +28,10 @@ describe Inspiration do
       @inspiration.remove_like
     }.to change(@inspiration, :like).by(-1)
   end
+
+  it "decrements like only if likes are 0 or above" do
+    inspiration = build(:inspiration, like: 0)
+    inspiration.remove_like
+    expect(inspiration.like).to eq(0)
+  end
 end

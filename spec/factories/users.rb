@@ -3,7 +3,7 @@ FactoryGirl.define do
 		display_name {Faker::Internet.user_name}
 		password "gravity1"
 		email {Faker::Internet.email}
-		points 0
+		points 1
 		level :rookie
 
 		factory :invalid_user do

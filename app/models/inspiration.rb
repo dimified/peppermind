@@ -20,7 +20,11 @@ class Inspiration
   end
 
   def remove_like
-    self.like -= 1
+    if self.like > 0
+      self.like -= 1
+    else
+      self.like = 0
+    end
     self.save
   end
 end

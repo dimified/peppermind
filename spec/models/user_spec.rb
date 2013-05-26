@@ -33,6 +33,11 @@ describe User do
     }.to change(@user, :points).by(-1)
   end
 
+  it "decrements only until 0 points" do
+  	@user.decrement(points: 10)
+    expect(@user.points).to eq(0)
+  end
+
   it "changes the level of user from rookie to seeker" do
 		user = create(:user, points: 100)
 		assert_equal(user.level, :rookie)
