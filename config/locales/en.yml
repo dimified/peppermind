@@ -1,6 +1,6 @@
 en:
   global:
-    gravatar: "Gravatar"
+    gravatar: 'Gravatar'
   account:
     edit:
       button:

@@ -267,7 +267,7 @@ textarea.styled_input
 /* BUTTONS */
 
 .btn
-  display: block
+  display: inline-block
   margin: 10px 0
   padding: 5px 15px
   border: 1px solid rgb(212, 212, 212)
@@ -298,6 +298,10 @@ textarea.styled_input
 
 .btn:not(#toggle-social)
   white-space: nowrap
+
+.btn#toggle-social, .social-button
+  display: block
+  margin: 0
 
 .btn.btn-danger
   color: rgb(153, 0, 0)
