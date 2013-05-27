@@ -32,7 +32,7 @@ class SocialprovidersController < ApplicationController
       #  provider and uid ARE valid
       if provider != '' and uid != ''
         # user is NOT signed in
-        if !user_signed_in?
+        if !cookies['_peppermind_session']
           auth = Socialprovider.where(provider: provider, uid: uid).first
           # user HAS already signed in with this social provider -> sign in
           if auth
