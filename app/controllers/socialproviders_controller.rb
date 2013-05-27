@@ -63,15 +63,16 @@ class SocialprovidersController < ApplicationController
             redirect_to account_edit_path
           # social provider is NOT already linked with this account
           else
+            existinguser = User.where(_id: cookies[:user_id]).first
             # requested account linked with other user?
             if Socialprovider.where(provider: provider, uid: uid).first
-              flash[:notice] = t('authentication.social.already_linked_with_other', provider: provider.capitalize)
-              redirect_to account_edit_path
+              flash[:error] = t('authentication.social.already_linked_with_other', provider: provider.capitalize)
+              sign_in_and_redirect :user, existinguser
             # add social provider to account
             else
-              current_user.socialproviders.create provider: provider, uid: uid, display_name: display_name, email: email
+              existinguser.socialproviders.create provider: provider, uid: uid, display_name: display_name, email: email
               flash[:notice] = t('authentication.social.added', provider: provider.capitalize)
-              redirect_to account_edit_path
+              sign_in_and_redirect :user, existinguser
             end
           end
         end

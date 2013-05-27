@@ -22,12 +22,12 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    cookies[:user_id] = current_user.id
+    cookies[:user_id] = current_user.id unless cookies[:user_id]
     user_path resource
   end
 
-  def after_sign_out_path
-    cookies.delete :login
+  def after_sign_out_path_for(resoure)
+    cookies.delete :user_id
     root_path
   end
 end
