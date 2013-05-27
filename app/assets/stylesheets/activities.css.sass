@@ -1,14 +1,18 @@
+@import 'colors.css.sass'
+
 #main #main-content
   margin: 0
 
 .title
   margin: 0
   padding: 10px
-  text-indent: 10px
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1))
-  color: rgba(65, 65, 65, 1)
-  box-shadow: 0px 0px 2px 0px black
-  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5)
+  text-align: center
+  background: linear-gradient($lightgreen, $Blightgreen)
+  color: rgb(255, 255, 255)
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5)
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2)
+  font-size: 1em
+  position: relative
 
 nav[role='sub-menu']
   ul
@@ -16,9 +20,65 @@ nav[role='sub-menu']
     li
 
 .activity
-  height: 80px
+  height: 95px
   border-bottom: 1px solid rgb(170, 170, 170)
   box-shadow: 0px 1px 0px white
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))
 
-  &:hover, &:active
-    background: rgba(0, 0, 0, 0.1)
+  &:hover
+    background: rgba(255, 255, 255, 0.7)
+
+  &:active
+    background: rgba(162, 245, 112, 0.5)
+
+  .tile-header
+    padding: 5px 10px
+    font-size: 0.8em
+
+  .deleted
+    color: red
+
+  .user-avatar
+    width: 50px
+    height: 50px
+    margin-left: 10px
+    border-radius: 4px
+    float: left
+
+  .speech-bubble
+    font-size: 0.7em
+    position: relative
+    background: white
+    border: 1px solid rgba(0, 0, 0, 0.3)
+    margin: 0px 10px 0px 75px
+    border-radius: 4px
+    padding: 5px 10px 5px 10px
+    box-shadow: 0px 1px white
+
+    &:after, &:before
+      right: 100%
+      border: solid transparent
+      content: " "
+      height: 0
+      width: 0
+      position: absolute
+      pointer-events: none
+
+    &:after
+      border-color: rgba(255, 255, 255, 0)
+      border-right-color: #fff
+      border-width: 5px
+      top: 50%
+      margin-top: -5px
+
+    &:before
+      border-color: rgba(0, 0, 0, 0)
+      border-right-color: #B3B3B3
+      border-width: 6px
+      top: 50%
+      margin-top: -6px
+
+  .time
+    margin-left: 15px
+    font-size: 0.7em
+

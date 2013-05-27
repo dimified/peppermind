@@ -72,6 +72,7 @@ class ChallengesController < ApplicationController
   def destroy
     @challenge = Challenge.find(params[:id])
     @challenge.destroy
+    delete_activity @challenge
 
     respond_to do |format|
       format.html { redirect_to challenges_url, notice: t('challenges.alert.deleted') }

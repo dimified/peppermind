@@ -2,11 +2,12 @@
   = javascript_include_tag 'endless_scroll'
 
 = title t('.title')
+= link_to new_challenge_path, { class: 'menu-btn' } do
+  .icon-plus
+-#%nav{role: 'sub-menu'}
+  -#%ul
+    -#%li= link_to t('.link.all_challenges'), challenges_path
 
-%nav{role: 'sub-menu'}
-  %ul
-    %li= link_to t('.link.all_challenges'), challenges_path
-    %li= link_to t('.link.new_challenge'), new_challenge_path
 
 #activities
   = render @activities

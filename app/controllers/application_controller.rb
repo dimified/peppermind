@@ -16,6 +16,11 @@ class ApplicationController < ActionController::Base
     current_user.activities.create! action: action, trackable: trackable
   end
 
+  # Delete activities
+  def delete_activity(trackable)
+    current_user.activities.find(trackable).destroy
+  end
+
   # Convert Date in human-readable format
   def convert_date(date)
     DateTime.parse(date.to_s).strftime('%d.%m.%Y')

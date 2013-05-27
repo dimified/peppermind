@@ -1,6 +1,16 @@
-#{time activity.created_at, class: :timeago}:
-= link_to(activity.user.display_name, activity.user)
+.tile-header
+  %span.user
+    = link_to(activity.user.display_name, activity.user)
+  - if challenge
+    %span.message
+      = t('activities.challenge._create.exists')
+
+= link_to(image_tag('default_avatar.png', class: 'user-avatar'), activity.user)
+
 - if challenge
-  = t('activities.challenge._create.exists', link: link_to(challenge.question, challenge)).html_safe
-- else
-  = t('activities.challenge._create.deleted')
+  = link_to challenge do
+    .speech-bubble
+      = challenge.question.html_safe
+  %span.time
+    = t('activities.index.was')
+    #{time activity.created_at, class: :timeago}

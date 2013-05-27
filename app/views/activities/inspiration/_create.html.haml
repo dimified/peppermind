@@ -1,6 +1,16 @@
-#{time activity.created_at, class: :timeago}:
-= link_to(activity.user.display_name, activity.user)
+.tile-header
+  %span.user
+    = link_to(activity.user.display_name, activity.user)
+  - if activity.trackable
+    %span.message
+      = t('activities.inspiration._create.exists')
+
+= link_to(image_tag('default_avatar.png', class: 'user-avatar'), activity.user)
+
 - if activity.trackable
-  = t('activities.inspiration._create.exists', link: link_to('Inspiration', challenge_inspiration_path(activity.trackable.challenge_id, activity.trackable._id))).html_safe
-- else
-  = t('activities.inspiration._create.deleted')
+  = link_to challenge_inspiration_path(activity.trackable.challenge_id, activity.trackable_id) do
+    .speech-bubble
+      = tracked_inspiration(activity.trackable_id).description.split.slice(0, 15).join(" ") + '...'
+  %span.time
+    = t('activities.index.was')
+    #{time activity.created_at, class: :timeago}
