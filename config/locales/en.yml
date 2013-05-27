@@ -28,9 +28,9 @@ en:
   activities:
     challenge:
       _create:
-        exists: 'created the challenge:'
+        exists: 'created the challenge'
       _update:
-        exists: 'updated challenge:'
+        exists: 'updated challenge'
     index:
       link:
         all_challenges: 'All Challenges'
@@ -39,7 +39,7 @@ en:
       was: 'This was'
     inspiration:
       _create:
-        exists: 'created the inspiration:'
+        exists: 'created the inspiration'
   authentication:
     exception:
       access_denied: 'You are not authorized to access this page.'
