@@ -73,6 +73,7 @@ en:
       added: 'Anmeldung via %{provider} wurde zum Benutzerkonto hinzugefügt.'
       added_and_signed_in: 'Anmeldung via %{provider} wurde zum Benutzerkonto %{email} hinzugefügt. Anmeldung erfolgreich.'
       already_linked: '%{provider} ist bereits mit dem Benutzerkonto verknüpft.'
+      already_linked_with_other: 'Dieses Konto bei %{provider} ist bereits mit einem anderem Benutzerkonto verknüpft.'
       created: 'Das Benutzerkonto wurde erfolgreich via %{provider} erstellt.'
       error: 'Fehler bei der Anmeldung via %{provider}.'
       invalid_data: '%{provider} schickte ungültige Daten für diese User-ID zurück.'

@@ -32,7 +32,7 @@ class SocialprovidersController < ApplicationController
       #  provider and uid ARE valid
       if provider != '' and uid != ''
         # user is NOT signed in
-        if !cookies[:login]
+        if !cookies[:user_id]
           auth = Socialprovider.where(provider: provider, uid: uid).first
           # user HAS already signed in with this social provider -> sign in
           if auth
@@ -58,14 +58,16 @@ class SocialprovidersController < ApplicationController
         # user IS signed in
         else
           # social prodider IS already linked with this account
-          if Socialprovider.where(provider: provider, user_id: current_user.id).first
+          if Socialprovider.where(provider: provider, user_id: cookies[:user_id]).first
             flash[:notice] = t('authentication.social.already_linked', provider: provider.capitalize)
             redirect_to account_edit_path
-          # social provider is NOT already linked with this account -> add social provider to account
+          # social provider is NOT already linked with this account
           else
-            # debug output
+            # requested account linked with other user?
             if Socialprovider.where(provider: provider, uid: uid).first
-              raise 'DEBUG_OUTPUT'.to_yaml
+              flash[:notice] = t('authentication.social.already_linked_with_other', provider: provider.capitalize)
+              redirect_to account_edit_path
+            # add social provider to account
             else
               current_user.socialproviders.create provider: provider, uid: uid, display_name: display_name, email: email
               flash[:notice] = t('authentication.social.added', provider: provider.capitalize)
