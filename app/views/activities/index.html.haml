@@ -3,8 +3,10 @@
 
 = title t('.title')
 
-= link_to t('.link.all_challenges'), challenges_path
-= link_to t('.link.new_challenge'), new_challenge_path
+%nav{role: 'sub-menu'}
+  %ul
+    %li= link_to t('.link.all_challenges'), challenges_path
+    %li= link_to t('.link.new_challenge'), new_challenge_path
 
 #activities
   = render @activities

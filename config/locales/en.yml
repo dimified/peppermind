@@ -35,7 +35,7 @@ en:
       link:
         all_challenges: 'All Challenges'
         new_challenge: 'Neue Challenge'
-      title: 'Activity Stream'
+      title: 'What happened up to now'
     inspiration:
       _create:
         deleted: 'hat eine Inspiration beigetragen, welche seit dem gelöscht worden ist.'
