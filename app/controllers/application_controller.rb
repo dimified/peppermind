@@ -20,4 +20,14 @@ class ApplicationController < ActionController::Base
   def convert_date(date)
     DateTime.parse(date.to_s).strftime('%d.%m.%Y')
   end
+
+  def after_sign_in_path_for(resource)
+    cookies[:login] = true
+    user_path resource
+  end
+
+  def after_sign_out_path
+    cookies.delete :login
+    root_path
+  end
 end
