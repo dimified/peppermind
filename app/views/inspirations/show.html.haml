@@ -1,11 +1,11 @@
-= title t('.title')
-
-= @inspiration.description
-= @inspiration.user.display_name
+= title t('.title', user: @inspiration.user.display_name, challenge: @challenge.question)
 
 = render 'inspirations/count_likes'
+
 - if current_user != @inspiration.user && current_user
-  = render 'likes/form' 
+  = render 'likes/form'
+
+%p= @inspiration.description
 
 - if can? :update, @inspiration
   = link_to t('.link.edit'), edit_challenge_inspiration_path(@challenge, @inspiration), class: 'btn green-button'

@@ -35,7 +35,7 @@ en:
       link:
         all_challenges: 'All Challenges'
         new_challenge: 'Neue Challenge'
-      title: 'What happened up to now'
+      title: 'What happened up to now…'
     inspiration:
       _create:
         deleted: 'hat eine Inspiration beigetragen, welche seit dem gelöscht worden ist.'
@@ -114,6 +114,10 @@ en:
       title: 'Was bewegt dich !?'
     show:
       created: 'Created by %{user} at'
+      description: 'Description'
+      duration: 'Challenge läuft bis:'
+      ditos: 'Ditos:'
+      inspirations: 'Inspirations'
       link:
         challenges: 'All challenges'
         dashboard: 'Dashboard'
@@ -153,7 +157,7 @@ en:
         delete: 'Löschen'
         delete_confirm: 'Möchtest du die Inspiration wirklich löschen?'
         edit: 'Bearbeiten'
-      title: 'Inspiration'
+      title: 'Inspiration von »%{user}« zur Challenge »%{challenge}«'
   layouts:
     application:
       navigation:
@@ -178,33 +182,32 @@ en:
   tags:
     add: 'Tag+'
     title: 'Suche nach Challenges in Kategorien'
-    title_tagged: 'Challenges kategorisiert mit "%{tag}"'
+    title_tagged: 'Challenges kategorisiert mit »%{tag}«'
     title_tagged_short: 'Challenges kategorisiert mit'
   time:
     formats:
       default: '%d.%m.%Y, %H:%M'
   users:
-    edit:
-      errors:
-        title: '%{count} prohibited this user from being saved:'
-      link:
-        back: 'Back'
-        profile: 'Profile'
-      title: 'Edit user'
+    alert:
+      missing: Ein User mit dieser ID existiert nicht.
     index:
       title: 'Show all users'
     login:
       title: 'Sign in'
     show:
+      ditos:
+        one: '(%{count} Dito)'
+        other: '(%{count} Ditos)'
+      last_challenges: 'Die letzten 5 Challenges von %{user}:'
       link:
-        back: 'Back'
         challenge:
           all: 'All challenges'
           new: 'New challenge'
         edit: 'Edit'
-        signout: 'Sign out'
-        socialproviders: 'Social Providers'
-      title: 'Profile'
+      title: 'Profil von »%{user}«'
+      user_level:
+        one: '%{level} (%{count} Punkt)'
+        other: '%{level} (%{count} Punkte)'
   views:
     pagination:
       first: '&laquo; First'

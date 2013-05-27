@@ -14,7 +14,7 @@ module ApplicationHelper
 
   def title(page_title)
     content_for(:title, page_title.to_s + ' - ' + Rails.application.class.parent_name)
-    content_tag(:div, page_title, class: 'title')
+    content_tag(:h1, page_title, class: 'title')
   end
 
   def time(time, options = {})

@@ -1,36 +1,45 @@
 = title @challenge.question
 
-= @challenge.description
+%p
+  #{t('.created', user: @challenge.user.display_name)}
+  = time @challenge.created_at
+  = render 'challenges/count_ditos'
 
-= render 'challenges/count_ditos'
 - if current_user != @challenge.user && current_user
   = render 'ditos/form'
 
-#{t('.created', user: @challenge.user.display_name)}
-= time @challenge.created_at
+%h3= t('.description')
+
+%p= @challenge.description
+
+- if @challenge.tags_array.count > 0
+  %h3= t('tags.title')
+
+  %ul
+    - @challenge.tags_array.each do |tag|
+      %li
+        = link_to tag, tag_path(URI.escape(tag))
+
+%h3= t('.duration')
 %div= @challenge.duration_string
 
-%p
-  #{t('.updated')} #{time @challenge.updated_at}
+- if @inspirations.count > 0
+  %h3= t('.inspirations')
 
-%h3= t('tags.title')
-
-%ul
-  - @challenge.tags_array.each do |tag|
-    %li
-      = link_to tag, tag_path(URI.escape(tag))
+  - @inspirations.each do |inspiration|
+    %p= link_to inspiration.description, challenge_inspiration_path(@challenge, inspiration)
 
 %nav
-  = link_to t('.link.dashboard'), root_path
-  = link_to t('.link.challenges'), challenges_path
-  = link_to t('.link.inspiration'), new_challenge_inspiration_path(@challenge.id)
+  = link_to t('.link.dashboard'), root_path, class: 'btn green-button'
+  = link_to t('.link.challenges'), challenges_path, class: 'btn green-button'
+  = link_to t('.link.inspiration'), new_challenge_inspiration_path(@challenge.id), class: 'btn green-button'
 
   - if can? :update, @challenge
-    = link_to t('.link.edit'), edit_challenge_path(@challenge)
+    = link_to t('.link.edit'), edit_challenge_path(@challenge), class: 'btn green-button'
 
   - if can? :destroy, @challenge
-    = link_to t('.link.delete'), challenge_path(@challenge), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation'
+    = link_to t('.link.delete'), challenge_path(@challenge), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'
 
-- @inspirations.each do |inspiration|
-  = link_to inspiration.description, challenge_inspiration_path(@challenge, inspiration)
-
+%p
+  %small
+    #{t('.updated')} #{time @challenge.updated_at}
