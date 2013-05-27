@@ -12,7 +12,7 @@ $('#mozilla-persona').click (event) ->
         url: '/auth/persona/callback'
         data:
           assertion: assertion
-        success: (res, status, xhr) ->
+        success: () ->
           $loadingOverlay.removeClass('loading-overlay')
           $loadingSpinner.hide();
           window.location.reload()
