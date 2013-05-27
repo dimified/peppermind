@@ -1,4 +1,6 @@
 de:
+  global:
+    gravatar: "Gravatar"
   account:
     edit:
       button:

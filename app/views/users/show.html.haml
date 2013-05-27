@@ -1,4 +1,5 @@
 = title t('.title', user: @user.display_name)
+= image_tag avatar(@user, 48), alt: t("global.gravatar")
 
 %p= t('.user_level', level: @user.level, count: @user.points)
 
@@ -8,3 +9,4 @@
   %div
     = link_to challenge.question, challenge_path(challenge.id)
     = t('.ditos', count: challenge.ditos.count)
+
