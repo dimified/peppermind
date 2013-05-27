@@ -7,3 +7,5 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
   provider :open_id, name: 'google', store: OpenID::Store::Filesystem.new('./tmp'), identifier: 'https://www.google.com/accounts/o8/id'
 end
+
+OmniAuth.config.on_failure = SocialprovidersController.action(:oauth_failure)

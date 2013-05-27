@@ -94,4 +94,8 @@ class SocialprovidersController < ApplicationController
 
     redirect_to account_edit_path, notice: t('authentication.social.removed', provider: @socialprovider.provider.capitalize)
   end
+
+  def oauth_failure
+    redirect_to root_path
+  end
 end
