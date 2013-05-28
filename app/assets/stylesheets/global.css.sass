@@ -77,10 +77,9 @@ textarea.styled_input
     position: absolute
     z-index: 2
     top: 8px
-    left: 15px
+    left: 40px
     width: 100px
     transition: text-shadow 0.3s linear
-    margin-left: 25px
 
     &:hover
       text-shadow: 0px 0px 15px rgba($lightgreen, 0.8)
@@ -275,7 +274,7 @@ textarea.styled_input
   left: 10px
   margin: 0
   padding: 4px 10px
-  border: 1px solid rgba(21, 127, 0, 0.5)
+  border: 1px solid
   color: rgb(51, 51, 51)
   text-decoration: none
   cursor: pointer
@@ -283,19 +282,19 @@ textarea.styled_input
   background-clip: padding-box
   font-size: 0.8em
   border-radius: 2px
-  border-bottom-color: rgba(21, 127, 0, 0.7)
   text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.3)
   color: $white
-  background-color: $Blightgreen
-  @include background-image(linear-gradient(top, $Blightgreen, $Bdarkgreen))
+  box-shadow: 0px 1px 0px rgba(white, 0.4)
 
-  &:hover, &:focus, &:active
+  border-color: rgba(50, 100, 50, 0.3)
+  @include background-image(linear-gradient($lightgreen, $Blightgreen))
 
-  &:active
-    border-color: rgba(21, 127, 0, 0.5)
-    border-bottom-color: rgba(21, 127, 0, 0.7)
-    background-color: rgb(130, 217, 0)
-    @include background-image(linear-gradient(top, $Hlightgreen, $Hdarkgreen))
+  &:hover
+    @include background-image(linear-gradient(rgba(white, 0.3), $lightgreen 40%, $Blightgreen))
+
+  &:focus, &:active
+    @include background-image(linear-gradient($Blightgreen, $Bdarkgreen))
+    border-top-color: $Bdarkgreen
 
 .btn
   display: inline-block

@@ -25,9 +25,10 @@
 
       %nav.off-canvas-navigation
         %ul
-          %li.back-item
-            = link_to :back, title: t('.topbar.back') do
-              %i.icon-chevron-left
+          - if user_signed_in?
+            %li.back-item
+              = link_to :back, title: t('.topbar.back') do
+                %i.icon-chevron-left
           %li.menu-item
             = link_to '#menu', title: t('.topbar.menu'), class: 'menu-button' do
               %i.icon-reorder
