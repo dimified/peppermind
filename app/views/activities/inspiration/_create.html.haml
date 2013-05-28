@@ -1,16 +1,15 @@
 .tile-header
   %span.user
-    = link_to(activity.user.display_name, activity.user)
+    = activity.user.display_name
   - if activity.trackable
     %span.message
       = t('activities.inspiration._create.exists')
 
-= link_to(image_tag('default_avatar.png', class: 'user-avatar'), activity.user)
+= image_tag 'default_avatar.png', class: 'user-avatar'
 
 - if activity.trackable
-  = link_to challenge_inspiration_path(activity.trackable.challenge_id, activity.trackable_id) do
-    .speech-bubble
-      = tracked_inspiration(activity.trackable_id).description.split.slice(0, 15).join(" ") + '...'
+  .speech-bubble
+    = tracked_inspiration(activity.trackable_id).description.split.slice(0, 15).join(" ") + '...'
   %span.time
     = t('activities.index.was')
     #{time activity.created_at, class: :timeago}

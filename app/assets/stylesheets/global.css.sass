@@ -16,7 +16,9 @@ i[class^='icon-']
 
 a
   text-decoration: none
-  color: $darkgrey
+
+  &:visited, &:active, &:focus, &:hover
+    color: inherit
 
   i[class^='icon-']
     cursor: pointer
@@ -288,6 +290,9 @@ textarea.styled_input
 
   border-color: rgba(50, 100, 50, 0.3)
   @include background-image(linear-gradient($lightgreen, $Blightgreen))
+
+  &:visited
+    color: $white
 
   &:hover
     @include background-image(linear-gradient(rgba(white, 0.3), $lightgreen 40%, $Blightgreen))

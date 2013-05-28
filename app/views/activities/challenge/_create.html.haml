@@ -1,16 +1,15 @@
 .tile-header
   %span.user
-    = link_to(activity.user.display_name, activity.user)
+    = activity.user.display_name
   - if challenge
     %span.message
       = t('activities.challenge._create.exists')
 
-= link_to(image_tag('default_avatar.png', class: 'user-avatar'), activity.user)
+= image_tag 'default_avatar.png', class: 'user-avatar'
 
 - if challenge
-  = link_to challenge do
-    .speech-bubble
-      = challenge.question.html_safe
+  .speech-bubble
+    = challenge.question.html_safe
   %span.time
     = t('activities.index.was')
     #{time activity.created_at, class: :timeago}

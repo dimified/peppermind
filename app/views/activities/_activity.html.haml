@@ -1,2 +1,3 @@
-%article.activity
-  = ActivityPresenter.new(activity, self).render_activity
+= link_to activity_link(activity.trackable_type, activity.trackable_id) do
+  %article.activity
+    = ActivityPresenter.new(activity, self).render_activity
