@@ -20,7 +20,6 @@ gem 'font-awesome-sass-rails', '~> 3.0.2.1'
 gem 'wicked', '~> 0.5.0'
 gem 'kaminari', '~> 0.14.1'
 gem 'mongoid_taggable', '~> 1.1.1'
-gem "whenever", "~> 0.8.2", require: false
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -34,6 +33,7 @@ end
 group :development do
   gem 'better_errors', '~> 0.6.0'
   gem 'binding_of_caller'
+  gem 'whenever', '~> 0.8.2', require: false
 end
 
 # Gems for production with deployment on Heroku
