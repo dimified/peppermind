@@ -1,3 +1,4 @@
+@import 'mixin.css.sass'
 @import 'colors.css.sass'
 
 #main #main-content
@@ -7,7 +8,8 @@
   margin: 0
   padding: 10px
   text-align: center
-  background-image: linear-gradient($lightgreen, $Blightgreen)
+  background: $lightgreen
+  @include linear-gradient($lightgreen, $Blightgreen)
   color: rgb(255, 255, 255)
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5)
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2)
@@ -22,7 +24,7 @@ nav[role='sub-menu']
 .activity
   border-bottom: 1px solid rgb(170, 170, 170) !important
   box-shadow: 0px 1px 0px white
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))
+  @include linear-gradient(rgba(white, 0.5), rgba(white, 0))
   padding: 5px 0px 10px 0px
 
   &:hover, &:active, &:focus
@@ -79,8 +81,6 @@ nav[role='sub-menu']
       margin-top: -6px
       color: #B3B3B3
 
-
   .time
     margin-left: 15px
     font-size: 0.7em
-
