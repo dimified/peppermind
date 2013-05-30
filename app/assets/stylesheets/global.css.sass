@@ -91,6 +91,18 @@ textarea.styled_input
       color: $lightgreen
       text-decoration: none
 
+.title
+  margin: 0
+  padding: 10px
+  text-align: center
+  background: $lightgreen
+  @include linear-gradient($lightgreen, $Blightgreen)
+  color: rgb(255, 255, 255)
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5)
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2)
+  font-size: 1em
+  position: relative
+
 #main
   position: absolute
   top: 42px
@@ -99,7 +111,11 @@ textarea.styled_input
   background: url('noise.png') repeat
 
   #main-content
-    margin: 15px 10%
+    padding: 15px 0px
+    margin: 0px 10%
+
+  #list
+    margin: 0px
 
 .loading-overlay
   display: block
@@ -292,7 +308,7 @@ textarea.styled_input
   box-shadow: 0px 1px 0px rgba(white, 0.4) inset, 0px 1px 1px rgba(0, 0, 0, 0.2)
 
   &:hover, &:focus, &:active
-    @include linear-gradient(rgba(white, 0.3), rgb(130, 210, 0) 50%, rgb(110, 190, 0))
+    @include linear-gradient(rgba(white, 0.5), rgb(130, 210, 0) 50%, rgb(110, 190, 0))
 
   &:active
     box-shadow: 0px 1px 6px -1px rgba(black, 0.5) inset
@@ -316,18 +332,18 @@ textarea.styled_input
   @include linear-gradient(rgb(220, 100, 90), rgb(180, 50, 50))
 
   &:hover, &:focus, &:active
-    @include linear-gradient(rgba(white, 0.3), rgb(220, 100, 90), rgb(180, 50, 50))
+    @include linear-gradient(rgba(white, 0.5), rgb(220, 100, 90), rgb(180, 50, 50))
 
   &:active
     box-shadow: 0px 1px 6px -1px rgba(black, 0.3) inset
     border-color: rgb(150, 100, 100)
     @include linear-gradient(rgb(180, 50, 50), rgb(220, 100, 90))
 
-.btn.title
+.btn.btn-title
   position: absolute
   font-size: 0.8em
   top: 8px
-  margin: 0
+  margin: 0px
   padding: 4px 10px
   color: rgb(50, 50, 50)
   box-shadow: 0px 1px 0px rgba(white, 0.4)
@@ -339,17 +355,17 @@ textarea.styled_input
     color: white
 
   &:hover, &:focus, &:active
-    @include linear-gradient(rgba(white, 0.3), rgb(170, 255, 50) 40%, rgb(130, 210, 0))
+    @include linear-gradient(rgba(white, 0.5), rgb(170, 255, 50) 40%, rgb(130, 210, 0))
 
   &:active
     @include linear-gradient(rgb(150, 235, 30), rgb(110, 190, 0))
     border-top-color: rgb(110, 190, 0)
 
   &#new-challenge
-    left: 10px
+    right: 10px
 
   &#all-challenge
-    right: 10px
+    left: 10px
 
 /* FORMS */
 

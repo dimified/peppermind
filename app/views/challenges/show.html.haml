@@ -1,45 +1,46 @@
-= title @challenge.question
+= title t('.title')
 
-%p
-  #{t('.created', user: @challenge.user.display_name)}
-  = time @challenge.created_at
-  = render 'challenges/count_ditos'
+#main-content
+  %p
+    #{t('.created', user: @challenge.user.display_name)}
+    = time @challenge.created_at
+    = render 'challenges/count_ditos'
 
-- if current_user != @challenge.user && current_user
-  = render 'ditos/form'
+  - if current_user != @challenge.user && current_user
+    = render 'ditos/form'
 
-%h3= t('.description')
+  %h3= t('.description')
 
-%p= @challenge.description
+  %p= @challenge.description
 
-- if @challenge.tags_array.count > 0
-  %h3= t('tags.title')
+  - if @challenge.tags_array.count > 0
+    %h3= t('tags.title')
 
   %ul
     - @challenge.tags_array.each do |tag|
       %li
         = link_to tag, tag_path(URI.escape(tag))
 
-%h3= t('.duration')
-%div= @challenge.duration_string
+  %h3= t('.duration')
+  %div= @challenge.duration_string
 
-- if @inspirations.count > 0
-  %h3= t('.inspirations')
+  - if @inspirations.count > 0
+    %h3= t('.inspirations')
 
-  - @inspirations.each do |inspiration|
-    %p= link_to inspiration.description, challenge_inspiration_path(@challenge, inspiration)
+    - @inspirations.each do |inspiration|
+      %p= link_to inspiration.description, challenge_inspiration_path(@challenge, inspiration)
 
-%nav
-  = link_to t('.link.dashboard'), root_path, class: 'btn green-button'
-  = link_to t('.link.challenges'), challenges_path, class: 'btn green-button'
-  = link_to t('.link.inspiration'), new_challenge_inspiration_path(@challenge.id), class: 'btn green-button'
+  %nav
+    = link_to t('.link.dashboard'), root_path, class: 'btn green-button'
+    = link_to t('.link.challenges'), challenges_path, class: 'btn green-button'
+    = link_to t('.link.inspiration'), new_challenge_inspiration_path(@challenge.id), class: 'btn green-button'
 
-  - if can? :update, @challenge
-    = link_to t('.link.edit'), edit_challenge_path(@challenge), class: 'btn green-button'
+    - if can? :update, @challenge
+      = link_to t('.link.edit'), edit_challenge_path(@challenge), class: 'btn green-button'
 
-  - if can? :destroy, @challenge
-    = link_to t('.link.delete'), challenge_path(@challenge), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'
+    - if can? :destroy, @challenge
+      = link_to t('.link.delete'), challenge_path(@challenge), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'
 
-%p
-  %small
-    #{t('.updated')} #{time @challenge.updated_at}
+  %p
+    %small
+      #{t('.updated')} #{time @challenge.updated_at}
