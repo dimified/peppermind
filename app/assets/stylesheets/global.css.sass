@@ -1,12 +1,12 @@
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400')
 @import url('http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz')
+@import 'mixin.css.sass'
 @import 'colors.css.sass'
 
 /* GENERAL */
 
 body
   margin: 0
-  background: url('noise.png') repeat
   font-family: 'Open Sans', 'Trebuchet MS', Arial, Helvetica, sans-serif
   -webkit-font-smoothing: antialiased
   color: $darkgrey
@@ -25,6 +25,7 @@ a
 
 a.btn
   text-decoration: none
+  color: white
 
 .clearfix:after
   visibility: hidden
@@ -95,6 +96,7 @@ textarea.styled_input
   top: 42px
   width: 100%
   overflow: hidden
+  background: url('noise.png') repeat
 
   #main-content
     margin: 15px 10%
@@ -258,7 +260,7 @@ textarea.styled_input
           color: rgb(102, 102, 102)
 
       &:hover
-        background: url('noise.png') repeat
+        background: rgb(240, 240, 240)
 
         a, i
           color: rgb(112, 175, 61)
@@ -269,66 +271,33 @@ textarea.styled_input
 
 /* BUTTONS */
 
-.menu-btn
-  position: absolute
-  top: 8px
-  left: 10px
-  margin: 0
-  padding: 4px 10px
-  border: 1px solid
-  color: rgb(51, 51, 51)
-  text-decoration: none
-  cursor: pointer
-  outline: none
-  background-clip: padding-box
-  font-size: 0.8em
-  border-radius: 2px
-  text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.3)
-  color: $white
-  box-shadow: 0px 1px 0px rgba(white, 0.4)
-
-  border-color: rgba(50, 100, 50, 0.3)
-  background-image: linear-gradient($lightgreen, $Blightgreen)
-
-  &:visited
-    color: $white
-
-  &:hover
-    background-image: linear-gradient(rgba(white, 0.3), $lightgreen 40%, $Blightgreen)
-
-  &:focus, &:active
-    background-image: linear-gradient($Blightgreen, $Bdarkgreen)
-    border-top-color: $Bdarkgreen
-
 .btn
   display: inline-block
   margin: 10px 0
   padding: 5px 15px
-  border: 1px solid rgb(212, 212, 212)
-  text-shadow: 0px 1px 0 rgb(255, 255, 255)
-  color: rgb(51, 51, 51)
+  border: 1px solid
   text-decoration: none
   cursor: pointer
   outline: none
-  background-color: rgb(236, 236, 236)
-  background-image: linear-gradient(rgb(244, 244, 244), rgb(236, 236, 236))
   background-clip: padding-box
   font-size: 0.8em
   border-radius: 2px
+  text-shadow: 0px -1px 0 rgba(black, 0.3)
+  color: white
+
+  border-color: rgba(20, 120, 0, 0.5)
+  border-bottom-color: rgba(20, 120, 0, 0.7)
+  background-color: rgb(130, 210, 0)
+  @include linear-gradient(rgb(130, 210, 0), rgb(110, 190, 0))
+  box-shadow: 0px 1px 0px rgba(white, 0.4) inset, 0px 1px 1px rgba(0, 0, 0, 0.2)
 
   &:hover, &:focus, &:active
-    border-color: rgba(21, 127, 0, 0.5)
-    border-bottom-color: rgba(21, 127, 0, 0.7)
-    text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.3)
-    color: $white
-    background-color: $Blightgreen
-    background-image: linear-gradient($Blightgreen, $Bdarkgreen)
+    @include linear-gradient(rgba(white, 0.3), rgb(130, 210, 0) 50%, rgb(110, 190, 0))
 
   &:active
-    border-color: rgba(21, 127, 0, 0.5)
-    border-bottom-color: rgba(21, 127, 0, 0.7)
-    background-color: rgb(130, 217, 0)
-    background-image: linear-gradient($Hlightgreen, $Hdarkgreen)
+    box-shadow: 0px 1px 6px -1px rgba(black, 0.5) inset
+    border-color: rgb(100, 150, 100)
+    @include linear-gradient(rgb(90, 170, 0), rgb(110, 190, 0))
 
 .btn:not(#toggle-social)
   white-space: nowrap
@@ -338,20 +307,49 @@ textarea.styled_input
   margin: 0
 
 .btn.btn-danger
-  color: rgb(153, 0, 0)
+  color: white
+  border-color: rgb(180, 60, 60)
+  border-bottom-color: rgb(160, 50, 50)
+  color: white
+
+  background-color: rgb(220, 100, 90)
+  @include linear-gradient(rgb(220, 100, 90), rgb(180, 50, 50))
 
   &:hover, &:focus, &:active
-    border-color: rgb(181, 63, 58)
-    border-bottom-color: rgb(160, 48, 42)
-    color: rgb(255, 255, 255)
-    background-color: rgb(220, 95, 89)
-    background-image: linear-gradient(rgb(220, 95, 89), rgb(179, 54, 48))
+    @include linear-gradient(rgba(white, 0.3), rgb(220, 100, 90), rgb(180, 50, 50))
 
   &:active
-    border-color: rgb(160, 48, 42)
-    border-bottom-color: rgb(191, 72, 67)
-    background-color: rgb(179, 54, 48)
-    background-image: linear-gradient(rgb(179, 54, 48), rgb(220, 95, 89))
+    box-shadow: 0px 1px 6px -1px rgba(black, 0.3) inset
+    border-color: rgb(150, 100, 100)
+    @include linear-gradient(rgb(180, 50, 50), rgb(220, 100, 90))
+
+.btn.title
+  position: absolute
+  font-size: 0.8em
+  top: 8px
+  margin: 0
+  padding: 4px 10px
+  color: rgb(50, 50, 50)
+  box-shadow: 0px 1px 0px rgba(white, 0.4)
+
+  border-color: rgba(50, 100, 50, 0.3)
+  @include linear-gradient(rgb(170, 255, 50), rgb(130, 210, 0))
+
+  &:visited
+    color: white
+
+  &:hover, &:focus, &:active
+    @include linear-gradient(rgba(white, 0.3), rgb(170, 255, 50) 40%, rgb(130, 210, 0))
+
+  &:active
+    @include linear-gradient(rgb(150, 235, 30), rgb(110, 190, 0))
+    border-top-color: rgb(110, 190, 0)
+
+  &#new-challenge
+    left: 10px
+
+  &#all-challenge
+    right: 10px
 
 /* FORMS */
 
