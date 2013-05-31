@@ -1,23 +1,24 @@
 de:
   errors:
     messages:
-      expired: "ist abgelaufen, bitte neu anfordern"
-      not_found: "nicht gefunden"
-      already_confirmed: "wurde bereits bestätigt"
-      not_locked: "ist nicht gesperrt"
+      blank: 'Bitte Feld ausfüllen.'
+      confirmation: 'Die beiden Felder stimmen nicht überein.'
+      expired: 'ist abgelaufen, bitte neu anfordern'
+      not_found: 'Einen Benutzer mit dieser E-Mail-Adresse gibt es nicht.'
+      already_confirmed: 'wurde bereits bestätigt'
+      not_locked: 'ist nicht gesperrt'
       not_saved:
-        one: "Konnte %{resource} nicht speichern: ein Fehler."
-        other: "Konnte %{resource} nicht speichern: %{count} Fehler."
-
+        one: 'Konnte %{resource} nicht speichern: ein Fehler.'
+        other: 'Konnte %{resource} nicht speichern: %{count} Fehler.'
   devise:
     failure:
       already_authenticated: 'Du bist bereits angemeldet.'
-      unauthenticated: 'Du musst Dich anmelden oder registrieren, bevor Du fortfahren kannst.'
-      unconfirmed: 'Du musst Deinen Account bestätigen, bevor Du fortfahren kannst.'
+      unauthenticated: 'Du musst dich anmelden oder registrieren, bevor du fortfahren kannst.'
+      unconfirmed: 'Du musst deinen Account bestätigen, bevor du fortfahren kannst.'
       locked: 'Dein Account ist gesperrt.'
       invalid: 'Ungültige Anmeldedaten.'
       invalid_token: 'Der Anmelde-Token ist ungültig.'
-      timeout: 'Deine Sitzung ist abgelaufen, bitte melde Dich erneut an.'
+      timeout: 'Deine Sitzung ist abgelaufen, bitte melde dich erneut an.'
       inactive: 'Dein Account ist nicht aktiv.'
       user:
         not_found_in_database: 'Benutzer wurde nicht in der Datenbank gefunden.'
@@ -25,40 +26,52 @@ de:
       signed_in: 'Erfolgreich angemeldet.'
       signed_out: 'Erfolgreich abgemeldet.'
     passwords:
+      edit:
+        button:
+          cancel: 'Abbrechen'
+          submit: 'Passwort ändern'
+        label:
+          password: 'Passwort (mind. 6 Zeichen)'
+          password_confirm: 'Passwort wiederholen'
+        title: 'Neues Passwort einstellen'
       new:
         placeholder:
           email: 'E-Mail-Adresse'
         submit: 'Neues Passwort anfordern'
         title: 'Passwort vergessen !?'
-      send_instructions: 'Du erhältst in wenigen Minuten eine E-Mail mit der Anleitung, wie Du Dein Passwort zurücksetzen kannst.'
+      send_instructions: 'Du erhältst in Kürze eine E-Mail mit weiteren Anweisungen, um dein Passwort zurückzusetzen.'
       updated: 'Dein Passwort wurde geändert. Du bist jetzt angemeldet.'
       updated_not_active: 'Dein Passwort wurde geändert.'
-      send_paranoid_instructions: "Falls Deine E-Mail-Adresse in unserer Datenbank existiert erhältst Du in wenigen Minuten eine E-Mail mit der Anleitung, wie Du Dein Passwort zurücksetzen können."
+      send_paranoid_instructions: "Falls deine E-Mail-Adresse in unserer Datenbank existiert, erhältst du in Kürze eine E-Mail mit der Anleitung, wie du dein Passwort zurücksetzen kannst."
       forgot: 'Passwort vergessen?'
-      remember: 'Eingeloggt bleiben'
+      remember: 'Angemeldet bleiben'
     confirmations:
-      send_instructions: 'Du erhältst in wenigen Minuten eine E-Mail, mit der Du Deine Registrierung bestätigen kannst.'
-      send_paranoid_instructions: 'Falls Deine E-Mail-Adresse in unserer Datenbank existiert erhältst Du in wenigen Minuten eine E-Mail mit der Du Deine Registrierung bestätigen kannst.'
-      confirmed: 'Vielen Dank für Deine Registrierung. Du bist jetzt angemeldet.'
+      send_instructions: 'Du erhältst in wenigen Minuten eine E-Mail, mit welcher du deine Registrierung bestätigen kannst.'
+      send_paranoid_instructions: 'Falls deine E-Mail-Adresse in unserer Datenbank existiert, erhältst du in Kürze eine E-Mail mit der du deine Registrierung bestätigen kannst.'
+      confirmed: 'Vielen Dank für deine Registrierung. Du bist jetzt angemeldet.'
     registrations:
       signed_up: 'Du hast dich erfolgreich registriert.'
-      signed_up_but_unconfirmed: 'Du hast Dich erfolgreich registriert. Wir konnten Dich noch nicht anmelden, da Dein Account noch nicht bestätigt ist. Du erhältst in Kürze eine E-Mail mit der Anleitung, wie Du Deinen Account freischalten kannst.'
-      signed_up_but_inactive: 'Du hast dich erfolgreich registriert. Wir konnten Dich noch nicht anmelden, da Dein Account inaktiv ist.'
-      signed_up_but_locked: 'Du hast dich erfolgreich registriert. Wir konnten Dich noch nicht anmelden, da Dein Account gesperrt ist.'
+      signed_up_but_unconfirmed: 'Du hast dich erfolgreich registriert. Wir konnten dich noch nicht anmelden, da dein Account noch nicht bestätigt ist. Du erhältst in Kürze eine E-Mail mit der Anleitung, wie du deinen Account freischalten kannst.'
+      signed_up_but_inactive: 'Du hast dich erfolgreich registriert. Wir konnten dich noch nicht anmelden, da dein Account inaktiv ist.'
+      signed_up_but_locked: 'Du hast dich erfolgreich registriert. Wir konnten dich noch nicht anmelden, da dein Account gesperrt ist.'
       updated: 'Deine Daten wurden aktualisiert.'
-      update_needs_confirmation: "Deine Daten wurden aktualisiert, aber Du musst Deine neue E-Mail-Adresse bestätigen. Du erhälsts in wenigen Minuten eine E-Mail, mit der Du die Änderung Deiner E-Mail-Adresse abschließen kannst."
+      update_needs_confirmation: "Deine Daten wurden aktualisiert, aber du musst deine neue E-Mail-Adresse bestätigen. Du erhältst in Kürze eine E-Mail, mit der du die Änderung deiner E-Mail-Adresse abschließen kannst."
       destroyed: 'Dein Account wurde gelöscht.'
     unlocks:
-      send_instructions: 'Du erhältst in wenigen Minuten eine E-Mail mit der Anleitung, wie Du Deinen Account entsperren können.'
+      send_instructions: 'Du erhältst in Kürze eine E-Mail mit der Anleitung, wie du deinen Account entsperren kannst.'
       unlocked: 'Dein Account wurde entsperrt. Du bist jetzt angemeldet.'
-      send_paranoid_instructions: "Falls Deine E-Mail-Adresse in unserer Datenbank existiert erhältst Du in wenigen Minuten eine E-Mail mit der Anleitung, wie Du Deinen Account entsperren kannst."
+      send_paranoid_instructions: "Falls deine E-Mail-Adresse in unserer Datenbank existiert, erhältst du in Kürze eine E-Mail mit der Anleitung, wie du deinen Account entsperren kannst."
     omniauth_callbacks:
-      success: 'Du hast Dich erfolgreich mit Deinem %{kind}-Account angemeldet.'
-      failure: 'Du konntest nicht Deinem %{kind}-Account angemeldet werden, weil "%{reason}".'
+      success: 'Du hast dich erfolgreich mit deinem %{kind}-Account angemeldet.'
+      failure: 'Du konntest nicht deinem %{kind}-Account angemeldet werden, weil "%{reason}".'
     mailer:
       confirmation_instructions:
-        subject: 'Anleitung zur Bestätigung Deines Accounts'
+        subject: '[peppermind] Bestätigung der Anmeldung'
       reset_password_instructions:
-        subject: 'Anleitung um Dein Passwort zurückzusetzen'
+        subject: '[peppermind] Passwort zurücksetzen'
       unlock_instructions:
-        subject: 'Anleitung um Deinen Account freizuschalten'
+        subject: '[peppermind] Benutzerkonto freischalten'
+    mail:
+      intro: 'Es wurde eine Anfrage gestartet, das Passwort deines Benutzerkontos auf Peppermind zu ändern. Dein Passwort kannst du über den folgenden Link ändern. Der Link ist 6 Stunden lang gültig, nach Ablauf dieser Zeit musst du einen neuen Link anfordern, um dein Passwort zu ändern.'
+      outro: 'Wenn diese Anfrage nicht von dir gestartet wurde, kannst du diese E-Mail einfach ignorieren. Dein Passwort wird nicht geändert, solange du nicht über diesen Link ein neues Passwort einstellst.'
+      welcome: 'Hallo %{user},'

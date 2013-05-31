@@ -1,8 +1,8 @@
-= title 'Change your password'
+= title t('.title')
 
-= simple_form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :put } do |f|
-  = devise_error_messages!
+= simple_form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :put }, defaults: { input_html: { class: 'styled_input' } } do |f|
   = f.hidden_field :reset_password_token
-  = f.input :password, 'New password', autofocus: true
-  = f.input :password_confirmation, 'Confirm new password'
-  = f.submit 'Change my password'
+  = f.input :password, placeholder: t('.label.password'), autofocus: true
+  = f.input :password_confirmation, placeholder: t('.label.password_confirm')
+  = f.submit t('.button.submit'), class: 'btn green-button'
+  = link_to t('.button.cancel'), root_path, class: 'btn btn-danger'
