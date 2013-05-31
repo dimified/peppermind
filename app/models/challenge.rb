@@ -22,7 +22,7 @@
   attr_accessor :duration_string
 
   # Fields accessable by the user
-  attr_accessible :question, :description, :duration_string
+  attr_accessible :question, :description, :duration_string, :tags
 
   # Validations
   validates :question, presence: true, length: { maximum: 100 }
