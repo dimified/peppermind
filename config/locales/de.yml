@@ -9,6 +9,8 @@ de:
       label:
         display_name: 'Anzeigename'
         email: 'E-Mail-Adresse'
+      link:
+        forgot_password: 'Passwort vergessen'
       provider:
         email: 'E-Mail-Adresse'
         id: 'ID'
@@ -22,8 +24,15 @@ de:
       warning: '<strong>Achtung:</strong> Wenn du dich über einen Social Provider auf Peppermind registriert hast, wurde ein zufälliges Passwort für dich gewählt. Du kannst ein neues Passwort über die %{link}-Seite anfordern. <strong>Bitte sperre dich nicht aus deinem eigenen Account aus!</strong>'
     validation:
       display_name:
-        blank: 'Bitte einen Anzeigenamen angeben!'
-        not_unique: 'Dieser Anzeigename ist bereits vergeben, tut uns Leid!'
+        blank: 'Bitte einen Anzeigenamen angeben! '
+        not_unique: 'Dieser Anzeigename ist bereits vergeben, tut uns Leid! '
+      email:
+        confirm: 'Die beiden E-Mail-Adressen stimmen nicht überein. '
+        format: 'Bitte eine gültige E-Mail-Adresse angeben. '
+        not_unique: 'Diese E-Mail-Adresse ist bereits vergeben, tut uns Leid! '
+      password:
+        confirm: 'Die beiden Passwörter stimmen nicht überein. '
+        length: 'Das Passwort muss aus mindestens 6 Zeichen bestehen. '
       success: 'Deine Angaben wurden erfolgreich geändert!'
   activities:
     challenge:
@@ -57,7 +66,7 @@ de:
       display_name: 'Benutzername'
       email: 'E-Mail-Adresse'
       email_confirm: 'E-Mail-Adresse bestätigen'
-      password: 'Passwort'
+      password: 'Passwort (mind. 6 Zeichen)'
     registration:
       cancel: 'Abbrechen'
       providers:
@@ -83,9 +92,11 @@ de:
         cancel: 'Abbrechen'
         submit: 'Kostenlos anmelden!'
       label:
-        display_name: 'Anzeigename:'
-        email: 'E-Mail-Adresse:'
-        password: 'Passwort:'
+        display_name: 'Anzeigename'
+        email: 'E-Mail-Adresse'
+        email_confirm: 'E-Mail-Adresse bestätigen'
+        password: 'Passwort (mind. 6 Zeichen)'
+        password_confirm: 'Passwort wiederholen'
       title: 'Anmeldung abschließen'
   challenge_inspirations:
     _form:
