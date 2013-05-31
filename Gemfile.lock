@@ -286,7 +286,7 @@ DEPENDENCIES
   devise (~> 2.2.3)
   factory_girl_rails (~> 4.2.1)
   faker (~> 1.1.2)
-  font-awesome-sass-rails (~> 3.0.2.1)
+  font-awesome-sass-rails (~> 3.0.2.2)
   guard-rspec (~> 2.5.0)
   haml (~> 4.0.0)
   haml-rails (~> 0.4)

@@ -124,10 +124,10 @@ de:
     new:
       title: 'Was bewegt dich !?'
     show:
+      title: 'Herausforderung'
       created: 'Angelegt von %{user} am'
       description: 'Beschreibung'
       duration: 'Challenge läuft bis:'
-      ditos: 'Ditos:'
       inspirations: 'Inspirationen'
       link:
         challenges: 'Alle Challenges'
@@ -139,6 +139,10 @@ de:
       problem: 'Problem'
       solution: 'Lösung'
       updated: 'Letzte Aktualisierung:'
+  ditos:
+    form:
+      dito: 'Dito'
+      undito: 'Undito'
   endless_scrolling:
     loading_label: 'Laden…'
   errors:

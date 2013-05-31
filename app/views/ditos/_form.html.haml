@@ -1,9 +1,9 @@
-#dito-form
+.dito-form
   - if dito = current_user.ditos.where(challenge: @challenge).first
     = simple_form_for(dito, remote: true, method: :delete) do |f|
       = hidden_field_tag('challenge_id', @challenge.id)
-      = f.submit "Undito"
+      = f.submit t('.undito').upcase, class: 'btn'
   - else
     = simple_form_for(current_user.ditos.build(challenge: @challenge), remote: true) do |f|
       = hidden_field_tag('challenge_id', @challenge.id)
-      = f.submit "Dito"
+      = f.submit t('.dito').upcase, class: 'btn'
