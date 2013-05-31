@@ -77,6 +77,7 @@ class User
     end
   end
 
+  # validations
   def validate_display_name(name)
     if name.blank?
       errors.add(:display_name, I18n.t('account.validation.display_name.blank'))
@@ -87,6 +88,31 @@ class User
     end
   end
 
+  def validate_email(email, confirm)
+    unless email =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+      errors.add(:email, I18n.t('account.validation.email.format'))
+    end
+
+    unless confirm === email
+      errors.add(:email, I18n.t('account.validation.email.confirm'))
+    end
+
+    if User.where(email: email).exists?
+      errors.add(:email_confirm, I18n.t('account.validation.email.not_unique'))
+    end
+  end
+
+  def validate_password(password, confirm)
+    unless password.length >= 6
+      errors.add(:password, I18n.t('account.validation.password.length'))
+    end
+
+    unless confirm === password
+      errors.add(:password_confirm, I18n.t('account.validation.password.confirm'))
+    end
+  end
+
+  # user ranking
   def add_points(options = {})
     self.points += options[:points] || 1
     self.save

@@ -1,6 +1,5 @@
 = title t('.title', user: @user.display_name)
--#= image_tag avatar(@user, 48), alt: t('global.gravatar')
-= image_tag 'default_avatar.png'
+= image_tag avatar(@user, 48), alt: t('global.gravatar')
 
 %p= t('.user_level', level: @user.level, count: @user.points)
 
