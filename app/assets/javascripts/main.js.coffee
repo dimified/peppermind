@@ -12,7 +12,7 @@ jQuery(document).ready ->
   jQuery(window).resize ->
     recalculateHeight()
 
-  $('.menu-button').click (e) ->
+  $('.menu-button').on 'click', (e) ->
     e.preventDefault()
     $('body').toggleClass 'active-sidebar'
     $('.menu-button').toggleClass 'active-button'
@@ -65,7 +65,7 @@ jQuery(document).ready ->
         onShow: ->
           active = true
 
-  $('.confirmation').click ->
+  $('.confirmation').on 'click', () ->
     $notificationbar = $('#noty_top_layout_container')
     $content = $('#main-content')
     $menu = $('#menu')
