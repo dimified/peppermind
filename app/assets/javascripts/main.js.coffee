@@ -17,6 +17,11 @@ jQuery(document).ready ->
     $('body').toggleClass 'active-sidebar'
     $('.menu-button').toggleClass 'active-button'
 
+  # back button
+  $('.back-item').find('a').on 'click', (e) ->
+    e.preventDefault()
+    history.back()
+
   # use timeago plugin in time tags with .timeago class
   jQuery('time.timeago').timeago()
 
