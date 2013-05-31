@@ -9,8 +9,6 @@ de:
       label:
         display_name: 'Anzeigename'
         email: 'E-Mail-Adresse'
-      link:
-        forgot_password: 'Passwort vergessen'
       provider:
         email: 'E-Mail-Adresse'
         id: 'ID'
@@ -21,7 +19,7 @@ de:
             text: 'Verknüpfung aufheben'
       social_provider: 'Social Login Verknüpfungen'
       title: 'Profil bearbeiten'
-      warning: '<strong>Achtung:</strong> Wenn du dich über einen Social Provider auf Peppermind registriert hast, wurde ein zufälliges Passwort für dich gewählt. Du kannst ein neues Passwort über die %{link}-Seite anfordern. <strong>Bitte sperre dich nicht aus deinem eigenen Account aus!</strong>'
+      warning: '<strong>Achtung:</strong> Wenn du dich über einen Social Provider auf Peppermind registriert hast, wurde ein zufälliges Passwort für dich gewählt. Du kannst ein neues Passwort über den "Passwort vergessen?"-Link auf der Anmelden-Seite anfordern. <strong>Bitte sperre dich nicht aus deinem eigenen Account aus!</strong>'
     validation:
       display_name:
         blank: 'Bitte einen Anzeigenamen angeben! '

@@ -9,8 +9,6 @@ en:
       label:
         display_name: 'Display name'
         email: 'E-Mail-Adresse'
-      link:
-        forgot_password: 'Forgot password'
       provider:
         email: 'E-Mail-Adresse'
         id: 'ID'

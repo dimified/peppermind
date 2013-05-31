@@ -4,7 +4,7 @@
   :javascript
     $(document).ready(function() {
       var noty_notice = noty({
-        text : "#{escape_javascript(t('.warning', link: link_to(t('.link.forgot_password'), new_user_password_path)).html_safe)}",
+        text : "#{escape_javascript(t('.warning').html_safe)}",
         layout : 'top',
         type : 'warning',
         timeout : false,
