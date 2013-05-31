@@ -7,6 +7,7 @@
 
 body
   margin: 0
+  background: url('noise.png') repeat
   font-family: 'Open Sans', 'Trebuchet MS', Arial, Helvetica, sans-serif
   -webkit-font-smoothing: antialiased
   color: $darkgrey
@@ -37,11 +38,11 @@ a.btn
 
 input.styled_input, textarea.styled_input
   width: 100%
-  margin: 5px 0px
+  margin: 5px 0
   padding: 10px
   border-radius: 2px
   border: none
-  box-shadow: 0px -1px 1px rgba($darkgrey, 0.5)
+  box-shadow: 0 -1px 1px rgba($darkgrey, 0.5)
   font-family: 'Open Sans', 'Trebuchet MS', Arial, Helvetica, sans-serif
   font-size: 12px
 
@@ -84,7 +85,7 @@ textarea.styled_input
     transition: text-shadow 0.3s linear
 
     &:hover
-      text-shadow: 0px 0px 15px rgba($lightgreen, 0.8)
+      text-shadow: 0 0 15px rgba($lightgreen, 0.8)
 
     a
       color: $lightgreen
@@ -97,8 +98,8 @@ textarea.styled_input
   background: $lightgreen
   @include linear-gradient($lightgreen, $Blightgreen)
   color: rgb(255, 255, 255)
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5)
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2)
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5)
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2)
   font-size: 1em
   position: relative
 
@@ -110,11 +111,11 @@ textarea.styled_input
   background: url('noise.png') repeat
 
   #main-content
-    padding: 15px 0px
-    margin: 0px 10%
+    padding: 15px 0
+    margin: 0 10%
 
   #list
-    margin: 0px
+    margin: 0
 
 .loading-overlay
   display: block
@@ -219,12 +220,12 @@ textarea.styled_input
         transition: text-shadow 0.3s linear
 
         &:hover
-          text-shadow: 0px 0px 20px rgba(white, 0.8)
+          text-shadow: 0 0 20px rgba(white, 0.8)
 
       &:active, .menu-button.active-button
         i
           color: $white
-          text-shadow: 0px 0px 20px rgba(white, 0.8)
+          text-shadow: 0 0 20px rgba(white, 0.8)
 
     li.back-item
       float: left
@@ -237,7 +238,7 @@ textarea.styled_input
       cursor: default
 
       i.online
-        text-shadow: 0px 0px 15px rgba($lightgreen, 0.5)
+        text-shadow: 0 0 15px rgba($lightgreen, 0.5)
         color: $lightgreen
 
 /* NAVIGATION */
@@ -275,7 +276,7 @@ textarea.styled_input
           color: rgb(102, 102, 102)
 
       &:hover
-        background: rgb(240, 240, 240)
+        background: url('noise.png') repeat
 
         a, i
           color: rgb(112, 175, 61)
@@ -297,14 +298,14 @@ textarea.styled_input
   background-clip: padding-box
   font-size: 0.8em
   border-radius: 2px
-  text-shadow: 0px -1px 0 rgba(black, 0.3)
+  text-shadow: 0 -1px 0 rgba(black, 0.3)
   color: white
 
   border-color: rgba(20, 120, 0, 0.5)
   border-bottom-color: rgba(20, 120, 0, 0.7)
   background-color: rgb(130, 210, 0)
   @include linear-gradient(rgb(130, 210, 0), rgb(110, 190, 0))
-  box-shadow: 0px 1px 0px rgba(white, 0.4) inset, 0px 1px 1px rgba(0, 0, 0, 0.2)
+  box-shadow: 0 1px 0 rgba(white, 0.4) inset, 0 1px 1px rgba(0, 0, 0, 0.2)
 
   &:hover, &:focus, &:active
     @include linear-gradient(rgba(white, 0.5), rgb(130, 210, 0) 50%, rgb(110, 190, 0))
@@ -334,7 +335,7 @@ textarea.styled_input
     @include linear-gradient(rgba(white, 0.5), rgb(220, 100, 90), rgb(180, 50, 50))
 
   &:active
-    box-shadow: 0px 1px 6px -1px rgba(black, 0.3) inset
+    box-shadow: 0 1px 6px -1px rgba(black, 0.3) inset
     border-color: rgb(150, 100, 100)
     @include linear-gradient(rgb(180, 50, 50), rgb(220, 100, 90))
 
@@ -342,10 +343,10 @@ textarea.styled_input
   position: absolute
   font-size: 0.8em
   top: 8px
-  margin: 0px
+  margin: 0
   padding: 4px 10px
   color: rgb(50, 50, 50)
-  box-shadow: 0px 1px 0px rgba(white, 0.4)
+  box-shadow: 0 1px 0 rgba(white, 0.4)
 
   border-color: rgba(50, 100, 50, 0.3)
   @include linear-gradient(rgb(170, 255, 50), rgb(130, 210, 0))
