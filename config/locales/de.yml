@@ -77,6 +77,16 @@ de:
       invalid_data: '%{provider} schickte ungültige Daten für diese User-ID zurück.'
       removed: 'Verknüpfung mit %{provider} aufgehoben.'
       success: 'Erfolgreich via %{provider} angemeldet.'
+  after_signup:
+    index:
+      button:
+        cancel: 'Abbrechen'
+        submit: 'Kostenlos anmelden!'
+      label:
+        display_name: 'Anzeigename:'
+        email: 'E-Mail-Adresse:'
+        password: 'Passwort:'
+      title: 'Anmeldung abschließen'
   challenge_inspirations:
     _form:
       placeholder:

@@ -16,6 +16,7 @@ Peppermind::Application.routes.draw do
   post 'account/update'
   resources :socialproviders, only: [:create, :destroy]
   match '/auth/:socialprovider/callback' => 'socialproviders#create'
+  resources :after_signup, only: [:index, :create]
 
   # challenges
   resources :challenges do

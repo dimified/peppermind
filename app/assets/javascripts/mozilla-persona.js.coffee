@@ -14,8 +14,8 @@ $('#mozilla-persona').click (event) ->
           assertion: assertion
         success: () ->
           $loadingOverlay.removeClass('loading-overlay')
-          $loadingSpinner.hide();
-          window.location.reload()
+          $loadingSpinner.hide()
+          window.location.href = '/after_signup'
         error: (xhr, status, error) ->
           console.error(error)
     onlogout: ->

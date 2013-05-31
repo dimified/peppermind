@@ -23,7 +23,7 @@ class SocialprovidersController < ApplicationController
         # TWITTER
         when 'twitter'
           display_name = omniauth['info']['name']
-          email = omniauth['uid'] + '@peppermind.com'
+          email = ''
           uid = omniauth['uid']
         else
           display_name = email = uid = ''
@@ -48,11 +48,11 @@ class SocialprovidersController < ApplicationController
               sign_in_and_redirect :user, existinguser
             # user has NOT already a peppermind account -> create a peppermind account, add the social provider and sign in
             else
-              user = User.create email: email, password: SecureRandom.hex(10), display_name: display_name
-              user.socialproviders.create provider: provider, uid: uid, display_name: display_name, email: email
-
-              flash[:myinfo] = t('authentication.social.created', provider: provider.capitalize)
-              sign_in_and_redirect :user, user
+              session[:user_display_name] = display_name
+              session[:user_email] = email
+              session[:user_provider] = provider
+              session[:user_uid] = uid
+              redirect_to after_signup_index_path
             end
           end
         # user IS signed in

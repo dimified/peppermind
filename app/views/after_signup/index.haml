@@ -1,0 +1,10 @@
+= title t('.title')
+
+= simple_form_for :temporary_user, url: after_signup_index_path, defaults: { input_html: { class: 'styled_input' } } do |f|
+  .form_with_labels
+    = f.input :display_name, placeholder: t('.label.display_name'), label: t('.label.display_name'), autofocus: true, :input_html => { :value => @user.display_name }
+    = f.input :email, placeholder: t('.label.email'), label: t('.label.email'), :input_html => { :value => @user.email }
+    = f.input :password, placeholder: t('.label.password'), label: t('.label.password')
+
+    = f.submit t('.button.submit'), class: 'btn green-button'
+    = link_to t('.button.cancel'), root_path, class: 'btn btn-danger'
