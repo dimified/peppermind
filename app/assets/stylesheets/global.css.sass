@@ -163,7 +163,7 @@ textarea.styled_input
   position: relative
   display: block
   width: 100%
-  transition: 1s margin ease
+  transition: 1s transform ease
 
 .js [role='main']
   position: relative
@@ -187,11 +187,10 @@ textarea.styled_input
       display: block
 
 .active-sidebar [role='main']
-  margin-left: -75%
+  transform: translate3d(-75%, 0, 0)
 
 .active-sidebar [role='navigation']
-  margin-left: 0
-  width: 75%
+  transform: translate3d(-75%, 0, 0)
 
 .off-canvas-navigation
   position: absolute
