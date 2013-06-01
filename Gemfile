@@ -2,20 +2,20 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 
 gem 'rails', '3.2.13'
-gem 'mongoid', '~> 3.1.0'
+gem 'mongoid', '~> 3.1.4'
 gem 'mongoid_auto_increment_id', '~> 0.6.1'
-gem 'jquery-rails', '~> 2.2.1'
-gem 'jquery-ui-rails'
-gem 'devise', '~> 2.2.3'
-gem 'omniauth', '~> 1.1.3'
+gem 'jquery-rails', '~> 2.2.2'
+gem 'jquery-ui-rails', '~> 4.0.3'
+gem 'devise', '~> 2.2.4'
+gem 'omniauth', '~> 1.1.4'
 gem 'omniauth-browserid', '~> 0.0.1'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'omniauth-openid', '~> 1.0.1'
-gem 'omniauth-twitter', '~> 0.0.14'
-gem 'cancan', '~> 1.6.9'
+gem 'omniauth-twitter', '~> 0.0.16'
+gem 'cancan', '~> 1.6.10'
 gem 'simple_form', '~> 2.0.4'
 gem 'haml-rails', '~> 0.4'
-gem 'haml', '~> 4.0.0'
+gem 'haml', '~> 4.0.3'
 gem 'font-awesome-sass-rails', '~> 3.0.2.2'
 gem 'wicked', '~> 0.5.0'
 gem 'kaminari', '~> 0.14.1'
@@ -24,7 +24,7 @@ gem 'mongoid_taggable', '~> 1.1.1'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
@@ -38,14 +38,14 @@ end
 
 # Gems for production with deployment on Heroku
 group :production do
-  gem 'thin'
-  gem 'pg'
+  gem 'thin', '~> 1.5.1'
+  gem 'pg', '~> 0.15.1'
 end
 
 group :test, :development do
   gem 'rspec-rails','~> 2.12.2'
   gem 'factory_girl_rails', '~> 4.2.1'
-  gem 'guard-rspec', '~> 2.5.0'
+  gem 'guard-rspec', '~> 2.5.4'
 end
 
 group :test do
