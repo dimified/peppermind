@@ -31,11 +31,9 @@
           = link_to tag_path(URI.escape(tag)) do
             %li= tag
 
--#= t('.description')
--#%p= @challenge.description
+  .description
+    = @challenge.description
 
-  
-  
 - if current_user != @challenge.user && current_user
   = render 'ditos/form'
 
@@ -51,5 +49,3 @@
 -#- if can? :destroy, @challenge
 -#= link_to t('.link.delete'), challenge_path(@challenge), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'
 
--#%p
--#%small
