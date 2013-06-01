@@ -2,8 +2,7 @@ class User
   include Mongoid::Document
   after_create :init
   # Include default devise modules. Others available are:
-  # :token_authenticatable,
-  # :lockable, :timeoutable and :omniauthable
+  # :token_authenticatable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
 
   # Associations
@@ -49,10 +48,10 @@ class User
   attr_accessor :login, :email_confirmation
 
   # Confirmable
-   field :confirmation_token,   :type => String
-   field :confirmed_at,         :type => Time
-   field :confirmation_sent_at, :type => Time
-   field :unconfirmed_email,    :type => String
+  field :confirmation_token,   :type => String
+  field :confirmed_at,         :type => Time
+  field :confirmation_sent_at, :type => Time
+  field :unconfirmed_email,    :type => String
 
   index({ confirmation_token: 1 }, { unique: true, name: 'confirmation_token_index' })
 
