@@ -39,7 +39,7 @@ end
 
 # Gems for production with deployment on Heroku
 group :production do
-  gem 'thin', '~> 1.5.1'
+  gem 'thin'
   gem 'pg', '~> 0.15.1'
 end
 
