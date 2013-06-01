@@ -147,7 +147,7 @@ en:
         inspiration: 'New inspiration'
       problem: 'Problem'
       solution: 'Solution'
-      updated: 'Last update:'
+      updated: 'Last update on'
   ditos:
     form:
       dito: 'Dito'

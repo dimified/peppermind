@@ -2,7 +2,7 @@
 @import 'tags.css.sass'
 
 .header
-  padding: 10px 20px
+  padding: 7px 20px
   background: url('notepad.png') repeat
   box-shadow: 0 1px 0 white, 0 0 10px rgba(0, 0, 0, 0.3) inset
   color: white
@@ -45,7 +45,6 @@
       color: rgba(200,200,200,0.5)
 
   .user-name
-    font-size: 0.8em
     margin-left: 80px
 
   .avatar
@@ -58,7 +57,10 @@
     left: 0
     top: -20px
     float: left
-    margin-right: 5px
+    margin-right: 6px
+
+.meta
+  font-size: 0.8em
 
 #main
   background: url('linedpaper.png') repeat
@@ -67,18 +69,22 @@
     padding: 5px 0
 
   .tags
+    clear: both
+    position: relative
+    top: -18px
+
     ul
       padding: 0
       margin: 0
 
       li
         display: inline
-        font-size: 0.8em
+        font-size: 0.7em
         margin: 0px 3px
-        border: 1px solid rgb(220, 220, 220)
+        border: 1px solid gainsboro
         border-radius: 8px
-        line-height: 3
-        padding: 5px
+        line-height: 2.1
+        padding: 0px 7px
         box-shadow: 0px 1px 0px white
         text-shadow: 0px 1px 0px white
         @include linear-gradient(rgb(240, 240, 240), rgb(230, 230, 230))

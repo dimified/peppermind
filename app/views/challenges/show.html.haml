@@ -4,7 +4,6 @@
     .icon-plus
   = link_to t('.link.challenges'), challenges_path, class: 'btn btn-title', id: 'all-challenges'
 
-
 .header
   .timer
     - distance_of_time_in_words_hash(Time.now, Time.now + (@challenge.duration.to_time - Time.now)).each do |key, value|
@@ -16,13 +15,15 @@
   .question
     = @challenge.question
     = render 'challenges/count_ditos'
-  .user-name
+  .meta.user-name
     #{t('.created', user: @challenge.user.display_name)}
     #{time @challenge.created_at}
   = link_to image_tag('default_avatar.png', class: 'avatar'), user_path(@challenge.user)
   -#= image_tag avatar(@challenge.user, 48), alt: t('global.gravatar'), class: 'avatar'
 
 #main-content
+  .meta
+    #{t('.updated')} #{time @challenge.updated_at}
   .tags
     - if @challenge.tags_array.count > 0
       %ul
@@ -52,4 +53,3 @@
 
 -#%p
 -#%small
--##{t('.updated')} #{time @challenge.updated_at}
