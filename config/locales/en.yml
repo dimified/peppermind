@@ -114,7 +114,7 @@ en:
         edit: 'Edit'
       placeholder:
         description: 'Description'
-        duration: 'Challenge läuft bis…'
+        duration: 'Challenge expires on...'
         question: 'Fragestellung'
     _process:
       title: 'Neue Challenge anlegen'
@@ -134,9 +134,9 @@ en:
       title: 'Was bewegt dich !?'
     show:
       title: 'Challenge'
-      created: 'Created by %{user} at'
+      created: 'Created by %{user} on'
       description: 'Description'
-      duration: 'Challenge läuft bis:'
+      duration: 'Challenge expires on'
       inspirations: 'Inspirations'
       link:
         challenges: 'All challenges'
