@@ -10,6 +10,7 @@ de:
       not_saved:
         one: 'Konnte %{resource} nicht speichern: ein Fehler.'
         other: 'Konnte %{resource} nicht speichern: %{count} Fehler.'
+      too_short: 'Passwort zu kurz.'
   devise:
     failure:
       already_authenticated: 'Du bist bereits angemeldet.'
@@ -46,12 +47,23 @@ de:
       forgot: 'Passwort vergessen?'
       remember: 'Angemeldet bleiben'
     confirmations:
+      show:
+        button:
+          cancel: 'Abbrechen'
+          submit: 'Anmeldung abschließen'
+        error:
+          blank: 'Bitte ausfüllen.'
+          confirmation: 'Die Passwörter stimmen nicht überein.'
+        label:
+          password: 'Passwort (mind. 6 Zeichen)'
+          password_confirm: 'Passwort wiederholen'
+        title: 'Nur noch ein Schritt…'
       send_instructions: 'Du erhältst in wenigen Minuten eine E-Mail, mit welcher du deine Registrierung bestätigen kannst.'
       send_paranoid_instructions: 'Falls deine E-Mail-Adresse in unserer Datenbank existiert, erhältst du in Kürze eine E-Mail mit der du deine Registrierung bestätigen kannst.'
       confirmed: 'Vielen Dank für deine Registrierung. Du bist jetzt angemeldet.'
     registrations:
       signed_up: 'Du hast dich erfolgreich registriert.'
-      signed_up_but_unconfirmed: 'Du hast dich erfolgreich registriert. Wir konnten dich noch nicht anmelden, da dein Account noch nicht bestätigt ist. Du erhältst in Kürze eine E-Mail mit der Anleitung, wie du deinen Account freischalten kannst.'
+      signed_up_but_unconfirmed: 'Du hast dich erfolgreich registriert. Du erhältst in Kürze eine Bestätigungs-Mail, über welche du dein Benutzerkonto freischalten kannst.'
       signed_up_but_inactive: 'Du hast dich erfolgreich registriert. Wir konnten dich noch nicht anmelden, da dein Account inaktiv ist.'
       signed_up_but_locked: 'Du hast dich erfolgreich registriert. Wir konnten dich noch nicht anmelden, da dein Account gesperrt ist.'
       updated: 'Deine Daten wurden aktualisiert.'
@@ -72,6 +84,10 @@ de:
       unlock_instructions:
         subject: '[peppermind] Benutzerkonto freischalten'
     mail:
-      intro: 'Es wurde eine Anfrage gestartet, das Passwort deines Benutzerkontos auf Peppermind zu ändern. Dein Passwort kannst du über den folgenden Link ändern. Der Link ist 6 Stunden lang gültig, nach Ablauf dieser Zeit musst du einen neuen Link anfordern, um dein Passwort zu ändern.'
-      outro: 'Wenn diese Anfrage nicht von dir gestartet wurde, kannst du diese E-Mail einfach ignorieren. Dein Passwort wird nicht geändert, solange du nicht über diesen Link ein neues Passwort einstellst.'
-      welcome: 'Hallo %{user},'
+      confirmation:
+        intro: 'vielen Dank für deine Anmeldung auf Peppermind. Du bist nur noch einen Schritt von der Teilnahme an unserer Community entfernt. Bestätige deine Registrierung, indem du den folgenden Link klickst und ein Passwort für dein Benutzerkonto vergibst:'
+        welcome: 'Hallo %{user},'
+      lost_password:
+        intro: 'Es wurde eine Anfrage gestartet, das Passwort deines Benutzerkontos auf Peppermind zu ändern. Dein Passwort kannst du über den folgenden Link ändern. Der Link ist 6 Stunden lang gültig, nach Ablauf dieser Zeit musst du einen neuen Link anfordern, um dein Passwort zu ändern.'
+        outro: 'Wenn diese Anfrage nicht von dir gestartet wurde, kannst du diese E-Mail einfach ignorieren. Dein Passwort wird nicht geändert, solange du nicht über diesen Link ein neues Passwort einstellst.'
+        welcome: 'Hallo %{user},'

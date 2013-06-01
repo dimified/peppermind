@@ -1,6 +1,17 @@
 en:
   devise:
     confirmations:
+      show:
+        button:
+          cancel: 'Abbrechen'
+          submit: 'Anmeldung abschließen'
+        error:
+          blank: 'Bitte ausfüllen.'
+          confirmation: 'Die Passwörter stimmen nicht überein.'
+        label:
+          password: 'Passwort (mind. 6 Zeichen)'
+          password_confirm: 'Passwort wiederholen'
+        title: 'Nur noch ein Schritt…'
       confirmed: "Your account was successfully confirmed. You are now signed in."
       send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
@@ -63,9 +74,13 @@ en:
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
     mail:
-      intro: 'Es wurde eine Anfrage gestartet, das Passwort deines Benutzerkontos auf Peppermind zu ändern. Dein Passwort kannst du über den folgenden Link ändern. Der Link ist 6 Stunden lang gültig, nach Ablauf dieser Zeit musst du einen neuen Link anfordern, um dein Passwort zu ändern.'
-      outro: 'Wenn diese Anfrage nicht von dir gestartet wurde, kannst du diese E-Mail einfach ignorieren. Dein Passwort wird nicht geändert, solange du nicht über diesen Link ein neues Passwort einstellst.'
-      welcome: 'Hallo %{user},'
+      confirmation:
+        intro: 'vielen Dank für deine Anmeldung auf Peppermind. Du bist nur noch einen Schritt von der Teilnahme an unserer Community entfernt. Bestätige deine Registrierung, indem du den folgenden Link klickst und ein Passwort für dein Benutzerkonto vergibst:'
+        welcome: 'Hallo %{user},'
+      lost_password:
+        intro: 'Es wurde eine Anfrage gestartet, das Passwort deines Benutzerkontos auf Peppermind zu ändern. Dein Passwort kannst du über den folgenden Link ändern. Der Link ist 6 Stunden lang gültig, nach Ablauf dieser Zeit musst du einen neuen Link anfordern, um dein Passwort zu ändern.'
+        outro: 'Wenn diese Anfrage nicht von dir gestartet wurde, kannst du diese E-Mail einfach ignorieren. Dein Passwort wird nicht geändert, solange du nicht über diesen Link ein neues Passwort einstellst.'
+        welcome: 'Hallo %{user},'
   errors:
     messages:
       blank: 'Bitte Feld ausfüllen.'
@@ -78,3 +93,4 @@ en:
       not_saved:
         one: '1 error prohibited this %{resource} from being saved:'
         other: '%{count} errors prohibited this %{resource} from being saved:'
+      too_short: 'Password too short.'

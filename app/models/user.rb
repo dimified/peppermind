@@ -2,9 +2,9 @@ class User
   include Mongoid::Document
   after_create :init
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
+  # :token_authenticatable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
 
   # Associations
   has_many :socialproviders, dependent: :destroy
@@ -49,10 +49,12 @@ class User
   attr_accessor :login, :email_confirmation
 
   # Confirmable
-  # field :confirmation_token,   :type => String
-  # field :confirmed_at,         :type => Time
-  # field :confirmation_sent_at, :type => Time
-  # field :unconfirmed_email,    :type => String # Only if using reconfirmable
+   field :confirmation_token,   :type => String
+   field :confirmed_at,         :type => Time
+   field :confirmation_sent_at, :type => Time
+   field :unconfirmed_email,    :type => String
+
+  index({ confirmation_token: 1 }, { unique: true, name: 'confirmation_token_index' })
 
   # Lockable
   # field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts
@@ -77,7 +79,28 @@ class User
     end
   end
 
+  # confirm registration
+  def password_required?
+    super if confirmed?
+  end
+
   # validations
+  def password_match?(password, confirm)
+    if password.blank?
+      errors.add(:password, I18n.t('devise.confirmations.show.error.blank'))
+    end
+
+    if confirm.blank?
+      errors.add(:password_confirmation, I18n.t('devise.confirmations.show.error.blank'))
+    end
+
+    if password != confirm
+      errors.add(password_confirmation, I18n.t('devise.confirmations.show.error.confirmation'))
+    end
+
+    password == confirm && !password.blank?
+  end
+
   def validate_display_name(name)
     if name.blank?
       errors.add(:display_name, I18n.t('account.validation.display_name.blank'))
@@ -99,16 +122,6 @@ class User
 
     if User.where(email: email).exists?
       errors.add(:email_confirm, I18n.t('account.validation.email.not_unique'))
-    end
-  end
-
-  def validate_password(password, confirm)
-    unless password.length >= 6
-      errors.add(:password, I18n.t('account.validation.password.length'))
-    end
-
-    unless confirm === password
-      errors.add(:password_confirm, I18n.t('account.validation.password.confirm'))
     end
   end
 

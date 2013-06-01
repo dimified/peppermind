@@ -20,7 +20,6 @@ class AfterSignupController < ApplicationController
     @user = User.new(email: params[:temporary_user][:email], password: params[:temporary_user][:password], display_name: params[:temporary_user][:display_name])
     @user.validate_display_name(params[:temporary_user][:display_name])
     @user.validate_email(params[:temporary_user][:email], params[:temporary_user][:email_confirm])
-    @user.validate_password(params[:temporary_user][:password], params[:temporary_user][:password_confirm])
 
     if @user.errors.empty?
       # save user and link social provider with account
@@ -44,8 +43,6 @@ class AfterSignupController < ApplicationController
       flash[:error] += @user.errors[:display_name].first.to_s if @user.errors[:display_name]
       flash[:error] += @user.errors[:email].first.to_s if @user.errors[:email]
       flash[:error] += @user.errors[:email_confirm].first.to_s if @user.errors[:email_confirm]
-      flash[:error] += @user.errors[:password].first.to_s if @user.errors[:password]
-      flash[:error] += @user.errors[:password_confirm].first.to_s if @user.errors[:password_confirm]
 
       # redirect to after signup path
       redirect_to after_signup_index_path

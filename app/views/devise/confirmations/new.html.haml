@@ -1,7 +1,6 @@
 = title 'Resend confirmation instructions'
 
 = simple_form_for resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post } do |f|
-  = devise_error_messages!
   = f.label :email
   = f.email_field :email, autofocus: true
   = f.submit 'Resend confirmation instructions'

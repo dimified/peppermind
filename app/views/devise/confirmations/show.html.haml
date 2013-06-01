@@ -1,0 +1,8 @@
+= title t('.title')
+
+= simple_form_for resource, as: resource_name, url: confirm_path, defaults: { input_html: { class: 'styled_input' } } do |f|
+  = f.hidden_field :confirmation_token
+  = f.input :password, placeholder: t('.label.password'), input_html: { autofocus: true }
+  = f.input :password_confirmation, placeholder: t('.label.password_confirm')
+  = f.submit t('.button.submit'), class: 'btn green-button'
+  = link_to t('.button.cancel'), root_path, class: 'btn btn-danger'

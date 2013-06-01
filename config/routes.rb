@@ -7,10 +7,11 @@ Peppermind::Application.routes.draw do
   # root path for guest users
   devise_scope :user do
     root to: 'devise/sessions#new'
+    put '/confirm' => 'confirmations#confirm'
   end
 
   # users
-  devise_for :users
+  devise_for :users, controllers: { confirmations: 'confirmations' }
   resources :users, except: [:new]
   get 'account/edit'
   post 'account/update'
