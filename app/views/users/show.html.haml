@@ -1,12 +1,24 @@
-= title t('.title', user: @user.display_name)
-= image_tag avatar(@user, 48), alt: t('global.gravatar')
+= title @user.display_name
 
-%p= t('.user_level', level: @user.level, count: @user.points)
+#main-content
+  = image_tag 'default_avatar.png', id: 'avatar'
+  -#= image_tag avatar(@user, 48), alt: t('global.gravatar')
 
-%h3= t('.last_challenges', user: @user.display_name)
+  - if current_user == @user
+    %nav
+      = link_to t('.link.edit'), edit_user_path(@user), class: 'btn btn-title right'
 
-- @challenges.each do |challenge|
-  %div
-    = link_to challenge.question, challenge_path(challenge.id)
-    = t('.ditos', count: challenge.ditos.count)
+  .level
+    = t('.user_level', level: @user.level)
+
+  .points
+    = t('.user_points', count: @user.points)
+
+  .contributions
+    = t('.last_challenges', user: @user.display_name)
+
+  - @challenges.each do |challenge|
+    %div
+      = link_to challenge.question, challenge_path(challenge.id)
+      = t('.ditos', count: challenge.ditos.count)
 

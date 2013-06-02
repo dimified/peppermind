@@ -228,10 +228,10 @@ de:
           all: 'Alle Challenges'
           new: 'Neue Challenge'
         edit: 'Bearbeiten'
-      title: 'Profil von »%{user}«'
-      user_level:
-        one: '%{level} (%{count} Punkt)'
-        other: '%{level} (%{count} Punkte)'
+      user_level: 'Du befindest dich auf Level %{level}'
+      user_points:
+        one: 'Du hast %{count} Punkt'
+        other: 'Du hast %{count} Punkte'
   views:
     pagination:
       first: '« Erste'
