@@ -150,8 +150,8 @@ en:
       updated: 'Last update on'
   ditos:
     form:
-      dito: 'Dito'
-      undito: 'Undito'
+      dito: 'Same here'
+      undito: 'Not the same anymore'
   endless_scrolling:
     loading_label: 'Loading…'
   errors:

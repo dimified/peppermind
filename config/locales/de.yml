@@ -150,8 +150,8 @@ de:
       updated: 'Zuletzt aktualisiert am'
   ditos:
     form:
-      dito: 'Dito'
-      undito: 'Undito'
+      dito: 'Geht mir auch so'
+      undito: 'Geht mir nicht mehr so'
   endless_scrolling:
     loading_label: 'Laden…'
   errors:

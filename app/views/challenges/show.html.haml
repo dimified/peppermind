@@ -22,8 +22,6 @@
   -#= image_tag avatar(@challenge.user, 48), alt: t('global.gravatar'), class: 'avatar'
 
 #challenge
-  .meta
-    #{t('.updated')} #{time @challenge.updated_at}
   .tags
     - if @challenge.tags_array.count > 0
       %ul
@@ -34,8 +32,13 @@
   .description
     = @challenge.description
 
-  -#- if current_user != @challenge.user && current_user
-    -#= render 'ditos/form'
+  - if current_user != @challenge.user && current_user
+    = render 'ditos/form'
+  - else
+    - if can? :update, @challenge
+      = link_to t('.link.edit'), edit_challenge_path(@challenge), class: 'btn green-button'
+    - if can? :destroy, @challenge
+      = link_to t('.link.delete'), challenge_path(@challenge), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'
 
 - if @inspirations.count > 0
   - @inspirations.each do |inspiration|
@@ -50,10 +53,4 @@
   = link_to new_challenge_inspiration_path(@challenge) do
     .icon-plus.new-inspiration
   = link_to t('.link.inspiration'), new_challenge_inspiration_path(@challenge), class: 'btn'
-
--#- if can? :update, @challenge
--#= link_to t('.link.edit'), edit_challenge_path(@challenge), class: 'btn green-button'
-
--#- if can? :destroy, @challenge
--#= link_to t('.link.delete'), challenge_path(@challenge), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'
 
