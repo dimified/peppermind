@@ -20,7 +20,7 @@ gem 'font-awesome-sass-rails', '~> 3.0.2.2'
 gem 'wicked', '~> 0.5.0'
 gem 'kaminari', '~> 0.14.1'
 gem 'mongoid_taggable', '~> 1.1.1'
-gem 'mail', git: 'git://github.com/jeremy/mail.git'
+#gem 'mail', git: 'git://github.com/jeremy/mail.git'
 gem "dotiw", "~> 1.1.1" # better implementation of distance_of_time_in_words
 
 # Gems used only for assets and not required
