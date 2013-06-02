@@ -21,7 +21,7 @@
   = link_to image_tag('default_avatar.png', class: 'avatar'), user_path(@challenge.user)
   -#= image_tag avatar(@challenge.user, 48), alt: t('global.gravatar'), class: 'avatar'
 
-#main-content
+#challenge
   .meta
     #{t('.updated')} #{time @challenge.updated_at}
   .tags
@@ -34,14 +34,22 @@
   .description
     = @challenge.description
 
-- if current_user != @challenge.user && current_user
-  = render 'ditos/form'
+  -#- if current_user != @challenge.user && current_user
+    -#= render 'ditos/form'
 
--#- if @inspirations.count > 0
--#%h3= t('.inspirations')
+- if @inspirations.count > 0
+  - @inspirations.each do |inspiration|
+    .inspiration
+      = link_to image_tag('default_avatar.png', class: 'contributors'), user_path(inspiration.user)
+      .inspiration-user-name
+        = link_to inspiration.user.display_name
+      .inspiration-description
+        = link_to inspiration.description, challenge_inspiration_path(@challenge, inspiration)
 
--#- @inspirations.each do |inspiration|
--#%p= link_to inspiration.description, challenge_inspiration_path(@challenge, inspiration)
+#main-content
+  = link_to new_challenge_inspiration_path(@challenge) do
+    .icon-plus.new-inspiration
+  = link_to t('.link.inspiration'), new_challenge_inspiration_path(@challenge), class: 'btn'
 
 -#- if can? :update, @challenge
 -#= link_to t('.link.edit'), edit_challenge_path(@challenge), class: 'btn green-button'

@@ -144,7 +144,7 @@ de:
         delete: 'Löschen'
         delete_confirm: 'Möchtest du die Challenge wirklich löschen?'
         edit: 'Challenge bearbeiten'
-        inspiration: 'Neue Inspiration'
+        inspiration: 'Neue Inspiration hinzufügen'
       problem: 'Problem'
       solution: 'Lösung'
       updated: 'Zuletzt aktualisiert am'

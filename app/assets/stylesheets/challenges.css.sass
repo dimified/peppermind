@@ -38,11 +38,11 @@
 
     .value
       font-size: 16px
-      color: rgba(170,255,0,0.5)
+      color: rgba(170, 255, 0, 0.5)
 
     .key
       font-size: 10px
-      color: rgba(200,200,200,0.5)
+      color: rgba(200, 200, 200, 0.5)
 
   .user-name
     margin-left: 80px
@@ -51,13 +51,14 @@
     width: 70px
     border-radius: 40px
     height: 70px
-    border: 2px solid rgba(255, 255, 255, 0.9)
-    box-shadow: 0 1px 0 white
+    border: 2px solid white
+    box-shadow: 0px 0px 4px rgb(100, 100, 100)
     position: relative
     left: 0
     top: -20px
     float: left
     margin-right: 6px
+
 
 .meta
   font-size: 0.8em
@@ -66,7 +67,45 @@
   background: url('linedpaper.png') repeat
 
   #main-content
-    padding: 5px 0
+    margin: 0 10% 20px 56px
+    padding: 0
+
+  #challenge
+    padding: 5px 0px 5px 30px
+    border-left: 2px solid rgba(100, 100, 100, 0.2)
+    margin: 0 10% 0 56px
+
+  .inspiration
+    padding: 5px 0px 13px 30px
+    border-left: 2px solid rgba(100, 100, 100, 0.2)
+    margin: 0 10% 0 56px
+
+    .contributors
+      width: 40px
+      border-radius: 21px
+      height: 40px
+      border: 1px solid white
+      box-shadow: 0px 0px 4px #646464
+      position: relative
+      left: -52px
+
+    .inspiration-user-name
+      font-size: 0.9em
+      display: inline
+      position: relative
+      left: -46px
+      top: -25px
+
+    .inspiration-description
+      font-size: 13px
+      line-height: 1.95
+      position: relative
+      top: -23px
+      border: 1px solid rgba(200, 200, 220, 1)
+      padding: 4px 10px
+      border-radius: 4px
+      background: rgba(200, 200, 220, 0.3)
+      box-shadow: 0px 1px 0px white, 0px 0px 4px rgba(100, 100, 100, 0.2) inset
 
   .tags
     clear: both
@@ -94,8 +133,25 @@
 
   .description
     font-size: 13px
-    margin: 34px 0px
+    margin: 37px 0px
     line-height: 1.95
+
+.new-inspiration
+  height: 30px
+  width: 30px
+  border-radius: 20px
+  text-align: center
+  line-height: 2
+  border: 2px solid white
+  box-shadow: 0px 0px 4px #646464
+  position: relative
+  left: -16px
+  color: white
+  text-shadow: 0px -1px 0px rgba(black, 0.3)
+  @include linear-gradient(rgb(130, 210, 0), rgb(110, 190, 0))
+
+.btn
+  margin: 0
 
 .challenge
   margin: 10px 0
