@@ -1,11 +1,3 @@
-GIT
-  remote: git://github.com/jeremy/mail.git
-  revision: 4875bc2ba1670289a34a155569af2f51abddc316
-  specs:
-    mail (2.5.4)
-      mime-types (~> 1.16)
-      treetop (~> 1.4.8)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -130,6 +122,9 @@ GEM
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
     lumberjack (1.0.3)
+    mail (2.5.4)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.23)
     mongoid (3.1.4)
@@ -301,7 +296,6 @@ DEPENDENCIES
   jquery-rails (~> 2.2.2)
   jquery-ui-rails (~> 4.0.3)
   kaminari (~> 0.14.1)
-  mail!
   mongoid (~> 3.1.4)
   mongoid-rspec (~> 1.7.0)
   mongoid_auto_increment_id (~> 0.6.1)
