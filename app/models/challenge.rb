@@ -98,16 +98,14 @@
 
   # convert date string in Date object and validates date
   def validate_date
-    if self.duration.nil?
-      if self.duration_string.match(/^\d{2}\.\d{2}\.\d{4}$/)
-        self.duration = Date.strptime self.duration_string, '%d.%m.%Y'
+    if self.duration_string.match(/^\d{2}\.\d{2}\.\d{4}$/)
+      self.duration = Date.strptime self.duration_string, '%d.%m.%Y'
 
-        unless self.duration > DateTime.now.to_date
-          errors.add(:duration_string, I18n.t('mongoid.errors.models.challenge.attributes.duration_string.not_in_future'))
-        end
-      else
-        errors.add(:duration_string, I18n.t('mongoid.errors.models.challenge.attributes.duration_string.invalid'))
+      unless self.duration > DateTime.now.to_date
+        errors.add(:duration_string, I18n.t('mongoid.errors.models.challenge.attributes.duration_string.not_in_future'))
       end
+    else
+      errors.add(:duration_string, I18n.t('mongoid.errors.models.challenge.attributes.duration_string.invalid'))
     end
   end
 end
