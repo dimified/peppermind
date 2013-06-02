@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+#ruby '1.9.3'
 
 gem 'rails', '3.2.13'
 gem 'mongoid', '~> 3.1.4'
@@ -20,8 +20,7 @@ gem 'font-awesome-sass-rails', '~> 3.0.2.2'
 gem 'wicked', '~> 0.5.0'
 gem 'kaminari', '~> 0.14.1'
 gem 'mongoid_taggable', '~> 1.1.1'
-gem 'mail', git: 'git://github.com/jeremy/mail.git'
-gem "dotiw", "~> 1.1.1" # better implementation of distance_of_time_in_words
+gem 'dotiw', '~> 1.1.1'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -40,7 +39,7 @@ end
 
 # Gems for production with deployment on Heroku
 group :production do
-  gem 'thin'
+  #gem 'thin'
   gem 'pg', '~> 0.15.1'
 end
 
