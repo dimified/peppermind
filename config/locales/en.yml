@@ -6,6 +6,12 @@ en:
       button:
         cancel: 'Cancel'
         submit: 'Edit'
+      delete_account:
+        button: 'Benutzerkonto löschen'
+        confirmation: 'Bist du dir sicher, dass du dein Benutzerkonto unwiderruflich löschen möchtest?'
+        success: 'Dein Benutzerkonto wurde erfolgreich gelöscht. Vielleicht sieht man sich irgendwann wieder !?'
+        title: 'Benutzerkonto löschen'
+        warning: 'Hier hast du die Möglichkeit, dein Benutzerkonto unwiderruflich zu löschen. Auch wenn wir dies sehr schade fänden, respektieren wir diesen Wunsch. Die bestehenden Herausforderungen werden einem anonymen Benutzerkonto zugeordnet.'
       label:
         display_name: 'Username'
         email: 'E-Mail-Adresse'

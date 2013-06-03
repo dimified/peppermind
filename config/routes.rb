@@ -8,6 +8,7 @@ Peppermind::Application.routes.draw do
   devise_scope :user do
     root to: 'devise/sessions#new'
     put '/confirm' => 'confirmations#confirm'
+    get '/users/edit' => 'account#edit'
   end
 
   # users
@@ -15,6 +16,7 @@ Peppermind::Application.routes.draw do
   resources :users, except: [:new]
   get 'account/edit'
   post 'account/update'
+  delete 'account/destroy'
   resources :socialproviders, only: [:create, :destroy]
   match '/auth/:socialprovider/callback' => 'socialproviders#create'
   resources :after_signup, only: [:index, :create]

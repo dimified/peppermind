@@ -32,4 +32,26 @@ class AccountController < ApplicationController
       end
     end
   end
+
+  def destroy
+    # remember user id and delete cookie
+    user_id = current_user.id
+    cookies.delete :user_id
+
+    # delete user and her/his activities
+    Activity.where(user_id: user_id).destroy
+    User.find(user_id).destroy
+
+    # change ownership of challenges and inspirations
+    peppermind_user = User.first.id
+
+    Challenge.where(user_id: user_id).update_all(user_id: peppermind_user)
+    Inspiration.where(user_id: user_id).update_all(user_id: peppermind_user)
+
+    # show success message and redirect to root path
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: t('account.edit.delete_account.success') }
+      format.json { head :no_content }
+    end
+  end
 end

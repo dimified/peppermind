@@ -42,7 +42,7 @@
       %div{class: 'social-box ' + socialprovider.provider + ' enabled'}
         %div{class: 'logo'}
         %p
-        = link_to t('.provider.link.remove_service.text'), socialprovider, :confirm => t('.provider.link.remove_service.confirmation'), method: :delete, class: 'confirmation btn btn-danger'
+        = link_to t('.provider.link.remove_service.text'), socialprovider, confirm: t('.provider.link.remove_service.confirmation'), method: :delete, class: 'confirmation btn btn-danger'
     - (@providers_suggested).each do |provider|
       %div{class: 'social-box ' + provider + ' disabled'}
         %div{class: 'logo'}
@@ -56,3 +56,10 @@
             = link_to t('.provider.link.add_service'), '/auth/google/', class: 'btn btn-green'
           - when 'twitter'
             = link_to t('.provider.link.add_service'), '/auth/twitter/', class: 'btn btn-green'
+
+%h1= t('.delete_account.title')
+
+%p
+  %em= t('.delete_account.warning')
+
+%p= link_to t('.delete_account.button'), account_destroy_path, confirm: t('.delete_account.confirmation'), method: :delete, class: 'confirmation btn btn-danger'
