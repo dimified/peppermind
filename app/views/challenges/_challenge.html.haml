@@ -1,7 +1,10 @@
-%article.challenge
-  =link_to challenge_path(challenge.id) do
-    %div
-      %h2= challenge.question
-      #{challenge.user.display_name}
-      = time challenge.created_at, class: :timeago
-      %p= challenge.description
+= link_to challenge_path(challenge.id) do
+  %article.challenge
+    .question-icon
+      .icon-question
+    .text
+      = challenge.question
+    .icon-chevron-right
+    -##{challenge.user.display_name}
+    -#= time challenge.created_at, class: :timeago
+    -#%p= challenge.description

@@ -1,3 +1,6 @@
+- content_for :head do
+  = stylesheet_link_tag 'linedpaper'
+
 = title t('.title')
 %nav
   = link_to new_challenge_path, { class: 'btn btn-title right' } do
