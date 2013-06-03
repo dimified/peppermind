@@ -23,12 +23,13 @@
   .level, .points
     margin-bottom: 10px
 
-.challenges
+.contributions
   clear: both
   border: 1px solid rgba(black, 0.3)
   background: linear-gradient(rgba(white, 0.3), rgba(white, 0.5))
   box-shadow: 0px 0px 4px rgba(black, 0.3) inset
   border-radius: 4px
+  margin: 20px 0
 
   h2
     margin: 0
@@ -39,9 +40,14 @@
     text-shadow: 0px -1px rgba(50, 50, 50, 0.3)
     color: white
     font-weight: normal
-    @include linear-gradient(rgb(130, 210, 0), rgb(110, 190, 0))
 
-  .challenge
+    &#challenge
+      @include linear-gradient(rgb(130, 210, 0), rgb(110, 190, 0))
+
+    &#inspiration
+      @include linear-gradient(rgb(180, 180, 200), rgb(160, 160, 180))
+
+  .contribution
     padding: 10px 0
     box-shadow: 0px 1px 0px white
     border-bottom: 1px solid rgba(black, 0.3)
@@ -64,12 +70,17 @@
       left: 8px
       color: white
       text-shadow: 0px -1px rgba(black, 0.3)
-      @include linear-gradient(rgb(130, 210, 0), rgb(110, 190, 0))
+
+      &#challenge
+        @include linear-gradient(rgb(130, 210, 0), rgb(110, 190, 0))
+
+      &#inspiration
+        @include linear-gradient(rgb(180, 180, 200), rgb(160, 160, 180))
 
     .icon
       width: 40px
 
-    .dito
+    .like
       width: 7px
       margin-right: 20px
       display: inline

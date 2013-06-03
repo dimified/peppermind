@@ -16,16 +16,30 @@
     .points
       = t('.user_points', count: @user.points)
 
-  .challenges
-    %h2= t('.last_challenges', user: @user.display_name)
+  .contributions
+    %h2#challenge
+      = t('.last_challenges', user: @user.display_name)
     - @challenges.each do |challenge|
-      = link_to challenge_path(challenge.id) do
-        .challenge
+      = link_to challenge_path(challenge) do
+        .contribution
           .icon
-            .question-icon
+            .question-icon#challenge
               .icon-question
-          .dito
+          .like
             = challenge.dito
           .text
             = challenge.question
 
+  .contributions
+    %h2#inspiration
+      = t('.last_challenges', user: @user.display_name)
+    - @inspirations.each do |inspiration|
+      = link_to challenge_inspiration_path(inspiration.challenge_id, inspiration) do
+        .contribution
+          .icon
+            .question-icon#inspiration
+              .icon-lightbulb
+          .like
+            = inspiration.like
+          .text
+            = inspiration.description.split.slice(0, 5).join(" ") + '...'

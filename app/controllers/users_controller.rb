@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @challenges = Challenge.where(user_id: @user).order_by([:id, :desc]).limit(5)
+    @inspirations = Inspiration.where(user_id: @user).limit(5).desc
 
     respond_to do |format|
       format.html
