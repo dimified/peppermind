@@ -4,6 +4,8 @@
       .icon-question
     .text
       = challenge.question
+      .ditos
+        = t('.ditos_count', count: challenge.dito)
     .icon-chevron-right
     -##{challenge.user.display_name}
     -#= time challenge.created_at, class: :timeago

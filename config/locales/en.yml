@@ -106,6 +106,10 @@ en:
     deleted: 'Die Inspiration wurde erfolgreich gelöscht.'
     updated: 'Inspiration was successfully updated.'
   challenges:
+    challenge:
+      ditos_count:
+        one: '%{count} Dito'
+        other: '%{count} Ditos'
     _form:
       button:
         cancel: 'Cancel'
