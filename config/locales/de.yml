@@ -40,8 +40,7 @@ de:
         exists: 'aktualisierte die Herausforderung'
     index:
       link:
-        all_challenges: 'Alle Challenges'
-        new_challenge: 'Neue Challenge'
+        challenges: 'Herausforderungen'
       title: 'Letzte Aktivitäten'
       was: 'Das war'
     inspiration:
@@ -127,9 +126,8 @@ de:
       title: '%{challenge} - Challenge bearbeiten'
     index:
       link:
-        dashboard: 'Dashboard'
-        new: 'Neue Challenge'
-      title: 'Challenges'
+        activities: 'Aktivitäten'
+      title: 'Alle Herausforderungen'
     new:
       title: 'Was bewegt dich !?'
     show:

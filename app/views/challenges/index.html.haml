@@ -2,9 +2,10 @@
   = javascript_include_tag 'endless_scroll'
 
 = title t('.title')
-
-= link_to t('.link.dashboard'), root_path
-= link_to t('.link.new'), new_challenge_path
+%nav
+  = link_to t('.link.activities'), root_path, class: 'btn btn-title left'
+  = link_to new_challenge_path, { class: 'btn btn-title right' } do
+    .icon-plus
 
 #challenges
   = render @challenges
