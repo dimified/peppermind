@@ -1,8 +1,8 @@
 = title t('.title')
 %nav
-  = link_to new_challenge_path, { class: 'btn btn-title', id: 'new-challenge' } do
+  = link_to new_challenge_path, { class: 'btn btn-title right' } do
     .icon-plus
-  = link_to t('.link.challenges'), challenges_path, class: 'btn btn-title', id: 'all-challenges'
+  = link_to t('.link.challenges'), challenges_path, class: 'btn btn-title left'
 
 .header
   .timer

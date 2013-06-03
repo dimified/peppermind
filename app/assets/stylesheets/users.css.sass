@@ -1,13 +1,51 @@
-#avatar
-  margin: 10px
+@import 'mixin.css.sass'
+
+.user-area
+  margin-bottom: 20px
   height: 70px
-  width: 70px
-  border-radius: 4px
-  box-shadow: 0px 1px 0px white
-  float: left
 
-.level, .points
-  margin: 10px
+  #avatar
+    height: 70px
+    width: 70px
+    margin-right: 10px
+    border-radius: 5px
+    box-shadow: 0px 1px 0px white, 0px 0px 10px rgba(0,0,0,0.5) inset
+    float: left
 
-.contributions
+    img
+      position: relative
+      z-index: -1
+      margin: 0 !important
+      border-radius: 5px
+      height: 70px
+      width: 70px
+
+  .level, .points
+    margin-bottom: 10px
+
+.challenges
   clear: both
+  border: 1px solid rgba(black, 0.3)
+  background: linear-gradient(rgba(white, 0.3), rgba(white, 0.5))
+  box-shadow: 0px 0px 4px rgba(black, 0.3) inset
+  border-radius: 4px
+
+  h2
+    margin: 0
+    padding: 10px
+    font-size: 1.2em
+    border-bottom: 1px solid rgba(black, 0.3)
+    box-shadow: 0px 1px 0px white
+    text-shadow: 0px -1px rgba(50, 50, 50, 0.3)
+    color: white
+    font-weight: normal
+    @include linear-gradient(rgb(130, 210, 0), rgb(110, 190, 0))
+
+  .challenge
+    padding: 10px 10px
+    box-shadow: 0px 1px 0px white
+    border-bottom: 1px solid rgba(black, 0.3)
+    @include linear-gradient(rgba(white, 0.5), rgba(white, 0))
+
+    &:hover
+      background: rgba(white, 0.7)

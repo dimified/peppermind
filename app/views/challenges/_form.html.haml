@@ -11,7 +11,7 @@
     });
 
 = simple_fields_for @challenge, defaults: { input_html: { class: 'styled_input' } } do |f|
-  = f.input :question, placeholder: t('challenges._form.placeholder.question'), label: t('challenges._form.placeholder.question'), autofocus: true
-  = f.input :description, as: :text, placeholder: t('challenges._form.placeholder.description'), label: t('challenges._form.placeholder.description')
+  = f.input :question, placeholder: t('challenges._form.placeholder.question'), label: t('challenges._form.placeholder.question'), autofocus: true, input_html: { maxlength: 100 }
+  = f.input :description, as: :text, placeholder: t('challenges._form.placeholder.description'), label: t('challenges._form.placeholder.description'), input_html: { maxlength: 500 }
   = f.input :duration_string, input_html: { class: 'styled_input datepicker', :autocomplete => 'off' }, placeholder: t('challenges._form.placeholder.duration'), label: t('challenges._form.placeholder.duration')
   = f.input :tags, input_html: { :autocomplete => 'off' }, placeholder: t('tags.add'), label: t('tags.add');
