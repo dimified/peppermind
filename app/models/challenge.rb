@@ -98,7 +98,7 @@
 
   # convert date string in Date object and validates date
   def validate_date
-    if self.duration.nil?
+    if self.duration.nil? || self.duration_string
       if self.duration_string.match(/^\d{2}\.\d{2}\.\d{4}$/)
         self.duration = Date.strptime self.duration_string, '%d.%m.%Y'
 
