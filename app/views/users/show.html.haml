@@ -1,4 +1,7 @@
-= title @user.display_name
+- if current_user == @user
+  = title t('.title')
+- else
+  = title @user.display_name
 
 #main-content
   .user-area
@@ -8,37 +11,44 @@
     - if current_user == @user
       %nav
         = link_to t('.link.edit'), account_edit_path, class: 'btn btn-title right'
-
-    .level
-      = t('.user_level', level: @user.level)
-
-    .points
-      = t('.user_points', count: @user.points)
+      .level
+        = t('.account_level', level: @user.level)
+      .points
+        = t('.account_points', count: @user.points)
+    - else
+      .level
+        = t('.user_level', level: @user.level)
+      .points
+        = t('.user_points', count: @user.points)
 
   .contributions
     %h2#challenge
-      = t('.last_challenges', user: @user.display_name)
+      - if current_user == @user
+        = t('.your_last_challenges')
+      - else
+        = t('.last_challenges', user: @user.display_name)
     - @challenges.each do |challenge|
       = link_to challenge_path(challenge) do
         .contribution
           .icon
             .question-icon#challenge
               .icon-question
-          .like
-            = challenge.dito
+          = t('.ditos_html'.html_safe, count: challenge.dito)
           .text
             = challenge.question
 
   .contributions
     %h2#inspiration
-      = t('.last_challenges', user: @user.display_name)
+      - if current_user == @user
+        = t('.your_last_inspirations')
+      - else
+        = t('.last_inspirations', user: @user.display_name)
     - @inspirations.each do |inspiration|
       = link_to challenge_inspiration_path(inspiration.challenge_id, inspiration) do
         .contribution
           .icon
             .question-icon#inspiration
               .icon-lightbulb
-          .like
-            = inspiration.like
+          = t('.loves_html'.html_safe, count: inspiration.like)
           .text
             = inspiration.description.split.slice(0, 5).join(" ") + '...'

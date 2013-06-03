@@ -219,19 +219,30 @@ de:
     login:
       title: 'Anmelden'
     show:
-      ditos:
-        one: '(%{count} Dito)'
-        other: '(%{count} Ditos)'
-      last_challenges: 'Die letzten 5 Challenges von %{user}:'
+      title: 'Dein Profil'
+      ditos_html:
+        one: '<div class="like"><span class="count">%{count}</span><<span> Dito</span></div>'
+        other: '<div class="like"><span class="count">%{count}</span><span> Ditos</span></div>'
+      loves_html:
+        one: '<div class="like"><span class="count">%{count}</span><<span> Love</span></div>'
+        other: '<div class="like"><span class="count">%{count}</span><span> Loves</span></div>'
+      last_challenges: 'Die letzten 5 Herausforderungen von %{user}'
+      last_inspirations: 'Die letzten 5 Inspirationen von %{user}'
+      your_last_challenges: 'Deine letzten 5 Herausforderungen'
+      your_last_inspirations: 'Deine letzten 5 Inspirationen'
       link:
         challenge:
           all: 'Alle Challenges'
           new: 'Neue Challenge'
         edit: 'Bearbeiten'
-      user_level: 'Du befindest dich auf Level %{level}'
-      user_points:
+      account_level: 'Du befindest dich auf Level %{level}'
+      account_points:
         one: 'Du hast %{count} Punkt'
         other: 'Du hast %{count} Punkte'
+      user_level: 'Dieser Nutzer befindet sich auf Level %{level}'
+      user_points:
+        one: 'Der Nutzer hat %{count} Punkt'
+        other: 'Der Nutzer hat %{count} Punkte'
   views:
     pagination:
       first: '« Erste'
