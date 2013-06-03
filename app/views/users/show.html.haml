@@ -20,8 +20,12 @@
     %h2= t('.last_challenges', user: @user.display_name)
     - @challenges.each do |challenge|
       = link_to challenge_path(challenge.id) do
-        .icon-question
         .challenge
-          = challenge.question
-          = t('.ditos', count: challenge.ditos.count)
+          .icon
+            .question-icon
+              .icon-question
+          .dito
+            = challenge.dito
+          .text
+            = challenge.question
 

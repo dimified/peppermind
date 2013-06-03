@@ -41,20 +41,44 @@
     font-weight: normal
     @include linear-gradient(rgb(130, 210, 0), rgb(110, 190, 0))
 
-  //.question-icon
-    //height: 20px
-    //width: 20px
-    //border-radius: 10px
-    //text-align: center
-    //line-height: 2
-    //border: 2px solid white
-    //box-shadow: 0px 0px 4px rgba(black, 0.3)
-
   .challenge
-    padding: 10px 10px
+    padding: 10px 0
     box-shadow: 0px 1px 0px white
     border-bottom: 1px solid rgba(black, 0.3)
     @include linear-gradient(rgba(white, 0.5), rgba(white, 0))
 
     &:hover
       background: rgba(white, 0.7)
+
+    .question-icon
+      height: 20px
+      width: 20px
+      border-radius: 15px
+      text-align: center
+      line-height: 1.7
+      border: 2px solid white
+      box-shadow: 0px 0px 4px rgba(black, 0.3)
+      float: left
+      position: relative
+      top: -3px
+      left: 8px
+      color: white
+      text-shadow: 0px -1px rgba(black, 0.3)
+      @include linear-gradient(rgb(130, 210, 0), rgb(110, 190, 0))
+
+    .icon
+      width: 40px
+
+    .dito
+      width: 7px
+      margin-right: 20px
+      display: inline
+      float: right
+      background: rgba(50, 50, 50, 0.5)
+      padding: 0px 5px
+      border-radius: 10px
+      color: white
+      box-shadow: 0px 0px 5px rgba(black, 0.3) inset
+
+    .text
+      margin: 0 45px
