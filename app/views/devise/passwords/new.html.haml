@@ -1,3 +1,15 @@
+- if resource.errors.any?
+  - content_for :javascript do
+    :javascript
+      $(document).ready(function() {
+        var noty_notice = noty({
+          text : "#{escape_javascript(devise_error_messages!.html_safe)}",
+          layout : 'top',
+          type : 'error',
+          timeout : 3000
+        });
+      });
+
 = title t('.title')
 
 = simple_form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, defaults: { input_html: { class: 'styled_input' } } do |f|

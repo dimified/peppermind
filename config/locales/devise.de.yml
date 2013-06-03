@@ -46,13 +46,16 @@ de:
       send_paranoid_instructions: "Falls deine E-Mail-Adresse in unserer Datenbank existiert, erhältst du in Kürze eine E-Mail mit der Anleitung, wie du dein Passwort zurücksetzen kannst."
       forgot: 'Passwort vergessen?'
       remember: 'Angemeldet bleiben'
+      user:
+        no_token: 'Ohne mich, Freundchen!'
     confirmations:
       show:
         button:
           cancel: 'Abbrechen'
           submit: 'Anmeldung abschließen'
         error:
-          blank: 'Bitte ausfüllen.'
+          blank: 'Bitte ein Passwort mit mindestens 6 Zeichen eingeben.'
+          confirmation_blank: 'Bitte eine Passwort-Bestätigung eingeben.'
           confirmation: 'Die Passwörter stimmen nicht überein.'
         label:
           password: 'Passwort (mind. 6 Zeichen)'

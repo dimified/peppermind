@@ -6,7 +6,8 @@ en:
           cancel: 'Abbrechen'
           submit: 'Anmeldung abschließen'
         error:
-          blank: 'Bitte ausfüllen.'
+          blank: 'Bitte ein Passwort mit mindestens 6 Zeichen eingeben.'
+          confirmation_blank: 'Bitte eine Passwort-Bestätigung eingeben.'
           confirmation: 'Die Passwörter stimmen nicht überein.'
         label:
           password: 'Passwort (mind. 6 Zeichen)'
@@ -57,6 +58,8 @@ en:
       updated: "Your password was changed successfully. You are now signed in."
       updated_not_active: "Your password was changed successfully."
       forgot: "Forgot password?"
+      user:
+        no_token: 'Without me, matey!'
     registrations:
       destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."

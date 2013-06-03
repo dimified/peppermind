@@ -90,11 +90,11 @@ class User
     end
 
     if confirm.blank?
-      errors.add(:password_confirmation, I18n.t('devise.confirmations.show.error.blank'))
+      errors.add(:password_confirmation, I18n.t('devise.confirmations.show.error.confirmation_blank'))
     end
 
     if password != confirm
-      errors.add(password_confirmation, I18n.t('devise.confirmations.show.error.confirmation'))
+      errors.add(:password_confirmation, I18n.t('devise.confirmations.show.error.confirmation'))
     end
 
     password == confirm && !password.blank?

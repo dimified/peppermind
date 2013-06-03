@@ -7,7 +7,7 @@ en:
         cancel: 'Cancel'
         submit: 'Edit'
       label:
-        display_name: 'Display name'
+        display_name: 'Username'
         email: 'E-Mail-Adresse'
       provider:
         email: 'E-Mail-Adresse'
@@ -22,8 +22,8 @@ en:
       warning: '<strong>Achtung:</strong> Wenn du dich über einen Social Provider auf Peppermind registriert hast, wurde ein zufälliges Passwort für dich gewählt. Du kannst ein neues Passwort über den »Passwort vergessen?«-Link auf der Anmelden-Seite anfordern. <strong>Bitte sperre dich nicht aus deinem eigenen Account aus!</strong>'
     validation:
       display_name:
-        blank: 'Bitte einen Anzeigenamen angeben! '
-        not_unique: 'Dieser Anzeigename ist bereits vergeben, tut uns Leid! '
+        blank: 'Bitte einen Benutzernamen angeben! '
+        not_unique: 'Dieser Benutzername ist bereits vergeben, tut uns Leid! '
       email:
         confirm: 'Die beiden E-Mail-Adressen stimmen nicht überein. '
         format: 'Bitte eine gültige E-Mail-Adresse angeben. '
@@ -89,7 +89,7 @@ en:
         cancel: 'Cancel'
         submit: 'Kostenlos anmelden!'
       label:
-        display_name: 'Anzeigename'
+        display_name: 'Username'
         email: 'E-Mail-Adresse'
         email_confirm: 'E-Mail-Adresse wiederholen'
         password: 'Passwort (mind. 6 Zeichen)'

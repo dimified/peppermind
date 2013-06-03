@@ -1,6 +1,18 @@
 - content_for :head do
   = stylesheet_link_tag 'account', controller_name, media: 'screen'
 
+- if resource.errors.any?
+  - content_for :javascript do
+    :javascript
+      $(document).ready(function() {
+        var noty_notice = noty({
+          text : "#{escape_javascript(devise_error_messages!.html_safe)}",
+          layout : 'top',
+          type : 'error',
+          timeout : 3000
+        });
+      });
+
 = title t('authentication.registration.title')
 
 = render 'form'

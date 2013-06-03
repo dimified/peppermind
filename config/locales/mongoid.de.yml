@@ -63,9 +63,17 @@ de:
         challenge:
           attributes:
             description:
-              blank: "Beschreibung darf nicht leer sein"
+              blank: 'Beschreibung darf nicht leer sein.'
             question:
-              blank: "Fragestellung darf nicht leer sein"
+              blank: 'Fragestellung darf nicht leer sein.'
             duration_string:
-              invalid: "Das Datum muss im Format dd.mm.yyyy angegeben sein"
-              not_in_future: "Das Datum muss in der Zukunft liegen"
+              invalid: 'Das Datum muss im Format dd.mm.yyyy angegeben sein.'
+              not_in_future: 'Das Datum muss in der Zukunft liegen.'
+        user:
+          attributes:
+            display_name:
+              blank: 'Bitte einen Benutzernamen angeben.'
+            email:
+              blank: 'Bitte eine gültige E-Mail-Adresse angeben.'
+              confirmation: 'Die beiden E-Mail-Adressen stimmen nicht überein.'
+              invalid: 'Bitte eine gültige E-Mail-Adresse angeben.'

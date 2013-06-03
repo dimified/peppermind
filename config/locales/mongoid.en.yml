@@ -66,9 +66,17 @@ en:
         challenge:
           attributes:
             description:
-              blank: "Description must not be blank"
+              blank: 'Description must not be blank.'
             question:
-              blank: "Question must not be blank"
+              blank: 'Question must not be blank.'
             duration_string:
-              invalid: "Das Datum muss im Format dd.mm.yyyy angegeben sein"
-              not_in_future: "Das Datum muss in der Zukunft liegen"
+              invalid: 'Das Datum muss im Format dd.mm.yyyy angegeben sein.'
+              not_in_future: 'Das Datum muss in der Zukunft liegen.'
+        user:
+          attributes:
+            display_name:
+              blank: 'Bitte einen Benutzernamen angeben.'
+            email:
+              blank: 'Bitte eine gültige E-Mail-Adresse angeben.'
+              confirmation: 'Die beiden E-Mail-Adressen stimmen nicht überein.'
+              invalid: 'Bitte eine gültige E-Mail-Adresse angeben.'
