@@ -219,11 +219,11 @@ de:
     show:
       title: 'Dein Profil'
       ditos_html:
-        one: '<div class="like"><span class="count">%{count}</span><span> Dito</span></div>'
-        other: '<div class="like"><span class="count">%{count}</span><span> Ditos</span></div>'
+        one: '<div class="like"><span class="count">%{count}</span><span class="likes"> Dito</span></div>'
+        other: '<div class="like"><span class="count">%{count}</span><span class="likes"> Ditos</span></div>'
       loves_html:
-        one: '<div class="like"><span class="count">%{count}</span><span> Love</span></div>'
-        other: '<div class="like"><span class="count">%{count}</span><span> Loves</span></div>'
+        one: '<div class="like"><span class="count">%{count}</span><span class="likes"> Love</span></div>'
+        other: '<div class="like"><span class="count">%{count}</span><span class="likes"> Loves</span></div>'
       last_challenges: 'Die letzten 5 Herausforderungen von %{user}'
       last_inspirations: 'Die letzten 5 Inspirationen von %{user}'
       your_last_challenges: 'Deine letzten 5 Herausforderungen'
