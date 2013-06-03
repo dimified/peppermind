@@ -18,8 +18,8 @@
   .meta.user-name
     #{t('.created', user: @challenge.user.display_name)}
     #{time @challenge.created_at}
-  -#= link_to image_tag('default_avatar.png', class: 'avatar'), user_path(@challenge.user)
-  = image_tag avatar(@challenge.user, 70), alt: t('global.gravatar'), class: 'avatar'
+  = link_to user_path(@challenge.user) do
+    = image_tag avatar(@challenge.user, 70), alt: t('global.gravatar'), class: 'avatar'
 
 #challenge
   .tags
@@ -43,8 +43,8 @@
 - if @inspirations.count > 0
   - @inspirations.each do |inspiration|
     .inspiration
-      -#= link_to image_tag('default_avatar.png', class: 'contributors'), user_path(inspiration.user)
-      = image_tag avatar(@challenge.user, 40), alt: t('global.gravatar'), class: 'contributors'
+      = link_to user_path(inspiration.user) do
+        = image_tag avatar(inspiration.user, 40), alt: t('global.gravatar'), class: 'contributors'
       .inspiration-user-name
         = link_to inspiration.user.display_name
       .inspiration-description
@@ -52,6 +52,7 @@
 
 #main-content
   = link_to new_challenge_inspiration_path(@challenge) do
-    .icon-plus.new-inspiration
-  = link_to t('.link.inspiration'), new_challenge_inspiration_path(@challenge), class: 'btn'
+    .new-inspiration
+      .icon-plus
+  = link_to t('.link.inspiration'), new_challenge_inspiration_path(@challenge), class: 'btn new-inspiration-button'
 
