@@ -20,21 +20,20 @@
 
   %h2= t('authentication.registration.social')
 
-  #social-boxes
-    .clearfix
-      %div{class: 'social-box persona'}
-        %div{class: 'logo'}
-        %p
-          = link_to t('authentication.registration.providers.persona'), '/auth/persona/', id: 'mozilla-persona', class: 'btn btn-green'
-      %div{class: 'social-box twitter'}
-        %div{class: 'logo'}
-        %p
-          = link_to t('authentication.registration.providers.twitter'), '/auth/twitter/', class: 'btn btn-green'
-      %div{class: 'social-box facebook'}
-        %div{class: 'logo'}
-        %p
-          = link_to t('authentication.registration.providers.facebook'), '/auth/facebook/', class: 'btn btn-green'
-      %div{class: 'social-box google'}
-        %div{class: 'logo'}
-        %p
-          = link_to t('authentication.registration.providers.google'), '/auth/google/', class: 'btn btn-green'
+  #social-boxes.clearfix
+    %div{class: 'social-box persona'}
+      %div{class: 'logo'}
+      %p
+        = link_to t('authentication.registration.providers.persona'), '/auth/persona/', id: 'mozilla-persona', class: 'btn btn-green'
+    %div{class: 'social-box twitter'}
+      %div{class: 'logo'}
+      %p
+        = link_to t('authentication.registration.providers.twitter'), '/auth/twitter/', class: 'btn btn-green'
+    %div{class: 'social-box facebook'}
+      %div{class: 'logo'}
+      %p
+        = link_to t('authentication.registration.providers.facebook'), '/auth/facebook/', class: 'btn btn-green'
+    %div{class: 'social-box google'}
+      %div{class: 'logo'}
+      %p
+        = link_to t('authentication.registration.providers.google'), '/auth/google/', class: 'btn btn-green'

@@ -33,7 +33,7 @@
             %li= tag
 
   .description
-    = @challenge.description
+    = simple_format @challenge.description
 
   - if current_user != @challenge.user && current_user
     = render 'ditos/form'
@@ -55,7 +55,7 @@
         = link_to t('challenges.created', user: inspiration.user.display_name)
         = time inspiration.created_at, class: :timeago
       .inspiration-description
-        = link_to inspiration.description, challenge_inspiration_path(@challenge, inspiration)
+        = link_to simple_format(inspiration.description), challenge_inspiration_path(@challenge, inspiration)
 
 #new-inspiration-button
   = link_to new_challenge_inspiration_path(@challenge) do
