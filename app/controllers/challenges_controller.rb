@@ -50,7 +50,7 @@ class ChallengesController < ApplicationController
       else
         format.html do
           flash[:error] = @challenge.errors.full_messages.to_sentence + '.'
-          render action: 'new'
+          redirect_to new_challenge_path
         end
         format.json { render json: @challenge.errors, status: :unprocessable_entity }
       end
