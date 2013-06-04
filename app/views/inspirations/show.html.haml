@@ -33,9 +33,9 @@
       .meta
         = time @inspiration.created_at, class: :timeago
     .likes
-      .icon-heart
+      .icon-heart{ title: t('challenges.challenge.loves_count', count: @inspiration.like) }
       = render 'inspirations/count_likes'
-      - unless current_user == @inspiration.user
+      - unless current_user == @inspiration.user && current_user
         = render 'likes/form'
     .inspiration-description
       .question-icon
@@ -43,16 +43,8 @@
       .text
         = simple_format(@inspiration.description)
 
+    - if can? :update, @inspiration
+      = link_to t('.link.edit'), edit_challenge_inspiration_path(@challenge, @inspiration), class: 'btn green-button'
 
-
-
-
--#- if current_user != @inspiration.user && current_user
-  -#= render 'likes/form'
-
-
--#- if can? :update, @inspiration
-  -#= link_to t('.link.edit'), edit_challenge_inspiration_path(@challenge, @inspiration), class: 'btn green-button'
-
--#- if can? :destroy, @inspiration
-  -#= link_to t('.link.delete'), challenge_inspiration_path(@challenge, @inspiration), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'
+    - if can? :destroy, @inspiration
+      = link_to t('.link.delete'), challenge_inspiration_path(@challenge, @inspiration), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'

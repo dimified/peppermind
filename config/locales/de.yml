@@ -60,6 +60,7 @@ de:
       _update:
         exists: 'aktualisierte die Herausforderung'
     index:
+      button: 'Neue Herausforderung anlegen'
       link:
         challenges: 'Herausforderungen'
       title: 'Letzte Aktivitäten'
@@ -152,6 +153,7 @@ de:
     edit:
       title: '%{challenge} - Herausforderung bearbeiten'
     index:
+      button: 'Neue Herausforderung anlegen'
       link:
         activities: 'Aktivitäten'
       title: 'Alle Herausforderungen'
