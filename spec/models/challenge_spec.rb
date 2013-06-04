@@ -10,8 +10,8 @@ describe Challenge do
 		expect(build(:challenge, question: Faker::Lorem.characters(101))).to_not be_valid
 	end
 
-	it "is invalid when description is more than 500 characters" do
-		expect(build(:challenge, description: Faker::Lorem.characters(501))).to_not be_valid
+	it "is invalid when description is more than 1000 characters" do
+		expect(build(:challenge, description: Faker::Lorem.characters(1001))).to_not be_valid
 	end
 
 	it "converts duration into duration_string" do 

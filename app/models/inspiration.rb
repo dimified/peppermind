@@ -12,7 +12,7 @@ class Inspiration
   belongs_to :challenge
 
   # Validations
-  validates :description, presence: true, length: { maximum: 500 }
+  validates :description, presence: true, length: { maximum: 1000 }
   validates :like, numericality: true, allow_nil: false
 
   def add_like

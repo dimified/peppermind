@@ -30,6 +30,7 @@ de:
           attributes:
             description:
               blank: 'Beschreibung darf nicht leer sein'
+              too_long: 'Die Beschreibung ist zu lang. Bitte kürzen'
             duration_string:
               invalid: 'Die Dauer muss im Format dd.mm.yyyy angegeben sein'
               not_in_future: 'Das Datum muss in der Zukunft liegen'

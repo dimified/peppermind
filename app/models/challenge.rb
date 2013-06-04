@@ -26,7 +26,7 @@
 
   # Validations
   validates :question, presence: true, length: { maximum: 100 }
-  validates :description, presence: true, length: { maximum: 500 }
+  validates :description, presence: true, length: { maximum: 1000 }
 
   # Number of Elements per Page
   paginates_per 10
