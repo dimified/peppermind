@@ -1,8 +1,0 @@
-= simple_form_for @challenge, url: wizard_path do |f|
-  = yield f
-
-  %a{href: next_wizard_path}
-    %button{class: 'green-button'}
-      = t('challenges._form.button.skip')
-
-  = f.submit t('challenges._form.button.continue'), class: 'green-button'
