@@ -110,14 +110,6 @@ en:
     deleted: 'Die Inspiration wurde erfolgreich gelöscht.'
     updated: 'Inspiration was successfully updated.'
   challenges:
-    created: 'Created by %{user}'
-    inspirations:
-      one: '%{count} Inspiration'
-      other: '%{count} Inspirations'
-    challenge:
-      ditos_count:
-        one: '%{count} Dito'
-        other: '%{count} Ditos'
     _form:
       button:
         cancel: 'Cancel'
@@ -134,6 +126,11 @@ en:
       deleted: 'Die Challenge wurde erfolgreich gelöscht.'
       missing: 'Eine Challenge mit dieser ID existiert nicht.'
       updated: 'Die Challenge wurde erfolgreich aktualisiert.'
+    challenge:
+      ditos_count:
+        one: '%{count} Dito'
+        other: '%{count} Ditos'
+    created: 'Created by %{user}'
     edit:
       title: '%{challenge} - Edit challenge'
     index:
@@ -141,6 +138,9 @@ en:
       link:
         activities: 'Activities'
       title: 'challenges'
+    inspirations:
+      one: '%{count} Inspiration'
+      other: '%{count} Inspirations'
     new:
       title: 'Was bewegt dich !?'
     show:
