@@ -163,7 +163,7 @@ article.challenge
   border-bottom: 1px solid rgb(170, 170, 170)
   box-shadow: 0px 1px 0px white
   @include linear-gradient(rgba(white, 0.5), rgba(white, 0))
-  padding: 20px 0
+  padding: 10px 0
   position: relative
   cursor: pointer
 
@@ -171,30 +171,43 @@ article.challenge
     background: rgba(white, 0.7)
 
   .question-icon
-    left: 10px
     height: 30px
     width: 30px
     border-radius: 20px
     font-size: 1.5em
     line-height: 1.6
+    margin: 4px 0
     @include linear-gradient(rgb(130, 210, 0), rgb(110, 190, 0))
-    position: absolute
-    margin-top: -15px
-    top: 50%
 
   .text
     text-shadow: 0px 1px white
-    margin: 0 60px
+    margin: 0 40px 0 10px
 
-  .ditos
-    padding: 2px 5px
-    text-align: center
-    background: rgba(130, 210, 0, 0.5)
-    border-radius: 10px
-    color: rgb(50, 50, 50)
-    font-size: 0.85em
-    margin: 5px 0
-    display: block
+    .user
+      font-size: 0.9em
+
+    .question
+      background: white
+      border: 1px solid rgba(0, 0, 0, 0.3)
+      border-radius: 4px
+      box-shadow: 0px 1px white
+      margin: 7px 0 7px 40px
+      padding: 5px
+
+    .ditos, .inspirations
+      padding: 2px 8px
+      text-align: center
+      border-radius: 10px
+      color: rgb(50, 50, 50)
+      font-size: 0.85em
+      margin: 5px 0
+      display: inline-block
+
+    .ditos
+      background: rgba(130, 210, 0, 0.5)
+
+    .inspirations
+      background: rgba(180, 180, 200, 0.5)
 
   .icon-chevron-right
     font-size: 20px

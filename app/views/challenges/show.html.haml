@@ -19,8 +19,8 @@
     = @challenge.question
     = render 'challenges/count_ditos'
   .meta.user-name
-    #{t('.created', user: @challenge.user.display_name)}
-    #{time @challenge.created_at}
+    = t('challenges.created', user: @challenge.user.display_name)
+    = time @challenge.created_at, class: :timeago
   = link_to user_path(@challenge.user) do
     = image_tag avatar(@challenge.user, 70), alt: '', class: 'avatar'
 

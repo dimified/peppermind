@@ -110,6 +110,10 @@ en:
     deleted: 'Die Inspiration wurde erfolgreich gelöscht.'
     updated: 'Inspiration was successfully updated.'
   challenges:
+    created: 'Created by %{user}'
+    inspirations:
+      one: '%{count} Inspiration'
+      other: '%{count} Inspirations'
     challenge:
       ditos_count:
         one: '%{count} Dito'
@@ -133,6 +137,7 @@ en:
     edit:
       title: '%{challenge} - Edit challenge'
     index:
+      created_at: 'Created by %{user} on %{date}' 
       link:
         activities: 'Activities'
       title: 'challenges'
@@ -140,10 +145,8 @@ en:
       title: 'Was bewegt dich !?'
     show:
       title: 'Challenge'
-      created: 'Created by %{user} on'
       description: 'Description'
       duration: 'Challenge expires on'
-      inspirations: 'Inspirations'
       link:
         challenges: 'All challenges'
         dashboard: 'Dashboard'

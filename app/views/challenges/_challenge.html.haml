@@ -1,12 +1,16 @@
 = link_to challenge_path(challenge.id) do
   %article.challenge
-    .question-icon
-      .icon-question
     .text
-      = challenge.question
+      .user
+        = t('challenges.created', user: challenge.user.display_name)
+        = time challenge.created_at, class: :timeago
+      .question-icon
+        .icon-question
+      .question
+        = challenge.question
       .ditos
         = t('.ditos_count', count: challenge.dito)
-    .icon-chevron-right
-    -##{challenge.user.display_name}
-    -#= time challenge.created_at, class: :timeago
+      .inspirations
+        = t('challenges.inspirations', count: challenge.inspirations.count)
+      .icon-chevron-right
     -#%p= challenge.description
