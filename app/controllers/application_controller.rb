@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :set_locale
+
   # Custom error page
   rescue_from ActionController::RoutingError, ActionController::UnknownController, ::AbstractController::ActionNotFound do
     ErrorsController::render_404
@@ -34,5 +36,16 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resoure)
     cookies.delete :user_id
     root_path
+  end
+
+  private
+
+  def set_locale
+    locale = request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
+    if locale.match /^(de|en)$/
+      I18n.locale = locale
+    else
+      I18n.locale = Rails.application.config.i18n.default_locale
+    end
   end
 end
