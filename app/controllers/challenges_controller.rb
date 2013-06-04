@@ -51,6 +51,7 @@ class ChallengesController < ApplicationController
         format.html do
           flash[:error] = @challenge.errors.full_messages.to_sentence + '.'
           render 'new'
+          flash.discard :error
         end
         format.json { render json: @challenge.errors, status: :unprocessable_entity }
       end
@@ -69,6 +70,7 @@ class ChallengesController < ApplicationController
         format.html do
           flash[:error] = @challenge.errors.full_messages.to_sentence + '.'
           render 'edit'
+          flash.discard :error
         end
         format.json { render json: @challenge.errors, status: :unprocessable_entity }
       end

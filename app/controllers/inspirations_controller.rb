@@ -52,6 +52,7 @@ class InspirationsController < ApplicationController
         format.html do
           flash[:error] = @inspiration.errors.full_messages.to_sentence + '.'
           render 'new'
+          flash.discard :error
         end
         format.json { render json: challenge_inspiration_path(@challenge, @inspiration).errors, status: :unprocessable_entity }
       end
@@ -70,6 +71,7 @@ class InspirationsController < ApplicationController
         format.html do
           flash[:error] = @inspiration.errors.full_messages.to_sentence + '.'
           render 'edit'
+          flash.discard :error
         end
         format.json { render json: challenge_inspiration_path(@challenge, @inspiration).errors, status: :unprocessable_entity }
       end
