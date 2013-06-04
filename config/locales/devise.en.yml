@@ -1,43 +1,51 @@
 en:
   devise:
     confirmations:
+      confirmed: 'Your account was successfully confirmed. You are now signed in.'
       show:
         button:
           cancel: 'Abbrechen'
           submit: 'Anmeldung abschließen'
+        confirmed: 'Dein Benutzerkonto wurde erfolgreich bestätigt. Du bist nun angemeldet.'
         error:
           blank: 'Bitte ein Passwort mit mindestens 6 Zeichen eingeben.'
-          confirmation_blank: 'Bitte eine Passwort-Bestätigung eingeben.'
           confirmation: 'Die Passwörter stimmen nicht überein.'
+          confirmation_blank: 'Bitte eine Passwort-Bestätigung eingeben.'
         label:
           password: 'Passwort (mind. 6 Zeichen)'
           password_confirm: 'Passwort wiederholen'
         title: 'Nur noch ein Schritt…'
-      confirmed: "Your account was successfully confirmed. You are now signed in."
-      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
+      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      send_paranoid_instructions: 'If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account was not activated yet."
-      invalid: "Invalid username and/or password."
-      invalid_token: "Invalid authentication token."
-      locked: "Your account is locked."
-      not_found_in_database: "Invalid email or password."
-      timeout: "Your session expired, please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your account before continuing."
+      already_authenticated: 'You are already signed in.'
+      inactive: 'Your account was not activated yet.'
+      invalid: 'Invalid username and/or password.'
+      invalid_token: 'Invalid authentication token.'
+      locked: 'Your account is locked.'
+      timeout: 'Your session expired, please sign in again to continue.'
+      unauthenticated: 'You need to sign in or sign up before continuing.'
+      unconfirmed: 'You have to confirm your account before continuing.'
       user:
         not_found_in_database: 'Invalid username and/or password.'
+    mail:
+      confirmation:
+        intro: 'vielen Dank für deine Anmeldung auf Peppermind. Du bist nur noch einen Schritt von der Teilnahme an unserer Community entfernt. Bestätige deine Registrierung, indem du den folgenden Link klickst und ein Passwort für dein Benutzerkonto vergibst:'
+        welcome: 'Hallo %{user},'
+      lost_password:
+        intro: 'Es wurde eine Anfrage gestartet, das Passwort deines Benutzerkontos auf Peppermind zu ändern. Dein Passwort kannst du über den folgenden Link ändern. Der Link ist 6 Stunden lang gültig, nach Ablauf dieser Zeit musst du einen neuen Link anfordern, um dein Passwort zu ändern.'
+        outro: 'Wenn diese Anfrage nicht von dir gestartet wurde, kannst du diese E-Mail einfach ignorieren. Dein Passwort wird nicht geändert, solange du nicht über diesen Link ein neues Passwort einstellst.'
+        welcome: 'Hallo %{user},'
     mailer:
       confirmation_instructions:
-        subject: "[peppermind] Confirmation instructions"
+        subject: '[peppermind] Confirmation instructions'
       reset_password_instructions:
-        subject: "[peppermind] Reset password instructions"
+        subject: '[peppermind] Reset password instructions'
       unlock_instructions:
-        subject: "[peppermind] Unlock Instructions"
+        subject: '[peppermind] Unlock Instructions'
     omniauth_callbacks:
-      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
-      success: "Successfully authenticated from %{kind} account."
+      failure: 'Could not authenticate you from %{kind} because %{reason}.'
+      success: 'Successfully authenticated from %{kind} account.'
     passwords:
       edit:
         button:
@@ -47,48 +55,39 @@ en:
           password: 'Passwort (mind. 6 Zeichen)'
           password_confirm: 'Passwort wiederholen'
         title: 'Neues Passwort einstellen'
+      forgot: 'Forgot password?'
       new:
         placeholder:
           email: 'E-Mail-Adresse'
         submit: 'Neues Passwort anfordern'
         title: 'Passwort vergessen !?'
-      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
-      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Your password was changed successfully. You are now signed in."
-      updated_not_active: "Your password was changed successfully."
-      forgot: "Forgot password?"
+      remember: 'Angemeldet bleiben'
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      send_paranoid_instructions: 'If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.'
+      updated: 'Your password was changed successfully. You are now signed in.'
+      updated_not_active: 'Your password was changed successfully.'
       user:
-        no_token: 'Without me, matey!'
+        no_token: 'Kein gültiges Token übergeben.'
     registrations:
-      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
-      signed_up: "Welcome! You have signed up successfully."
-      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
-      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
-      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
-      updated: "You updated your account successfully."
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+      signed_up: 'Welcome! You have signed up successfully.'
+      signed_up_but_inactive: 'You have signed up successfully. However, we could not sign you in because your account is not yet activated.'
+      signed_up_but_locked: 'You have signed up successfully. However, we could not sign you in because your account is locked.'
+      signed_up_but_unconfirmed: 'A message with a confirmation link has been sent to your email address. Please open the link to activate your account.'
+      updated: 'You updated your account successfully.'
+      update_needs_confirmation: 'You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address.'
     sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
-      remember: "Remember me"
+      signed_in: 'Signed in successfully.'
+      signed_out: 'Signed out successfully.'
     unlocks:
-      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
-      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
-    mail:
-      confirmation:
-        intro: 'vielen Dank für deine Anmeldung auf Peppermind. Du bist nur noch einen Schritt von der Teilnahme an unserer Community entfernt. Bestätige deine Registrierung, indem du den folgenden Link klickst und ein Passwort für dein Benutzerkonto vergibst:'
-        welcome: 'Hallo %{user},'
-      lost_password:
-        intro: 'Es wurde eine Anfrage gestartet, das Passwort deines Benutzerkontos auf Peppermind zu ändern. Dein Passwort kannst du über den folgenden Link ändern. Der Link ist 6 Stunden lang gültig, nach Ablauf dieser Zeit musst du einen neuen Link anfordern, um dein Passwort zu ändern.'
-        outro: 'Wenn diese Anfrage nicht von dir gestartet wurde, kannst du diese E-Mail einfach ignorieren. Dein Passwort wird nicht geändert, solange du nicht über diesen Link ein neues Passwort einstellst.'
-        welcome: 'Hallo %{user},'
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      send_paranoid_instructions: 'If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.'
+      unlocked: 'Your account has been unlocked successfully. Please sign in to continue.'
   errors:
     messages:
+      already_confirmed: 'was already confirmed, please try signing in'
       blank: 'Bitte Feld ausfüllen.'
       confirmation: 'Die beiden Felder stimmen nicht überein.'
-      already_confirmed: 'was already confirmed, please try signing in'
       confirmation_period_expired: 'needs to be confirmed within %{period}, please request a new one'
       expired: 'has expired, please request a new one'
       not_found: 'Einen Benutzer mit dieser E-Mail-Adresse gibt es nicht.'

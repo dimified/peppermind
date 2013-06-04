@@ -235,7 +235,7 @@ en:
         one: '<div class="like"><span class="count">%{count}</span><span class="likes"> Love</span></div>'
         other: '<div class="like"><span class="count">%{count}</span><span class="likes"> Loves</span></div>'
       last_challenges: 'The last 5 challenges of %{user}'
-      last_inspiraations: 'The last 5 inspirations of %{user}'
+      last_inspirations: 'The last 5 inspirations of %{user}'
       your_last_challenges: 'Your last 5 challenges'
       your_last_inspirations: 'Your last 5 inspirations'
       link:
@@ -247,8 +247,8 @@ en:
       account_points:
         one: 'You have %{count} Point'
         other: 'You have %{count} Points'
-      account_level: 'The user is on level %{level}'
-      account_points:
+      user_level: 'The user is on level %{level}'
+      user_points:
         one: 'The user has %{count} point'
         other: 'The user has %{count} points'
   views:

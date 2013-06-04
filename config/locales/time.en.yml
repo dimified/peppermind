@@ -7,18 +7,16 @@ en:
   months: months
   years: years
 
-  support:
-    array:
-      two_words_connector: " and "
-      words_connector: ", "
-      last_word_connector: ", and "
-
   datetime:
     distance_in_words:
       about_x_years:
-        one: "about 1 year"
-        many: "about %{count} years"
-
+        one: 'about 1 year'
+        many: 'about %{count} years'
   number:
       format:
-        separator: "."
+        separator: '.'
+  support:
+    array:
+      last_word_connector: ', and '
+      two_words_connector: ' and '
+      words_connector: ', '
