@@ -21,7 +21,7 @@
     = title t('.title')
     = simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
       %i.icon-user
-      = f.input :login, placeholder: t('authentication.label.login'), autofocus: true
+      = f.input :login, placeholder: t('authentication.label.login')
       %i.icon-lock
       = f.input :password, placeholder: t('authentication.label.password')
 
