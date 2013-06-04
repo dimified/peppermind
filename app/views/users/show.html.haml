@@ -6,7 +6,7 @@
 #main-content
   .user-area
     #avatar
-      = image_tag avatar(@user, 70), alt: t('global.gravatar')
+      = image_tag avatar(@user, 70), alt: ''
 
     - if current_user == @user
       %nav

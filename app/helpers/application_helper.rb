@@ -24,7 +24,7 @@ module ApplicationHelper
 
   # gravatar helper
   def avatar(user, size = 32)
-    default_url = image_path 'default_avatar.png'
+    default_url = root_url[0...-1] + image_path('default_avatar.png')
     gravatar_hash = Digest::MD5.hexdigest(user.email.downcase) if user.email
     "http://gravatar.com/avatar/#{gravatar_hash}?s=#{size}&d=#{CGI.escape(default_url)}"
   end

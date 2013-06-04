@@ -22,7 +22,7 @@
     #{t('.created', user: @challenge.user.display_name)}
     #{time @challenge.created_at}
   = link_to user_path(@challenge.user) do
-    = image_tag avatar(@challenge.user, 70), alt: t('global.gravatar'), class: 'avatar'
+    = image_tag avatar(@challenge.user, 70), alt: '', class: 'avatar'
 
 #challenge
   .tags
