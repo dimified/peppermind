@@ -47,8 +47,8 @@
   - @inspirations.each do |inspiration|
     .inspiration
       .likes
-        .icon-heart{ title: t('challenges.challenge.loves_count', count: inspiration.like) }
         = inspiration.like
+        .icon-heart
       = link_to user_path(inspiration.user) do
         = image_tag avatar(inspiration.user, 40), alt: t('global.gravatar'), class: 'contributors'
       .inspiration-user-name

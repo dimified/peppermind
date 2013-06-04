@@ -7,12 +7,49 @@
   = link_to new_challenge_inspiration_path(@challenge), { class: 'btn btn-title right' } do
     .icon-plus
 
--#= render 'inspirations/count_likes'
+#main-content
+  = link_to user_path(@challenge.user) do
+    = image_tag avatar(@challenge.user, 50), alt: '', class: 'avatar'
+  #challenge
+    .info
+      %h2
+        = @challenge.question
+        = render 'challenges/count_ditos'
+      .meta
+        = t('challenges.created', user: @challenge.user.display_name)
+        = time @challenge.created_at, class: :timeago
+    .challenge-description
+      .question-icon
+        .icon-question
+      .text
+        = simple_format(@challenge.description)
+
+  = link_to user_path(@inspiration.user) do
+    = image_tag avatar(@challenge.user, 70), alt: '', class: 'avatar', id: 'inspiration-user'
+  #inspiration
+    .info
+      %h2#user
+        = @inspiration.user.display_name
+      .meta
+        = time @inspiration.created_at, class: :timeago
+    .likes
+      .icon-heart
+      = render 'inspirations/count_likes'
+      - unless current_user == @inspiration.user
+        = render 'likes/form'
+    .inspiration-description
+      .question-icon
+        .icon-lightbulb
+      .text
+        = simple_format(@inspiration.description)
+
+
+
+
 
 -#- if current_user != @inspiration.user && current_user
   -#= render 'likes/form'
 
--#%p= simple_format(@inspiration.description)
 
 -#- if can? :update, @inspiration
   -#= link_to t('.link.edit'), edit_challenge_inspiration_path(@challenge, @inspiration), class: 'btn green-button'

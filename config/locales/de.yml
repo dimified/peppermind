@@ -215,6 +215,10 @@ de:
         signed_in: 'Du bist angemeldet. Abmelden?'
         signed_out: 'Du bist nicht angemeldet. Anmelden?'
         signout_confirmation: 'Möchtest du dich wirklich abmelden?'
+  likes:
+    form:
+      like: 'Finde ich gut'
+      unlike: 'Finde ich nicht mehr gut'
   notification:
     button_cancel: 'Nein, bitte nicht!'
     button_okay: 'Ja, wirklich!'

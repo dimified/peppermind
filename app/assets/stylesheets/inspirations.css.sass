@@ -1,2 +1,94 @@
+@import 'mixin.css.sass'
+
+.info
+  margin-bottom: 25px
+  float: left
+
+.avatar
+  height: 50px
+  width: 50px
+  float: left
+
+.likes
+  float: right
+
+  #count-likes
+    font-size: 1.5em
+    float: right
+
+  #like-form
+
+  .icon-heart
+    color: rgb(220, 100, 90)
+    font-size: 1.5em
+    float: right
+    margin: 4px
+
+h2
+  font-size: 1.2em
+  display: table
+  margin: 2px 0 4px 0
+  line-height: 1.6
+
+  &#user
+    font-size: 1.5em
+
+#inspiration-user
+  height: 70px
+  width: 70px
+  float: left
+  position: relative
+  left: -10px
+
+#inspiration
+  margin-left: 27px
+  padding: 0 0 30px 40px
+
+  .inspiration-description
+    line-height: 1.95
+    padding-top: 70px
+
+    .text
+      padding-left: 60px
+
+  .question-icon
+    height: 40px
+    width: 40px
+    border-radius: 25px
+    font-size: 2em
+    line-height: 1.5
+    @include linear-gradient(rgb(180, 180, 200), rgb(160, 160, 180))
+    top: 5px
+    left: -5px
+
+#challenge
+  border-left: 1px solid rgba(50, 50, 50, 0.3)
+  margin-left: 27px
+  padding: 0 0 30px 40px
+
+  .meta
+    float: left
+    font-size: 0.9em
+
+  .count-ditos
+    color: white
+
+  .challenge-description
+    line-height: 1.95
+    clear: both
+    padding-top: 10px
+
+    .text
+      padding-left: 60px
+
+  .question-icon
+    height: 40px
+    width: 40px
+    border-radius: 25px
+    font-size: 2em
+    line-height: 1.5
+    @include linear-gradient(rgb(130, 210, 0), rgb(110, 190, 0))
+    top: 5px
+
 span.error
   display: none
