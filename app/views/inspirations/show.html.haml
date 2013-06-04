@@ -1,14 +1,15 @@
 = title t('.title', user: @inspiration.user.display_name, challenge: @challenge.question)
 
-= render 'inspirations/count_likes'
+#main-content
+  = render 'inspirations/count_likes'
 
-- if current_user != @inspiration.user && current_user
-  = render 'likes/form'
+  - if current_user != @inspiration.user && current_user
+    = render 'likes/form'
 
-%p= @inspiration.description
+  %p= @inspiration.description
 
-- if can? :update, @inspiration
-  = link_to t('.link.edit'), edit_challenge_inspiration_path(@challenge, @inspiration), class: 'btn green-button'
+  - if can? :update, @inspiration
+    = link_to t('.link.edit'), edit_challenge_inspiration_path(@challenge, @inspiration), class: 'btn green-button'
 
-- if can? :destroy, @inspiration
-  = link_to t('.link.delete'), challenge_inspiration_path(@challenge, @inspiration), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'
+  - if can? :destroy, @inspiration
+    = link_to t('.link.delete'), challenge_inspiration_path(@challenge, @inspiration), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'

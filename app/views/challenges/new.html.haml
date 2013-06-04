@@ -1,7 +1,8 @@
 = title t('.title')
 
-= simple_form_for @challenge do |f|
-  = render 'form'
+#main-content
+  = simple_form_for @challenge do |f|
+    = render 'form'
 
-  = f.submit t('challenges._form.button.create'), class: 'btn green-button'
-  = link_to t('challenges._form.button.cancel'), root_path, class: 'btn btn-danger'
+    = f.submit t('challenges._form.button.create'), class: 'btn green-button'
+    = link_to t('challenges._form.button.cancel'), root_path, class: 'btn btn-danger'

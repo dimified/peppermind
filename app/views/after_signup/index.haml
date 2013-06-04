@@ -1,10 +1,11 @@
 = title t('.title')
 
-= simple_form_for :temporary_user, url: after_signup_index_path, defaults: { input_html: { class: 'styled_input' } } do |f|
-  .form_with_labels
-    = f.input :display_name, placeholder: t('.label.display_name'), label: t('.label.display_name'), autofocus: true, input_html: { value: @user.display_name }
-    = f.input :email, placeholder: t('.label.email'), label: t('.label.email'), input_html: { value: @user.email }
-    = f.input :email_confirm, placeholder: t('.label.email_confirm'), label: t('.label.email_confirm'), input_html: { value: @user.email }
+#main-content
+  = simple_form_for :temporary_user, url: after_signup_index_path, defaults: { input_html: { class: 'styled_input' } } do |f|
+    .form_with_labels
+      = f.input :display_name, placeholder: t('.label.display_name'), label: t('.label.display_name'), autofocus: true, input_html: { value: @user.display_name }
+      = f.input :email, placeholder: t('.label.email'), label: t('.label.email'), input_html: { value: @user.email }
+      = f.input :email_confirm, placeholder: t('.label.email_confirm'), label: t('.label.email_confirm'), input_html: { value: @user.email }
 
-    = f.submit t('.button.submit'), class: 'btn green-button'
-    = link_to t('.button.cancel'), root_path, class: 'btn btn-danger'
+      = f.submit t('.button.submit'), class: 'btn green-button'
+      = link_to t('.button.cancel'), root_path, class: 'btn btn-danger'

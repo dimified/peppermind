@@ -12,7 +12,8 @@
 
 = title t('.title')
 
-= simple_form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, defaults: { input_html: { class: 'styled_input' } } do |f|
-  = f.input :email, autofocus: true, placeholder: t('.placeholder.email')
-  = f.submit t('.submit'), class: 'btn btn-green'
-  = link_to t('challenges._form.button.cancel'), root_path, class: 'btn btn-danger'
+#main-content
+  = simple_form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, defaults: { input_html: { class: 'styled_input' } } do |f|
+    = f.input :email, autofocus: true, placeholder: t('.placeholder.email')
+    = f.submit t('.submit'), class: 'btn btn-green'
+    = link_to t('challenges._form.button.cancel'), root_path, class: 'btn btn-danger'
