@@ -31,6 +31,7 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset
     border: 1px solid rgba(100, 100, 100, 0.1)
     border-radius: 5px
+    margin-left: 15px
 
     .elements
       display: inline-block
@@ -91,6 +92,7 @@
     box-shadow: 0 0 4px rgb(100, 100, 100)
     position: relative
     left: -52px
+    display: inline-block
 
   .inspiration-user-name
     font-size: 0.9em
@@ -139,6 +141,21 @@
   line-height: 1.95
   margin-top: 25px
 
+  &:before
+    content: open-quote
+
+  &:after
+    content: close-quote
+
+.buttons
+  margin: 18px 0
+
+  .btn
+    margin: 5px 0
+
+.btn.new-inspiration-button
+  margin: 2px 0
+
 .new-inspiration
   float: left
   height: 30px
@@ -153,12 +170,6 @@
   color: white
   text-shadow: 0 -1px 0 rgba(black, 0.3)
   @include linear-gradient(rgb(130, 210, 0), rgb(110, 190, 0))
-
-.btn.new-inspiration-button
-  margin: 2px 0
-
-.btn
-  margin: 20px 0
 
 article.challenge
   border-bottom: 1px solid rgb(170, 170, 170)

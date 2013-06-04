@@ -6,7 +6,8 @@
   - if current_user != @inspiration.user && current_user
     = render 'likes/form'
 
-  %p= @inspiration.description
+
+%p= simple_format(@inspiration.description)
 
   - if can? :update, @inspiration
     = link_to t('.link.edit'), edit_challenge_inspiration_path(@challenge, @inspiration), class: 'btn green-button'

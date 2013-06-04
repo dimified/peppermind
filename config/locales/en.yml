@@ -170,6 +170,7 @@ en:
       title: 'Page not found'
     format: '%{message}'
   global:
+    characters_left: 'Characters left:'
     gravatar: 'Gravatar'
   helpers:
     submit:

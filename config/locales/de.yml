@@ -170,6 +170,7 @@ de:
       title: 'Seite nicht gefunden'
     format: '%{message}'
   global:
+    characters_left: 'Zeichen verbleibend:'
     gravatar: 'Gravatar'
   helpers:
     submit:
