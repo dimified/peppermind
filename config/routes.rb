@@ -17,6 +17,8 @@ Peppermind::Application.routes.draw do
   get 'account/edit'
   post 'account/update'
   delete 'account/destroy'
+  get 'account/edit_password'
+  post 'account/update_password'
   resources :socialproviders, only: [:create, :destroy]
   match '/auth/:socialprovider/callback' => 'socialproviders#create'
   resources :after_signup, only: [:index, :create]

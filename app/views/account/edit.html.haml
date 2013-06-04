@@ -52,8 +52,10 @@
             = link_to t('.provider.link.add_service'), '/auth/facebook/', class: 'btn btn-green'
           - when 'google'
             = link_to t('.provider.link.add_service'), '/auth/google/', class: 'btn btn-green'
-          - when 'twitter'
-            = link_to t('.provider.link.add_service'), '/auth/twitter/', class: 'btn btn-green'
+
+  %h1= t('.edit_password.title')
+
+  = link_to t('.edit_password.button'), account_edit_password_path, class: 'btn green-button'
 
   %h1= t('.delete_account.title')
 

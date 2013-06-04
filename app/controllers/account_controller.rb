@@ -54,4 +54,35 @@ class AccountController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def edit_password
+    @user = current_user
+  end
+
+  def update_password
+    @user = User.find(current_user.id)
+
+    respond_to do |format|
+      @user.validate_password(params[:user][:password])
+      @user.password_match?(params[:user][:password], params[:user][:password_confirmation])
+
+      if @user.errors.empty? && @user.update_with_password(params[:user])
+        format.html do
+          sign_in @user, bypass: true
+          redirect_to user_path(@user), notice: t('account.validation.success')
+        end
+        format.json { head :no_content }
+      else
+        format.html do
+          errors = ''
+          errors << t('account.validation.password.current') if @user.errors[:current_password]
+          errors << @user.errors[:password].first.to_s if @user.errors[:password]
+          errors << @user.errors[:password_confirmation].first.to_s if @user.errors[:password_confirmation]
+          flash[:error] = errors
+          redirect_to account_edit_password_path
+        end
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 end

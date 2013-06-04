@@ -84,6 +84,12 @@ class User
   end
 
   # validations
+  def validate_password(password)
+    unless password.length >= 8
+      errors.add(:password, I18n.t('account.validation.password.length'))
+    end
+  end
+
   def password_match?(password, confirm)
     if password.blank?
       errors.add(:password, I18n.t('devise.confirmations.show.error.blank'))

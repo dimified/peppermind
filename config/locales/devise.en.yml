@@ -71,7 +71,6 @@ en:
     registrations:
       destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
       edit:
-        title: 'Passwort ändern'
       signed_up: 'Welcome! You have signed up successfully.'
       signed_up_but_inactive: 'You have signed up successfully. However, we could not sign you in because your account is not yet activated.'
       signed_up_but_locked: 'You have signed up successfully. However, we could not sign you in because your account is locked.'
@@ -97,4 +96,4 @@ en:
       not_saved:
         one: '1 error prohibited this %{resource} from being saved:'
         other: '%{count} errors prohibited this %{resource} from being saved:'
-      too_short: 'Password too short.'
+      too_short: 'Das Passwort muss mindestens 8 Zeichen lang sein.'

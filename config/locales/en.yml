@@ -12,6 +12,7 @@ en:
         warning: 'Hier hast du die Möglichkeit, dein Benutzerkonto unwiderruflich zu löschen. Auch wenn wir dies sehr schade fänden, respektieren wir diesen Wunsch. Die bestehenden Herausforderungen werden einem anonymen Benutzerkonto zugeordnet.'
       edit_password:
         button: 'Passwort bearbeiten'
+        title: 'Passwort bearbeiten'
       label:
         display_name: 'Username'
         email: 'E-Mail-Adresse'
@@ -26,6 +27,19 @@ en:
       social_provider: 'Social Login Verknüpfungen'
       title: 'Edit profile'
       warning: '<strong>Achtung:</strong> Wenn du dich über einen Social Provider auf Peppermind registriert hast, wurde ein zufälliges Passwort für dich gewählt. Du kannst ein neues Passwort über den »Passwort vergessen?«-Link auf der Anmelden-Seite anfordern. <strong>Bitte sperre dich nicht aus deinem eigenen Account aus!</strong>'
+    edit_password:
+      button:
+        cancel: 'Abbrechen'
+        submit: 'Passwort ändern'
+      error:
+        blank: 'Bitte ein Passwort mit mindestens 8 Zeichen eingeben.'
+        confirmation: 'Die Passwörter stimmen nicht überein.'
+        confirmation_blank: 'Bitte eine Passwort-Bestätigung eingeben.'
+      label:
+        current_password: 'Aktuelles Passwort'
+        new_password: 'Neues Passwort (mind. 8 Zeichen)'
+        new_password_confirmation: 'Passwort-Bestätigung'
+      title: 'Passwort ändern'
     validation:
       display_name:
         blank: 'Bitte einen Benutzernamen angeben. '
@@ -36,6 +50,7 @@ en:
         not_unique: 'Diese E-Mail-Adresse ist bereits vergeben, tut uns Leid! '
       password:
         confirm: 'Die beiden Passwörter stimmen nicht überein. '
+        current: 'Das aktuelle Passwort stimmt nicht. '
         length: 'Das Passwort muss aus mindestens 8 Zeichen bestehen. '
       success: 'Deine Angaben wurden erfolgreich geändert!'
   activities:
