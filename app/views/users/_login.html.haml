@@ -1,6 +1,18 @@
 - content_for :javascript do
   = javascript_include_tag 'login'
 
+- if flash[:alert]
+  - content_for :javascript do
+    :javascript
+      $(document).ready(function() {
+        var noty_notice = noty({
+          text : "#{escape_javascript(flash[:alert].html_safe)}",
+          layout : 'top',
+          type : 'error',
+          timeout : 3000
+        });
+      });
+
 %section{role: 'home'}
   #big-logo
     = image_tag 'logo.png'
