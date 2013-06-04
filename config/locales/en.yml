@@ -130,6 +130,9 @@ en:
       ditos_count:
         one: '%{count} Dito'
         other: '%{count} Ditos'
+      loves_count:
+        one: '%{count} Love'
+        other: '%{count} Loves'
     created: 'Created by %{user}'
     edit:
       title: '%{challenge} - Edit challenge'
@@ -149,7 +152,7 @@ en:
       duration: 'Challenge expires on'
       link:
         challenges: 'All challenges'
-        dashboard: 'Dashboard'
+        last_activities: 'Last activities'
         delete: 'Delete'
         delete_confirm: 'Möchtest du die Challenge wirklich löschen?'
         edit: 'Edit challenge'
