@@ -1,6 +1,7 @@
+var $pagination = $('.pagination');
 $('#activities').append('<%= escape_javascript(render(@activities)) %>');
 <% if @activities.current_page < @activities.num_pages %>
-$('.pagination').replaceWith('<%= j paginate(@activities) %>');
+  $pagination.replaceWith('<%= j paginate(@activities) %>');
 <% else %>
-$('.pagination').remove();
+  $pagination.remove();
 <% end %>
