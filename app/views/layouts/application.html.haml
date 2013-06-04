@@ -108,21 +108,7 @@
             text : "#{escape_javascript(flash[:notice].html_safe)}",
             layout : 'top',
             type : 'success',
-            timeout : 3000,
-            callback : {
-              onShow : function() {
-                var active;
-                active = true;
-                return $('#main-content').animate({
-                  marginTop: '+=35'
-                }, 500);
-              },
-              onClose : function() {
-                return $('#main-content').animate({
-                  marginTop: '-=35'
-                }, 500);
-              }
-            }
+            timeout : 5000
           });
         });
     - elsif flash[:error]
@@ -132,20 +118,6 @@
             text : "#{escape_javascript(flash[:error].html_safe)}",
             layout : 'top',
             type : 'error',
-            timeout : 3000,
-            callback : {
-              onShow : function() {
-                var active;
-                active = true;
-                return $('#main-content').animate({
-                  marginTop: '+=35'
-                }, 500);
-              },
-              onClose : function() {
-                return $('#main-content').animate({
-                  marginTop: '-=35'
-                }, 500);
-              }
-            }
+            timeout : 5000
           });
         });

@@ -2,7 +2,7 @@ jQuery(document).ready ->
   # off canvas main menu
   recalculateHeight = ->
     $main = $('section[role="main"]')
-    $height = window.innerHeight - 44
+    $height = window.innerHeight - 42
 
     if $main.height() < $height
       $main.height($height)
