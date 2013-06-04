@@ -35,26 +35,25 @@
 
   %h1= t('.social_provider')
 
-  #social-boxes
-    .clearfix
-      - (@providers_user).each do |socialprovider|
-        %div{class: 'social-box ' + socialprovider.provider + ' enabled'}
-          %div{class: 'logo'}
-          %p
-          = link_to t('.provider.link.remove_service.text'), socialprovider, confirm: t('.provider.link.remove_service.confirmation'), method: :delete, class: 'confirmation btn btn-danger'
-      - (@providers_suggested).each do |provider|
-        %div{class: 'social-box ' + provider + ' disabled'}
-          %div{class: 'logo'}
-          %p
-          - case provider
-            - when 'persona'
-              = link_to t('.provider.link.add_service'), '/auth/persona/', id: 'mozilla-persona', class: 'btn btn-green'
-            - when 'facebook'
-              = link_to t('.provider.link.add_service'), '/auth/facebook/', class: 'btn btn-green'
-            - when 'google'
-              = link_to t('.provider.link.add_service'), '/auth/google/', class: 'btn btn-green'
-            - when 'twitter'
-              = link_to t('.provider.link.add_service'), '/auth/twitter/', class: 'btn btn-green'
+  #social-boxes.clearfix
+    - (@providers_user).each do |socialprovider|
+      %div{class: 'social-box ' + socialprovider.provider + ' enabled'}
+        %div{class: 'logo'}
+        %p
+        = link_to t('.provider.link.remove_service.text'), socialprovider, confirm: t('.provider.link.remove_service.confirmation'), method: :delete, class: 'confirmation btn btn-danger'
+    - (@providers_suggested).each do |provider|
+      %div{class: 'social-box ' + provider + ' disabled'}
+        %div{class: 'logo'}
+        %p
+        - case provider
+          - when 'persona'
+            = link_to t('.provider.link.add_service'), '/auth/persona/', id: 'mozilla-persona', class: 'btn btn-green'
+          - when 'facebook'
+            = link_to t('.provider.link.add_service'), '/auth/facebook/', class: 'btn btn-green'
+          - when 'google'
+            = link_to t('.provider.link.add_service'), '/auth/google/', class: 'btn btn-green'
+          - when 'twitter'
+            = link_to t('.provider.link.add_service'), '/auth/twitter/', class: 'btn btn-green'
 
   %h1= t('.delete_account.title')
 
