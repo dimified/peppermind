@@ -151,7 +151,6 @@ de:
       duration: 'Herausforderung läuft bis'
       link:
         challenges: 'Alle Herausforderungen'
-        last_activities: 'Letzte Aktivitäten'
         delete: 'Löschen'
         delete_confirm: 'Möchtest du die Herausforderung wirklich löschen?'
         edit: 'Herausforderung bearbeiten'
@@ -201,8 +200,8 @@ de:
       navigation:
         all_challenges: 'Herausforderung finden'
         all_users: 'Alle Benutzer'
-        dashboard: 'Dashboard'
         edit_profile: 'Profil bearbeiten'
+        last_activities: 'Letzte Aktivitäten'
         new_challenge: 'Neue Herausforderung'
         profile: 'Mein Profil'
         signin: 'Anmelden'

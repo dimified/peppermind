@@ -137,7 +137,6 @@ en:
     edit:
       title: '%{challenge} - Edit challenge'
     index:
-      created_at: 'Created by %{user} on %{date}' 
       link:
         activities: 'Activities'
       title: 'challenges'
@@ -152,7 +151,6 @@ en:
       duration: 'Challenge expires on'
       link:
         challenges: 'All challenges'
-        last_activities: 'Last activities'
         delete: 'Delete'
         delete_confirm: 'Möchtest du die Challenge wirklich löschen?'
         edit: 'Edit challenge'
@@ -202,8 +200,8 @@ en:
       navigation:
         all_challenges: 'Find challenge'
         all_users: 'All users'
-        dashboard: 'Dashboard'
         edit_profile: 'Edit profile'
+        last_activities: 'Last activities'
         new_challenge: 'New Challenge'
         profile: 'My Profile'
         signin: 'Sign in'
