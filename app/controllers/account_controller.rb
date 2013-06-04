@@ -6,7 +6,7 @@ class AccountController < ApplicationController
     @user = User.find(current_user.id)
 
     # social providers
-    @providers_suggested = %w[persona twitter facebook google]
+    @providers_suggested = %w[persona facebook google]
     @providers_user = current_user.socialproviders.all
 
     @providers_user.each do | socialprovider |

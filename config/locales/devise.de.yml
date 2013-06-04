@@ -8,11 +8,11 @@ de:
           submit: 'Anmeldung abschließen'
         confirmed: 'Dein Benutzerkonto wurde erfolgreich bestätigt. Du bist nun angemeldet.'
         error:
-          blank: 'Bitte ein Passwort mit mindestens 6 Zeichen eingeben.'
+          blank: 'Bitte ein Passwort mit mindestens 8 Zeichen eingeben.'
           confirmation: 'Die Passwörter stimmen nicht überein.'
           confirmation_blank: 'Bitte eine Passwort-Bestätigung eingeben.'
         label:
-          password: 'Passwort (mind. 6 Zeichen)'
+          password: 'Passwort (mind. 8 Zeichen)'
           password_confirm: 'Passwort wiederholen'
         title: 'Nur noch ein Schritt…'
       send_instructions: 'Du erhältst in wenigen Minuten eine E-Mail, mit welcher du deine Registrierung bestätigen kannst.'
@@ -52,7 +52,7 @@ de:
           cancel: 'Abbrechen'
           submit: 'Passwort ändern'
         label:
-          password: 'Passwort (mind. 6 Zeichen)'
+          password: 'Passwort (mind. 8 Zeichen)'
           password_confirm: 'Passwort wiederholen'
         title: 'Neues Passwort einstellen'
       forgot: 'Passwort vergessen?'

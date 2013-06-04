@@ -20,11 +20,6 @@ class SocialprovidersController < ApplicationController
           display_name = omniauth['info']['name']
           email = omniauth['info']['email']
           uid = omniauth['uid']
-        # TWITTER
-        when 'twitter'
-          display_name = omniauth['info']['name']
-          email = ''
-          uid = omniauth['uid']
         else
           display_name = email = uid = ''
       end

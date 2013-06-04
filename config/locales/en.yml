@@ -10,6 +10,8 @@ en:
         success: 'Dein Benutzerkonto wurde erfolgreich gelöscht. Vielleicht sieht man sich irgendwann wieder !?'
         title: 'Benutzerkonto löschen'
         warning: 'Hier hast du die Möglichkeit, dein Benutzerkonto unwiderruflich zu löschen. Auch wenn wir dies sehr schade fänden, respektieren wir diesen Wunsch. Die bestehenden Herausforderungen werden einem anonymen Benutzerkonto zugeordnet.'
+      edit_password:
+        button: 'Passwort bearbeiten'
       label:
         display_name: 'Username'
         email: 'E-Mail-Adresse'
@@ -34,7 +36,7 @@ en:
         not_unique: 'Diese E-Mail-Adresse ist bereits vergeben, tut uns Leid! '
       password:
         confirm: 'Die beiden Passwörter stimmen nicht überein. '
-        length: 'Das Passwort muss aus mindestens 6 Zeichen bestehen. '
+        length: 'Das Passwort muss aus mindestens 8 Zeichen bestehen. '
       success: 'Deine Angaben wurden erfolgreich geändert!'
   activities:
     challenge:
@@ -62,19 +64,17 @@ en:
       signin: 'Sign in with Peppermind Account'
       signup: 'Sign up to Peppermind'
       social-login: 'Choose an existing account'
-      twitter: 'Sign in with Twitter Account'
     placeholder:
       display_name: 'Username'
       email: 'Email address'
       email_confirm: 'Confirm email address'
-      password: 'Password (at least 6 characters)'
+      password: 'Password (at least 8 characters)'
     registration:
       cancel: 'Cancel'
       providers:
         facebook: 'Mit Facebook anmelden'
         google: 'Mit Google Plus anmelden'
         persona: 'Mit Mozilla Persona anmelden'
-        twitter: 'Mit Twitter anmelden'
       social: '… oder mit bestehenden Nutzerdaten anmelden'
       title: 'Jetzt kostenlos anmelden!'
     social:
@@ -96,7 +96,7 @@ en:
         display_name: 'Username'
         email: 'E-Mail-Adresse'
         email_confirm: 'E-Mail-Adresse wiederholen'
-        password: 'Passwort (mind. 6 Zeichen)'
+        password: 'Passwort (mind. 8 Zeichen)'
         password_confirm: 'Passwort wiederholen'
       title: 'Anmeldung abschließen'
   challenge_inspirations:

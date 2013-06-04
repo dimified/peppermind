@@ -1,0 +1,10 @@
+= title t('.title')
+
+#main-content
+  .form_with_labels
+    = simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, defaults: { input_html: { class: 'styled_input' } } do |f|
+      = f.input :current_password, as: :password, placeholder: t('.label.current_password'), label: t('.label.current_password'), autofocus: true
+      = f.input :password, as: :password, placeholder: t('.label.new_password'), label: t('.label.new_password')
+      = f.input :password_confirmation, as: :password, placeholder: t('.label.new_password_confirmation'), label: t('.label.new_password_confirmation')
+      = f.button :submit, class: 'btn green-button'
+      = link_to t('authentication.registration.cancel'), account_edit_path, class: 'btn btn-danger'
