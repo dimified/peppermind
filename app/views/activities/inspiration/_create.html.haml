@@ -5,7 +5,9 @@
     %span.message
       = t('activities.inspiration._create.exists')
 
-= image_tag avatar(activity.user, 50), alt: '', class: 'user-avatar'
+.avatar
+  = image_tag avatar(activity.user, 50), alt: '', class: 'user-avatar'
+  .icon-lightbulb
 
 - if activity.trackable
   .speech-bubble
