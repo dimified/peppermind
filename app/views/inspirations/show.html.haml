@@ -1,16 +1,21 @@
-= title t('.title', user: @inspiration.user.display_name, challenge: @challenge.question)
+- content_for :head do
+  = stylesheet_link_tag 'linedpaper'
 
-#main-content
-  = render 'inspirations/count_likes'
+= title t('.title')
+%nav
+  = link_to t('.link.challenges'), challenge_path(@challenge), class: 'btn btn-title left'
+  = link_to new_challenge_inspiration_path(@challenge), { class: 'btn btn-title right' } do
+    .icon-plus
 
-  - if current_user != @inspiration.user && current_user
-    = render 'likes/form'
+-#= render 'inspirations/count_likes'
 
+-#- if current_user != @inspiration.user && current_user
+  -#= render 'likes/form'
 
-%p= simple_format(@inspiration.description)
+-#%p= simple_format(@inspiration.description)
 
-  - if can? :update, @inspiration
-    = link_to t('.link.edit'), edit_challenge_inspiration_path(@challenge, @inspiration), class: 'btn green-button'
+-#- if can? :update, @inspiration
+  -#= link_to t('.link.edit'), edit_challenge_inspiration_path(@challenge, @inspiration), class: 'btn green-button'
 
-  - if can? :destroy, @inspiration
-    = link_to t('.link.delete'), challenge_inspiration_path(@challenge, @inspiration), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'
+-#- if can? :destroy, @inspiration
+  -#= link_to t('.link.delete'), challenge_inspiration_path(@challenge, @inspiration), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'

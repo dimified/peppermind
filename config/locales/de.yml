@@ -192,10 +192,11 @@ de:
       title: 'Neue Inspiration anlegen'
     show:
       link:
+        challenges: 'Herausforderung'
         delete: 'Löschen'
         delete_confirm: 'Möchtest du die Inspiration wirklich löschen?'
         edit: 'Bearbeiten'
-      title: 'Inspiration von »%{user}« zur Herausforderung »%{challenge}«'
+      title: 'Inspiration'
   layouts:
     application:
       navigation:
