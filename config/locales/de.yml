@@ -124,14 +124,14 @@ de:
         duration: 'Herausforderung läuft bis…'
         question: 'Fragestellung'
     _process:
-      title: 'Neue Challenge anlegen'
+      title: 'Neue Herausforderung anlegen'
     alert:
-      created: 'Die Challenge wurde erfolgreich angelegt.'
-      deleted: 'Die Challenge wurde erfolgreich gelöscht.'
-      missing: 'Eine Challenge mit dieser ID existiert nicht.'
-      updated: 'Die Challenge wurde erfolgreich aktualisiert.'
+      created: 'Die Herausforderung wurde erfolgreich angelegt.'
+      deleted: 'Die Herausforderung wurde erfolgreich gelöscht.'
+      missing: 'Eine Herausforderung mit dieser ID existiert nicht.'
+      updated: 'Die Herausforderung wurde erfolgreich aktualisiert.'
     edit:
-      title: '%{challenge} - Challenge bearbeiten'
+      title: '%{challenge} - Herausforderung bearbeiten'
     index:
       link:
         activities: 'Aktivitäten'
@@ -145,11 +145,11 @@ de:
       duration: 'Herausforderung läuft bis'
       inspirations: 'Inspirationen'
       link:
-        challenges: 'Alle Challenges'
+        challenges: 'Alle Herausforderungen'
         dashboard: 'Dashboard'
         delete: 'Löschen'
-        delete_confirm: 'Möchtest du die Challenge wirklich löschen?'
-        edit: 'Challenge bearbeiten'
+        delete_confirm: 'Möchtest du die Herausforderung wirklich löschen?'
+        edit: 'Herausforderung bearbeiten'
         inspiration: 'Neue Inspiration hinzufügen'
       problem: 'Problem'
       solution: 'Lösung'
@@ -190,15 +190,15 @@ de:
         delete: 'Löschen'
         delete_confirm: 'Möchtest du die Inspiration wirklich löschen?'
         edit: 'Bearbeiten'
-      title: 'Inspiration von »%{user}« zur Challenge »%{challenge}«'
+      title: 'Inspiration von »%{user}« zur Herausforderung »%{challenge}«'
   layouts:
     application:
       navigation:
-        all_challenges: 'Challenge finden'
+        all_challenges: 'Herausforderung finden'
         all_users: 'Alle Benutzer'
         dashboard: 'Dashboard'
         edit_profile: 'Profil bearbeiten'
-        new_challenge: 'Neue Challenge'
+        new_challenge: 'Neue Herausforderung'
         profile: 'Mein Profil'
         signin: 'Anmelden'
         signout: 'Abmelden'
@@ -214,9 +214,9 @@ de:
     button_okay: 'Ja, wirklich!'
   tags:
     add: 'Tag+'
-    title: 'Suche nach Challenges in Kategorien'
-    title_tagged: 'Challenges kategorisiert mit »%{tag}«'
-    title_tagged_short: 'Challenges kategorisiert mit'
+    title: 'Suche nach Herausforderungen in Kategorien'
+    title_tagged: 'Herausforderungen kategorisiert mit »%{tag}«'
+    title_tagged_short: 'Herausforderungen kategorisiert mit'
   time:
     formats:
       default: '%d.%m.%Y, %H:%M'
@@ -241,8 +241,8 @@ de:
       your_last_inspirations: 'Deine letzten 5 Inspirationen'
       link:
         challenge:
-          all: 'Alle Challenges'
-          new: 'Neue Challenge'
+          all: 'Alle Herausforderungen'
+          new: 'Neue Herausforderung'
         edit: 'Bearbeiten'
       account_level: 'Du befindest dich auf Level %{level}'
       account_points:

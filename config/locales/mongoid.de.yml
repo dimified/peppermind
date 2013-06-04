@@ -42,7 +42,7 @@ de:
         user:
           attributes:
             display_name:
-              blank: 'Bitte einen Benutzernamen angeben'
+              blank: 'Bitte einen Benutzernamen angeben.'
             email:
               blank: 'Bitte eine gültige E-Mail-Adresse angeben.'
               confirmation: 'Die beiden E-Mail-Adressen stimmen nicht überein.'
