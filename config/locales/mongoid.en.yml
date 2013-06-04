@@ -31,10 +31,14 @@ en:
             description:
               blank: 'Description must not be blank.'
             duration_string:
-              invalid: 'Das Datum muss im Format dd.mm.yyyy angegeben sein.'
+              invalid: 'Die Dauer muss im Format dd.mm.yyyy angegeben sein.'
               not_in_future: 'Das Datum muss in der Zukunft liegen.'
             question:
               blank: 'Question must not be blank.'
+        inspiration:
+          attributes:
+            description:
+              blank: 'Beschreibung der Inspiration darf nicht leer sein'
         user:
           attributes:
             display_name:

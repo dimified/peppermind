@@ -48,7 +48,10 @@ class ChallengesController < ApplicationController
         format.html { redirect_to new_challenge_inspiration_path(@challenge), notice: t('challenges.alert.created') }
         format.json { render json: @challenge }
       else
-        format.html { render action: 'new' }
+        format.html do
+          flash[:error] = @challenge.errors.full_messages.to_sentence + '.'
+          render action: 'new'
+        end
         format.json { render json: @challenge.errors, status: :unprocessable_entity }
       end
     end
@@ -63,7 +66,10 @@ class ChallengesController < ApplicationController
         format.html { redirect_to @challenge, notice: t('challenges.alert.updated') }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html do
+          flash[:error] = @challenge.errors.full_messages.to_sentence + '.'
+          redirect_to edit_challenge_path @challenge
+        end
         format.json { render json: @challenge.errors, status: :unprocessable_entity }
       end
     end

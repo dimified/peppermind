@@ -49,7 +49,10 @@ class InspirationsController < ApplicationController
         format.html { redirect_to challenge_inspiration_path(@challenge, @inspiration), notice: t('challenge_inspirations.created') }
         format.json { render json: challenge_inspiration_path(@challenge, @inspiration), status: :created, location: @inspiration }
       else
-        format.html { render action: 'new' }
+        format.html do
+          flash[:error] = @inspiration.errors.full_messages.to_sentence + '.'
+          redirect_to new_challenge_inspiration_path
+        end
         format.json { render json: challenge_inspiration_path(@challenge, @inspiration).errors, status: :unprocessable_entity }
       end
     end
@@ -64,7 +67,10 @@ class InspirationsController < ApplicationController
         format.html { redirect_to challenge_inspiration_path(@challenge, @inspiration), notice: t('challenge_inspirations.updated') }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html do
+          flash[:error] = @inspiration.errors.full_messages.to_sentence + '.'
+          redirect_to edit_challenge_inspiration_path @challenge, @inspiration
+        end
         format.json { render json: challenge_inspiration_path(@challenge, @inspiration).errors, status: :unprocessable_entity }
       end
     end

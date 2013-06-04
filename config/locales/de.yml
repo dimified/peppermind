@@ -1,6 +1,4 @@
 de:
-  global:
-    gravatar: 'Gravatar'
   account:
     edit:
       button:
@@ -28,7 +26,7 @@ de:
       warning: '<strong>Achtung:</strong> Wenn du dich über einen Social Provider auf Peppermind registriert hast, wurde ein zufälliges Passwort für dich gewählt. Du kannst ein neues Passwort über den »Passwort vergessen?«-Link auf der Anmelden-Seite anfordern. <strong>Bitte sperre dich nicht aus deinem eigenen Account aus!</strong>'
     validation:
       display_name:
-        blank: 'Bitte einen Benutzer angeben! '
+        blank: 'Bitte einen Benutzernamen angeben. '
         not_unique: 'Dieser Benutzername ist bereits vergeben, tut uns Leid! '
       email:
         confirm: 'Die beiden E-Mail-Adressen stimmen nicht überein. '
@@ -166,6 +164,9 @@ de:
     error_404:
       content: 'Die gewünschte Seite konnte leider nicht gefunden werden.'
       title: 'Seite nicht gefunden'
+    format: '%{message}'
+  global:
+    gravatar: 'Gravatar'
   helpers:
     submit:
       user:
