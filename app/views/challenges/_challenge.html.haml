@@ -1,12 +1,11 @@
 = link_to challenge_path(challenge.id) do
-  %article.challenge
+  %article.challenge.clearfix
     .text
       .user
         = t('challenges.created', user: challenge.user.display_name)
         = time challenge.created_at, class: :timeago
-      .question-icon
-        .icon-question
-      .question
+      = image_tag avatar(challenge.user, 50), alt: '', class: 'user-avatar'
+      .speech-bubble
         = challenge.question
       .ditos
         = t('.ditos_count', count: challenge.dito)
