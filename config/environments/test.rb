@@ -32,6 +32,12 @@ Peppermind::Application.configure do
   # Raise exception on mass assignment protection for Active Record models
   # config.active_record.mass_assignment_sanitizer = :strict
 
+  # Disable delivery errors, bad email addresses will be ignored
+  config.action_mailer.raise_delivery_errors = false
+
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # Ensure you have defined default url options in your environments files.
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 end

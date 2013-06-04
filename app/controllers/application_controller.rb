@@ -41,9 +41,11 @@ class ApplicationController < ActionController::Base
   private
 
   def set_locale
-    locale = request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
-    if locale.match /^(de|en)$/
-      I18n.locale = locale
+    unless request.env['HTTP_ACCEPT_LANGUAGE'].nil?
+      locale = request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
+      if locale.match /^(de|en)$/
+        I18n.locale = locale
+      end
     else
       I18n.locale = Rails.application.config.i18n.default_locale
     end

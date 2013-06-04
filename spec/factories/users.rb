@@ -5,6 +5,7 @@ FactoryGirl.define do
 		email {Faker::Internet.email}
 		points 1
 		level :rookie
+		confirmed_at Time.new(2013)
 
 		factory :invalid_user do
 			display_name nil
@@ -12,6 +13,7 @@ FactoryGirl.define do
 			email nil
 			points nil
 			level nil
+			confirmed_at nil
 		end
 	end
 end

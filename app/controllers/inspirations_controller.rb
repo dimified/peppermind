@@ -54,7 +54,7 @@ class InspirationsController < ApplicationController
           render 'new'
           flash.discard :error
         end
-        format.json { render json: challenge_inspiration_path(@challenge, @inspiration).errors, status: :unprocessable_entity }
+        format.json { render json: challenge_path(@challenge).errors, status: :unprocessable_entity }
       end
     end
   end

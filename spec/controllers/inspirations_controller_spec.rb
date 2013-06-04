@@ -90,7 +90,7 @@ describe InspirationsController do
       end
 
       it "redirects to challenge_path" do
-        post :create, challenge_id: @challenge
+        post :create, challenge_id: @challenge, inspiration: attributes_for(:inspiration)
         expect(response).to redirect_to(challenge_path(@challenge))
       end
     end
@@ -102,10 +102,10 @@ describe InspirationsController do
         }.to_not change(Inspiration, :count)
       end
       
-      it "re-renders the new template" do 
+      it "redirects to new_challenge_inspiration_path" do
         post :create, challenge_id: @challenge, inspiration: attributes_for(:invalid_inspiration)
-        expect(response).to render_template :new
-      end 
+        expect(response).to redirect_to(new_challenge_inspiration_path)
+      end
     end
   end
 
