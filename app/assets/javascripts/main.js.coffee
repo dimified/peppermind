@@ -67,28 +67,14 @@ jQuery(document).ready ->
 
   $('.confirmation').on 'click', () ->
     $notificationbar = $('#noty_top_layout_container')
-    $content = $('#main-content')
-    $menu = $('#menu')
 
     if !clicked
       clicked = true
       $notificationbar.animate
-        top: '44'
+        top: '42'
       , 500
-      $content.animate
-        marginTop: '87'
-      , 500
-      $menu.animate
-        marginTop: '87'
-      , 100
     else
       clicked = false
       $notificationbar.animate
-        top: '-32'
+        top: '-85'
       , 500
-      $content.animate
-        marginTop: '15px'
-      , 500
-      $menu.animate
-        marginTop: '15px'
-      , 100

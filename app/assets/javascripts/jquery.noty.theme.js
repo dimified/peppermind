@@ -26,7 +26,7 @@
         fontSize: '13px',
         lineHeight: '16px',
         textAlign: 'center',
-        padding: '8px 10px 9px',
+        padding: '14px 10px',
         width: 'auto',
         position: 'relative'
       });
