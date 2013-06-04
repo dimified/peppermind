@@ -25,8 +25,8 @@
     = image_tag avatar(@challenge.user, 70), alt: '', class: 'avatar'
 
 #challenge
-  .tags
-    - if @challenge.tags_array.count > 0
+  - if @challenge.tags_array.count > 0
+    .tags
       %ul
         - @challenge.tags_array.each do |tag|
           = link_to tag_path(URI.escape(tag)) do
@@ -46,10 +46,14 @@
 - if @inspirations.count > 0
   - @inspirations.each do |inspiration|
     .inspiration
+      .likes
+        .icon-heart
+        = inspiration.like
       = link_to user_path(inspiration.user) do
         = image_tag avatar(inspiration.user, 40), alt: t('global.gravatar'), class: 'contributors'
       .inspiration-user-name
-        = link_to inspiration.user.display_name
+        = link_to t('challenges.created', user: inspiration.user.display_name)
+        = time inspiration.created_at, class: :timeago
       .inspiration-description
         = link_to inspiration.description, challenge_inspiration_path(@challenge, inspiration)
 

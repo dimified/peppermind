@@ -1,5 +1,6 @@
 class Inspiration
   include Mongoid::Document
+  include Mongoid::Timestamps::Created
 
   # Fields
   field :description, type: String

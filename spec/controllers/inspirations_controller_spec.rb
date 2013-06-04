@@ -89,9 +89,9 @@ describe InspirationsController do
         expect(assigns(:inspiration).attributes.symbolize_keys).to_not be_nil
       end
 
-      it "redirects to challenge_inspiration_path" do
-        post :create, challenge_id: @challenge, inspiration: attributes_for(:inspiration)
-        expect(response).to redirect_to(challenge_inspiration_path(@challenge, 1))
+      it "redirects to challenge_path" do
+        post :create, challenge_id: @challenge
+        expect(response).to redirect_to(challenge_path(@challenge))
       end
     end
 

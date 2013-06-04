@@ -2,23 +2,23 @@
 @import 'tags.css.sass'
 
 .header
-  padding: 7px 20px
+  padding: 10px 20px
   background: url('notepad.png') repeat
   box-shadow: 0 1px 0 white, 0 0 10px rgba(0, 0, 0, 0.3) inset
   color: white
 
   .question
     text-shadow: 0 -1px 0 rgba(black, 0.7)
-    font-size: 1.2em
+    font-size: 1.4em
     padding-bottom: 10px
 
   .count-ditos
     background: rgba(130, 210, 0, 0.7)
     border-radius: 10px
-    padding: 0 5px 0px 5px
-    font-size: 0.6em
+    padding: 0 6px 1px 6px
+    font-size: 0.8em
     text-shadow: none
-    margin: 0px 5px
+    margin: 0px 2px
     position: relative
     top: -2px
 
@@ -29,7 +29,6 @@
     padding: 2px 5px
     background: rgba(30, 30, 30, 0.4)
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5) inset
-    margin: 5px 0px 5px 10px
     border: 1px solid rgba(100, 100, 100, 0.1)
     border-radius: 5px
 
@@ -59,18 +58,15 @@
     float: left
     margin-right: 6px
 
-.meta
-  font-size: 0.8em
-
 #list
   background: none
 
-#main-content
+#main #main-content
   margin: 0 10% 20px 56px
   padding: 0
 
 #challenge
-  padding: 5px 0px 20px 30px
+  padding: 0 0 24px 30px
   border-left: 2px solid rgba(100, 100, 100, 0.2)
   margin: 0 10% 0 56px
 
@@ -78,6 +74,13 @@
   padding: 5px 0px 13px 30px
   border-left: 2px solid rgba(100, 100, 100, 0.2)
   margin: 0 10% 0 56px
+
+  .likes
+    float: right
+    text-shadow: 0px 1px white
+
+    .icon-heart
+      color: rgb(220, 100, 90)
 
   .contributors
     width: 40px
@@ -94,6 +97,7 @@
     position: relative
     left: -46px
     top: -25px
+    text-shadow: 0px 1px white
 
   .inspiration-description
     font-size: 13px
@@ -107,20 +111,17 @@
     box-shadow: 0px 1px 0px white, 0px 0px 4px rgba(100, 100, 100, 0.2) inset
 
 .tags
-  margin-left: 15px
-  position: relative
-  top: 19px
+  margin: 22px 0 30px 15px
 
   ul
     padding: 0
-    margin: 0
 
     li
       display: inline
-      font-size: 0.7em
+      font-size: 0.9em
       margin: 0px 3px
       border: 1px solid gainsboro
-      border-radius: 8px
+      border-radius: 10px
       line-height: 2.1
       padding: 0px 7px
       box-shadow: 0px 1px 0px white
@@ -131,9 +132,8 @@
         @include linear-gradient(rgba(170, 255, 50, 0.5), rgba(130, 210, 0, 0.5))
 
 .description
-  font-size: 13px
-  margin: 49px 0px 18px 0px
   line-height: 1.95
+  margin-top: 25px
 
   &:before
     content: open-quote
@@ -157,7 +157,10 @@
   @include linear-gradient(rgb(130, 210, 0), rgb(110, 190, 0))
 
 .btn.new-inspiration-button
-  margin: 4px 0
+  margin: 2px 0
+
+.btn
+  margin: 20px 0
 
 article.challenge
   border-bottom: 1px solid rgb(170, 170, 170)

@@ -46,8 +46,8 @@ class InspirationsController < ApplicationController
     respond_to do |format|
       if @inspiration.save
         track_activity @inspiration
-        format.html { redirect_to challenge_inspiration_path(@challenge, @inspiration), notice: t('challenge_inspirations.created') }
-        format.json { render json: challenge_inspiration_path(@challenge, @inspiration), status: :created, location: @inspiration }
+        format.html { redirect_to challenge_path(@challenge), notice: t('challenge_inspirations.created') }
+        format.json { render json: challenge_path(@challenge), status: :created, location: @inspiration }
       else
         format.html do
           flash[:error] = @inspiration.errors.full_messages.to_sentence + '.'
