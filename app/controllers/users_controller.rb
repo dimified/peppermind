@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   rescue_from Mongoid::Errors::DocumentNotFound, with: :access_denied
 
   def index
-    @users = User.all
+    @users = User.all.order_by([:points, :desc])
 
     respond_to do |format|
       format.html
