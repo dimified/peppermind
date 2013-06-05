@@ -14,16 +14,11 @@ class InspirationsController < ApplicationController
 
   def show
     @challenge = Challenge.find(params[:challenge_id])
-    @inspiration = Inspiration.where(_id: params[:id], challenge: @challenge).first()
+    @inspiration = Inspiration.find(params[:id])
 
-    if @inspiration
-      respond_to do |format|
-        format.html
-        format.json { render json: @inspiration }
-      end
-    else
-      flash[:error] = t('inspirations.alert.missing')
-      redirect_to @challenge
+    respond_to do |format|
+      format.html
+      format.json { render json: @inspiration }
     end
   end
 
@@ -56,7 +51,7 @@ class InspirationsController < ApplicationController
       else
         format.html do
           flash[:error] = @inspiration.errors.full_messages.to_sentence + '.'
-          redirect_to new_challenge_inspiration_path
+          render 'new'
           flash.discard :error
         end
         format.json { render json: challenge_path(@challenge).errors, status: :unprocessable_entity }

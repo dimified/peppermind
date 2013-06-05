@@ -94,9 +94,9 @@ describe ChallengesController do
         }.to_not change(Challenge, :count)
       end
       
-      it "redirects to the new_challenge_path" do
+      it "re-renders the :new path" do
         post :create, challenge: attributes_for(:invalid_challenge)
-        expect(response).to redirect_to(new_challenge_path)
+        expect(response).to render_template :new
       end
     end
   end
