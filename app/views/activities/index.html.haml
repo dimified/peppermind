@@ -3,9 +3,10 @@
 
 = title t('.title')
 %nav
-  = link_to t('.link.challenges'), challenges_path, class: 'btn btn-title left'
-  = link_to new_challenge_path, { class: 'btn btn-title right' } do
-    .icon-plus{ title: t('.button') }
+  = link_to challenges_path, class: 'btn btn-title left' do
+    .icon-th-list
+  = link_to new_challenge_path, class: 'btn btn-title right' do
+    .icon-plus
 
 #list
   #activities

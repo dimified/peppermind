@@ -3,8 +3,9 @@
 
 = title t('.title')
 %nav
-  = link_to t('.link.challenges'), challenge_path(@challenge), class: 'btn btn-title left'
-  = link_to new_challenge_inspiration_path(@challenge), { class: 'btn btn-title right' } do
+  = link_to challenge_path(@challenge), class: 'btn btn-title left' do
+    .icon-question-sign
+  = link_to new_challenge_inspiration_path(@challenge), class: 'btn btn-title right' do
     .icon-plus
 
 #main-content

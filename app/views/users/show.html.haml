@@ -3,16 +3,18 @@
 - else
   = title @user.display_name
 %nav
-  = link_to t('.link.users'), users_path, class: 'btn btn-title left'
+  = link_to users_path, class: 'btn btn-title left' do
+    .icon-group
+  - if current_user == @user
+    = link_to account_edit_path, class: 'btn btn-title right' do
+      .icon-pencil
 
 #main-content
   .user-area
     #avatar
       = image_tag avatar(@user, 70), alt: ''
 
-    - if current_user == @user
-      %nav
-        = link_to t('.link.edit'), account_edit_path, class: 'btn btn-title right'
+    - if current_user == @user        
       .level
         = t('.account_level', level: @user.level)
       .points

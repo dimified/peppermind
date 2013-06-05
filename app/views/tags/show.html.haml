@@ -3,8 +3,9 @@
 
 = title @tag
 %nav
-  = link_to t('.link.tags'), tags_path, class: 'btn btn-title left'
-  = link_to new_challenge_path, { class: 'btn btn-title right' } do
+  = link_to tags_path, class: 'btn btn-title left' do
+    .icon-tags
+  = link_to new_challenge_path, class: 'btn btn-title right' do
     .icon-plus
 
 #challenges
