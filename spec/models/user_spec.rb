@@ -5,10 +5,6 @@ describe User do
 		@user = create(:user)
 	end
 
-	it "has a valid factory" do
-	  expect(@user).to be_valid
-	end
-
 	it "is invalid with a duplicate email address" do
 		expect(build(:user, email: @user.email)).to_not be_valid
 	end
