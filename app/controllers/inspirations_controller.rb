@@ -14,11 +14,16 @@ class InspirationsController < ApplicationController
 
   def show
     @challenge = Challenge.find(params[:challenge_id])
-    @inspiration = Inspiration.find(params[:id])
+    @inspiration = Inspiration.where(_id: params[:id], challenge: @challenge).first()
 
-    respond_to do |format|
-      format.html
-      format.json { render json: @inspiration }
+    if @inspiration
+      respond_to do |format|
+        format.html
+        format.json { render json: @inspiration }
+      end
+    else
+      flash[:error] = t('inspirations.alert.missing')
+      redirect_to @challenge
     end
   end
 
