@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :challenge do
   	question {Faker::Lorem.characters(100)}
-  	description {Faker::Lorem.characters(255)}
-    duration Date.new(2013, 06, 05)
-  	duration_string "05.06.2013"
+  	description {Faker::Lorem.characters(1000)}
+    duration Date.new(2100, 06, 05)
+  	duration_string "05.06.2100"
     status :open
     user 1
     dito 1

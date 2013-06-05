@@ -17,7 +17,7 @@ describe Challenge do
 	it "converts duration into duration_string" do 
 		challenge = create(:challenge)
 		@controller = ApplicationController.new
-		expect(@controller.send(:convert_date, challenge.duration)).to eq("05.06.2013")
+		expect(@controller.send(:convert_date, challenge.duration)).to eq("05.06.2100")
 	end
 
 	it "increments dito" do
