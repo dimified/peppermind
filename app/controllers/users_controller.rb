@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   rescue_from Mongoid::Errors::DocumentNotFound, with: :access_denied
 
   def index
-    @users = User.all.order_by([:points, :desc])
+    # show all users except the first user, it's our default user "Pepper Mind"
+    @users = User.not_in(_id: User.first.id).order_by([:points, :desc])
 
     respond_to do |format|
       format.html
