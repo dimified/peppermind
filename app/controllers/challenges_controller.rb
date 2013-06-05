@@ -77,17 +77,6 @@ class ChallengesController < ApplicationController
     end
   end
 
-  def destroy
-    @challenge = Challenge.find(params[:id])
-    @challenge.destroy
-    delete_activity @challenge
-
-    respond_to do |format|
-      format.html { redirect_to challenges_url, notice: t('challenges.alert.deleted') }
-      format.json { head :no_content }
-    end
-  end
-
   private
 
   def access_denied

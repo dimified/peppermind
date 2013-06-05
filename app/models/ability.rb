@@ -7,7 +7,7 @@ class Ability
     # Challenge
     can :read, Challenge
     can :create, Challenge if user
-    can [:update, :destroy], Challenge, :user_id => user.id
+    can :update, Challenge, :user_id => user.id
 
     # Inspiration
     can :read, Inspiration

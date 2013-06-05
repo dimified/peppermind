@@ -139,7 +139,6 @@ de:
       title: 'Neue Herausforderung anlegen'
     alert:
       created: 'Die Herausforderung wurde erfolgreich angelegt.'
-      deleted: 'Die Herausforderung wurde erfolgreich gelöscht.'
       missing: 'Eine Herausforderung mit dieser ID existiert nicht.'
       updated: 'Die Herausforderung wurde erfolgreich aktualisiert.'
     challenge:

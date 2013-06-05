@@ -40,8 +40,6 @@
   - else
     - if can? :update, @challenge
       = link_to t('.link.edit'), edit_challenge_path(@challenge), class: 'btn green-button'
-    - if can? :destroy, @challenge
-      = link_to t('.link.delete'), challenge_path(@challenge), method: :delete, confirm: t('.link.delete_confirm'), class: 'confirmation btn btn-danger'
 
 - if @inspirations.count > 0
   - @inspirations.each do |inspiration|
