@@ -22,7 +22,8 @@
     = t('challenges.created', user: @challenge.user.display_name)
     = time @challenge.created_at, class: :timeago
   = link_to user_path(@challenge.user) do
-    = image_tag avatar(@challenge.user, 70), alt: '', class: 'avatar'
+    .initial-user
+      = image_tag avatar(@challenge.user, 70), alt: ''
 
 #challenge
   - if @challenge.tags_array.count > 0
