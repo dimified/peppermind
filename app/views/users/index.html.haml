@@ -1,6 +1,17 @@
 = title t('.title')
 
-#main-content
-  %ul
+#list
+  #users
     - @users.each do |user|
-      %li= link_to user.display_name, user
+      = link_to user_path(user) do
+        .user
+          = image_tag avatar(user, 70), alt: '', class: 'user-avatar'
+          .text
+            .name= user.display_name
+            .level
+              = t('.level')
+              %span= user.level
+            .points
+              = t('.points')
+              %span= user.points
+          .icon-chevron-right

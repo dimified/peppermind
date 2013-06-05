@@ -9,7 +9,7 @@
     width: 70px
     margin-right: 10px
     border-radius: 5px
-    box-shadow: 0 1px 0 white, 0 0 10px rgba(0,0,0,0.5) inset
+    box-shadow: 0 1px 0 white, 0 0 10px rgba(black, 0.5) inset
     float: left
 
     img
@@ -97,3 +97,58 @@
 
 .empty
   padding: 10px
+
+.user
+  border-bottom: 1px solid rgb(170, 170, 170)
+  box-shadow: 0 1px 0 white
+  @include linear-gradient(rgba(white, 0.5), rgba(white, 0))
+  padding: 10px 0
+  cursor: pointer
+  position: relative
+
+  &:hover, &:active, &:focus
+    background: rgba(white, 0.7)
+
+  .user-avatar
+    height: 70px
+    width: 70px
+    margin: 0 10px
+    border-radius: 5px
+    box-shadow: 0 1px 0 white, 0 0 10px rgba(black, 0.5) inset
+    display: inline-block
+
+  .text
+    display: inline-block
+    vertical-align: top
+    font-size: 0.9em
+
+    .name
+      text-shadow: 0 1px white
+      font-size: 1.2em
+      font-weight: 500
+
+    .name, .level, .points
+      margin-bottom: 5px
+
+    .level
+      span
+        padding: 0 5px
+        background: rgba(10, 50, 100, 0.5)
+        border-radius: 15px
+        color: white
+
+    .points
+      span
+        padding: 0 5px
+        background: rgba(10, 100, 10, 0.5)
+        border-radius: 15px
+        color: white
+
+  .icon-chevron-right
+    font-size: 20px
+    position: absolute
+    top: 50%
+    margin-top: -10px
+    right: 11px
+    color: rgba(100, 100, 100, 0.5)
+    text-shadow: 0 1px white

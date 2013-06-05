@@ -249,6 +249,8 @@ en:
     alert:
       missing: Ein User mit dieser ID existiert nicht.
     index:
+      level: 'Level'
+      points: 'Points'
       title: 'Show all users'
     login:
       title: 'Sign in'
