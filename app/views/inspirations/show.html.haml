@@ -9,7 +9,8 @@
 
 #main-content
   = link_to user_path(@challenge.user) do
-    = image_tag avatar(@challenge.user, 50), alt: '', class: 'avatar'
+    .challenge-user
+      = image_tag avatar(@challenge.user, 50), alt: ''
   #challenge
     .info
       %h2
@@ -25,7 +26,8 @@
         = simple_format(@challenge.description)
 
   = link_to user_path(@inspiration.user) do
-    = image_tag avatar(@challenge.user, 70), alt: '', class: 'avatar', id: 'inspiration-user'
+    .inspiration-user
+      = image_tag avatar(@challenge.user, 70), alt: ''
   #inspiration
     .info
       %h2#user
