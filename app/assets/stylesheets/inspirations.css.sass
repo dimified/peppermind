@@ -50,6 +50,9 @@ h2
     .text
       padding-left: 60px
 
+      @media only screen and (max-width: 640px)
+        padding-left: 0
+
   .question-icon
     height: 40px
     width: 40px
@@ -60,6 +63,9 @@ h2
     top: 5px
     left: -5px
     cursor: default
+
+    @media only screen and (max-width: 640px)
+      display: none
 
 #challenge
   border-left: 1px solid rgba(50, 50, 50, 0.3)
@@ -82,6 +88,9 @@ h2
     .text
       padding-left: 60px
 
+      @media only screen and (max-width: 640px)
+        padding-left: 0
+
   .question-icon
     height: 40px
     width: 40px
@@ -91,6 +100,9 @@ h2
     @include linear-gradient(rgb(130, 210, 0), rgb(110, 190, 0))
     top: 5px
     cursor: default
+
+    @media only screen and (max-width: 640px)
+      display: none
 
 span.error
   display: none
