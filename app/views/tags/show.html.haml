@@ -1,12 +1,11 @@
 - content_for :head do
   = stylesheet_link_tag 'challenges', controller_name, media: 'screen'
 
-- title t('tags.title_tagged', tag: @tag)
-
-%h1{class: 'title'}
-  = t('tags.title_tagged_short')
-  %i.icon-tag
-  = '»' + @tag + '«'
+= title @tag
+%nav
+  = link_to t('.link.tags'), tags_path, class: 'btn btn-title left'
+  = link_to new_challenge_path, { class: 'btn btn-title right' } do
+    .icon-plus
 
 #challenges
   = render @challenges

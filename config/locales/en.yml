@@ -239,9 +239,10 @@ en:
     button_okay: 'Ja, wirklich!'
   tags:
     add: 'Tag+'
-    title: 'Suche nach Challenges in Kategorien'
-    title_tagged: 'Challenges kategorisiert mit »%{tag}«'
-    title_tagged_short: 'Challenges kategorisiert mit'
+    show:
+      link:
+        tags: 'Alle Tags'
+    title: 'Categories'
   time:
     formats:
       default: '%d.%m.%Y, %H:%M'
@@ -254,6 +255,8 @@ en:
       title: 'Sign in'
     show:
       title: 'Your profile'
+      challenges_empty: 'No challenges created yet'
+      inspirations_empty: 'No inspirations created yet'
       ditos_html:
         one: '<div class="like"><span class="count">%{count}</span><span class="likes"> Dito</span></div>'
         other: '<div class="like"><span class="count">%{count}</span><span class="likes"> Ditos</span></div>'
@@ -265,9 +268,7 @@ en:
       your_last_challenges: 'Your last 5 challenges'
       your_last_inspirations: 'Your last 5 inspirations'
       link:
-        challenge:
-          all: 'All challenges'
-          new: 'New challenge'
+        users: 'All users'
         edit: 'Edit'
       account_level: 'You are on level %{level}'
       account_points:
