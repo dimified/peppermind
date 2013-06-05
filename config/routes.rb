@@ -24,7 +24,7 @@ Peppermind::Application.routes.draw do
   resources :after_signup, only: [:index, :create]
 
   # challenges
-  resources :challenges do
+  resources :challenges, except: :destroy do
     # pagination
     get 'page/:page', action: :index, on: :collection, constraints: { page: /\d/ }
     resources :inspirations
@@ -36,8 +36,8 @@ Peppermind::Application.routes.draw do
     get 'page/:page', action: :index, on: :collection, constraints: { page: /\d/ }
   end
   
-  resources :ditos
-  resources :likes
+  resources :ditos, only: [:create, :destroy]
+  resources :likes, only: [:create, :destroy]
 
   # tags
   resources :tags, only: [:index, :show] do

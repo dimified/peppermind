@@ -5,24 +5,6 @@ class SomeHocusPocusClass; end
 describe InspirationsController do
   let(:user) { create(:user) }
 
-  describe "GET index" do
-    before(:each) do
-      sign_in user
-      @challenge = create(:challenge)
-    end
-
-    it "assigns all inspirations as @inspirations" do
-      inspiration = create(:inspiration)
-      get :index, challenge_id: @challenge
-      expect(assigns(:inspirations)).to eq([inspiration])
-    end
-
-    it "renders the index template" do
-      get :index, challenge_id: @challenge
-      expect(response).to render_template :index
-    end
-  end
-
   describe "GET show" do
     before(:each) do
       sign_in user

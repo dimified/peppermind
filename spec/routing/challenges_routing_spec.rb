@@ -27,9 +27,5 @@ describe ChallengesController do
       put("/challenges/1").should route_to("challenges#update", id: "1")
     end
 
-    it "routes to #destroy" do
-      delete("/challenges/1").should route_to("challenges#destroy", id: "1")
-    end
-
   end
 end
