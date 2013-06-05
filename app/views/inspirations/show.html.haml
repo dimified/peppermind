@@ -15,7 +15,6 @@
     .info
       %h2
         = @challenge.question
-        = render 'challenges/count_ditos'
       .meta
         = t('challenges.created', user: @challenge.user.display_name)
         = time @challenge.created_at, class: :timeago
