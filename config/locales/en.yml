@@ -77,8 +77,8 @@ en:
       login: 'Username or Email address'
       password: 'Password'
       persona: 'Sign in with Mozilla Persona'
-      signin: 'Sign in with Peppermind Account'
-      signup: 'Sign up to Peppermind'
+      signin: 'Sign in to Peppermind'
+      signup: 'Sign Up'
       social-login: 'Choose an existing account'
     placeholder:
       display_name: 'Username'

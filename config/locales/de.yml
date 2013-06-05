@@ -77,8 +77,8 @@ de:
       login: 'Benutzername oder E-Mail-Adresse'
       password: 'Passwort'
       persona: 'Mozilla Persona verwenden'
-      signin: 'Mit Peppermind Konto anmelden'
-      signup: 'Bei Peppermind registrieren'
+      signin: 'Bei Peppermind anmelden'
+      signup: 'Registrieren'
       social-login: 'Mit einem anderen Konto anmelden'
     placeholder:
       display_name: 'Benutzername'

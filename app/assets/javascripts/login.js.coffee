@@ -9,8 +9,8 @@ $('#toggle-social').click ->
     else if $('#toggle-social > i').hasClass('icon-chevron-up')
       $('#toggle-social > i').attr('class', 'icon-chevron-down')
       $('#toggle-social').css({
-        'border-bottom-left-radius' : '2px',
-        'border-bottom-right-radius' : '2px'
+        'border-bottom-left-radius' : '4px',
+        'border-bottom-right-radius' : '4px'
       })
   )
 
