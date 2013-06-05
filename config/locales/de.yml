@@ -215,7 +215,7 @@ de:
     application:
       navigation:
         all_challenges: 'Herausforderung finden'
-        all_users: 'Alle Benutzer'
+        all_users: 'Nutzerranking'
         edit_profile: 'Profil bearbeiten'
         last_activities: 'Letzte Aktivitäten'
         new_challenge: 'Neue Herausforderung'
@@ -251,7 +251,7 @@ de:
     index:
       level: 'Level'
       points: 'Punkte'
-      title: 'Alle Benutzer anzeigen'
+      title: 'Nutzerranking'
     login:
       title: 'Anmelden'
     show:

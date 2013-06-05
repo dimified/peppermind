@@ -215,7 +215,7 @@ en:
     application:
       navigation:
         all_challenges: 'Find challenge'
-        all_users: 'All users'
+        all_users: 'User Ranking'
         edit_profile: 'Edit profile'
         last_activities: 'Last activities'
         new_challenge: 'New Challenge'
@@ -251,7 +251,7 @@ en:
     index:
       level: 'Level'
       points: 'Points'
-      title: 'Show all users'
+      title: 'User Ranking'
     login:
       title: 'Sign in'
     show:
