@@ -198,14 +198,12 @@ de:
     alert:
       missing: 'Eine Inspiration mit dieser ID existiert nicht.'
     edit:
-      button:
-        cancel: 'Abbrechen'
-        submit: 'Bearbeiten'
       title: 'Inspiration bearbeiten'
-    new:
+    form:
       button:
         cancel: 'Abbrechen'
-        submit: 'Anlegen'
+        submit: 'Speichern'
+    new:
       title: 'Neue Inspiration anlegen'
     show:
       link:
