@@ -1,10 +1,7 @@
 require 'spec_helper'
 
-class SomeHocusPocusClass; end
-
 describe InspirationsController do
   let(:user) { create(:user) }
-
   describe "GET show" do
     before(:each) do
       sign_in user
@@ -88,21 +85,6 @@ describe InspirationsController do
         post :create, challenge_id: @challenge, inspiration: attributes_for(:invalid_inspiration)
         expect(response).to render_template :new
       end
-    end
-  end
-
-  describe "GET access_denied" do
-    before do
-      sign_in user
-      def controller.index
-        raise Mongoid::Errors::DocumentNotFound.new SomeHocusPocusClass, {}
-      end
-    end
-
-    it "redirects to challenge_path" do 
-      @challenge = create(:challenge)
-      get :index, challenge_id: @challenge
-      expect(response).to redirect_to(challenge_path(@challenge))
     end
   end
 end

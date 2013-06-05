@@ -92,4 +92,3 @@ describe User do
 		}.to change(user, :level).from(:solver).to(:inspirer)
 	end
 end
-

@@ -27,7 +27,7 @@ Peppermind::Application.routes.draw do
   resources :challenges, except: :destroy do
     # pagination
     get 'page/:page', action: :index, on: :collection, constraints: { page: /\d/ }
-    resources :inspirations
+    resources :inspirations, except: [:index]
   end
 
   # activities

@@ -3,10 +3,6 @@ require "spec_helper"
 describe InspirationsController do
   describe "routing" do
 
-    it "routes to #index" do
-      get("/challenges/1/inspirations").should route_to("inspirations#index", challenge_id: "1")
-    end
-
     it "routes to #show" do
       expect(get("/challenges/1/inspirations/1")).to route_to("inspirations#show", challenge_id: "1", id: "1")
     end
