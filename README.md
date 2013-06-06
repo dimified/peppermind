@@ -7,14 +7,14 @@ The application has a default user which must be initialized by `rake db:seed`.
 
 Please create a `/config/env_vars.rb` file and define the following environment variables:
 
-// secret token
+// secret token<br />
 ENV['SECRET_TOKEN']
 
-// mail settings. Host = URL of the Peppermind page
-ENV['MAIL_HOST'] 
-ENV['MAIL_USER']
-ENV['MAIL_PASS']
+// mail settings. HOST = URL of the Peppermind page<br />
+ENV['MAIL_HOST']<br />
+ENV['MAIL_USER']<br />
+ENV['MAIL_PASS']<br />
 
-// Social login keys
-ENV['FACEBOOK_KEY']
+// social login keys<br />
+ENV['FACEBOOK_KEY']<br />
 ENV['FACEBOOK_SECRET']
