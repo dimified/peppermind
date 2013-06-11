@@ -8,8 +8,6 @@ class AfterSignupController < ApplicationController
       @user = TemporaryUser.new
       @user.display_name = session[:user_display_name]
       @user.email = session[:user_email]
-
-      render 'index'
     else
       redirect_to root_path
     end
